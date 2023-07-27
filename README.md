@@ -1,2 +1,2 @@
-# homepage
-Repository for the Kocakavuk Lab (Computational Oncology)
+# Kocakavuk Lab Website
+Repository for the Kocakavuk Lab (Computational Oncology) Website
