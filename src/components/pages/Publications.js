@@ -5,7 +5,7 @@ import cancerCell2020 from "../../assets/publications-shots/cancer-cell-2020.png
 import cell2022 from "../../assets/publications-shots/cell-2022.png";
 import natGen2021 from "../../assets/publications-shots/nat-gen-2021.png";
 import neuroOnco2023 from "../../assets/publications-shots/neuro-onco-2023.png";
-
+import axios from "axios";
 const boldAuthorName = (html, authorName) => {
   const boldedName = `<strong>${authorName}</strong>`;
   return html.replace(new RegExp(authorName, "g"), boldedName);

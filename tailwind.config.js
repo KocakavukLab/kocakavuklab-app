@@ -10,9 +10,8 @@ module.exports = {
       normal: "0",
       wide: ".025em",
       wider: ".05em",
-      widest: ".1em",
       widest: ".25em",
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [],
 };
