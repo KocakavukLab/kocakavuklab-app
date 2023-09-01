@@ -1,5 +1,6 @@
 {
                    "workbench.colorCustomizations": {
+<<<<<<< HEAD
                                       "activityBar.activeBackground": "#ff6433",
                                       "activityBar.background": "#ff6433",
                                       "activityBar.foreground": "#15202b",
@@ -26,4 +27,32 @@
                                       "titleBar.inactiveForeground": "#e7e7e799"
                    },
                    "peacock.color": "#ff3d00"
+=======
+                                      "activityBar.activeBackground": "#9294f5",
+                                      "activityBar.background": "#9294f5",
+                                      "activityBar.foreground": "#15202b",
+                                      "activityBar.inactiveForeground": "#15202b99",
+                                      "activityBarBadge.background": "#cc1317",
+                                      "activityBarBadge.foreground": "#e7e7e7",
+                                      "commandCenter.border": "#e7e7e799",
+                                      "editorGroup.border": "#9294f5",
+                                      "sash.hoverBorder": "#9294f5",
+                                      "statusBar.background": "#6366f1",
+                                      "statusBar.border": "#6366f1",
+                                      "statusBar.debuggingBackground": "#f1ee63",
+                                      "statusBar.debuggingBorder": "#f1ee63",
+                                      "statusBar.debuggingForeground": "#15202b",
+                                      "statusBar.foreground": "#e7e7e7",
+                                      "statusBarItem.hoverBackground": "#9294f5",
+                                      "statusBarItem.remoteBackground": "#6366f1",
+                                      "statusBarItem.remoteForeground": "#e7e7e7",
+                                      "tab.activeBorder": "#9294f5",
+                                      "titleBar.activeBackground": "#6366f1",
+                                      "titleBar.activeForeground": "#e7e7e7",
+                                      "titleBar.border": "#6366f1",
+                                      "titleBar.inactiveBackground": "#6366f199",
+                                      "titleBar.inactiveForeground": "#e7e7e799"
+                   },
+                   "peacock.color": "#6366F1"
+>>>>>>> 3c2114b (First commit)
 }
