@@ -1,5 +1,5 @@
 {
-  "homepage": "https://kocakavuklab-app.vercel.app/",
+  "homepage": "/build",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
