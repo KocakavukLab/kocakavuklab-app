@@ -39,7 +39,7 @@ function About() {
         <div className="h-full flex flex-col justify-center items-center text-center">
           <h1
             style={{ fontSize: h1FontSize, transition: "font-size 0.3s" }}
-            className="monst-font text-white  text-2xl sm:text-sm leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-4 pb-4 sm:font-normal lg:text-5xl"
+            className="monst-font text-white  text-2xl sm:text-xs leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-4 pb-4 lg:text-5xl"
           >
             Kocakavuk Lab
           </h1>
