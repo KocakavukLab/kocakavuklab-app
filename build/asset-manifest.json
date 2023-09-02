@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/build/static/css/main.5e46f1c8.css",
+    "main.js": "/build/static/js/main.9e6c327a.js",
+    "static/media/NCT.png": "/build/static/media/NCT.d3b325afdfb11629b2dd.png",
+    "static/media/UMEA.png": "/build/static/media/UMEA.a1198cade9a7bf03fc88.png",
+    "static/media/Found1.png": "/build/static/media/Found1.bc37ddf803a676cf292b.png",
+    "static/media/dna2.jpg": "/build/static/media/dna2.bd3b6613d75d715fc19f.jpg",
+    "static/media/neuro-onco-2023.png": "/build/static/media/neuro-onco-2023.3c5f088ecb3a7c3432c1.png",
+    "static/media/cell-2022.png": "/build/static/media/cell-2022.82bb02eea1093dddc097.png",
+    "static/media/cancer-cell-2020.png": "/build/static/media/cancer-cell-2020.2cc4fcba66f64fae97d7.png",
+    "static/media/Bhs.png": "/build/static/media/Bhs.82b3e3be1f4ad7856440.png",
+    "static/media/Glass.png": "/build/static/media/Glass.5f19ff3ef41897c91de3.png",
+    "static/media/UMECombi.png": "/build/static/media/UMECombi.1979d23374a9a2155449.png",
+    "static/media/WTZ.png": "/build/static/media/WTZ.b97c36ed69569caddbca.png",
+    "static/media/Yalecombi.png": "/build/static/media/Yalecombi.efa73f8e08b93884df80.png",
+    "static/media/Cantar.png": "/build/static/media/Cantar.d667fa00cad9b8cda34e.png",
+    "static/media/Forbeck.png": "/build/static/media/Forbeck.60ac1c6a362da78957bf.png",
+    "static/media/else.png": "/build/static/media/else.6e60ed1fd8c22f02e1cb.png",
+    "static/media/ESMO.png": "/build/static/media/ESMO.9ddd602e14b4118eab15.png",
+    "static/media/DFG.png": "/build/static/media/DFG.976060595bf55c7a5eb1.png",
+    "static/media/nat-gen-2021.png": "/build/static/media/nat-gen-2021.a24f33748dae4b7cbcc9.png",
+    "static/media/Logo_Kocakavuklab_Redesign.svg": "/build/static/media/Logo_Kocakavuklab_Redesign.0be7b94fc78c9409019df9776290adba.svg",
+    "static/media/Logo.svg": "/build/static/media/Logo.1a308b1e8ded61577794ffb56271f21d.svg",
+    "static/media/footer-bg.jpg": "/build/static/media/footer-bg.2a56507f2213b584fc3a.jpg",
+    "static/media/slick.svg": "/build/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/build/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/build/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/build/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/build/index.html",
+    "main.5e46f1c8.css.map": "/build/static/css/main.5e46f1c8.css.map",
+    "main.9e6c327a.js.map": "/build/static/js/main.9e6c327a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e46f1c8.css",
+    "static/js/main.9e6c327a.js"
+  ]
+}
