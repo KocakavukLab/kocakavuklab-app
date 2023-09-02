@@ -25,7 +25,7 @@ const Footer = () => {
           </p>
           <p className="monst-font">Email:</p>
           <Link
-            href="mailto:kocakavuklab@gmail.com"
+            to="mailto:kocakavuklab@gmail.com"
             className="monst-font font-light hover:text-cyan-400 hover:underline"
           >
             {" "}
@@ -34,7 +34,7 @@ const Footer = () => {
           <br />
           <p className="monst-font">Phone:</p>{" "}
           <Link
-            href="tel:+49-(0)201-723-0"
+            to="tel:+49-(0)201-723-0"
             className="monst-font inline font-light hover:text-cyan-400 hover:underline slashed-zero"
           >
             +49-(0)201-723-0
@@ -53,18 +53,21 @@ const Footer = () => {
           <div className="flex flex-row space-x-4 mt-2 items-center justify-center">
             <Link
               to="/imprint"
+              target="_top"
               className="monst-font block hover:text-cyan-400 hover:underline"
             >
               Imprint
             </Link>
             <Link
               to="/privacypolicy"
+              target="_top"
               className="monst-font block hover:text-cyan-400 hover:underline"
             >
               Privacy Policy
             </Link>
             <Link
               to="/designcredits"
+              target="_top"
               className="monst-font hover:underline hover:text-cyan-400"
             >
               Design Credits

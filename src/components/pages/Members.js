@@ -36,7 +36,7 @@ function Members() {
                 <Link to="mailto:emre.kocakavuk@uk-essen.de">
                   <FaEnvelope />
                 </Link>
-                <Link to="https://twitter.com/ekocakavuk">
+                <Link to="https://twitter.com/ekocakavuk" target="_blank">
                   <FontAwesomeIcon
                     icon={faXTwitter}
                     style={{ color: "#000" }}
@@ -71,7 +71,7 @@ function Members() {
                 <Link to="mailto:fabian.ullrich@uk-essen.de">
                   <FaEnvelope />
                 </Link>
-                <Link to="https://twitter.com/fa_ulle">
+                <Link to="https://twitter.com/fa_ulle" target="_blank">
                   <FontAwesomeIcon
                     icon={faXTwitter}
                     style={{ color: "#000" }}
@@ -106,7 +106,10 @@ function Members() {
                 <Link to="mailto:pranavswaroop.gundla@uk-essen.de">
                   <FaEnvelope />
                 </Link>
-                <Link to="https://www.linkedin.com/in/pranavswaroopgundla/">
+                <Link
+                  to="https://www.linkedin.com/in/pranavswaroopgundla/"
+                  target="_blank"
+                >
                   <FaLinkedin />
                 </Link>
               </div>
