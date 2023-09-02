@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #082f49; /*#052548*/
+  background-color: #ed7009;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -90,48 +90,7 @@
   }
 
   .nav-menu.active {
-    background: #082f49;
-    left: 0px;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
-  .nav-item .active {
-    color: #fff;
-    border: none;
-  }
-  .nav-links {
-    padding: 1.5rem;
-    width: 100%;
-    display: table;
-  }
-
-  .nav-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #fff;
-  }
-}
-@media screen and (max-width: 390px) {
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-top: 1pxsolid #000;
-    position: absolute;
-    top: 80px;
-    left: -110%;
-    opacity: 1;
-    transition: all 0.5s ease;
-  }
-
-  .nav-menu.active {
-    background: #052548;
+    background: #ed7009;
     left: 0px;
     opacity: 1;
     transition: all 0.5s ease;
