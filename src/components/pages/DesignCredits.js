@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useRouteLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaReact, FaFontAwesome, FaThumbsUp, FaHandPointDown } from "react-icons/fa";
 
 
