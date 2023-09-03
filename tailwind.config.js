@@ -2,6 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screns:{
+      'mobile' : '390px'
+    },
     extend: {},
     letterSpacing: {
       tightest: "-.075em",
@@ -13,5 +16,5 @@ module.exports = {
       widest: ".25em",
     },
   },
-  plugins: [],
+  plugins: [require('autoprefixer')],
 };

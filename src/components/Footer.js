@@ -5,9 +5,9 @@ import { TwitterTweetEmbed } from "react-twitter-embed";
 const Footer = () => {
   return (
     <section className="relative footer-bg-img backdrop-blur-md text-justify text-slate-300">
-      <div className="container mx-auto flex flex-col sm:grid sm:grid-cols-1 lg:grid-cols-3 gap-6 py-6 px-2 sm:px-0 lg:px-4 relative z-10">
+      <div className="lg:container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 sm:px-0 relative z-10">
         {/* First Column: Contact Information */}
-        <div className="mt-4 sm:mt-1 lg:mt-8 lg:py-4">
+        <div className="mt-4 px-1 text-justify lg:text-left sm:mt-1 lg:mt-8 lg:py-4">
           <h2 className="monst-font font-bold lg:uppercase text-xl">
             Contact{" "}
           </h2>
@@ -41,7 +41,7 @@ const Footer = () => {
           </Link>
         </div>
         {/* Second Column: Logo */}
-        <div className="text-center sm:text-left lg:text-center lg:py-4">
+        <div className="md:order-3 lg:order-2 lg:col-span-1 lg:bg-none md:bg-black md:col-span-2 text-center sm:text-left lg:text-center lg:py-4 md:py-0">
           <img
             src={HomeLogo}
             alt="Logo"
@@ -50,7 +50,7 @@ const Footer = () => {
           <h3 className="monst-font font-bold text-lg sm:text-center">
             Quick Links
           </h3>
-          <div className="flex flex-row space-x-4 mt-2 items-center justify-center">
+          <div className="flex md:flex-row sm:flex-col space-x-4 mt-2 items-center justify-center">
             <Link
               to="/imprint"
               target="_top"
@@ -75,8 +75,9 @@ const Footer = () => {
           </div>
         </div>
         {/* Third Column: Latest Tweet */}
-        <div className="ml-auto lg:ml-auto mr-6 sm:mr-64  lg:mr-0 lg:py-2">
-          <h3 className="monst-font font-bold text-lg text-center uppercase">
+
+        <div className="hidden md:block md:order-2 lg:order-last justify-center">
+          <h3 className="monst-font font-bold text-lg text-left uppercase">
             Latest Tweet
           </h3>
           {/* Replace this with the actual latest tweet using Twitter API */}
@@ -92,9 +93,9 @@ const Footer = () => {
             />
           </div>
         </div>
+        {/* Footer Bottom: Copyright and Design Credits */}
       </div>
-      {/* Footer Bottom: Copyright and Design Credits */}
-      <div className="border-t pt-4 relative z-10 text-center">
+      <div className="border-t pt-4 relative z-10 text-center bg-black">
         <p className="text-md">
           <span className="monst-font tracking-wider">
             &copy; 2023 KOCAKAVUK COMPUTATIONAL ONCOLOGY LAB

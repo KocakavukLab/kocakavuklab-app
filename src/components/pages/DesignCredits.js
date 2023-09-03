@@ -1,72 +1,71 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaReact, FaFontAwesome, FaThumbsUp, FaHandPointDown } from "react-icons/fa";
-
 
 const DesignCredits = () => {
   return (
-    <div className="grid grid-cols-1 text-lg p-10 monst-font">
-      <h1 className="monst-font text-cyan-400 text-center text-6xl mb-5">
-        Web Design Credits
-      </h1>
-      <p className="monst-font  text-black text-justify items-center">
-        <div className="flex items-center monst-font">
-          <FaThumbsUp className="mr-4" />{" "}
-          <Link
-            to={{ pathname: "https://biocoderr.github.io/" }}
-            target="_blank"
-            className="m-1 monst-font"
-          >
-            Pranav{" "}
-          </Link>{" "}
-          who has designed the website
+    <div className="  grid grid-cols-1 p-6 px-6 md:px-4 lg:text-md">
+      <div className="md:text-center sm:text-justify">
+        <h1 className="credits-font text-gray-500 text-center lg:text-5xl text-3xl mb-5">
+          Site Credits
+        </h1>
+        <div className="credits-font  text-black items-center">
+          <div className="flex flex-col text-left items-center">
+            <ul className="text-lg text-sm">
+              <li>
+                Website designed by{" "}
+                <Link
+                  to="https://biocoderr.github.io"
+                  className="hover:underline visited:text-orange-400"
+                >
+                  Pranav
+                </Link>
+              </li>
+              <li className="credit-font">
+                WebPage is completely built using the Frameworks and libraries:{" "}
+                <br />
+                <Link
+                  to="https://react.dev/"
+                  className="credit-font hover:underline hover:text-blue-700 visited:text-orange-400"
+                >
+                  React.js
+                </Link>
+                <br />
+                <Link
+                  to="https://tailwindcss.com/"
+                  className="credit-font hover:underline hover:text-blue-700 visited:text-orange-400"
+                >
+                  TailwindCSS
+                </Link>
+                <br />
+                <Link
+                  to="https://nathansearles.github.io/slidesjs/"
+                  className="credit-font hover:underline hover:text-blue-700 visited:text-orange-400"
+                >
+                  Slidejs
+                </Link>
+              </li>
+              <li className="credit-font">
+                Icons from{" "}
+                <Link
+                  to="https://www.adobe.com/sensei/generative-ai/firefly.html"
+                  className="credit-font hover:underline visited:text-orange-400"
+                >
+                  react-icons
+                </Link>
+              </li>
+              <li className="credit-font">
+                Home Page Cover is designed by{" "}
+                <Link
+                  to="https://www.adobe.com/sensei/generative-ai/firefly.html"
+                  className="credit-font hover:underline visited:text-orange-400"
+                >
+                  Adobe firefly
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="flex items-center monst-font">
-          <FaHandPointDown className="mr-4" />
-          WebPage is completely built using the Frameworks and libraries:
-          <br />
-        </div>
-        <div className="flex items-center">
-          <FaReact className="mr-4" /> React.js
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" /> TailwindCSS
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" />
-          Slidejs
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" /> FontAwesome-Icons
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" /> Material-ui-icons
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" /> AdobeFirefly's Text to image is
-          used for HomePage Cover.
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" />
-          <Link
-            to="https://react-icons.github.io/react-icons"
-            className="monst-font"
-          >
-            Font Awesome Icons, BoxIcons & Material UI Icons.
-          </Link>
-        </div>
-        <div className="flex items-center monst-font">
-          <FaFontAwesome className="mr-4" />
-          Home Page Cover is designed by{" "}
-          <Link
-            to="https://www.adobe.com/sensei/generative-ai/firefly.html"
-            className="monst-font ml-4"
-          >
-            Adobe firefly
-          </Link>
-          .
-        </div>
-      </p>
+      </div>
     </div>
   );
 };

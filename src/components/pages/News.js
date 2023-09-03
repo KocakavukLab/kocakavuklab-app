@@ -4,16 +4,20 @@ const News = () => {
   return (
     <div className="">
       <div className="text-center">
-        <h1 className="monst-font text-8xl font-medium">Updates</h1>
-        <div className="flex items-center justify-center p-8">
-          <div className="items-center pt-6">
+        <h1 className="monst-font text-5xl font-medium">Updates</h1>
+        <div className="flex items-center justify-center md:pb-2">
+          <div className="items-center pt-6" style={{ height: 800 }}>
             <TwitterTimelineEmbed
               onLoad={function noRefCheck() {}}
               screenName="ekocakavuk"
               sourceType="widget"
+              slug="breakingnews"
               noScrollbar="True"
-              tweetLimit={1}
-              options={{ height: 600, width: 600 }}
+              autoHeight
+              options={{ width:400, tweetLimit: "4" }}
+              noFooter="True"
+              noHeader="True"
+              noBorder="True"
             />
           </div>
         </div>

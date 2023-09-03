@@ -7,12 +7,12 @@ function Members() {
   return (
     <div className="p-4">
       <div className="text-center">
-        <div className="monst-font lg:text-8xl font-medium md:text-4xl sm:text-2xl m-10">
+        <div className="monst-font lg:text-5xl text-3xl m-10">
           Our Members
         </div>
         <div className="monst-font justify-center lg:text-6xl md:text-3xl"></div>
       </div>
-      <div className="grid lg:grid-cols-3 sm:grid-cols-1 mt-16 gap-3">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-16 gap-3">
         {/* Member 1 */}
         <div className="flex justify-center items-between py-4 p-3">
           <div class="max-w-sm rounded shadow-2xl">
@@ -83,7 +83,7 @@ function Members() {
           </div>
         </div>
         {/*Member 3 */}
-        <div className="flex justify-center items-between py-4 p-3">
+        <div className="flex md:col-span-2 lg:col-span-1 justify-center items-between py-4 p-3">
           <div class="max-w-sm rounded shadow-2xl">
             <div className="align-center px-12">
               <img

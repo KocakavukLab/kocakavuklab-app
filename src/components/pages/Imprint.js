@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Imprint = () => {
   return (
     <div className="flex flex-col items-center p-5 lg:p-20">
-      <h1 className="monst-font text-3xl lg:text-6xl text-cyan-400 font-bold mb-4">
+      <h1 className="monst-font lg:text-5xl text-3xl text-cyan-400 font-bold mb-4">
         Imprint
       </h1>
-      <div className="w-full lg:w-2/3 text-justify">
+      <div className="w-full lg:w-2/3 lg:text-justify sm:text-left">
         <h2 className="monst-font text-lg lg:text-2xl font-semibold mt-4">
           Information pursuant to Sect. 5 German Telemedia Act (TMG)
         </h2>

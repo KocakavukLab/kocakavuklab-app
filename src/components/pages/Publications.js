@@ -110,41 +110,50 @@ const Publications = () => {
    (a, b) => b.year - a.year
  );
   return (
-    <div className="flex flex-col justify-center mx-14 z-10 px-4 py-8">
-      <h1 className="monst-font text-6xl sm:text-7xl md:text-8xl font-medium text-center break-words pb-2">
-        Publications
-        <span class="monst-font bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-2 sm:break-all">
-          Selected
-        </span>
-      </h1>
+    // Main div
+    <div className="flex flex-col justify-center z-10 px-4 py-8">
+      <div className="lg:flex grid grid-cols-1">
+        <h1 className="monst-font md:text-5xl text-3xl font-medium text-center break-words pb-2">
+          Publications
+          <sup>
+            <span className="text-xs text-blue-600">Selected</span>
+          </sup>
+        </h1>
+      </div>
+
       <ul>
         {sortedPublications.map((pub, index) => (
-          <li key={index} className="flex mb-8">
-            <img
-              src={pub.image}
-              alt={pub.title}
-              className="w-[320px] h-320 mr-4"
-            />
-            <div>
-              <h2 className="monst-font flex flex-col text-xl font-bold mb-2">
-                {pub.title}
-              </h2>
-              <p className="monst-font text-md font-medium text-gray-900">
-                {pub.journal}
-              </p>
+          <li
+            key={index}
+            className="flex px-2 md:px-0 shadow-md border rounded-md mb-8"
+          >
+            <div className="lg:flex grid grid-cols-1 px-2 lg:px-0">
+              <img
+                src={pub.image}
+                alt={pub.title}
+                className="w-[320px] h-320 mr-4"
+              />
+              <div className="">
+                <h2 className="monst-font flex flex-col md:text-xl text-lg font-bold mb-2">
+                  {pub.title}
+                </h2>
+                <p className="monst-font text-md font-medium text-gray-900">
+                  {pub.journal}
+                </p>
 
-              <p className="monst-font text-sm text-gray-900">{pub.year}</p>
-              <p className="monst-font text-md font-medium text-gray-900">
-                {pub.authors}
-              </p>
-              {getDOIForPublication(pub.title) && (
-                <Link
-                  to={getDOIForPublication(pub.title)}
-                  className="monst-font text-md font-medium text-blue-600 hover:underline visited:text-orange-400 mb-2"
-                >
-                  {getDOIForPublication(pub.title)}
-                </Link>
-              )}
+                <p className="monst-font text-sm text-gray-900">{pub.year}</p>
+                <p className="monst-font text-sm font-medium text-gray-900">
+                  {pub.authors}
+                </p>
+                {getDOIForPublication(pub.title) && (
+                  <Link
+                    to={getDOIForPublication(pub.title)}
+                    className="monst-font text-sm font-medium text-blue-600 hover:underline visited:text-orange-400 mb-2"
+                  >
+                    {getDOIForPublication(pub.title)}
+                  </Link>
+                )}
+              </div>
             </div>
           </li>
         ))}
