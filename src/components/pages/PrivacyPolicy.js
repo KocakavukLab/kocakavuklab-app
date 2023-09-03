@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   return (
     <div className="flex flex-col items-center p-5 lg:p-20">
-      <h1 className="monst-font text-cyan-400 text-3xl lg:text-6xl font-bold mb-4">
+      <h1 className="monst-font text-cyan-400 lg:text-5xl text-3xl font-bold mb-4">
         Privacy Policy
       </h1>
-      <div className="w-full lg:w-2/3 text-justify">
-        <h2 className="monst-font text-indigo-600 text-lg lg:text-2xl font-extrabold mt-4">
+      <div className="w-full lg:w-2/3 lg:text-justify sm:text-left">
+        <h2 className="monst-font text-blue-600 lg:text-2xl text-sm font-extrabold mt-4">
           1. An overview of data protection
         </h2>
-        <h3 className="monst-font text-orange-500 text-md md:text-xl font-semibold mt-4">
+        <h3 className="monst-font text-teal-700 text-sm lg:text-xl font-bold sm:text-md mt-4">
           General information
         </h3>
         <p className="monst-font text-sm lg:text-base">
@@ -22,17 +23,24 @@ const PrivacyPolicy = () => {
           Declaration, which we have included beneath this copy.
         </p>
 
-        <h2 className="monst-font text-indigo-600 text-lg lg:text-2xl font-bold mt-4">
+        <h2 className="monst-font text-blue-600 text-sm lg:text-2xl font-bold mt-4">
           2. Hosting
         </h2>
         <p className="monst-font text-sm lg:text-base">
-          We host our website with Vercel app. We use the Vercel App as
-          open-sourcing agent for all the page publishing.GNU License.
+          We host our website with{" "}
+          <Link
+            to="https://vercel.com/"
+            className="hover:text-blue-700 visited:text-orange-400"
+          >
+            Vercel app{" "}
+          </Link>
+          which is a platform for developers that provides the tools, workflows,
+          and infrastructure you need to build and deploy your web apps faster,
+          without the need for additional configuration. We use the Vercel App
+          as open-sourcing agent for all the page publishing.GNU License.
         </p>
 
-        {/* ... Other sections ... */}
-
-        <h2 className="monst-font text-indigo-600 text-lg lg:text-2xl font-bold mt-4">
+        <h2 className="monst-font text-blue-600 text-sm lg:text-2xl font-bold mt-4">
           3. Custom Services
         </h2>
         <p className="monst-font text-sm lg:text-base">

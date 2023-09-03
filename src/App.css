@@ -1,6 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 /* Body Styling */
 body {
   box-sizing: border-box;
@@ -17,7 +18,6 @@ html {
   display: none;
 }
 
-
 #bg-aboutcover {
   transition: height 0.3s;
   background-image: url("./assets/HomePage_Covers/dna2.jpg");
@@ -33,33 +33,19 @@ html {
 .members-subhead{
   font-family: 'Merriweather', serif;
 }
+.credits-font{
+  font-family: 'PT Serif', serif;
+}
+/* Footer image */
 .footer-bg-img{
   background-image: url('./assets/HomePage_Covers/footer-bg.jpg');
+  background-repeat: no-repeat;
+  height: auto;
 }
-
 /* icons styling in members*/
 .icon-class {
   font-size: 1.5em;
   color: gray;
-}
-.abstract {
-  text-align: justify;
-}
-
-.journal-logo {
-  max-width: 100%;
-}
-
-.text-justify {
-  text-align: justify;
-}
-/* Citation Styling */
-.citation {
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-left: 3px solid #0077b6;
-  font-size: 0.9rem;
-  margin-top: 15px;
 }
 
 /* Ensuring mobile responsiveness for the background image and header */

@@ -158,7 +158,7 @@ const networking = [
       <div className="slider-wrapper space-x-6">
         {/* Network */}
         <div className="relative networks-div p-6">
-          <h1 className="monst-font text-6xl sm:text-7xl md:text-8xl font-medium text-center break-words">
+          <h1 className="monst-font text-5xl font-medium text-center break-words">
             Our Network
           </h1>
           <Slider {...settingsMain} ref={(slider) => setNav1(slider)}>
@@ -191,7 +191,7 @@ const networking = [
         {/* Networks div close */}
         <div className="relative funders-div p-10 m-20">
           {/* Funders */}
-          <h1 className="monst-font text-6xl sm:text-7xl md:text-8xl font-medium text-center break-words">
+          <h1 className="monst-font text-5xl font-medium text-center break-words">
             {" "}
             Funding
           </h1>

@@ -57,18 +57,14 @@ const Contact = () => {
     <div className="justify-center items-center">
       {/* Heading */}
       <div className="text-center">
-        <h1 className="most-font text-8xl font-medium">Contact Us</h1>
+        <h1 className="most-font md:text-5xl text-3xl">Contact Us</h1>
       </div>
 
       {/* Mother Form Div */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-3 mobile:grid-cols-1 gap-4">
         {/* Form Div */}
-        <div className="p-10 col-start-2 col-span-2 grounded drop-shadow-xl bg-white">
-          <form
-            onSubmit={handleSubmit}
-            id="form"
-            className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-          >
+        <div className="md:container col-start-2 grid-cols-1 place-content-center grounded">
+          <form onSubmit={handleSubmit} id="form" className="rounded">
             <div className="mb-4 field">
               <label
                 className="members-subhead block text-gray-700 text-sm mb-2"
@@ -123,7 +119,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleInputChange}
               ></textarea>
-              <p className="monst-font">
+              <p className="monst-font mobile:text-left mobile:text-xs">
                 <input
                   type="checkbox"
                   required
@@ -156,8 +152,8 @@ const Contact = () => {
 
       {/* GMap */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-6 items-center">
-        <div className="heading-class col-span-1">
-          <h1 className="monst-font text-8xl font-medium mb-10 text-center">
+        <div className="text-center">
+          <h1 className="monst-font text-3xl md:text-5xl">
             Lab Location
           </h1>
         </div>
