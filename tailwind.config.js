@@ -3,7 +3,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screns:{
-      'mobile' : '390px'
+      'tablet' : '1023px',
     },
     extend: {},
     letterSpacing: {

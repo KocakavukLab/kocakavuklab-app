@@ -5,23 +5,26 @@ function About() {
   const [h2FontSize, setH2FontSize] = useState("1.5rem"); // Initial font size for h2
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Adjust the h1 font size based on scroll position
-      let newSizeH1 = Math.max(3, 5 - window.scrollY / 100) + "rem";
-      setH1FontSize(newSizeH1);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-      // Adjust the h2 font size based on scroll position
-      let newSizeH2 = Math.min(5, 3 + window.scrollY / 100) + "rem";
-      setH2FontSize(newSizeH2);
-    };
+    if (!isSafari) {
+      const handleScroll = () => {
+        // Your existing code for adjusting font sizes
+        // Adjust the h1 font size based on scroll position
+        let newSizeH1 = Math.max(3, 5 - window.scrollY / 100) + "rem";
+        setH1FontSize(newSizeH1);
 
-    // Add the scroll event listener
-    window.addEventListener("scroll", handleScroll);
+        // Adjust the h2 font size based on scroll position
+        let newSizeH2 = Math.min(5, 3 + window.scrollY / 100) + "rem";
+        setH2FontSize(newSizeH2);
+      };
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   return (
@@ -31,12 +34,9 @@ function About() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       </Helmet>
 
-      <header
-        className="relative h-screen bg-cover bg-center"
-        id="bg-aboutcover"
-      >
+      <header className="relative h-screen bg-center" id="bg-aboutcover">
         <div className="absolute"></div>
-        <div className="h-full flex flex-col justify-center items-center text-center">
+        <div className="h-full flex flex-col justify-center items-center text-center backdrop-blur-sm backdrop-opacity-20 bg-orange/20">
           <h1
             style={{ fontSize: h1FontSize, transition: "font-size 0.3s" }}
             className="monst-font text-white  text-2xl sm:text-xs leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-4 pb-4 lg:text-5xl"

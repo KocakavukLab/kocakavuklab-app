@@ -1,21 +1,19 @@
 import React from "react";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faXTwitter, faOrcid, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Members() {
   return (
     <div className="p-4">
       <div className="text-center">
-        <div className="monst-font lg:text-5xl text-3xl m-10">
-          Our Members
-        </div>
+        <div className="monst-font lg:text-5xl text-3xl m-10">Our Members</div>
         <div className="monst-font justify-center lg:text-6xl md:text-3xl"></div>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-16 gap-3">
         {/* Member 1 */}
-        <div className="flex justify-center items-between py-4 p-3">
-          <div class="max-w-sm rounded shadow-2xl">
+        <div className="flex inset-0 justify-center items-between py-4 p-3">
+          <div class="max-w-sm rounded shadow-2xl ">
             <div className="align-center px-12">
               <img
                 class="h-56 w-56 mb-3 rounded-full transition duration-200 hover:scale-110"
@@ -34,11 +32,25 @@ function Members() {
               <div className="text-gray-600 text-sm text-md md:px-2 text-center mt-6"></div>
               <div class="icon-class flex items-center justify-center gap-3 mt-2 mb-5 w-auto h-5 text-gray-600">
                 <Link to="mailto:emre.kocakavuk@uk-essen.de">
-                  <FaEnvelope />
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
                 </Link>
                 <Link to="https://twitter.com/ekocakavuk" target="_blank">
                   <FontAwesomeIcon
                     icon={faXTwitter}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
+                </Link>
+                <Link
+                  to="https://orcid.org/0000-0003-1920-0494"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faOrcid}
                     style={{ color: "#000" }}
                     size="sm"
                   />
@@ -69,11 +81,25 @@ function Members() {
               </div>
               <div class="icon-class flex items-center justify-center gap-3 mt-2 mb-5 w-auto h-5 text-gray-600">
                 <Link to="mailto:fabian.ullrich@uk-essen.de">
-                  <FaEnvelope />
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
                 </Link>
                 <Link to="https://twitter.com/fa_ulle" target="_blank">
                   <FontAwesomeIcon
                     icon={faXTwitter}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
+                </Link>
+                <Link
+                  to="https://orcid.org/0000-0002-5033-2201"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faOrcid}
                     style={{ color: "#000" }}
                     size="sm"
                   />
@@ -104,13 +130,29 @@ function Members() {
               </div>
               <div class="icon-class flex items-center justify-center gap-3 mt-2 mb-5 w-auto h-5 text-gray-600">
                 <Link to="mailto:pranavswaroop.gundla@uk-essen.de">
-                  <FaEnvelope />
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
                 </Link>
+                <Link to="https://www.linkedin.com/in/pranavswaroopgundla/">
+                  <FontAwesomeIcon
+                    icon={faLinkedinIn}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
+                </Link>
+
                 <Link
-                  to="https://www.linkedin.com/in/pranavswaroopgundla/"
+                  to="https://orcid.org/0000-0002-3726-1445"
                   target="_blank"
                 >
-                  <FaLinkedin />
+                  <FontAwesomeIcon
+                    icon={faOrcid}
+                    style={{ color: "#000" }}
+                    size="sm"
+                  />
                 </Link>
               </div>
             </div>
@@ -119,6 +161,6 @@ function Members() {
       </div>
     </div>
   );
-}
+};
 
 export default Members;

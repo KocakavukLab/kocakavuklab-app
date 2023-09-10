@@ -106,9 +106,9 @@ const Publications = () => {
       setFetchedPublications(fetchedPublications);
     });
   }, []);
- const sortedPublications = [...staticPublications].sort(
-   (a, b) => b.year - a.year
- );
+  const sortedPublications = [...staticPublications].sort(
+    (a, b) => b.year - a.year
+  );
   return (
     // Main div
     <div className="flex flex-col justify-center z-10 px-4 py-8">

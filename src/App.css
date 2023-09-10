@@ -1,22 +1,22 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 /* Body Styling */
 body {
   box-sizing: border-box;
 }
 /* Enable smooth scrolling */
-html {
+/* html {
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox 64+ */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+} */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 #bg-aboutcover {
   transition: height 0.3s;
@@ -28,19 +28,20 @@ html {
 }
 /* Font styling */
 .monst-font {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-.members-subhead{
-  font-family: 'Merriweather', serif;
+.members-subhead {
+  font-family: "Merriweather", serif;
 }
-.credits-font{
-  font-family: 'PT Serif', serif;
+.credits-font {
+  font-family: "PT Serif", serif;
 }
 /* Footer image */
-.footer-bg-img{
-  background-image: url('./assets/HomePage_Covers/footer-bg.jpg');
+.footer-bg-img {
+  background-image: url("./assets/HomePage_Covers/footer-bg.jpg");
   background-repeat: no-repeat;
-  height: auto;
+  background-size: cover;
+  background-position: relative;
 }
 /* icons styling in members*/
 .icon-class {
@@ -49,9 +50,9 @@ html {
 }
 
 /* Ensuring mobile responsiveness for the background image and header */
-header.h-screen {
-  min-height: -webkit-fill-available; /* This helps to ensure the full viewport height on mobile browsers */
-}
+/* header.h-screen {
+  min-height: -webkit-fill-available; 
+} */
 
 /* Ensuring the background image fits within the viewport */
 header.h-screen {
@@ -60,4 +61,3 @@ header.h-screen {
   height: 100vh; /* Taking the full viewport height */
   overflow: hidden; /* Preventing overflow */
 }
-

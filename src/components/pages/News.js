@@ -9,12 +9,13 @@ const News = () => {
           <div className="items-center pt-6" style={{ height: 800 }}>
             <TwitterTimelineEmbed
               onLoad={function noRefCheck() {}}
+              align="center"
               screenName="ekocakavuk"
               sourceType="widget"
               slug="breakingnews"
               noScrollbar="True"
               autoHeight
-              options={{ width:400, tweetLimit: "4" }}
+              options={{ width: 400, tweetLimit: "4" }}
               noFooter="True"
               noHeader="True"
               noBorder="True"
