@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import "../../App.css";
+import {FaArrowRight, FaArrowLeft} from "react-icons/fa";
 import {
   CanTarLogo,
   BFondLogo,
@@ -19,6 +20,31 @@ import {
   NCTLogo
 } from "../LogoName";
 global.window.matchMedia = require("media-match").default;
+const CustomNextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="slick-arrow slick-next hidden md:inline lg:inline"
+      style={{ color: '#082F49', fontSize: '20px', right: '-10px' }}
+      onClick={onClick}
+    >
+      <FaArrowRight />
+    </div>
+  );
+};
+
+const CustomPrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="slick-arrow slick-prev hidden md:inline lg:inline"
+      style={{ color: '#082F49', fontSize: '20px', left: '-10px' }}
+      onClick={onClick}
+    >
+      <FaArrowLeft />
+    </div>
+  );
+};
 const Network = () => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
@@ -35,6 +61,7 @@ const Network = () => {
     autoplaySpeed: 1500,
     lazyLoad: `ondemand`,
     pauseOnFocus: true,
+    
   };
 
   const settingsThumbs = {
@@ -46,6 +73,8 @@ const Network = () => {
     swipeToSlide: false,
     focusOnSelect: false,
     centerPadding: "10px",
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
   };
   const settingsMainFunders = {
     slidesToShow: 1,
@@ -57,6 +86,7 @@ const Network = () => {
     autoplaySpeed: 1500,
     lazyLoad: `ondemand`,
     pauseOnFocus: true,
+   
   };
   const settingsThumbsFunders = {
     slidesToShow: 3,
@@ -67,6 +97,8 @@ const Network = () => {
     swipeToSlide: false,
     focusOnSelect: false,
     centerPadding: "10px",
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
   };
 const networking = [
   {
