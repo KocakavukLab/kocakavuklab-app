@@ -50,7 +50,7 @@ const Imprint = () => {
         <h2 className="monst-font text-lg lg:text-2xl font-semibold mt-4">
           Person responsible for editorial
         </h2>
-        Dr. med. Dr. rer. Emre Kocakavuk
+        Dr. med. Dr. rer. nat. Emre Kocakavuk
       </div>
       <div className="w-full lg:w-2/3 text-justify">
         <h2 className="monst-font text-lg lg:text-2xl font-semibold mt-4">
