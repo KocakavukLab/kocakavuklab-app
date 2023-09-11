@@ -21,7 +21,7 @@ const Imprint = () => {
           Represented by:
         </h2>
         <p className="monst-font text-sm lg:text-base">
-          Dr. med. Dr. rer. Emre Kocakavuk
+          Dr. med. Dr. rer. nat. Emre Kocakavuk
         </p>
 
         <h2 className="monst-font text-lg lg:text-2xl font-semibold mt-4">
