@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";  // Removed setApplyTransition
 import Helmet from "react-helmet";
+import '../../App.css';
+
 function About() {
-  const [h1FontSize, setH1FontSize] = useState("5rem");
-  const [h2FontSize, setH2FontSize] = useState("1.5rem"); // Initial font size for h2
+  const [h1FontSize, setH1FontSize] = useState("4rem");
+  const [h2FontSize, setH2FontSize] = useState("1.75rem");
+  const [applyTransition, setApplyTransition] = useState(true);
 
   useEffect(() => {
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const isMobile = window.innerWidth <= 768;
 
-    if (!isSafari) {
+    setApplyTransition(!isSafari && !isMobile);
+
+    if (!isSafari && !isMobile) {
       const handleScroll = () => {
-        // Your existing code for adjusting font sizes
-        // Adjust the h1 font size based on scroll position
-        let newSizeH1 = Math.max(3, 5 - window.scrollY / 100) + "rem";
+        let newSizeH1 = Math.max(2, 4 - window.scrollY / 100) + "rem";
         setH1FontSize(newSizeH1);
-
-        // Adjust the h2 font size based on scroll position
-        let newSizeH2 = Math.min(5, 3 + window.scrollY / 100) + "rem";
+        let newSizeH2 = Math.min(4, 2 + window.scrollY / 100) + "rem";
         setH2FontSize(newSizeH2);
       };
-
       window.addEventListener("scroll", handleScroll);
 
       return () => {
@@ -26,7 +27,6 @@ function About() {
       };
     }
   }, []);
-
   return (
     <div>
       <Helmet>
@@ -38,15 +38,25 @@ function About() {
         <div className="absolute"></div>
         <div className="h-full flex flex-col justify-center items-center text-center backdrop-blur-sm backdrop-opacity-20 bg-orange/20">
           <h1
-            style={{ fontSize: h1FontSize, transition: "font-size 0.3s" }}
-            className="monst-font text-white  text-2xl sm:text-xs leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-4 pb-4 lg:text-5xl"
+            style={{
+              fontSize: h1FontSize, transition: "font-size 0.3s",
+              '@media(max-width: 768px)': {
+                fontSize: '1.5rem',
+              }
+            }}
+            className={`monst-font text-white sm:text-xs leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-4 pb-4 lg:text-5xl ${applyTransition ? 'header-transition' : 'header-no-transition'}`}
           >
             Kocakavuk Lab
           </h1>
 
           <h2
-            style={{ fontSize: h2FontSize, transition: "font-size 0.3s" }}
-            className="monst-font text-white text-xl sm:text-sm leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-2 pb-5 sm:font-normal lg:text-2xl"
+            style={{
+              fontSize: h2FontSize, transition: "font-size 0.3s",
+              '@media(max-width: 768px)': {
+                fontSize: '2rem',
+              }
+            }}
+            className={`monst-font text-white sm:text-sm leading-relaxed sm:leading-normal md:leading-relaxed md:text-xl mb-2 pb-5 sm:font-normal lg:text-2xl ${applyTransition ? 'header-transition' : 'header-no-transition'}`}
           >
             Computational Oncology
           </h2>

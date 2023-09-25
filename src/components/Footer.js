@@ -6,6 +6,7 @@ const Footer = () => {
   return (
     // Main Div
     <div className="relative grid sm:grid-cols-1 lg:grid-cols-3 justify-between lg:gap-4 md:gap-0 footer-bg-img bg-[#000000] backdrop-blur-[20px] text-slate-300 lg:p-4 sm:p-1">
+      
       {/* First Column - Left */}
       <div className="lg:text-left md:text-center sm:text-left m-2">
         <h2 className="monst-font font-bold lg:uppercase text-xl">Contact </h2>
