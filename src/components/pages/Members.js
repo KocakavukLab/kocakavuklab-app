@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXTwitter, faOrcid, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { SiGmail,SiX, SiGooglescholar, SiResearchgate } from "react-icons/si";
 function Members() {
   return (
     <div className="p-4">
@@ -32,28 +30,18 @@ function Members() {
               <div className="text-gray-600 text-sm text-md md:px-2 text-center mt-6"></div>
               <div class="icon-class flex items-center justify-center gap-3 mt-2 mb-5 w-auto h-5 text-gray-600">
                 <Link to="mailto:emre.kocakavuk@uk-essen.de">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    style={{ color: "#000" }}
-                    size="sm"
-                  />
+                  <SiGmail style={{ color: "#000" }} />
                 </Link>
                 <Link to="https://twitter.com/ekocakavuk" target="_blank">
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    style={{ color: "#000" }}
-                    size="sm"
+                  <SiX style={{ color: "#000" }}
                   />
                 </Link>
                 <Link
-                  to="https://orcid.org/0000-0003-1920-0494"
+                  to="https://scholar.google.co.in/citations?user=gGSCLooAAAAJ&hl=en&oi=ao"
                   target="_blank"
                 >
-                  <FontAwesomeIcon
-                    icon={faOrcid}
-                    style={{ color: "#000" }}
-                    size="sm"
-                  />
+                  <SiGooglescholar style={{ color: "#000" }} />
+                  
                 </Link>
               </div>
             </div>
@@ -81,28 +69,18 @@ function Members() {
               </div>
               <div class="icon-class flex items-center justify-center gap-3 mt-2 mb-5 w-auto h-5 text-gray-600">
                 <Link to="mailto:fabian.ullrich@uk-essen.de">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    style={{ color: "#000" }}
-                    size="sm"
+                  <SiGmail style={{ color: "#000" }}
                   />
                 </Link>
                 <Link to="https://twitter.com/fa_ulle" target="_blank">
-                  <FontAwesomeIcon
-                    icon={faXTwitter}
-                    style={{ color: "#000" }}
-                    size="sm"
+                  <SiX style={{ color: "#000" }}
                   />
                 </Link>
                 <Link
-                  to="https://orcid.org/0000-0002-5033-2201"
+                  to="https://www.researchgate.net/profile/Fabian-Ullrich"
                   target="_blank"
                 >
-                  <FontAwesomeIcon
-                    icon={faOrcid}
-                    style={{ color: "#000" }}
-                    size="sm"
-                  />
+                  <SiResearchgate style={{ color: "#000" }} />
                 </Link>
               </div>
             </div>
@@ -130,29 +108,19 @@ function Members() {
               </div>
               <div class="icon-class flex items-center justify-center gap-3 mt-2 mb-5 w-auto h-5 text-gray-600">
                 <Link to="mailto:pranavswaroop.gundla@uk-essen.de">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    style={{ color: "#000" }}
-                    size="sm"
+                  <SiGmail style={{ color: "#000" }}
                   />
                 </Link>
-                <Link to="https://www.linkedin.com/in/pranavswaroopgundla/">
-                  <FontAwesomeIcon
-                    icon={faLinkedinIn}
-                    style={{ color: "#000" }}
-                    size="sm"
+                <Link to="https://twitter.com/im_pranavgundla">
+                  <SiX style={{ color: "#000" }}
                   />
                 </Link>
 
                 <Link
-                  to="https://orcid.org/0000-0002-3726-1445"
+                  to="https://scholar.google.co.in/citations?user=UzlYsbgAAAAJ&hl=en&oi=ao"
                   target="_blank"
                 >
-                  <FontAwesomeIcon
-                    icon={faOrcid}
-                    style={{ color: "#000" }}
-                    size="sm"
-                  />
+                  <SiGooglescholar style={{ color: "#000" }} />
                 </Link>
               </div>
             </div>
