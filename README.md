@@ -1,9 +1,3 @@
-# Kocakavuk Lab Website
-Repository for the Kocakavuk Lab (Computational Oncology) Website
-TODOs for the project
-- [] Members Page
-- [] Publications
-- [] Projects
-- [] News
-- [] Oppurtunities
-- [] Network
+# Kocakavuk Lab - Computational Oncology HomePage
+This is the Homepage for the Kocakavuk Lab at West German Cancer Center located in Universitätsklinikum Essen.
+Page is updated regularly with the information on Projects, Oppurtunities and newsletters. <a href="https://kocakavuklab.vercel.app/">Visit me</a> for the Lab's Home
