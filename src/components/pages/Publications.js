@@ -4,6 +4,7 @@ import cancerCell2020 from "../../assets/publications-shots/cancer-cell-2020.png
 import cell2022 from "../../assets/publications-shots/cell-2022.png";
 import natGen2021 from "../../assets/publications-shots/nat-gen-2021.png";
 import neuroOnco2023 from "../../assets/publications-shots/neuro-onco-2023.png";
+import nat2019 from "../../assets/publications-shots/nat2019.png";
 const boldAuthorName = (authors, targetNames) => {
   let boldedAuthors = authors;
   targetNames.forEach((name) => {
@@ -48,6 +49,15 @@ const staticPublications = [
     year: 2023,
     url: "https://doi.org/10.1093/neuonc/noad095",
     authors: "Emre Kocakavuk, Kevin C Johnson, Thais S Sabedot, Hans Christian Reinhardt, Houtan Noushmehr, Roel G W Verhaak",
+  },
+  {
+    id:5,
+    image:nat2019,
+    title: "Longitudinal molecular trajectories of diffuse glioma in adults",
+    journal: "Nature",
+    year:2019,
+    url:"https://doi.org/10.1038/s41586-019-1775-1",
+    authors:"Floris P. Barthel, Kevin C. Johnson, Frederick S. Varn, Anzhela D. Moskalik, Georgette Tanner, Emre Kocakavuk et al.",
   },
 ];
 const Publications = () => {
