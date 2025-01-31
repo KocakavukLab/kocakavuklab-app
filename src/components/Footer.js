@@ -1,108 +1,68 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomeLogo from "../assets/logos/Logo_Kocakavuklab_Redesign.svg";
-import { TwitterTweetEmbed } from "react-twitter-embed";
-const Footer = () => {
+import "../App.css";
+
+function Footer() {
   return (
-    // Main Div
-    <div className="relative grid sm:grid-cols-1 lg:grid-cols-3 justify-between lg:gap-4 md:gap-0 footer-bg-img bg-[#000000] backdrop-blur-[20px] text-slate-300 lg:p-4 sm:p-1">
-      
-      {/* First Column - Left */}
-      <div className="lg:text-left md:text-center sm:text-left m-2">
-        <h2 className="monst-font font-bold lg:uppercase text-xl">Contact </h2>
-        <h3 className="monst-font font-semibold text-lg">
-          West German Cancer Center
-        </h3>
-        <p className="monst-font font-light py-2">
-          <span className="monst-font text-md text-slate-300">Address:</span>{" "}
-          <br />
-          University Hospital Essen (AöR)
-          <br />
-          Hufelandstraße 55
-          <br />
-          D-45147 Essen{" "}
-        </p>
-        <p className="monst-font">Email:</p>
-        <Link
-          to="mailto:kocakavuklab@gmail.com"
-          className="monst-font font-light hover:text-cyan-400 hover:underline"
-        >
-          {" "}
-          kocakavuklab@gmail.com
-        </Link>
-        <br />
-        <p className="monst-font">Phone:</p>{" "}
-        <Link
-          to="tel:+49-(0)201-723-0"
-          className="monst-font inline font-light hover:text-cyan-400 hover:underline slashed-zero"
-        >
-          +49-(0)201-723-0
-        </Link>
-      </div>
-      {/* Left Column */}
-
-      <div className="text-center justify-center">
-        <img
-          src={HomeLogo}
-          alt="Logo"
-          className="w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] lg:w-[300px] lg:h-[300px] mx-auto sm:mx-center lg:mx-auto"
-        />
-        <h3 className="monst-font font-bold text-lg sm:text-center">
-          Quick Links
-        </h3>
-        <div className="space-x-4 m-2 flex sm:flex-col items-center justify-center">
-          <Link
-            to="/imprint"
-            target="_top"
-            className="monst-font block hover:text-cyan-400 hover:underline"
-          >
-            Imprint
-          </Link>
-          <Link
-            to="/privacypolicy"
-            target="_top"
-            className="monst-font block hover:text-cyan-400 hover:underline"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to="/designcredits"
-            target="_top"
-            className="monst-font hover:underline hover:text-cyan-400"
-          >
-            Design Credits
-          </Link>
+    <footer className="footer-bg-img bg-black backdrop-blur-lg text-slate-300 py-8 min-h-64">
+      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        
+        {/* Left Section: Quick Links */}
+        <div className="flex flex-col items-center md:items-start">
+          <h3 className="text-lg font-bold mb-2">Quick Links</h3>
+          <ul className="space-y-1">
+            <li>
+              <Link to="/imprint" className="hover:underline hover:text-cyan-300">
+                Imprint
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacypolicy" className="hover:underline hover:text-cyan-300">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/designcredits" className="hover:underline hover:text-cyan-300">
+                Design Credits
+              </Link>
+            </li>
+          </ul>
         </div>
-        <div className="text-center justify-center items-center">
-          <p className="text-md text-center">
-            <span className="monst-font tracking-wider">
-              &copy; 2023 KOCAKAVUK COMPUTATIONAL ONCOLOGY LAB
-            </span>
-            <br />{" "}
+
+        {/* Center Section: Logo */}
+        <div className="flex justify-center items-center">
+          <img
+            src="/lablogowhite_full.svg"
+            alt="Kocakavuk Lab"
+            className="h-64 w-64 sm:h-48 sm:w-48 md:h-56 md:w-56"
+          />
+        </div>
+
+        {/* Right Section: Contact Information */}
+        <div className="text-center md:text-right">
+          <h3 className="text-lg font-bold mb-2">Contact</h3>
+          <p>West German Cancer Center</p>
+          <p>University Hospital Essen (AöR)</p>
+          <p>Hufelandstrasse 55</p>
+          <p>D-45147 Essen</p>
+          <p>
+            Email:{" "}
+            <a href="mailto:kocakavuklab@gmail.com" className="hover:underline hover:text-cyan-300">
+              kocakavuklab@gmail.de
+            </a>
           </p>
-          <p className="tracking-wider monst-font">ALL RIGHTS RESERVED</p>
+          <p>Phone: +49-(0)201-723-0</p>
         </div>
       </div>
-      {/* Center column */}
-      <div className="hidden sm:block text-center items-center">
-        <h1 className="monst-font lg:uppercase text-slate-300 text-xl font-bold uppercase">
-          Latest tweet
-        </h1>
-        <TwitterTweetEmbed
-          onLoad={function noRefCheck() {}}
-          tweetId="1670389001599983617"
-          options={{
-            align: "center",
-            cards: "hidden",
-            maxWidth: 600,
-            width: 400,
-          }}
-        />
-      </div>
-      {/* Right column */}
-    </div>
-    // Main div
-  );
-};
 
-      export default Footer;
+      {/* Copyright Notice */}
+      <div className="text-center mt-8">
+        <p className="text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} Kocakavuk Computational Oncology Lab. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
