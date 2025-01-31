@@ -1,35 +1,69 @@
+/* ==================== */
+/* General Navbar Styles */
+/* ==================== */
 .navbar {
-  background-color: #082f49;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 22;
-}
-.hide-nav {
-  top: -100px;
-  transition: top 0.3s ease;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9); /* Transparent dark navbar */
+  backdrop-filter: blur(10px); /* Smooth blur effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  height: 80px; /* Fixed height */
+  display: flex;
+  align-items: center;
 }
 
+/* Solid Navbar Background on Scroll */
+.navbar-solid {
+  background-color: rgba(0, 0, 0, 0.95) !important; /* Black when scrolled */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix Navbar Text Color */
+.navbar .nav-links {
+  color: #ffffff !important; /* White text on dark navbar */
+}
+
+.navbar-solid .nav-links {
+  color: #ffffff !important; /* White text when navbar becomes solid */
+}
+
+/* Ensure Navbar Does Not Hide Content */
+body {
+  padding-top: 80px; /* Prevents content from going under navbar */
+}
+
+/* ==================== */
+/* Logo Fix */
+/* ==================== */
+.nav-logo img {
+  background: transparent;
+  height: 100px;
+}
+
+/* Fix Logo on Small Screens */
+@media screen and (max-width: 800px) {
+  .nav-logo img {
+    height: 80px; /* Adjust logo size */
+  }
+}
+
+/* ==================== */
+/* Navbar Container & Menu */
+/* ==================== */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   height: 80px;
-  max-width: 2600px;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  width: 120px;
-  height: 80px; 
-  padding: 6px;
+  width: 100%;
+  padding: 0 20px;
+  max-width: 1600px;
+  margin: auto;
 }
 
+/* Navbar Menu */
 .nav-menu {
   display: flex;
   list-style: none;
@@ -37,22 +71,24 @@
   margin-right: 2rem;
 }
 
+/* Navbar Links */
 .nav-links {
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
-  border-bottom: 3px solid transparent;
-}
-.fa-code {
-  margin-left: 1rem;
-}
-
-.nav-item {
-  line-height: 40px;
-  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
+/* Hover Effects */
+.nav-item:hover .nav-links {
+  color: #ffffff;
+}
+
+/* Animated Hover Underline */
 .nav-item:after {
   content: "";
   display: block;
@@ -64,56 +100,51 @@
 
 .nav-item:hover:after {
   width: 100%;
-  background: #fff;
+  background: #07c3fc;
 }
 
-.nav-item .active {
-  color: #fff;
-  border: 1px solid #fff;
-}
-
-.nav-icon {
-  display: none;
-}
-
+/* ==================== */
+/* Mobile Navbar Fix */
+/* ==================== */
 @media screen and (max-width: 960px) {
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-top: 1pxsolid #000;
     position: absolute;
     top: 80px;
-    left: -110%;
-    opacity: 1;
+    left: -100%;
+    opacity: 0;
     transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.9);
   }
 
   .nav-menu.active {
-    background: #082f49;
-    left: 0px;
+    left: 0;
     opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
   }
-  .nav-item .active {
-    color: #fff;
-    border: none;
+
+  .nav-item {
+    margin: 0;
   }
+
   .nav-links {
     padding: 1.5rem;
     width: 100%;
-    display: table;
+    text-align: center;
   }
 
+  /* Show Hamburger Menu */
   .nav-icon {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
+    font-size: 1.6rem;
     color: #fff;
   }
+}
+
+/* ==================== */
+/* Responsive Fix for Navbar Text Visibility */
+/* ==================== */
+.navbar-light .nav-links {
+  color: #000000 !important; /* Dark text when navbar is light */
 }

@@ -1,119 +1,96 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaTimes, FaBars } from "react-icons/fa";
-import HomeLogo from "../assets/logos/Logo.svg";
 
 function NavBar() {
-  const [click, setClick] = useState(false);
-  const [showNav, setShowNav] = useState(true);
-  const [scrollPos, setScrollPos] = useState(0);
+    const [click, setClick] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 960);
+    const [linkDisabled] = useState(true); // Change this to false to enable the link
+    const navbarRef = useRef(null);
 
-  const handleClick = () => setClick(!click);
+    const handleClick = () => setClick(!click);
 
-  const handleScroll = useCallback(() => {
-    const currentScrollPos = window.pageYOffset;
+    // Close menu when clicking outside
+    useEffect(() => {
+        const closeMenu = (e) => {
+            if (click && navbarRef.current && !navbarRef.current.contains(e.target)) {
+                setClick(false);
+            }
+        };
+        document.addEventListener("mousedown", closeMenu);
+        return () => document.removeEventListener("mousedown", closeMenu);
+    }, [click]);
 
-    if (currentScrollPos < scrollPos) {
-      setShowNav(true);
-    } else {
-      setShowNav(false);
-    }
+    // Update state when window resizes
+    useEffect(() => {
+        const checkScreenSize = () => setIsSmallScreen(window.innerWidth <= 960);
+        window.addEventListener("resize", checkScreenSize);
+        return () => window.removeEventListener("resize", checkScreenSize);
+    }, []);
 
-    setScrollPos(currentScrollPos);
-  }, [scrollPos]);
+    return (
+        <nav ref={navbarRef} className="navbar">
+            <div className="nav-container">
+                {/* Logo */}
+                <NavLink to="/" className="nav-logo">
+                    <img src="lablogowhite.svg" alt="Lab Logo" />
+                </NavLink>
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+                {/* Hamburger Icon (Only on Small Screens) */}
+                {isSmallScreen && (
+                    <div className="nav-icon" onClick={handleClick} aria-label="Toggle Menu">
+                        {click ? <FaTimes /> : <FaBars />}
+                    </div>
+                )}
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
-  return (
-    <>
-      <nav className={`navbar ${showNav ? "" : "hide-nav"}`}>
-        <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo">
-            <img src={HomeLogo} alt="lablogo" />
-          </NavLink>
-
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Overview
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/members"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Members
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/publications"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Publications
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/network"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Network
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/news"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                News
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/contact"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Contact Us
-              </NavLink>
-            </li>
-          </ul>
-          <div className="nav-icon" onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
-          </div>
-        </div>
-      </nav>
-    </>
-  );
+                {/* Navbar Links with Correct Paths */}
+                <ul className={`nav-menu ${click || !isSmallScreen ? "active" : ""}`}>
+                    <li className="nav-item">
+                        <NavLink to="/overview" className="nav-links" onClick={() => setClick(false)}>
+                            Overview
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/members" className="nav-links" onClick={() => setClick(false)}>
+                            Members
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/publications" className="nav-links" onClick={() => setClick(false)}>
+                            Publications
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/network" className="nav-links" onClick={() => setClick(false)}>
+                            Network
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/news" className="nav-links" onClick={() => setClick(false)}>
+                            News
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        {linkDisabled ? (
+                            <span className="nav-links text-gray-400 cursor-not-allowed">
+                                Join Us
+                            </span>
+                        ) : (
+                            <NavLink to="/joinus" className="nav-links" onClick={() => setClick(false)}>
+                                Join Us
+                            </NavLink>
+                        )}
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/contact" className="nav-links" onClick={() => setClick(false)}>
+                            Contact Us
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
 }
 
 export default NavBar;
