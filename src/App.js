@@ -1,34 +1,43 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
-import About from "./components/pages/About";
+import Overview from "./components/pages/Overview";
 import Members from "./components/pages/Members";
 import Network from "./components/pages/Network";
 import Publications from "./components/pages/Publications";
+import JoinUs from "./components/pages/JoinUs";
 import News from "./components/pages/News";
 import Contact from "./components/pages/Contact";
-import PageNotFound from "./components/PageNotFound";
+import NotFound from "./components/NotFound";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import Imprint from "./components/pages/Imprint";
 import DesignCredits from "./components/pages/DesignCredits";
+import NewsDetail from "./components/pages/NewsDetail";
 import "./App.css";
+import { inject } from "@vercel/analytics";
+inject();
 export const App = () => {
   
   return (
     <div className="App">
+      <ScrollToTop />
       <Layout>
         <Routes>
-          <Route path="/" element={<Navigate to="/about" />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Navigate to="/overview" />} />
+          <Route path="/overview" element={<Overview />} />
           <Route path="/members" element={<Members />} />
           <Route path="/network" element={<Network />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news/:newsId" element={<NewsDetail />} />
+          <Route path="/joinus" element={<JoinUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/imprint" element={<Imprint />} />
           <Route path="/designcredits" element={<DesignCredits />} />
-          <Route path="*" component={PageNotFound} />
+          {/* Fix NotFound route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </div>

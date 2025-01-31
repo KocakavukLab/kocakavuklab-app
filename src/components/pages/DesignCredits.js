@@ -3,63 +3,74 @@ import { Link } from "react-router-dom";
 
 const DesignCredits = () => {
   return (
-    <div className="  grid grid-cols-1 p-6 px-6 md:px-4 lg:text-md">
-      <div className="md:text-center sm:text-justify">
-        <h1 className="credits-font text-gray-500 text-center lg:text-5xl text-3xl mb-5">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100 py-10 px-6">
+      <div className="max-w-4xl bg-white shadow-lg rounded-lg p-8">
+        <h1 className="text-center text-gray-800 text-4xl font-bold mb-6">
           Site Credits
         </h1>
-        <div className="credits-font  text-black items-center">
-          <div className="flex flex-col text-left items-center">
-            <ul className="text-lg text-sm">
+
+        <div className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-center">
+            Website designed by{" "}
+            <Link
+              to="https://biocoderr.github.io"
+              className="text-blue-600 hover:underline"
+            >
+              Pranav a.k.a BioCoderR
+            </Link>
+          </p>
+
+          <div className="mt-6">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Frameworks & Libraries Used:
+            </h2>
+            <ul className="list-disc list-inside mt-2">
               <li>
-                Website designed by{" "}
-                <Link
-                  to="https://biocoderr.github.io"
-                  className="hover:underline visited:text-orange-400"
-                >
-                  Pranav
-                </Link>
-              </li>
-              <li className="credit-font">
-                WebPage is completely built using the Frameworks and libraries:{" "}
-                <br />
                 <Link
                   to="https://react.dev/"
-                  className="credit-font hover:underline hover:text-blue-700 visited:text-orange-400"
+                  className="text-blue-600 hover:underline"
                 >
                   React.js
                 </Link>
-                <br />
+              </li>
+              <li>
                 <Link
                   to="https://tailwindcss.com/"
-                  className="credit-font hover:underline hover:text-blue-700 visited:text-orange-400"
+                  className="text-blue-600 hover:underline"
                 >
                   TailwindCSS
                 </Link>
-                <br />
+              </li>
+              <li>
                 <Link
                   to="https://nathansearles.github.io/slidesjs/"
-                  className="credit-font hover:underline hover:text-blue-700 visited:text-orange-400"
+                  className="text-blue-600 hover:underline"
                 >
                   Slidejs
                 </Link>
               </li>
-              <li className="credit-font">
+            </ul>
+          </div>
+
+          <div className="mt-6">
+            <h2 className="text-xl font-semibold text-gray-800">Assets Used:</h2>
+            <ul className="list-disc list-inside mt-2">
+              <li>
                 Icons from{" "}
                 <Link
-                  to="https://www.adobe.com/sensei/generative-ai/firefly.html"
-                  className="credit-font hover:underline visited:text-orange-400"
+                  to="https://react-icons.github.io/react-icons/"
+                  className="text-blue-600 hover:underline"
                 >
                   react-icons
                 </Link>
               </li>
-              <li className="credit-font">
-                Home Page Cover is designed by{" "}
+              <li>
+                Home Page Cover designed using{" "}
                 <Link
                   to="https://www.adobe.com/sensei/generative-ai/firefly.html"
-                  className="credit-font hover:underline visited:text-orange-400"
+                  className="text-blue-600 hover:underline"
                 >
-                  Adobe firefly
+                  Adobe Firefly
                 </Link>
               </li>
             </ul>

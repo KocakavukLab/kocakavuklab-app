@@ -1,31 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
-
+import PageHeader from "../common/PageHeader"; 
 const Contact = () => {
   useEffect(() => {
     emailjs.init("wprxy5IfLB3zRbbj9");
   }, []);
 
-  const [checked, setChecked] = React.useState(false);
-  const [emailValid, setEmailValid] = React.useState(false);
+  const [checked, setChecked] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const formRef = useRef(null);
 
-  const handleChange = () => {
-    setChecked(!checked);
-  };
-  const [formData, setFormData] = React.useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const handleChange = () => setChecked(!checked);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleEmailChange = (e) => {
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setEmailValid(emailRegex.test(e.target.value));
+    handleInputChange(e);
   };
 
   const handleSubmit = (e) => {
@@ -33,142 +30,127 @@ const Contact = () => {
     const btn = e.target.querySelector('input[type="submit"]');
     btn.value = "Sending...";
 
-    const serviceID = "default_service";
-    const templateID = "template_75zmo4n";
-
-    emailjs.sendForm(serviceID, templateID, e.target).then(
+    emailjs.sendForm("default_service", "template_75zmo4n", e.target).then(
       () => {
         btn.value = "Send Email";
-        alert("Sent!");
+        alert("Message Sent!");
 
-        // Clear form fields
+        // Reset form
         setFormData({ name: "", email: "", message: "" });
         setChecked(false);
         setEmailValid(false);
       },
       (err) => {
         btn.value = "Send Email";
-        alert(JSON.stringify(err));
+        alert("Error sending message: " + JSON.stringify(err));
       }
     );
   };
-  const buttonClass = checked && emailValid ? "bg-green-500" : "bg-gray-200";
+
   return (
-    <div className="justify-center items-center">
-      {/* Heading */}
-      <div className="text-center">
-        <h1 className="most-font md:text-5xl text-3xl">Contact Us</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-blue-50 py-12 px-6">
+      {/* Reusable Page Header */}
+      <PageHeader title="Get in Touch" subtitle="We'd love to hear from you!" />
+
+      {/* Rest of the Contact Page Code */}
+      <div className="w-full max-w-4xl bg-white rounded-lg shadow-xl p-8">
+        
+          {/* Contact Form Section */}
+      <div className="w-full max-w-4xl bg-white rounded-lg shadow-xl p-8">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label className="block text-gray-700 font-semibold mb-2" htmlFor="name">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-semibold mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              value={formData.email}
+              onChange={handleEmailChange}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-semibold mb-2" htmlFor="message">
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              rows="5"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            ></textarea>
+          </div>
+
+          {/* Privacy Agreement */}
+          <div className="flex items-start">
+            <input
+              type="checkbox"
+              required
+              onChange={handleChange}
+              className="mt-1 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+            />
+            <p className="ml-3 text-sm text-gray-600">
+              I have read and agree to the{" "}
+              <Link
+                to="/privacypolicy"
+                className="text-blue-600 hover:underline"
+              >
+                data privacy policy
+              </Link>{" "}
+              and the processing of my personal data.
+            </p>
+          </div>
+
+          {/* Submit Button */}
+          <div className="text-center">
+            <input
+              type="submit"
+              value="Send Message"
+              disabled={!checked || !emailValid}
+              className={`px-6 py-3 font-bold text-white rounded-lg transition ${
+                checked && emailValid ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-300 cursor-not-allowed"
+              }`}
+            />
+          </div>
+        </form>
       </div>
 
-      {/* Mother Form Div */}
-      <div className="grid grid-cols-3 mobile:grid-cols-1 gap-4">
-        {/* Form Div */}
-        <div className="md:container col-start-2 grid-cols-1 place-content-center grounded">
-          <form onSubmit={handleSubmit} id="form" className="rounded">
-            <div className="mb-4 field">
-              <label
-                className="members-subhead block text-gray-700 text-sm mb-2"
-                htmlFor="name"
-              >
-                Name
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline block min-w-64"
-                type="text"
-                name="name"
-                id="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <div className="mb-4 field">
-              <label
-                className="members-subhead block text-gray-700 text-sm mb-2"
-                htmlFor="email"
-              >
-                Email
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline block min-w-64"
-                type="text"
-                name="email"
-                id="email"
-                required
-                value={formData.email}
-                onChange={(e) => {
-                  handleEmailChange(e);
-                  handleInputChange(e);
-                }}
-              />
-            </div>
-
-            <div className="mb-6 field">
-              <label
-                className="members-subhead block text-gray-700 text-sm mb-2"
-                htmlFor="message"
-              >
-                Message
-              </label>
-              <textarea
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline block min-w-64"
-                name="message"
-                id="message"
-                required
-                value={formData.message}
-                onChange={handleInputChange}
-              ></textarea>
-              <p className="monst-font mobile:text-left mobile:text-xs">
-                <input
-                  type="checkbox"
-                  required
-                  onChange={handleChange}
-                  color="green"
-                />{" "}
-                I have read and agree with the{" "}
-                <Link
-                  to="/privacypolicy"
-                  className="monst-font text-blue-600 hover:text-amber-500 visited:text-purple-700"
-                >
-                  data privacy policy
-                </Link>{" "}
-                and the processing of my personal data*
-              </p>
-            </div>
-
-            <div className="justify-center">
-              <input
-                className={`monst-font text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline block ${buttonClass}`}
-                type="submit"
-                id="button"
-                value="Submit"
-                disabled={!checked || !emailValid}
-              />
-            </div>
-          </form>
-        </div>
+      {/* Google Map Section */}
+      <div className="w-full max-w-4xl mt-16">
+        <h2 className="text-3xl font-bold text-gray-800 text-center mb-4">
+          Lab Location
+        </h2>
+        <iframe
+          className="w-full h-56 md:h-96 rounded-lg shadow-lg"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.1821154978984!2d6.9864337766158355!3d51.43644927179727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c2de2e687307%3A0x1ac25e006ad27840!2sEssen%20University%20Hospital%20Department%20of%20Hematology!5e0!3m2!1sen!2sde!4v1691880146400!5m2!1sen!2sde"
+          loading="lazy"
+          title="Lab Location Map"
+          allowFullScreen=""
+          style={{ border: 0 }}
+        ></iframe>
       </div>
-
-      {/* GMap */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-6 items-center">
-        <div className="text-center">
-          <h1 className="monst-font text-3xl md:text-5xl">
-            Lab Location
-          </h1>
-        </div>
-        <div className="col-span-1 md:container place-content-center">
-          <iframe
-            className="w-full h-56 md:h-96"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.1821154978984!2d6.9864337766158355!3d51.43644927179727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c2de2e687307%3A0x1ac25e006ad27840!2sEssen%20University%20Hospital%20Department%20of%20Hematology!5e0!3m2!1sen!2sde!4v1691880146400!5m2!1sen!2sde"
-            loading="lazy"
-            title="Lab Location Map"
-            allowFullScreen=""
-            style={{ border: 0 }}
-            aria-hidden="false"
-            tabIndex="0"
-          ></iframe>
-        </div>
       </div>
     </div>
   );

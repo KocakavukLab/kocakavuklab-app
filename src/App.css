@@ -1,42 +1,99 @@
 /* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family:Playfair+Display:wght@400;500&family:Roboto+Slab:wght@400&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 /* Body Styling */
 body {
   box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden; /* Allows vertical scrolling */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
-#bg-aboutcover {
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+/* Background Covers */
+.bg-cover {
+  background-image: url("./assets/covers/maincover.jpg");
   transition: height 0.3s;
-  background-image: url("./assets/HomePage_Covers/dna2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 10;
 }
-/* Font styling */
-.monst-font {
-  font-family: "Montserrat", sans-serif;
+/* bluesky embeds */
+.bsky-embed-wrapper {
+  max-height: 400px; /* Adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits to 3 lines */
+  -webkit-box-orient: vertical;
 }
-.members-subhead {
-  font-family: "Merriweather", serif;
+/* Logo Grid Container */
+.logo-container {
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
-.credits-font {
-  font-family: "PT Serif", serif;
-}
-/* Footer image */
+/* footer image */
 .footer-bg-img {
-  background-image: url("./assets/HomePage_Covers/footer-bg.jpg");
+  background-image: url("./assets/covers/footercover.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: relative;
+  background-size: fill;
+  background-position: center;
 }
-/* icons styling in members*/
-.icon-class {
-  font-size: 1.5em;
-  color: gray;
+/* Scrolling Animation */
+@keyframes scrollLeft {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+      transform: translateX(-100%);
+  }
 }
 
+.logo-scroller {
+  display: flex;
+  gap: 50px;
+  animation: scrollLeft 20s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Stop scrolling on hover */
+.logo-scroller:hover {
+  animation-play-state: paused;
+}
+
+/* Logo Item */
+.logo-item {
+  flex: 0 0 auto;
+  width: 150px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo Image */
+.logo-item img {
+  width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.logo-item:hover img {
+  filter: grayscale(0%);
+}
 /* Ensuring the background image fits within the viewport */
 header.h-screen {
   background-size: cover;
@@ -45,12 +102,54 @@ header.h-screen {
   overflow: hidden; /* Preventing overflow */
 }
 
-.slick-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  font-size: 24px;
-  cursor: pointer;
-  transform: translateY(-50%);
+/* Font styling */
+/* Headings */
+.monst-font {
+  font-family: "Poppins", sans-serif; /* Use "Raleway" or "Inter" as alternatives */
 }
 
+/* Subheadings */
+.members-subhead {
+  font-family: "Playfair Display", serif; /* "Lora" or "Crimson Pro" can be used too */
+}
+
+/* Detailed Text / Credits */
+.credits-font {
+  font-family: "Roboto Slab", serif; /* "IBM Plex Serif" or "Noto Serif" are other strong options */
+}
+/* icons styling in members*/
+.icon-class {
+  font-size: 1.5em;
+  color: gray;
+}
+/* News page */
+.news-card img {
+  transition: transform 0.3s ease;
+}
+.news-card:hover img {
+  transform: scale(1.05);
+}
+/* slider arrows */
+.slick-prev, .slick-next {
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  background-color: white;
+}
+
+.slick-prev {
+  left: -40px;
+}
+
+.slick-next {
+  right: -40px;
+}
