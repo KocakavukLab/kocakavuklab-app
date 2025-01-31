@@ -1,8 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.js";
+import App from "./App";
 import "./index.css";
+import reportWebVitals from './reportWebVitals';
 // Detect if the browser is Safari
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
@@ -28,3 +29,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+reportWebVitals();
