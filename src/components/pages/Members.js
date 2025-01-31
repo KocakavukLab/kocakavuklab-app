@@ -11,7 +11,7 @@ const members = [
     description:
       "Dr. Emre Kocakavuk leads the Computational Oncology group at Kocakavuk Lab. His research focuses on understanding the molecular mechanisms driving gliomas.",
     email: "mailto:emre.kocakavuk@uk-essen.de",
-    twitter: "https://twitter.com/ekocakavuk",
+    twitter: "https://bsky.app/profile/ekocakavuk.bsky.social",
     scholar:
       "https://scholar.google.co.in/citations?user=gGSCLooAAAAJ&hl=en&oi=ao",
     researchgate: ""
@@ -36,7 +36,7 @@ const members = [
     description:
       "Pranav Swaroop Gundla is a PhD student specializing in computational pathology, focusing on developing new algorithms for cancer diagnosis.",
     email: "mailto:pranavswaroop.gundla@uk-essen.de",
-    twitter: "https://twitter.com/im_pranavgundla",
+    twitter: "https://bsky.app/profile/pranavgundla.bsky.social",
     scholar:
       "https://scholar.google.co.in/citations?user=UzlYsbgAAAAJ&hl=en&oi=ao",
     researchgate: ""

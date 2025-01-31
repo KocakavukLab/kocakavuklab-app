@@ -16,6 +16,7 @@ import DesignCredits from "./components/pages/DesignCredits";
 import NewsDetail from "./components/pages/NewsDetail";
 import "./App.css";
 import { inject } from "@vercel/analytics";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 inject();
 export const App = () => {
   
@@ -40,6 +41,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
+      <SpeedInsights />
     </div>
   );
 };
