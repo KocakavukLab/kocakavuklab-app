@@ -25,7 +25,6 @@
     "framer-motion": "^10.12.1",
     "got": "^13.0.0",
     "helmet": "^7.0.0",
-    "lucide-react": "^0.474.0",
     "media-match": "^2.0.3",
     "morgan": "^1.10.0",
     "react": "^18.2.0",
@@ -34,14 +33,11 @@
     "react-hook-form": "^7.45.4",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
-    "react-tsparticles": "^2.12.2",
     "react-twitter-embed": "^4.0.4",
     "react-twitter-widgets": "^1.11.0",
     "react-vertical-timeline-component": "^3.5.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.4.7",
-    "tsparticles": "^3.8.0",
-    "tsparticles-engine": "^2.12.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
