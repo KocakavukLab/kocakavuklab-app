@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.448b9bc6.css",
+    "main.js": "/static/js/main.576a2b90.js",
+    "static/js/453.64be9eb2.chunk.js": "/static/js/453.64be9eb2.chunk.js",
+    "static/media/umea.png": "/static/media/umea.a1198cade9a7bf03fc88.png",
+    "static/media/maincover.jpg": "/static/media/maincover.bd3b6613d75d715fc19f.jpg",
+    "static/media/glass_consort.png": "/static/media/glass_consort.5f19ff3ef41897c91de3.png",
+    "static/media/nct.png": "/static/media/nct.14ae2ccc170c8371bc92.png",
+    "static/media/walterlogo.png": "/static/media/walterlogo.9e984c6a2d5e9d06fcdd.png",
+    "static/media/logo_emmy_noether_gross.jpg": "/static/media/logo_emmy_noether_gross.ace0af02d000bf8fcba6.jpg",
+    "static/media/elsekroner.png": "/static/media/elsekroner.9c5516cc0248482881d4.png",
+    "static/media/umeh.png": "/static/media/umeh.f63d7aa677b52794230a.png",
+    "static/media/dfg.png": "/static/media/dfg.30a3ee40bcda223444cd.png",
+    "static/media/forbeck.png": "/static/media/forbeck.ffdfddaacd858425dc5d.png",
+    "static/media/ikim.png": "/static/media/ikim.1a0e149ad9a44e7a2b9d.png",
+    "static/media/wtz.png": "/static/media/wtz.b966005ec33e36337f5a.png",
+    "static/media/bhs.svg": "/static/media/bhs.13151dc5b48380fba3b8ad2f61f056f1.svg",
+    "static/media/yalecombi.png": "/static/media/yalecombi.110fea115389da649236.png",
+    "static/media/footercover.jpg": "/static/media/footercover.2a56507f2213b584fc3a.jpg",
+    "static/media/logo_cantar.jpg": "/static/media/logo_cantar.bfe7f0b4a4e47472a211.jpg",
+    "static/media/dhk.png": "/static/media/dhk.5470dc61e690c70a1e7f.png",
+    "static/media/logo_jackstaedt.png": "/static/media/logo_jackstaedt.1df6fc57716105662e8d.png",
+    "static/media/esmo.png": "/static/media/esmo.62a8e7c5345240ee266c.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.448b9bc6.css.map": "/static/css/main.448b9bc6.css.map",
+    "main.576a2b90.js.map": "/static/js/main.576a2b90.js.map",
+    "453.64be9eb2.chunk.js.map": "/static/js/453.64be9eb2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.448b9bc6.css",
+    "static/js/main.576a2b90.js"
+  ]
+}

@@ -11,7 +11,7 @@ const DesignCredits = () => {
 
         <div className="text-gray-700 text-lg leading-relaxed">
           <p className="text-center">
-            Website designed by{" "}
+            Website designed with {" "}&#x2764; by{" "}
             <Link
               to="https://biocoderr.github.io"
               className="text-blue-600 hover:underline"

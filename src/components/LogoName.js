@@ -13,3 +13,5 @@ export { default as GLASSLogo } from "../assets/logos/glass_consort.png";
 export { default as NCTLogo } from "../assets/logos/nct.png";
 export { default as JSTLogo } from "../assets/logos/logo_jackstaedt.png";
 export { default as ENLogo } from "../assets/logos/logo_emmy_noether_gross.jpg";
+export { default as IKLogo } from "../assets/logos/ikim.png";
+export { default as DHKLogo } from "../assets/logos/dhk.png";

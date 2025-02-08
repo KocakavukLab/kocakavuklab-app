@@ -58,7 +58,7 @@ function Footer() {
       {/* Copyright Notice */}
       <div className="text-center mt-8">
         <p className="text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Kocakavuk Computational Oncology Lab. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Kocakavuk Lab Computational Oncology. All Rights Reserved.
         </p>
       </div>
     </footer>

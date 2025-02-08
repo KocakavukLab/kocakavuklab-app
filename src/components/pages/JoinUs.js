@@ -27,13 +27,14 @@ const JoinUs = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left">
                     {/* Text Section */}
                     <div className="flex flex-col items-center md:items-start">
-                        <PageHeader title="Join Our Research Team" subtitle="Be a part of Pioneering Research!"/>
+                        <PageHeader title="Join Our Research Team" subtitle=""/>
                         <p className="text-lg text-gray-700 leading-relaxed max-w-xl">
-                            We are constantly looking for highly motivated MD-, PhD-, and
-                            postdoctoral candidates! If you are interested in working in a
-                            dynamic, devoted, and well-funded research team with a strong
-                            translational background and close interactions with clinical teams,
-                            we invite you to send your application.
+                            We are constantly looking for highly motivated <strong>MDs-</strong>, 
+                            <strong>PhDs-</strong>, 
+                            and <strong>Post-Doctoral</strong> candidates! 
+                            If you are interested in working in a dynamic, devoted, 
+                            and well-funded research team with a strong translational background and close 
+                            interactions with clinical teams, we invite you to send your application.
                         </p>
 
                         {/* Apply Button (Hidden after Click) */}
@@ -51,7 +52,7 @@ const JoinUs = () => {
                     <div className="flex justify-center">
                         <img
                             src="hiring.jpg" // Ensure the correct image path
-                            alt="Westdeutsches Tumorzentrum"
+                            alt="Research teams working together"
                             className="w-full max-w-md md:max-w-lg h-auto rounded-xl shadow-xl object-cover"
                         />
                     </div>

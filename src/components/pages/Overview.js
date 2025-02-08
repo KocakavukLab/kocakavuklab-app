@@ -34,12 +34,15 @@ function Overview() {
         <div className="bg-white shadow-xl rounded-lg p-8">
           <PageHeader title="About Us" />
           <p className="text-lg text-contain text-gray-700 leading-relaxed">
-            We are a dedicated team of Clinician-Scientists and Researchers
-            at the West German Cancer Center and National Center for Tumor Diseases (NCT) West,
-            University Hospital Essen. Our research focuses on integrating <strong>computational biology</strong>,
-            <strong>genomics</strong>, and <strong>clinical oncology</strong> to push the boundaries of <strong>precision medicine</strong>.
-            By leveraging <strong>high-throughput sequencing</strong>, AI-driven analytics, and experimental studies,
-            we aim to uncover cancer’s evolutionary mechanisms and improve therapeutic strategies.
+          We are a dedicated team of Clinician-Scientists and Researchers based
+          at the West German Cancer Center and the National Center for Tumor
+          Diseases &#40;NCT&#41; West, University Hospital Essen. Our work lies at the
+          intersection of clinical oncology, computational biology and genomics.
+          Using high-throughput sequencing and computational analysis, combined
+          with preclinical functional studies, we aim to advance the field of
+          precision oncology. Understanding the evolutionary patterns &#40;both
+          natural and in response to treatment&#41; of cancer is a major part of our
+          research.
           </p>
         </div>
       {/* Bluesky Embedded Timeline with Shorter Context */}

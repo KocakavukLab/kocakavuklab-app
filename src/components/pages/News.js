@@ -31,10 +31,19 @@ const glowEffect = {
 // News Data
 const news = [
   {
+    title: "Junior Clinician Scientist Fellowship by UMEA",
+    date: "April 2024",
+    description:
+      "Fabian Ullrich, MD, has successfully secured a Junior Clinician Scientist fellowship granted by the Clinician Scientist Academy of the University Hospital Essen (UMEA) to join the lab and study aggressive and central nervous system lymphomas." ,
+    image: "/news/umea.png",
+    category: "grant",
+    link: "/news/umea-fellowship-grant"
+  },
+  {
     title: "Emmy Noether Grant by the DFG",
     date: "August 2024",
     description:
-      "Emre Kocakavuk has been awarded an Emmy Noether Group Grant by the DFG with a funding volume of over 2M EUR. Postdoc and PhD positions will be available soon!",
+      "This is a true milestone for our laboratory as we have secured funding in the prestigious Emmy Noether Program of the German Research Foundation (DFG). The grant with a funding volume over 2M EUR will support our research for the next six years. Stay tuned for postdoc and PhD positions!" ,
     image: "/news/logo_emmy_noether.jpg",
     category: "grant",
     link: "/news/emmy-noether-grant"
@@ -43,7 +52,7 @@ const news = [
     title: "Memorial Fellowship by the EKFS",
     date: "February 2024",
     description:
-      "Emre Kocakavuk has been awarded a prestigious Memorial Fellowship by the Else Kröner-Fresenius-Stiftung (EKFS) for the next two years.",
+      "We are excited to share the news that Emre Kocakavuk, MD, PhD has received the Memorial Fellowship by the Else Kröner-Fresenius-Stiftung (EKFS). This fellowship will support AI-guided analyses in precision oncology for the next two years.",
     image: "/news/elsekroner.png",
     category: "grant",
     link: "/news/memorial-fellowship"
@@ -60,10 +69,16 @@ const news = [
 ];
 
 // Sort news items in descending order (latest first)
-const sortedNews = [...news].sort(
-  (a, b) => new Date(b.date) - new Date(a.date)
-);
+const parseDate = (dateString) => {
+  const months = {
+    January: 1, February: 2, March: 3, April: 4, May: 5, June: 6,
+    July: 7, August: 8, September: 9, October: 10, November: 11, December: 12
+  };
+  const [month, year] = dateString.split(" ");
+  return new Date(year, months[month] - 1, 1); // (Year, Month index, Day)
+};
 
+const sortedNews = [...news].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 // Function to return the correct icon based on the category
 const getCategoryIcon = category => {
   switch (category) {
@@ -99,7 +114,7 @@ function News() {
     <div className="min-h-screen p-10 bg-gray-100 flex flex-col items-center">
       {/* Reusable Page Header */}
       <PageHeader
-        title="🔥 Latest News"
+        title="Latest News"
         subtitle="Stay updated with our latest achievements!"
       />
 
