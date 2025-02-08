@@ -52,7 +52,7 @@ const JoinUs = () => {
                     <div className="flex justify-center">
                         <img
                             src="hiring.jpg" // Ensure the correct image path
-                            alt="Westdeutsches Tumorzentrum"
+                            alt="Research teams working together"
                             className="w-full max-w-md md:max-w-lg h-auto rounded-xl shadow-xl object-cover"
                         />
                     </div>
