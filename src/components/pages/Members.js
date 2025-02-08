@@ -20,7 +20,7 @@ const members = [
     image: "/Fabian.png",
     role: "UMEA Clinician Scientist",
     description:
-      "Dr. Fabian Ullrich is a clinician scientist with a special focus on the genomics of CNS lymphoma. His work bridges the gap between clinical practice and research.",
+      "Dr. Fabian Ullrich is an UMEA-funded Clinician Scientist and dedicates his efforts on clinicogenomic characterization of aggressive and central nervous system lymphomas.",
     email: "mailto:fabian.ullrich@uk-essen.de",
     twitter: "https://twitter.com/fa_ulle",
     scholar: "",
@@ -31,7 +31,7 @@ const members = [
     image: "/Pranav.png",
     role: "PhD Student",
     description:
-      "Pranav Swaroop Gundla is a PhD student specializing in computational pathology, focusing on developing new algorithms for cancer diagnosis.",
+      "Pranav Swaroop Gundla is a CANTAR-funded PhD Student and focusses on applying deep learning methods in computational pathology.",
     email: "mailto:pranavswaroop.gundla@uk-essen.de",
     twitter: "https://bsky.app/profile/pranavgundla.bsky.social",
     scholar:
