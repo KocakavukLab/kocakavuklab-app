@@ -3,7 +3,7 @@ import { motion } from "framer-motion"; // Import animation library
 import {
     CanTarLogo, BFondLogo, DFGLogo, WTZLogo, EKFSLogo, 
     ESMOLogo, WSGLogo, UMEALogo, UMEHLogo, YaleLogo, 
-    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo
+    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,DHKLogo
 } from "../LogoName.js";
 import "../../App.css";
 import PageHeader from "../common/PageHeader"; 
@@ -16,6 +16,8 @@ const networking = [
     { nid: 4, ntitle: "Yale", nlogo: YaleLogo, url: "https://www.yale.edu/" },
     { nid: 5, ntitle: "WTZ", nlogo: WTZLogo, url: "https://wtz-essen.de/" },
     { nid: 6, ntitle: "GLASS", nlogo: GLASSLogo, url: "https://www.glass-consortium.org/" },
+    { nid: 7, ntitle: "IKIM", nlogo: IKLogo, url: "https://www.ikim.uk-essen.de/" },
+    { nid: 8, ntitle: "DHK", nlogo: DHKLogo, url: "#" }
 ];
 
 // Funders Section
@@ -48,12 +50,12 @@ const Network = () => {
         <div className="w-full py-6 relative flex flex-col items-center">
             {/* Page Header */}
             <div className="relative networks-div mb-6">
-                <PageHeader title="Our Network" subtitle="Advancing Computational Oncology Through Collaboration & Support" />
+                <PageHeader title="Our Network" />
             </div>
 
             {/* Collaborators Section */}
             <div className="w-full max-w-7xl px-4 overflow-hidden">
-                <h2 className="text-2xl font-bold text-center mb-4">Collaborators</h2>
+                <PageHeader title="Collaborations & Network" />
                 <motion.div className="flex w-max" variants={sliderAnimation} animate="animate">
                     {networking.concat(networking).map((network, index) => (
                         <a
@@ -66,7 +68,7 @@ const Network = () => {
                             <img
                                 src={network.nlogo}
                                 alt={network.ntitle}
-                                className="w-32 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                                className="w-64 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
                             />
                         </a>
                     ))}
@@ -75,7 +77,7 @@ const Network = () => {
 
             {/* Funders Section */}
             <div className="w-full max-w-7xl px-4 mt-12 overflow-hidden">
-                <h2 className="text-2xl font-bold text-center mb-4">Funders</h2>
+                <PageHeader title="Funding" />
                 <motion.div className="flex w-max" variants={sliderAnimation} animate="animate">
                     {funders.concat(funders).map((funder, index) => (
                         <a
@@ -88,7 +90,7 @@ const Network = () => {
                             <img
                                 src={funder.logo}
                                 alt={funder.title}
-                                className="w-32 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                                className="w-64 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
                             />
                         </a>
                     ))}
