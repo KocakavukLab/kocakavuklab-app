@@ -8,7 +8,7 @@ const members = [
         image: "/Emre.png",
         role: "Principal Investigator",
         description:
-            "Dr. Emre Kocakavuk is a Clinician Scientist and Emmy Noether Group Leader at the Department of Hematology and Stem Cell Transplantation Leader at the West German Cancer Center & Institute for AI in Medicine (IKIM)",
+            "Dr. Emre Kocakavuk is a Clinician Scientist and an Emmy Noether Group Leader in the Department of Hematology and Stem Cell Transplantation at the West German Cancer Center & Institute for AI in Medicine (IKIM)",
         email: "mailto:emre.kocakavuk@uk-essen.de",
         twitter: "https://bsky.app/profile/ekocakavuk.bsky.social",
         scholar:
@@ -145,7 +145,7 @@ function Members() {
             <div className="flex flex-col items-center justify-center w-full mt-16">
                 <img
                     className="w-72 sm:w-64 lg:w-80 h-auto mx-auto mb-6 transform duration-300 hover:scale-110"
-                    src="unclesam-alpha.svg"
+                    src="mainframe1.png"
                     alt="We Are Hiring"
                     style={{
                       border: "none",
@@ -161,7 +161,7 @@ function Members() {
             {/* Join Us Button with better UI/UX */}
             <button
             onClick={() => window.location.href = "/joinus"}
-            className="mt-4 px-6 py-2 text-md font-medium text-white bg-black hover:bg-cyan-400 rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95"
+            className="mt-4 px-6 py-2 text-md font-medium text-white bg-gradient-to-r bg-gradient-to-r from-[#FB7686] to-[#145587] hover:from-[#145587] hover:to-[#FB7686] rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95"
             >
             Join Us →
             </button>
