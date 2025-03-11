@@ -15,7 +15,7 @@ const JoinUs = () => {
         {
             title: "Open Postdoc Position",
             description: "We are currently accepting applications for Postdoctoral research positions.",
-            status: "Open",
+            status: "Closed",
             applyLink: "https://karriere.ume.de/job-finder/?get_job=12180",
         },
     ];
