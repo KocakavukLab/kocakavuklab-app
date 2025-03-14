@@ -142,7 +142,7 @@ function Members() {
             </div>
 
             {/* Hiring Section */}
-            <div className="flex flex-col items-center justify-center w-full mt-16">
+            {/* <div className="flex flex-col items-center justify-center w-full mt-16">
                 <img
                     className="w-72 sm:w-64 lg:w-80 h-auto mx-auto mb-6 transform duration-300 hover:scale-110"
                     src="mainframe1.png"
@@ -156,7 +156,7 @@ function Members() {
                       filter: "drop-shadow(0px 0px 0px transparent)"
                   }}
                 />
-            </div>
+            </div> */}
 
             {/* Join Us Button with better UI/UX */}
             <button

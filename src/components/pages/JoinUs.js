@@ -9,7 +9,7 @@ const JoinUs = () => {
         {
             title: "Open PhD Position Available",
             description: "We are looking for talented PhD candidates to join our research team.",
-            status: "Open", // Change to "Closed" if needed
+            status: "Closed", // Change to "Closed" if needed
             applyLink: "https://karriere.ume.de/job-finder/?get_job=12175",
         },
         {
