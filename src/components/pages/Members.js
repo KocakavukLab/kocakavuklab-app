@@ -159,12 +159,12 @@ function Members() {
             </div> */}
 
             {/* Join Us Button with better UI/UX */}
-            <button
+            {/* <button
             onClick={() => window.location.href = "/joinus"}
             className="mt-4 px-6 py-2 text-md font-medium text-white bg-gradient-to-r bg-gradient-to-r from-[#FB7686] to-[#145587] hover:from-[#145587] hover:to-[#FB7686] rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95"
             >
             Join Us →
-            </button>
+            </button> */}
             {/* Add the Go to Top Button */}
             <GoToTopButton />
         </div>
