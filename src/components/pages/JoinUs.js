@@ -7,10 +7,10 @@ const JoinUs = () => {
     // Job positions data
     const jobPositions = [
         {
-            title: "Open PhD Position Available",
-            description: "We are looking for talented PhD candidates to join our research team.",
-            status: "Closed", // Change to "Closed" if needed
-            applyLink: "https://karriere.ume.de/job-finder/?get_job=12175",
+            title: "Open Technical Assitant Position Available",
+            description: "We are looking for talented technical assistant candidates to join our research team.",
+            status: "Open", // Change to "Closed" if needed
+            applyLink: "https://karriere.ume.de/job-finder/?get_job=12335",
         },
         {
             title: "Open Postdoc Position",
