@@ -15,6 +15,7 @@ const members = [
             "https://scholar.google.co.in/citations?user=gGSCLooAAAAJ&hl=en&oi=ao",
         researchgate: "",
     },
+   
     {
         name: "Fabian Ullrich, MD",
         image: "/Fabian.png",
@@ -38,7 +39,19 @@ const members = [
             "https://scholar.google.co.in/citations?user=UzlYsbgAAAAJ&hl=en&oi=ao",
         researchgate: "",
     },
+   
 ];
+
+const blockTwo =[ 
+    {
+     name: "Mahsasadat Nezamabadi, B.Sc.",
+     image: "/mahsa.png",
+     role: "Student Research Assistant",
+     description:
+         "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science with a focus on Systems Engineering at the University of Duisburg-Essen. She supports the team as a Student Research Assistant.",
+     email: "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
+    }
+]
 
 function Members() {
     return (
@@ -141,22 +154,101 @@ function Members() {
                 ))}
             </div>
 
-            {/* Hiring Section */}
-            {/* <div className="flex flex-col items-center justify-center w-full mt-16">
-                <img
-                    className="w-72 sm:w-64 lg:w-80 h-auto mx-auto mb-6 transform duration-300 hover:scale-110"
-                    src="mainframe1.png"
-                    alt="We Are Hiring"
-                    style={{
-                      border: "none",
-                      outline: "none",
-                      display: "block",
-                      objectFit: "contain",
-                      boxShadow: "none",
-                      filter: "drop-shadow(0px 0px 0px transparent)"
-                  }}
-                />
-            </div> */}
+            {/* Second Block of Members Section */}
+
+             <div className="flex flex-col items-center justify-center w-full mt-16">
+                {blockTwo.map((blockTwo, index) => (
+                    <div
+                        key={index}
+                        className="flex flex-col items-center text-center bg-white shadow-xl rounded-lg p-6 w-full max-w-sm h-full"
+                    >
+                        {/* Profile Image */}
+                        <img
+                            className="w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
+                            src={blockTwo.image}
+                            alt={blockTwo.name}
+                        />
+
+                        {/* Name & Role */}
+                        <div className="flex flex-col items-center mt-4">
+                            <h3 className="text-lg font-semibold">
+                                {blockTwo.name}
+                            </h3>
+                            <p className="text-cyan-500 text-sm mt-1">
+                                {blockTwo.role}
+                            </p>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-gray-600 text-sm mt-4">
+                            {blockTwo.description}
+                        </p>
+
+                        {/* Social Icons - Always at the bottom */}
+                        <div className="flex justify-center gap-4 mt-auto pt-6">
+                            {blockTwo.email && (
+                                <a
+                                    href={blockTwo.email}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-gray-700 transition hover:text-red-500"
+                                >
+                                    <SiGmail size={20} />
+                                </a>
+                            )}
+
+                            {blockTwo.twitter && (
+                                <a
+                                    href={blockTwo.twitter}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="transition hover:opacity-100"
+                                >
+                                    <img
+                                        src="bluesky.svg"
+                                        alt="Bluesky"
+                                        className="w-5 h-5 opacity-80 transition"
+                                        style={{
+                                            filter: "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
+                                            transition: "filter 0.3s ease-in-out",
+                                        }}
+                                        onMouseOver={(e) => {
+                                            e.currentTarget.style.filter =
+                                                "invert(48%) sepia(74%) saturate(440%) hue-rotate(163deg) brightness(90%) contrast(90%)";
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.currentTarget.style.filter =
+                                                "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)";
+                                        }}
+                                    />
+                                </a>
+                            )}
+
+                            {blockTwo.scholar && (
+                                <a
+                                    href={blockTwo.scholar}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-gray-700 transition hover:text-blue-500"
+                                >
+                                    <SiGooglescholar size={20} />
+                                </a>
+                            )}
+
+                            {blockTwo.researchgate && (
+                                <a
+                                    href={blockTwo.researchgate}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-gray-700 transition hover:text-green-500"
+                                >
+                                    <SiResearchgate size={20} />
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div> 
 
             {/* Join Us Button with better UI/UX */}
             {/* <button

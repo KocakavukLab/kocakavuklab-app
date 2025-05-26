@@ -2,6 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const newsDetails = {
+     
+     "new-member": {
+        title: "Mahsa joins the lab",
+        date: "05/2025",
+        content:
+            "Mahsasadat Nezamabadi has joined the lab as a Student Research Assistant. She is currently pursuing her Master’s degree in Applied Computer Science at the University of Duisburg-Essen, specializing in Systems Engineering.",
+        image: "/news/newmember.jpg"
+    },
     "emmy-noether-grant": {
         title: "Emmy Noether Grant by the DFG",
         date: "02/2025",
@@ -23,13 +31,15 @@ const newsDetails = {
             "We are excited to share the news that Emre Kocakavuk, MD, PhD has received the Memorial Fellowship by the Else Kröner-Fresenius-Stiftung (EKFS). This fellowship will support AI-guided analyses in precision oncology for the next two years.",
         image: "/news/elsekroner.png"
     },
+   
     "lab-opening": {
         title: "Kocakavuk Lab opening its doors",
         date: "07/2023",
         content:
             "We are happy to share the news that the Kocakavuk Lab with a focus on Computational Oncology has opened. We welcome Pranav Swaroop Gundla, MSc as the first PhD student of the lab.",
         image: "/news/opening-doors.png"
-    }
+         },
+  
 };
 
 function NewsDetail() {
