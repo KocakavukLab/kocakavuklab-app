@@ -36,7 +36,7 @@ const news = [
         description:
             "Mahsasadat Nezamabadi has joined the lab as a Student Research Assistant. She is currently pursuing her Master’s degree in Applied Computer Science at the University of Duisburg-Essen, specializing in Systems Engineering.",
         image: "/news/newmember.png",
-        category: "grant",
+        category: "new_member",
         link:"/news/new-member"
 
     },
