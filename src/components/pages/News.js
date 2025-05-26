@@ -31,6 +31,16 @@ const glowEffect = {
 // News Data
 const news = [
   {
+        title: "Mahsa joins the lab",
+        date: "May 2025",
+        description:
+            "Mahsasadat Nezamabadi has joined the lab as a Student Research Assistant. She is currently pursuing her Master’s degree in Applied Computer Science at the University of Duisburg-Essen, specializing in Systems Engineering.",
+        image: "/news/newmember.png",
+        category: "grant",
+        link:"/news/new-member"
+
+    },
+  {
     title: "Junior Clinician Scientist Fellowship by UMEA",
     date: "April 2024",
     description:
@@ -39,6 +49,7 @@ const news = [
     category: "grant",
     link: "/news/umea-fellowship-grant"
   },
+
   {
     title: "Emmy Noether Grant by the DFG",
     date: "February 2025",
