@@ -30,13 +30,23 @@ const glowEffect = {
 };
 // News Data
 const news = [
+    {
+        title: "Yinchun joins the lab",
+        date: "June 2025",
+        description:
+            "Yinchun Su has joined the lab as a PhD student. He received his master’s degree in Neurobiology from Harbin Medical University, gaining valuable experiences in biomedical research. He will focus on integrating multi-omic data to better understand tumor heterogeneity in aggressive intracranial tumors.",
+        image: "/news/welcometotheteam.png",
+        category: "new_member",
+        link:"/news/new-member-yinchun"
+
+    },
   {
         title: "Mahsa joins the lab",
         date: "May 2025",
         description:
             "Mahsasadat Nezamabadi has joined the lab as a Student Research Assistant. She is currently pursuing her Master’s degree in Applied Computer Science at the University of Duisburg-Essen, specializing in Systems Engineering.",
         image: "/news/newmember.png",
-        category: "grant",
+        category: "new_member",
         link:"/news/new-member"
 
     },
@@ -176,7 +186,7 @@ function News() {
             <img
               src={item.image}
               alt={item.title}
-              className="w-32 h-20 object-contain rounded-lg shadow-md my-4"
+              className="w-32 h-20 object-fit rounded-lg shadow-md my-4"
             />
 
             {/* Description */}
