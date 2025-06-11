@@ -2,6 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const newsDetails = {
+         "new-member-yinchun": {
+        title: "Yinchun joins the lab",
+        date: "06/2025",
+        content:
+            " Yinchun Su has joined the lab as a PhD student. He received his master’s degree in Neurobiology from Harbin Medical University, gaining valuable experiences in biomedical research. He will focus on integrating multi-omic data to better understand tumor heterogeneity in aggressive intracranial tumors.",
+        image: "/news/welcometotheteam.jpg"
+    },
      
      "new-member": {
         title: "Mahsa joins the lab",
