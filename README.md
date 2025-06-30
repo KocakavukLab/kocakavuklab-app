@@ -9,7 +9,7 @@ This homepage serves as a central hub for:
 - 🎓 **Opportunities** for collaborations, PhD/postdoc positions, and internships
 - 📰 **Latest Newsletters & Research Updates** from the lab
 
-🔗 **Visit our homepage:** [Kocakavuk Lab](https://kocakavuklab.vercel.app/)
+🔗 **Visit our homepage:** [Kocakavuk Lab](https://kocakavuklab.com/)
 
 ## 🚀 How to Contribute
 If you are interested in collaborating or contributing, feel free to:
@@ -37,9 +37,9 @@ npm start    # Runs the development server
 🤝 Connect With Us
 
 Stay updated with the latest from our lab:
--	Website: [Kocakavuk Lab Homepage](https://kocakavuklab.vercel.app/)
+-	Website: [Kocakavuk Lab Homepage](https://kocakavuklab.com/)
 -	GitHub: [KocakavukLab](https://github.com/KocakavukLab)
 -	Bluesky: [ekocakavuk](https://bsky.app/profile/ekocakavuk.bsky.social)
 -	Email: [kocakavuklab](mailto:kocakavuklab@gmail.com)
 
-Maintained with ❤️ by Pranav a.k.a [BioCoderR](https://biocoderr.github.io)
+Maintained with ❤️ by Pranav a.k.a [BioCoderR](https://biocoderr.github.io) & [Mahsa] (https://github.com/MahsasadatNezamabadi) 

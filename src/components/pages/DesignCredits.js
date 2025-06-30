@@ -17,8 +17,11 @@ const DesignCredits = () => {
               to="https://biocoderr.github.io"
               className="text-blue-600 hover:underline"
             >
-              Pranav a.k.a BioCoderR
+              Pranav a.k.a BioCoderR 
             </Link>
+            <Link
+            to="https://github.com/MahsasadatNezamabadi"
+            className="text-blue-600 hover:underline"> Mahsa Nezamabadi</Link> 
           </p>
 
           <div className="mt-6">
