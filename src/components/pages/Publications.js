@@ -72,7 +72,7 @@ const publications = [
         authors:
             "Chowdhury T., Tesileanu C. M. S., Kocakavuk E., Johnson K. C., Lee J., Erson-Omay Z., Heo C., Aldape K., Amin S. B., Anderson K. J., Ashley D. M., Barnholtz-Sloan J. S., Brat D. J., Brodbelt A. R., Castro A. V., Claus E. B., Connelly J. M., Costello J., Datta I., Elliott C., Finocchiaro G., French P. J., Gan H. K., Garofano L., Ghospurkar P. L., Golebiewska A., Gundla P. S., Hermes B., Hong C., Hoogstrate Y., Horbinski C., Huse J. T., Iavarone A., Karadag C., Khasraw M., Kouwenhoven M. C. M., LaViolette P. S., Li K., Lowman A., McCortney K., Moon H. E., Nader S., Nasrallah M. P., Ng H. K., Ormond D. R., Padovan M., Paek S. H., Poisson L. M., Puri S., Shen E., Shwetal M., Sloan A. E., Vallentgoed W. R., Van Meir E. G., Vaubel R., Wade T., Walenkamp A. M., Watts C., Weiss T., Weller M., Wesseling P., Westcott K., Westerman B., Ye G. Y., Yung W. K. A., The GLASS Consortium, Varn F. S., Verhaak R. G. W.",
         date: "06/2025",
-        status: "In-Review",
+        status: "Published",
         image: "nature-25.png",
         journalLogo: "/journals/biorxiv.png"
     } 
