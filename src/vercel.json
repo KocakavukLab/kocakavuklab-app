@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://kocakavuklab.com/:path*",
+      "permanent": true
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
