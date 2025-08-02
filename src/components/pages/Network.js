@@ -6,7 +6,7 @@ import {
     ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,DHKLogo
 } from "../LogoName.js";
 import "../../App.css";
-import PageHeader from "../common/PageHeader"; 
+import PageHeader from "../common/PageHeader.js"; 
 import GoToTopButton from "../common/GoToTopButton.js";
 
 // Networking Collaborators
@@ -70,6 +70,7 @@ const Network = () => {
                                 src={network.nlogo}
                                 alt={network.ntitle}
                                 className="w-64 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                                loading="lazy"
                             />
                         </a>
                     ))}
@@ -92,6 +93,7 @@ const Network = () => {
                                 src={funder.logo}
                                 alt={funder.title}
                                 className="w-64 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                                loading="lazy"
                             />
                         </a>
                     ))}
