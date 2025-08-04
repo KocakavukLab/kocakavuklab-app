@@ -18,7 +18,7 @@ const members = [
         researchgate: "",
     },
     {
-        name: "Yinchun Su, M.Sc.",
+        name: "Yinchun Su, MSc",
         image: "/YinchunSu.png",
         role: "PhD Student",
         description:
@@ -42,7 +42,7 @@ const members = [
 ]
 const memberTwo = [
     {
-     name: "Mahsasadat Nezamabadi, BSC",
+     name: "Mahsasadat Nezamabadi, BSc",
      image: "/mahsa.png",
      role: "Student Research Assistant",
      description:
@@ -50,7 +50,7 @@ const memberTwo = [
      email: "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
     },
     {
-     name: "Fatma Atak.",
+     name: "Fatma Atak",
      image: "/fatma.png",
      role: "Erasmus Exchange Student",
      description:
@@ -200,7 +200,7 @@ function Members() {
                     >
                         {/* Profile Image */}
                         <img
-                            className="w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
+                            className="object-cover w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
                             src={member.image}
                             alt={member.name}
                         />
@@ -295,7 +295,7 @@ function Members() {
                     >
                         {/* Profile Image */}
                         <img
-                            className="w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
+                            className="object-cover w-40 h-40 rounded-full transition-transform duration-200 hover:scale-110"
                             src={memberTwo.image}
                             alt={memberTwo.name}
                         />
