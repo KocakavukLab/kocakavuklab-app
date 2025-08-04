@@ -48,7 +48,7 @@ const JoinUs = () => {
                             <button
                             disabled 
                                 onClick={() => setShowJobs(true)} // Clicking hides the button & shows jobs
-                                className="mt-6 px-8 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-gray-700 rounded-lg shadow-lg transition-transform transform hover:scale-105 "
+                                className="mt-6 px-8 py-3 text-lg font-semibold text-white bg-gray-500 rounded-lg shadow-lg transform"
                             >
                                 Apply Now →
                             </button>

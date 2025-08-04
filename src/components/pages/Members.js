@@ -1,5 +1,6 @@
 import React from "react";
-import { SiGmail, SiGooglescholar, SiResearchgate } from "react-icons/si";
+import {  SiGooglescholar, SiResearchgate } from "react-icons/si";
+import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 import PageHeader from "../common/PageHeader";
 import GoToTopButton from "../common/GoToTopButton"; 
 const members = [
@@ -105,7 +106,7 @@ function Members() {
                     >
                         {/* Profile Image */}
                         <img
-                            className="w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
+                            className="w-40 h-40 rounded-full object-cover bg-white p-1 border border-gray-200 shadow-sm transition-transform duration-200 hover:scale-110"
                             src={blockTwo.image}
                             alt={blockTwo.name}
                         />
@@ -132,9 +133,9 @@ function Members() {
                                     href={blockTwo.email}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="text-gray-700 transition hover:text-red-500"
+                                    className="text-gray-700 transition hover:text-blue-500"
                                 >
-                                    <SiGmail size={20} />
+                                    <PiMicrosoftOutlookLogoFill size={20} />
                                 </a>
                             )}
 
@@ -200,7 +201,7 @@ function Members() {
                     >
                         {/* Profile Image */}
                         <img
-                            className=" w-40 h-40 rounded-full object-fit transition-transform duration-200 hover:scale-110"
+                            className="w-40 h-40 rounded-full object-cover bg-white p-1 border border-gray-200 shadow-sm transition-transform duration-200 hover:scale-110"
                             src={member.image}
                             alt={member.name}
                         />
@@ -229,7 +230,7 @@ function Members() {
                                     rel="noreferrer"
                                     className="text-gray-700 transition hover:text-red-500"
                                 >
-                                    <SiGmail size={20} />
+                                    <PiMicrosoftOutlookLogoFill size={20} />
                                 </a>
                             )}
 
@@ -295,7 +296,7 @@ function Members() {
                     >
                         {/* Profile Image */}
                         <img
-                            className="object-cover w-40 h-40 rounded-full transition-transform duration-200 hover:scale-110"
+                            className="w-40 h-40 rounded-full object-cover bg-white p-1 border border-gray-200 shadow-sm transition-transform duration-200 hover:scale-110"
                             src={memberTwo.image}
                             alt={memberTwo.name}
                         />
@@ -322,9 +323,9 @@ function Members() {
                                     href={memberTwo.email}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="text-gray-700 transition hover:text-red-500"
+                                    className="text-gray-700 transition hover:text-blue-500"
                                 >
-                                    <SiGmail size={20} />
+                                    <PiMicrosoftOutlookLogoFill size={20} />
                                 </a>
                             )}
 
@@ -420,9 +421,9 @@ function Members() {
                href={alumni.email}
                target="_blank"
                rel="noreferrer"
-               className="text-gray-700 transition hover:text-red-500"
+               className="text-gray-700 transition hover:text-blue-500"
               >
-          <SiGmail size={18} />
+          <PiMicrosoftOutlookLogoFill size={18} className="hover:fill-blue-500" />
         </a>
       )}
 

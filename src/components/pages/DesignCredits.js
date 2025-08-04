@@ -17,8 +17,9 @@ const DesignCredits = () => {
               to="https://biocoderr.github.io"
               className="text-blue-600 hover:underline"
             >
-              Pranav
+              Pranav 
             </Link>
+            <span className="text-black"> &amp;</span>
             <Link
             to="https://github.com/MahsasadatNezamabadi"
             className="text-blue-600 hover:underline"> Mahsa</Link> 
@@ -58,7 +59,7 @@ const DesignCredits = () => {
                   to="https://github.com/VincentGarreau/particles.js/"
                   className="text-blue-600 hover:underline"
                 >
-                  Perticle-js
+                  Particle-js
                 </Link>
               </li>
             </ul>
@@ -88,7 +89,7 @@ const DesignCredits = () => {
             </ul>
           </div>
           <div className="mt-6">
-            <h2 className="text-xl font-semibold text-gray-800">Hosted on:</h2>
+            <h2 className="text-xl font-semibold text-gray-800">Hosting on:</h2>
             <ul className="list-disc list-inside mt-2">
               <li>
                 <Link

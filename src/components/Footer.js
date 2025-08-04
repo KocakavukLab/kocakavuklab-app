@@ -94,7 +94,7 @@ function Footer() {
             <p>D-45147 Essen</p>
             <p>
               Email:{" "}
-              <a href="contact@kocakavuklab.com " className="hover:underline hover:text-cyan-300">
+              <a href="mailto:kocakavuklab@gmail.com" className="hover:underline hover:text-cyan-300">
                 contact@kocakavuklab.com 
               </a>
             </p>
