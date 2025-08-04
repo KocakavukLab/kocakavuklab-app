@@ -9,13 +9,7 @@ This homepage serves as a central hub for:
 - 🎓 **Opportunities** for collaborations, PhD/postdoc positions, and internships
 - 📰 **Latest Newsletters & Research Updates** from the lab
 
-🔗 **Visit our homepage:** [Kocakavuk Lab](https://kocakavuklab.vercel.app/)
-
-## 🚀 How to Contribute
-If you are interested in collaborating or contributing, feel free to:
-- Fork this repository and submit a pull request
-- Open an issue to discuss research ideas
-- Contact us through our official website
+🔗 **Visit our homepage:** [kocakavuklab.com](https://kocakavuklab.com/)
 
 ## 🛠 Tech Stack
 This website is built using:
@@ -24,22 +18,12 @@ This website is built using:
 - **Bluesky Embed** for live updates
 - Hosted on **Vercel** for fast deployment
 
-## 📌 Installation & Setup
-To run the website locally:
-
-```shell
-git clone https://github.com/kocakavuklab/kocakavuklab-app.git
-cd kocakavuklab-app
-npm install  # or yarn install
-npm start    # Runs the development server
-```
-
 🤝 Connect With Us
 
 Stay updated with the latest from our lab:
--	Website: [Kocakavuk Lab Homepage](https://kocakavuklab.vercel.app/)
+-	Website: [Kocakavuk Lab Homepage](https://kocakavuklab.com/)
 -	GitHub: [KocakavukLab](https://github.com/KocakavukLab)
 -	Bluesky: [ekocakavuk](https://bsky.app/profile/ekocakavuk.bsky.social)
 -	Email: [kocakavuklab](mailto:kocakavuklab@gmail.com)
 
-Maintained with ❤️ by Pranav a.k.a [BioCoderR](https://biocoderr.github.io)
+Maintained with ❤️ by [Pranav](https://biocoderr.github.io) & [Mahsa](https://github.com/MahsasadatNezamabadi) 
