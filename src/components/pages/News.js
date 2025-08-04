@@ -31,21 +31,14 @@ const glowEffect = {
 // News Data
 const news = [
     {
-        title: "Yinchun joins the lab",
+        title: "New Members Joining Lab",
         date: "June 2025",
         description:
-            "Yinchun Su has joined the lab as a PhD student. He received his master’s degree in Neurobiology from Harbin Medical University, gaining valuable experiences in biomedical research. He will focus on integrating multi-omic data to better understand tumor heterogeneity in aggressive intracranial tumors.",
-        image: "/news/welcometotheteam.png",
-        category: "new_member",
-        link:"/news/new-member-yinchun"
-
-    },
-  {
-        title: "Mahsa joins the lab",
-        date: "May 2025",
-        description:
-            "Mahsasadat Nezamabadi has joined the lab as a Student Research Assistant. She is currently pursuing her Master’s degree in Applied Computer Science at the University of Duisburg-Essen, specializing in Systems Engineering.",
-        image: "/news/newmember.png",
+  "Cihat Karadag MD joins as a Clinician Scientist focused on glioma research and the use of clinicogenomic data in neuro-oncology.\n\n" +
+  "Yinchun Su joins as a PhD student, focusing on tumor heterogeneity through multi-omic data integration.\n\n" +
+  "Mahsasadat Nezamabadi, a Master’s student in Applied Computer Science at the University of Duisburg-Essen, joins as a Student Research Assistant.\n\n" +
+  "Fatma Atak, an undergraduate student in Electrical and Electronics Engineering at Marmara University in Istanbul, Turkey, joins the lab as part of the Erasmus exchange program.",
+        image: "/news/members.png",
         category: "new_member",
         link:"/news/new-member"
 
@@ -62,7 +55,7 @@ const news = [
 
   {
     title: "Emmy Noether Grant by the DFG",
-    date: "February 2025",
+    date: "May 2025",
     description:
       "This is a true milestone for our laboratory as we have secured funding in the prestigious Emmy Noether Program of the German Research Foundation (DFG). The grant with a funding volume over 2M EUR will support our research for the next six years. Stay tuned for postdoc and PhD positions!" ,
     image: "/news/logo_emmy_noether.jpg",
@@ -186,12 +179,16 @@ function News() {
             <img
               src={item.image}
               alt={item.title}
-              className="w-32 h-20 object-fit rounded-lg shadow-md my-4"
+              className="w-45 h-20 object-fit rounded-lg shadow-md my-4"
             />
 
             {/* Description */}
             <p className="text-gray-700">
-              {item.description}
+              {item.description.split("\n\n").map((para, idx) => (
+  <p key={idx} className="text-gray-700 mb-4">
+    {para}
+  </p>
+))}
             </p>
           </VerticalTimelineElement>
         )}

@@ -1,25 +1,23 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+
 
 const newsDetails = {
-         "new-member-yinchun": {
-        title: "Yinchun joins the lab",
+         "new-member": {
+        title: "New Members Joining Lab",
         date: "06/2025",
         content:
-            " Yinchun Su has joined the lab as a PhD student. He received his master’s degree in Neurobiology from Harbin Medical University, gaining valuable experiences in biomedical research. He will focus on integrating multi-omic data to better understand tumor heterogeneity in aggressive intracranial tumors.",
-        image: "/news/welcometotheteam.jpg"
+  "**Cihat Karadag MD** joins as a Clinician Scientist focused on glioma research and the use of clinicogenomic data in neuro-oncology.\n\n" +
+  "**Yinchun Su** joins as a PhD student, focusing on tumor heterogeneity through multi-omic data integration.\n\n" +
+  "**Mahsasadat Nezamabadi**, a Master’s student in Applied Computer Science at the University of Duisburg-Essen, joins as a Student Research Assistant.\n\n" +
+  "**Fatma Atak**, an undergraduate student in Electrical and Electronics Engineering at Marmara University in Istanbul, Turkey, joins the lab as part of the Erasmus exchange program.",
+        image: "/news/members.jpg"
     },
      
-     "new-member": {
-        title: "Mahsa joins the lab",
-        date: "05/2025",
-        content:
-            "Mahsasadat Nezamabadi has joined the lab as a Student Research Assistant. She is currently pursuing her Master’s degree in Applied Computer Science at the University of Duisburg-Essen, specializing in Systems Engineering.",
-        image: "/news/newmember.jpg"
-    },
     "emmy-noether-grant": {
         title: "Emmy Noether Grant by the DFG",
-        date: "02/2025",
+        date: "05/2025",
         content:
             "This is a true milestone for our laboratory as we have secured funding in the prestigious Emmy Noether Program of the German Research Foundation (DFG). The grant with a funding volume over 2M EUR will support our research for the next six years. Stay tuned for postdoc and PhD positions!",
         image: "/news/logo_emmy_noether.jpg"
@@ -69,7 +67,18 @@ function NewsDetail() {
             {newsItem.date}
             </p>
             
-            <p className="text-lg text-gray-700">{newsItem.content}</p>
+            <ReactMarkdown
+  components={{
+    p: ({ node, ...props }) => (
+      <p className="text-lg text-gray-700 mb-4" {...props} />
+    ),
+    strong: ({ node, ...props }) => (
+      <strong className="font-semibold text-gray-900" {...props} />
+    )
+  }}
+>
+  {newsItem.content}
+</ReactMarkdown>
         </div>
     );
 }

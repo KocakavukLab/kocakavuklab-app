@@ -17,11 +17,12 @@ const DesignCredits = () => {
               to="https://biocoderr.github.io"
               className="text-blue-600 hover:underline"
             >
-              Pranav a.k.a BioCoderR 
+              Pranav 
             </Link>
+            <span className="text-black"> &amp;</span>
             <Link
             to="https://github.com/MahsasadatNezamabadi"
-            className="text-blue-600 hover:underline"> Mahsa Nezamabadi</Link> 
+            className="text-blue-600 hover:underline"> Mahsa</Link> 
           </p>
 
           <div className="mt-6">
@@ -53,6 +54,14 @@ const DesignCredits = () => {
                   Slidejs
                 </Link>
               </li>
+               <li>
+                <Link
+                  to="https://github.com/VincentGarreau/particles.js/"
+                  className="text-blue-600 hover:underline"
+                >
+                  Particle-js
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -75,6 +84,19 @@ const DesignCredits = () => {
                   className="text-blue-600 hover:underline"
                 >
                   Adobe Firefly
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="mt-6">
+            <h2 className="text-xl font-semibold text-gray-800">Hosting on:</h2>
+            <ul className="list-disc list-inside mt-2">
+              <li>
+                <Link
+                  to="https://www.cloudflare.com/"
+                  className="text-blue-600 hover:underline"
+                >
+                  Cloudflare
                 </Link>
               </li>
             </ul>
