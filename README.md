@@ -13,10 +13,10 @@ This homepage serves as a central hub for:
 
 ## 🛠 Tech Stack
 This website is built using:
-- **React.js** with **Vite** for frontend development
+- **React.js** with **Node JS** for frontend development
 - **Tailwind CSS** for responsive UI
 - **Bluesky Embed** for live updates
-- Hosted on **Vercel** for fast deployment
+- Hosted on **Cloudflare** for fast deployment
 
 🤝 Connect With Us
 
