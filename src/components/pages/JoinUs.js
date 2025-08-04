@@ -9,7 +9,7 @@ const JoinUs = () => {
         {
             title: "Open Technical Assitant Position Available",
             description: "We are looking for talented technical assistant candidates to join our research team.",
-            status: "Close", // Change to "Closed" if needed
+            status: "Closed", // Change to "Closed" if needed
             applyLink: "https://karriere.ume.de/job-finder/?get_job=12335",
         },
         {
