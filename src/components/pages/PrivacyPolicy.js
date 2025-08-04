@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8 md:p-12">
         {/* Section: Overview */}
         <div className="mb-8">
-          <h2 className="text-xl md:text-2xl font-bold text-blue-600">
+          <h2 className="text-xl md:text-2xl font-bold text-black-600">
             1. An Overview of Data Protection
           </h2>
           <h3 className="text-lg md:text-xl font-semibold text-teal-700 mt-4">
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
 
         {/* Section: Hosting */}
         <div className="mb-8">
-          <h2 className="text-xl md:text-2xl font-bold text-blue-600">
+          <h2 className="text-xl md:text-2xl font-bold text-black-600">
             2. Hosting
           </h2>
           <p className="text-gray-700 text-md mt-2 leading-relaxed">
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
 
         {/* Section: Custom Services */}
         <div className="mb-8">
-          <h2 className="text-xl md:text-2xl font-bold text-blue-600">
+          <h2 className="text-xl md:text-2xl font-bold text-black-600">
             3. Custom Services
           </h2>
           <p className="text-gray-700 text-md mt-2 leading-relaxed">

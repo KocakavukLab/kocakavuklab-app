@@ -81,7 +81,7 @@ function Footer() {
             <img
               src="/lablogowhite_full.svg"
               alt="Kocakavuk Lab"
-              className="h-28 w-28 md:h-32 md:w-32"
+              className="h-28 w-28 md:h-44 md:w-44"
             />
           </div>
 
@@ -94,8 +94,8 @@ function Footer() {
             <p>D-45147 Essen</p>
             <p>
               Email:{" "}
-              <a href="mailto:kocakavuklab@gmail.com" className="hover:underline hover:text-cyan-300">
-                kocakavuklab@gmail.de
+              <a href="contact@kocakavuklab.com " className="hover:underline hover:text-cyan-300">
+                contact@kocakavuklab.com 
               </a>
             </p>
             <p>Phone: +49-(0)201-723-0</p>

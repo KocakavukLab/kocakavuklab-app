@@ -55,7 +55,7 @@ const news = [
 
   {
     title: "Emmy Noether Grant by the DFG",
-    date: "February 2025",
+    date: "May 2025",
     description:
       "This is a true milestone for our laboratory as we have secured funding in the prestigious Emmy Noether Program of the German Research Foundation (DFG). The grant with a funding volume over 2M EUR will support our research for the next six years. Stay tuned for postdoc and PhD positions!" ,
     image: "/news/logo_emmy_noether.jpg",

@@ -200,7 +200,7 @@ function Members() {
                     >
                         {/* Profile Image */}
                         <img
-                            className="object-cover w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
+                            className=" w-40 h-40 rounded-full object-fit transition-transform duration-200 hover:scale-110"
                             src={member.image}
                             alt={member.name}
                         />
@@ -384,99 +384,102 @@ function Members() {
 
             {/* Centered Grid for alumni */}
             <div className="flex flex-col items-center justify-center w-full mt-16 mb-14 ">
-                <PageHeader title="Alumni" />
+             <div className="mb-4">
+              <span className=" font-bold text-2xl text-black-900">Alumni</span>
+             </div>
                 {alumni.map((alumni, index) => (
+
                     <div
-                        key={index}
-                        className="flex flex-col items-center text-center bg-white shadow-xl rounded-lg p-6 w-full max-w-sm h-full"
-                    >
-                        {/* Profile Image */}
-                        <img
-                            className="w-40 h-40 rounded-full object-cover transition-transform duration-200 hover:scale-110"
-                            src={alumni.image}
-                            alt={alumni.name}
-                        />
+                 key={index}
+                 className="flex items-start space-x-6 bg-white shadow-lg rounded-md p-4 w-full max-w-5xl mb-6"
+                 >
+                    
 
-                        {/* Name & Role */}
-                        <div className="flex flex-col items-center mt-4">
-                            
-                            <h3 className="text-lg font-semibold">
-                                
-                                {alumni.name}
-                            </h3>
-                            <p className="text-cyan-500 text-sm mt-1">
-                                {alumni.role}
-                            </p>
-                        </div>
+                {/* Profile Image */}
+                <img
+                className="w-28 h-28 rounded-full object-cover mt-1"
+                src={alumni.image}
+                alt={alumni.name}
+                />
 
-                        {/* Description */}
-                        <p className="text-gray-600 text-sm mt-4 ">
-                            {alumni.description}
-                        </p>
+                {/* Name, Role & Description */}
+                <div className="flex flex-col justify-between">
+                {/* Name & Role */}
+                <div className="mb-2">
+                <h3 className="text-base font-semibold leading-tight">{alumni.name}</h3>
+                <p className="text-cyan-500 text-xs">{alumni.role}</p>
+                </div>
 
-                        {/* Social Icons - Always at the bottom */}
-                        <div className="flex justify-center gap-4 mt-auto pt-6">
-                            {alumni.email && (
-                                <a
-                                    href={alumni.email}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-gray-700 transition hover:text-red-500"
-                                >
-                                    <SiGmail size={20} />
-                                </a>
-                            )}
+               {/* Description */}
+               <p className="text-gray-600 text-sm max-w-3xl">{alumni.description}</p>
 
-                            {alumni.bsky && (
-                                <a
-                                    href={alumni.bsky}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="transition hover:opacity-100"
-                                >
-                                    <img
-                                        src="bluesky.svg"
-                                        alt="Bluesky"
-                                        className="w-5 h-5 opacity-80 transition"
-                                        style={{
-                                            filter: "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                                            transition: "filter 0.3s ease-in-out",
-                                        }}
-                                        onMouseOver={(e) => {
-                                            e.currentTarget.style.filter =
-                                                "invert(48%) sepia(74%) saturate(440%) hue-rotate(163deg) brightness(90%) contrast(90%)";
-                                        }}
-                                        onMouseOut={(e) => {
-                                            e.currentTarget.style.filter =
-                                                "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)";
-                                        }}
-                                    />
-                                </a>
-                            )}
+              {/* Social Icons */}
+              <div className="flex justify-center gap-4 mt-4">
+              {alumni.email && (
+              <a
+               href={alumni.email}
+               target="_blank"
+               rel="noreferrer"
+               className="text-gray-700 transition hover:text-red-500"
+              >
+          <SiGmail size={18} />
+        </a>
+      )}
 
-                            {alumni.scholar && (
-                                <a
-                                    href={alumni.scholar}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-gray-700 transition hover:text-blue-500"
-                                >
-                                    <SiGooglescholar size={20} />
-                                </a>
-                            )}
+      {alumni.bsky && (
+        <a
+          href={alumni.bsky}
+          target="_blank"
+          rel="noreferrer"
+          className="transition hover:opacity-100"
+        >
+          <img
+            src="bluesky.svg"
+            alt="Bluesky"
+            className="w-5 h-5 opacity-80 transition"
+            style={{
+              filter: "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
+              transition: "filter 0.3s ease-in-out",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.filter =
+                "invert(48%) sepia(74%) saturate(440%) hue-rotate(163deg) brightness(90%) contrast(90%)";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.filter =
+                "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)";
+            }}
+          />
+        </a>
+      )}
 
-                            {alumni.researchgate && (
-                                <a
-                                    href={alumni.researchgate}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-gray-700 transition hover:text-green-500"
-                                >
-                                    <SiResearchgate size={20} />
-                                </a>
-                            )}
-                        </div>
-                    </div>
+      {alumni.scholar && (
+        <a
+          href={alumni.scholar}
+          target="_blank"
+          rel="noreferrer"
+          className="text-gray-700 transition hover:text-blue-500"
+        >
+          <SiGooglescholar size={18} />
+        </a>
+      )}
+
+      {alumni.researchgate && (
+        <a
+          href={alumni.researchgate}
+          target="_blank"
+          rel="noreferrer"
+          className="text-gray-700 transition hover:text-green-500"
+        >
+          <SiResearchgate size={18} />
+        </a>
+      )}
+    </div>
+  </div>
+</div>
+
+                    
+                    
                 ))}
             </div> 
 

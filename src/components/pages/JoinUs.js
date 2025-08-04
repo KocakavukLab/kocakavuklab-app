@@ -9,7 +9,7 @@ const JoinUs = () => {
         {
             title: "Open Technical Assitant Position Available",
             description: "We are looking for talented technical assistant candidates to join our research team.",
-            status: "Open", // Change to "Closed" if needed
+            status: "Close", // Change to "Closed" if needed
             applyLink: "https://karriere.ume.de/job-finder/?get_job=12335",
         },
         {
@@ -32,16 +32,23 @@ const JoinUs = () => {
                             We are constantly looking for highly motivated <strong>MD-</strong>, 
                             <strong>PhD-</strong>, 
                             and <strong>Post-Doctoral</strong> candidates! 
-                            If you are interested in working in a dynamic, devoted, 
+                            If you are interested in working in a dynamic 
                             and well-funded research team with a strong translational background and close 
-                            interactions with clinical teams, we invite you to send your application.
+                            interactions with clinical teams, we invite you to send your application to:{" "}
+  <a
+    href="mailto:kocakavuklab@gmail.com"
+    className="text-cyan-400 hover:underline"
+  >
+    Emre Kocakavuk, MD, PhD
+  </a>.
                         </p>
 
                         {/* Apply Button (Hidden after Click) */}
                         {!showJobs && (
                             <button
+                            disabled 
                                 onClick={() => setShowJobs(true)} // Clicking hides the button & shows jobs
-                                className="mt-6 px-8 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                                className="mt-6 px-8 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-gray-700 rounded-lg shadow-lg transition-transform transform hover:scale-105 "
                             >
                                 Apply Now →
                             </button>
