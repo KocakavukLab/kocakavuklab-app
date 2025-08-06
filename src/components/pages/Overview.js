@@ -38,7 +38,7 @@ function Overview() {
             We are a dedicated team of Clinician-Scientists and Researchers based
             at the West German Cancer Center and the National Center for Tumor
             Diseases &#40;NCT&#41; West, University Hospital Essen. Our work lies at the
-            intersection of clinical oncology, computational biology, and genomics.
+            intersection of clinical oncology, computational biology, and cancer genomics.
             Using high-throughput sequencing and computational analysis, combined
             with preclinical functional studies, we aim to advance the field of
             precision oncology. Understanding the evolutionary patterns &#40;both

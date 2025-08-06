@@ -29,7 +29,7 @@ const members = [
         bsky: "https://bsky.app/profile/randef1ned.bsky.social" 
     },
     {
-        name: "Cihat Karadag MD",
+        name: "Cihat Karadag, MD",
         image: "/cihat.png",
         role: "Clinician Scientist",
         description:
@@ -82,7 +82,7 @@ const alumni =[
         image: "/Fabian.png",
         role: "UMEA Clinician Scientist",
         description:
-            "Dr. Fabian Ullrich is an UMEA-funded Clinician Scientist and dedicates his efforts on clinicogenomic characterization of aggressive and central nervous system lymphomas.",
+            "Dr. Fabian Ullrich joined the lab as an UMEA-funded Clinician Scientist. He currently performs a postdoctoral fellowship in the Zuber Lab at IMP in Vienna, Austria.",
         email: "mailto:fabian.ullrich@uk-essen.de",
         bsky: "https://twitter.com/fa_ulle",
         scholar: "",
