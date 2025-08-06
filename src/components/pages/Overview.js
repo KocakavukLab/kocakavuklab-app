@@ -40,7 +40,7 @@ function Overview() {
             Diseases &#40;NCT&#41; West, University Hospital Essen. Our work lies at the
             intersection of clinical oncology, computational biology, and cancer genomics.
             Using high-throughput sequencing and computational analysis, combined
-            with preclinical functional studies, we aim to advance the field of
+            with pre-clinical functional studies, we aim to advance the field of
             precision oncology. Understanding the evolutionary patterns &#40;both
             natural and in response to treatment&#41; of cancer is a major part of our
             research.

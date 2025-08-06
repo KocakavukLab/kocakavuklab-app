@@ -11,7 +11,7 @@ const members = [
         image: "/Pranav.png",
         role: "PhD Student",
         description:
-            "Pranav Swaroop Gundla is a CANTAR-funded PhD Student and focusses on applying deep learning methods in computational pathology.",
+            "Pranav Swaroop Gundla is a CANTAR-funded PhD Student and focuses on applying deep learning methods in computational pathology.",
         email: "mailto:pranavswaroop.gundla@uk-essen.de",
         bsky: "https://bsky.app/profile/pranavgundla.bsky.social",
         scholar:
@@ -23,7 +23,7 @@ const members = [
         image: "/YinchunSu.png",
         role: "PhD Student",
         description:
-            "Yinchun SU is a DFG-funded PhD student and focusses on performing integrative computational analyses to study aggressive intracranial tumors.",
+            "Yinchun Su is a DFG-funded PhD student and focuses on performing integrative computational analyses to study aggressive intracranial tumors.",
         email: "mailto: yinchun.su@uk-essen.de",
         researchgate: "https://www.researchgate.net/profile/Yinchun-Su",
         bsky: "https://bsky.app/profile/randef1ned.bsky.social" 

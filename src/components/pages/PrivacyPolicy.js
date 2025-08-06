@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-xl md:text-2xl font-bold text-black-600">
             1. An Overview of Data Protection
           </h2>
-          <h3 className="text-lg md:text-xl font-semibold text-teal-700 mt-4">
+          <h3 className="text-lg md:text-xl font-semibold text-black-700 mt-4">
             General Information
           </h3>
           <p className="text-gray-700 text-md mt-2 leading-relaxed">
@@ -34,14 +34,7 @@ const PrivacyPolicy = () => {
             2. Hosting
           </h2>
           <p className="text-gray-700 text-md mt-2 leading-relaxed">
-            We host our website with{" "}
-            <Link
-              to="https://vercel.com/"
-              className="text-blue-600 hover:underline"
-            >
-              Vercel
-            </Link>
-            , a platform providing seamless deployment and infrastructure for
+            We host our website with Cloudflare, a platform providing seamless deployment and infrastructure for
             modern web applications. It allows us to build and publish our
             website efficiently with GNU licensing.
           </p>
@@ -62,7 +55,7 @@ const PrivacyPolicy = () => {
 
         {/* Section: Handling Applicant Data */}
         <div className="mb-8">
-          <h3 className="text-lg md:text-xl font-semibold text-teal-700">
+          <h3 className="text-lg md:text-xl font-semibold text-black-700">
             Handling Applicant Data
           </h3>
           <p className="text-gray-700 text-md mt-2 leading-relaxed">
@@ -82,7 +75,7 @@ const PrivacyPolicy = () => {
 
         {/* Section: Data Retention Policy */}
         <div className="mb-8">
-          <h3 className="text-lg md:text-xl font-semibold text-teal-700">
+          <h3 className="text-lg md:text-xl font-semibold text-black-700">
             Data Retention Policy
           </h3>
           <p className="text-gray-700 text-md mt-2 leading-relaxed">
