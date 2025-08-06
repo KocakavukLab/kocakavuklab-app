@@ -61,6 +61,7 @@ function NewsDetail() {
                 src={newsItem.image}
                 alt={newsItem.title}
                 className="w-full rounded-lg shadow-lg mb-6"
+                loading="lazy"
             />
             <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
             <p className="text-sm text-gray-500 mb-4">
