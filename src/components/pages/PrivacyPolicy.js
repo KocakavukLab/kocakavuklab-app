@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import GoToTopButton from "../common/GoToTopButton";
 const PrivacyPolicy = () => {
   return (
