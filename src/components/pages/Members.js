@@ -3,9 +3,33 @@ import { SiGooglescholar, SiResearchgate } from "react-icons/si";
 import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 import { GrLinkedin } from "react-icons/gr";
 import { RiTwitterXLine } from "react-icons/ri";
+import { FaGithub } from "react-icons/fa";
+import { FiGlobe } from "react-icons/fi";
 import PageHeader from "../common/PageHeader";
 import GoToTopButton from "../common/GoToTopButton";
 const members = [
+  {
+    name: "Quan Shi, MBBS, PhD",
+    image: "/quan.png",
+    role: "Postdoctoral Researcher",
+    description: "Dr. Quan Shi is a DFG-funded postdoctoral researcher. He focuses on the development and application of single-cell and spatial transcriptomics technologies in cancer research.",
+    email: "mailto:Quan.Shi@uk-essen.de",
+    linkedin: "https://www.linkedin.com/in/quan-shi-11b5b49a",
+    github: "https://github.com/shiquan",
+    website: "https://shiquan.github.io/"
+  },
+  {
+    name: "Fabian Ullrich, MD",
+    image: "/Fabian.png",
+    role: "UMEA Clinician Scientist",
+    description:
+      "Dr. Fabian Ullrich joined the lab as an UMEA-funded Clinician Scientist. He currently performs a postdoctoral fellowship in the Zuber Lab at IMP in Vienna, Austria.",
+    email: "mailto:fabian.ullrich@uk-essen.de",
+    twitter: "https://twitter.com/fa_ulle",
+    scholar: "",
+    researchgate: "https://www.researchgate.net/profile/Fabian-Ullrich",
+    linkedin: "https://www.linkedin.com/in/fabian-u"
+  },
   {
     name: "Pranav Swaroop Gundla, MSc",
     image: "/Pranav.png",
@@ -41,9 +65,7 @@ const members = [
     scholar: "",
     researchgate: "https://www.researchgate.net/profile/Cihat-Karadag",
     linkedin: ""
-  }
-];
-const memberTwo = [
+  },
   {
     name: "Mahsasadat Nezamabadi, BSc",
     image: "/mahsa.png",
@@ -52,16 +74,10 @@ const memberTwo = [
       "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science at the University of Duisburg-Essen. She supports the team as a Student Research Assistant.",
     email: "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
     linkedin: "https://www.linkedin.com/in/mahsa-sadat-nezamabadi"
-  },
-  {
-    name: "Fatma Atak",
-    image: "/fatma.png",
-    role: "Erasmus Exchange Student",
-    description:
-      "Fatma Atak is an undergraduate student in Electrical and Electronics Engineering at the Marmara university, Istanbul, Turkey . She is joining the lab as a part of Erasmus Exchange Program.",
-    email: "mailto:atakf223@gmail.com",
-    linkedin: "https://www.linkedin.com/in/fatma-0148881b8"
   }
+];
+const memberTwo = [
+  
 ];
 
 const blockTwo = [
@@ -81,17 +97,15 @@ const blockTwo = [
 ];
 const alumni = [
   {
-    name: "Fabian Ullrich, MD",
-    image: "/Fabian.png",
-    role: "UMEA Clinician Scientist",
+    name: "Fatma Atak",
+    image: "/fatma.png",
+    role: "Erasmus Exchange Student",
     description:
-      "Dr. Fabian Ullrich joined the lab as an UMEA-funded Clinician Scientist. He currently performs a postdoctoral fellowship in the Zuber Lab at IMP in Vienna, Austria.",
-    email: "mailto:fabian.ullrich@uk-essen.de",
-    twitter: "https://twitter.com/fa_ulle",
-    scholar: "",
-    researchgate: "https://www.researchgate.net/profile/Fabian-Ullrich",
-    linkedin: "https://www.linkedin.com/in/fabian-u"
+      "Fatma Atak is an undergraduate student in Electrical and Electronics Engineering at the Marmara university, Istanbul, Turkey . She is joining the lab as a part of Erasmus Exchange Program.",
+    email: "mailto:atakf223@gmail.com",
+    linkedin: "https://www.linkedin.com/in/fatma-0148881b8"
   }
+  
 ];
 function Members() {
   return (
@@ -297,6 +311,32 @@ function Members() {
                 >
                   <GrLinkedin size={20} />
                 </a>}
+                {member.github && (
+  <a
+    href={member.github}
+    target="_blank"
+    rel="noreferrer"
+    aria-label={`${member.name} GitHub`}
+    className="text-gray-700 transition hover:text-gray-900"
+    title="GitHub"
+  >
+    <FaGithub size={20} />
+  </a>
+)}
+
+{member.website && (
+  <a
+    href={member.website}
+    target="_blank"
+    rel="noreferrer"
+    aria-label={`${member.name} Website`}
+    className="text-gray-700 transition hover:text-blue-600"
+    title="Website"
+  >
+    <FiGlobe size={20} />
+  </a>
+)}
+
             </div>
           </div>
         )}
