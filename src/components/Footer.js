@@ -98,7 +98,8 @@ function Footer() {
                 contact@kocakavuklab.com 
               </a>
             </p>
-            <p>Phone: +49-(0)201-723-0</p>
+           {/* take phone number out whenever needed
+           <p>Phone: +49-(0)201-723-0</p>*/}
           </div>
         </div>
       </div>
