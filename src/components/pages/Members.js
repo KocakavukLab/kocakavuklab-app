@@ -67,6 +67,33 @@ const members = [
     linkedin: ""
   },
   {
+    name: "Marco Tembrink, MD",
+    image: "/marco.png",
+    role: "UMEA Clinician Scientist",
+    description:
+      "Marco Tembrink is an UMEA-funded Clinician Scientist. He joined the lab to pursue analyses of complex genomic events in cancer, with a focus on CNS lymphomas.",
+    email: "mailto: marco.tembrink@uk-essen.de",
+    bsky: "",
+    scholar: "",
+    researchgate: "",
+    linkedin: ""
+  }
+  
+];
+const memberTwo = [
+  {
+    name: "Jiawei Zhou, MD",
+    image: "/jiawei.png",
+    role: "Visiting Researcher",
+    description:
+      "Jiawei Zhou is a Visiting Researcher collaborating with the lab on systematic analyses of real-world clinico-genomic datasets.",
+    email: "",
+    bsky: "",
+    scholar: "",
+    researchgate: "",
+    linkedin: ""
+  },
+  {
     name: "Mahsasadat Nezamabadi, BSc",
     image: "/mahsa.png",
     role: "Student Research Assistant",
@@ -75,8 +102,6 @@ const members = [
     email: "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
     linkedin: "https://www.linkedin.com/in/mahsa-sadat-nezamabadi"
   }
-];
-const memberTwo = [
   
 ];
 
