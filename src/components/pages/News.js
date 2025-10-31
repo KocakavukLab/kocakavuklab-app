@@ -30,8 +30,20 @@ const glowEffect = {
 };
 // News Data
 const news = [
+  {
+        title: "New members joining the lab",
+        date: "October 2025",
+        description:
+  "Marco Tembrink joins as a UMEA Clinician Scientist, focusing on genomic characterization of CNS lymphomas.\n\n" +
+  "Jiawei Zhou joins as a Visiting Researcher from Jiangsu Cancer Hospital, working on real-world cancer datasets.\n\n" +
+  "Dr. Quan Shi joins as a Postdoctoral Researcher, funded by the DFG, focusing on the development and application of single-cell and spatial transcriptomics technologies in cancer research.",
+        image: "/news/members2.png",
+        category: "new_member",
+        link:"/news/new-member2"
+
+    },
     {
-        title: "New Members Joining Lab",
+        title: "New members joining the lab",
         date: "June 2025",
         description:
   "Cihat Karadag MD joins as a Clinician Scientist focused on glioma research and the use of clinicogenomic data in neuro-oncology.\n\n" +

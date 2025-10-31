@@ -4,8 +4,18 @@ import ReactMarkdown from "react-markdown";
 
 
 const newsDetails = {
+    "new-member2": {
+        title: "New members joining the lab",
+        date: "10/2025",
+        content:
+  "**Marco Tembrink** joins as a UMEA Clinician Scientist, focusing on genomic characterization of CNS lymphomas.\n\n" +
+  "**Jiawei Zhou** joins as a Visiting Researcher from Jiangsu Cancer Hospital, working on real-world cancer datasets.\n\n" +
+  "**Dr. Quan Shi** joins as a Postdoctoral Researcher, funded by the DFG, focusing on the development and application of single-cell and spatial transcriptomics technologies in cancer research.\n\n",
+        image: "/news/members2.jpg"
+    },
+     
          "new-member": {
-        title: "New Members Joining Lab",
+        title: "New members joining the lab",
         date: "06/2025",
         content:
   "**Cihat Karadag MD** joins as a Clinician Scientist focused on glioma research and the use of clinicogenomic data in neuro-oncology.\n\n" +
