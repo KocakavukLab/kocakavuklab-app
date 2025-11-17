@@ -100,7 +100,7 @@ const memberTwo = [
     description:
       "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science at the University of Duisburg-Essen. She supports the team as a Student Research Assistant.",
     email: "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
-    linkedin: "https://www.linkedin.com/in/mahsa-sadat-nezamabadi"
+    linkedin: "https://de.linkedin.com/in/mahsa-sadat-nezamabadi-52238720b"
   }
   
 ];
@@ -117,7 +117,7 @@ const blockTwo = [
     scholar:
       "https://scholar.google.co.in/citations?user=gGSCLooAAAAJ&hl=en&oi=ao",
     researchgate: "",
-    linkedin: "https://www.linkedin.com/in/emre-kocakavuk"
+    linkedin: "https://de.linkedin.com/in/emre-kocakavuk-824284353"
   }
 ];
 const alumni = [
