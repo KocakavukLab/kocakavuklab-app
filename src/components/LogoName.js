@@ -1,4 +1,4 @@
-export { default as CanTarLogo } from "../assets/logos/logo_cantar.jpg";
+export { default as CanTarLogo } from "../assets/logos/logo-cantar2.jpg";
 export { default as BFondLogo } from "../assets/logos/bhs.svg";
 export { default as DFGLogo } from "../assets/logos/dfg.png";
 export { default as WTZLogo } from "../assets/logos/wtz.png";
@@ -15,3 +15,4 @@ export { default as JSTLogo } from "../assets/logos/logo_jackstaedt.png";
 export { default as ENLogo } from "../assets/logos/logo_emmy_noether_gross.jpg";
 export { default as IKLogo } from "../assets/logos/ikim.png";
 export { default as DHKLogo } from "../assets/logos/dhk.png";
+export { default as SFBLogo } from "../assets/logos/sfb.svg";
