@@ -1,4 +1,4 @@
-export { default as CanTarLogo } from "../assets/logos/logo_cantar.jpg";
+export { default as CanTarLogo } from "../assets/logos/logo-cantar2.jpg";
 export { default as BFondLogo } from "../assets/logos/bhs.svg";
 export { default as DFGLogo } from "../assets/logos/dfg.png";
 export { default as WTZLogo } from "../assets/logos/wtz.png";

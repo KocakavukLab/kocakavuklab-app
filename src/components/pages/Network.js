@@ -3,7 +3,7 @@ import { motion } from "framer-motion"; // Import animation library
 import {
     CanTarLogo, BFondLogo, DFGLogo, WTZLogo, EKFSLogo, 
     ESMOLogo, WSGLogo, UMEALogo, UMEHLogo, YaleLogo, 
-    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,DHKLogo,SFBLogo
+    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,pwdLogo,SFBLogo,DHKLogo
 } from "../LogoName.js";
 import "../../App.css";
 import PageHeader from "../common/PageHeader.js"; 
