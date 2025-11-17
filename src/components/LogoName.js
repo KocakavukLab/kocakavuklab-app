@@ -15,3 +15,4 @@ export { default as JSTLogo } from "../assets/logos/logo_jackstaedt.png";
 export { default as ENLogo } from "../assets/logos/logo_emmy_noether_gross.jpg";
 export { default as IKLogo } from "../assets/logos/ikim.png";
 export { default as DHKLogo } from "../assets/logos/dhk.png";
+export { default as SFBLogo } from "../assets/logos/sfb.svg";

@@ -3,7 +3,7 @@ import { motion } from "framer-motion"; // Import animation library
 import {
     CanTarLogo, BFondLogo, DFGLogo, WTZLogo, EKFSLogo, 
     ESMOLogo, WSGLogo, UMEALogo, UMEHLogo, YaleLogo, 
-    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,DHKLogo
+    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,DHKLogo,SFBLogo
 } from "../LogoName.js";
 import "../../App.css";
 import PageHeader from "../common/PageHeader.js"; 
@@ -18,7 +18,9 @@ const networking = [
     { nid: 5, ntitle: "WTZ", nlogo: WTZLogo, url: "https://wtz-essen.de/" },
     { nid: 6, ntitle: "GLASS", nlogo: GLASSLogo, url: "https://www.glass-consortium.org/" },
     { nid: 7, ntitle: "IKIM", nlogo: IKLogo, url: "https://www.ikim.uk-essen.de/" },
-    { nid: 8, ntitle: "DHK", nlogo: DHKLogo, url: "#" }
+    { nid: 8, ntitle: "DHK", nlogo: DHKLogo, url: "#" },
+    { nid: 9, ntitle: "SFB", nlogo: SFBLogo, url: "https://sfb1530.de/" },
+    { nid: 10, ntitle: "CANTAR", nlogo: CanTarLogo, url: "https://land.nrw/pressemitteilung/81-millionen-euro-landesfoerderung-fuer-fuenf-exzellente-forschungsnetzwerke" },
 ];
 
 // Funders Section
