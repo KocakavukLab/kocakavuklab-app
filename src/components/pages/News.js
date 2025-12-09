@@ -30,6 +30,23 @@ const glowEffect = {
 };
 // News Data
 const news = [
+  // ESMO Merit Award
+  {
+    title: "ESMO Merit Award",
+    date: "November 2025",
+    description:
+      "<p><a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a> "
+        "<a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a></p>"
+        "<p>Our PhD student Pranav Swaroop Gundla, has been awarded the prestigious ESMO Merit Award at the 2025 ESMO AI in Oncology Congress. "
+        "This recognition highlights their contribution to foundation-model-powered molecular subtype prediction in diffuse gliomas.</p>"
+        "<p>Learn more and join the conversation: "
+        "<a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a> "
+        "<a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a>.</p>" ,
+    image: "/news/Merit_Awardees.jpg",
+    category: "grant",
+    link: "news/esmo-merit-award"
+  },
+  // Marco, Jiawei and Quan
   {
         title: "New members joining the lab",
         date: "October 2025",
@@ -42,6 +59,7 @@ const news = [
         link:"/news/new-member2"
 
     },
+    // Cihat, Yinchun, Mahsa, Fatma
     {
         title: "New members joining the lab",
         date: "June 2025",
@@ -55,6 +73,7 @@ const news = [
         link:"/news/new-member"
 
     },
+    // Fabian Ullrich
   {
     title: "Junior Clinician Scientist Fellowship by UMEA",
     date: "April 2024",
@@ -64,7 +83,7 @@ const news = [
     category: "grant",
     link: "/news/umea-fellowship-grant"
   },
-
+  // Emmy Noether Grant
   {
     title: "Emmy Noether Grant by the DFG",
     date: "May 2025",
@@ -74,6 +93,7 @@ const news = [
     category: "grant",
     link: "/news/emmy-noether-grant"
   },
+  // EKFS Fellowship
   {
     title: "Memorial Fellowship by the EKFS",
     date: "February 2024",
@@ -83,6 +103,7 @@ const news = [
     category: "grant",
     link: "/news/memorial-fellowship"
   },
+  // Lab opening its doors.
   {
     title: "Kocakavuk Lab opening its doors",
     date: "July 2023",
