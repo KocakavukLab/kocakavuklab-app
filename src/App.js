@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
@@ -15,9 +14,7 @@ import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import Imprint from "./components/pages/Imprint";
 import DesignCredits from "./components/pages/DesignCredits";
 import "./App.css";
-import { inject } from "@vercel/analytics";
-import { SpeedInsights } from '@vercel/speed-insights/react';
-inject();
+
 export const App = () => {
   
   return (
@@ -46,7 +43,6 @@ export const App = () => {
       <Route path="*" element={<NotFound />} />
       </Routes>
       </Layout>
-      <SpeedInsights />
     </div>
   );
 };
