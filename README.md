@@ -7,7 +7,7 @@ Our lab focuses on **Computational Oncology**, leveraging advanced bioinformatic
 This homepage serves as a central hub for:
 - 🧬 **Ongoing Projects** in computational oncology and bioinformatics
 - 🎓 **Opportunities** for collaborations, PhD/postdoc positions, and internships
-- 📰 **Latest Newsletters & Research Updates** from the lab
+- 📰 **Latest Newsletters & Research Updates** from the lab is posted [here](https://kocakavuklab.com/news)
 
 🔗 **Visit our homepage:** [kocakavuklab.com](https://kocakavuklab.com/)
 
