@@ -35,16 +35,24 @@ const news = [
     title: "ESMO Merit Award",
     date: "November 2025",
     description:
-      "<p><a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a> "
-        "<a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a></p>"
-        "<p>Our PhD student Pranav Swaroop Gundla, has been awarded the prestigious ESMO Merit Award at the 2025 ESMO AI in Oncology Congress. "
-        "This recognition highlights their contribution to foundation-model-powered molecular subtype prediction in diffuse gliomas.</p>"
-        "<p>Learn more and join the conversation: "
-        "<a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a> "
-        "<a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a>.</p>" ,
+      "<p>Our PhD student Pranav Swaroop Gundla has been awarded the prestigious ESMO Merit Award at the ESMO AI & Digital Oncology Congress 2025. "
+      "The study highlights how foundation models and attention-based multiple instance learning (MIL) can help decode the molecular landscape of gliomas directly from H&E-stained whole slide images (WSIs) — moving one step closer toward precision pathology.</p>"
+      "Checkout the poster <a href='https://doi.org/10.1016/j.esmorw.2025.100474' target='_blank'>here</a>"
+      "<p><a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a> "
+      "<a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a></p>" ,
     image: "/news/Merit_Awardees.jpg",
     category: "grant",
     link: "news/esmo-merit-award"
+  },
+  // Marco's UMEA Grant
+  {
+    title: "Junior Clinician Scientist Fellowship by UMEA",
+    date: "November 2025",
+    description:
+      "Marco Tembrink, MD, has successfully secured a Junior Clinician Scientist fellowship granted by the Clinician Scientist Academy of the University Hospital Essen (UMEA) to join the lab and study focusing on genomic characterization of CNS lymphomas." ,
+    image: "/news/umea.png",
+    category: "grant",
+    link: "/news/marco-grant"
   },
   // Marco, Jiawei and Quan
   {
