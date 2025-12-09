@@ -3,21 +3,23 @@ import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
 
-const newsDetails = {
-// news detail 1
+The issue is missing string concatenation operators (+) when breaking strings across multiple lines. Here's the corrected code:
+Fixed newsDetails:
+javascriptconst newsDetails = {
+    // news detail 1
     "esmo-merit-award": {
-    title: "ESMO Merit Award",
-    date: "11/2025",
-    content: 
-        "<p>Our PhD student Pranav Swaroop Gundla, has been awarded the prestigious ESMO Merit Award at the 2025 ESMO AI in Oncology Congress. "
-        "This recognition highlights their contribution to foundation-model-powered molecular subtype prediction in diffuse gliomas.</p>"
-        "Checkout the poster <a href='https://doi.org/10.1016/j.esmorw.2025.100474' target='_blank'>here</a>"
-        "<a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a> "
-        "<a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a>.</p>",
-    image: "/news/Merit_Awardees.jpg"
-},
-// news detail umea
-"marco-grant": {
+        title: "ESMO Merit Award",
+        date: "11/2025",
+        content: 
+            "<p>Our PhD student Pranav Swaroop Gundla has been awarded the prestigious ESMO Merit Award at the 2025 ESMO AI in Oncology Congress. " +
+            "This recognition highlights their contribution to foundation-model-powered molecular subtype prediction in diffuse gliomas.</p>" +
+            "<p>Checkout the poster <a href='https://doi.org/10.1016/j.esmorw.2025.100474' target='_blank'>here</a></p>" +
+            "<p><a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a> " +
+            "<a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a></p>",
+        image: "/news/Merit_Awardees.jpg"
+    },
+    // news detail umea
+    "marco-grant": {
         title: "Junior Clinician Scientist Fellowship by UMEA",
         date: "11/2025",
         content:
