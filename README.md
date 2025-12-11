@@ -26,4 +26,4 @@ Stay updated with the latest from our lab:
 -	Bluesky: [ekocakavuk](https://bsky.app/profile/ekocakavuk.bsky.social)
 -	Email: [kocakavuklab](mailto:kocakavuklab@gmail.com)
 
-Maintained with ❤️ by [Pranav](https://biocoderr.github.io) & [Mahsa](https://github.com/MahsasadatNezamabadi) 
+Maintained with ❤️ by [Pranav](https://psgundla.github.io) & [Mahsa](https://github.com/MahsasadatNezamabadi) 
