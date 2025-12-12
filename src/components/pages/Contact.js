@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import PageHeader from "../common/PageHeader"; 
@@ -49,7 +49,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-blue-50 py-12 px-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 py-12 px-6">
       {/* Reusable Page Header */}
       <PageHeader title="Get in Touch" subtitle="We'd love to hear from you!" />
 

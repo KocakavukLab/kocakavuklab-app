@@ -1,119 +1,337 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { motion } from "framer-motion";
+import {
+    FaArrowLeft,
+    FaCalendarAlt,
+    FaTag,
+    FaMoneyBillWave,
+    FaUserPlus,
+    FaNewspaper,
+    FaAward,
+} from "react-icons/fa";
+import {
+    getNewsById,
+    NEWS_CATEGORIES,
+    getSortedNews,
+} from "../../data/newsData";
+import "../../App.css";
 
+// Function to get category icon
+const getCategoryIcon = (category) => {
+    switch (category) {
+        case "grant":
+            return <FaMoneyBillWave className="inline" />;
+        case "new_member":
+            return <FaUserPlus className="inline" />;
+        case "award":
+            return <FaAward className="inline" />;
+        default:
+            return <FaNewspaper className="inline" />;
+    }
+};
 
-The issue is missing string concatenation operators (+) when breaking strings across multiple lines. Here's the corrected code:
-Fixed newsDetails:
-javascriptconst newsDetails = {
-    // news detail 1
-    "esmo-merit-award": {
-        title: "ESMO Merit Award",
-        date: "11/2025",
-        content: 
-            "<p>Our PhD student Pranav Swaroop Gundla has been awarded the prestigious ESMO Merit Award at the 2025 ESMO AI in Oncology Congress. " +
-            "This recognition highlights their contribution to foundation-model-powered molecular subtype prediction in diffuse gliomas.</p>" +
-            "<p>Checkout the poster <a href='https://doi.org/10.1016/j.esmorw.2025.100474' target='_blank'>here</a></p>" +
-            "<p><a href='https://www.linkedin.com/feed/hashtag/esmoai25/' target='_blank'>#ESMOAI25</a> " +
-            "<a href='https://www.linkedin.com/feed/hashtag/esmomeritaward/' target='_blank'>#ESMOMeritAward</a></p>",
-        image: "/news/Merit_Awardees.jpg"
-    },
-    // news detail umea
-    "marco-grant": {
-        title: "Junior Clinician Scientist Fellowship by UMEA",
-        date: "11/2025",
-        content:
-            "Marco Tembrink, MD, has successfully secured a Junior Clinician Scientist fellowship granted by the Clinician Scientist Academy of the University Hospital Essen (UMEA) to join the lab and study focusing on genomic characterization of CNS lymphomas.",
-        image: "/news/umea.png"
-    },
-// news detail 2
-    "new-member2": {
-        title: "New members joining the lab",
-        date: "10/2025",
-        content:
-  "**Marco Tembrink** joins as a UMEA Clinician Scientist, focusing on genomic characterization of CNS lymphomas.\n\n" +
-  "**Jiawei Zhou** joins as a Visiting Researcher from Jiangsu Cancer Hospital, working on real-world cancer datasets.\n\n" +
-  "**Dr. Quan Shi** joins as a Postdoctoral Researcher, funded by the DFG, focusing on the development and application of single-cell and spatial transcriptomics technologies in cancer research.\n\n",
-        image: "/news/members2.jpg"
-    },
-// news detail 3
-        "new-member": {
-        title: "New members joining the lab",
-        date: "06/2025",
-        content:
-  "**Cihat Karadag MD** joins as a Clinician Scientist focused on glioma research and the use of clinicogenomic data in neuro-oncology.\n\n" +
-  "**Yinchun Su** joins as a PhD student, focusing on tumor heterogeneity through multi-omic data integration.\n\n" +
-  "**Mahsasadat Nezamabadi**, a Master’s student in Applied Computer Science at the University of Duisburg-Essen, joins as a Student Research Assistant.\n\n" +
-  "**Fatma Atak**, an undergraduate student in Electrical and Electronics Engineering at Marmara University in Istanbul, Turkey, joins the lab as part of the Erasmus exchange program.",
-        image: "/news/members.jpg"
-    },
-// news detail 4
-    "emmy-noether-grant": {
-        title: "Emmy Noether Grant by the DFG",
-        date: "05/2025",
-        content:
-            "This is a true milestone for our laboratory as we have secured funding in the prestigious Emmy Noether Program of the German Research Foundation (DFG). The grant with a funding volume over 2M EUR will support our research for the next six years. Stay tuned for postdoc and PhD positions!",
-        image: "/news/logo_emmy_noether.jpg"
-    },
-// news detail 5
-    "umea-fellowship-grant": {
-        title: "Junior Clinician Scientist Fellowship by UMEA",
-        date: "04/2024",
-        content:
-            "Fabian Ullrich, MD, has successfully secured a Junior Clinician Scientist fellowship granted by the Clinician Scientist Academy of the University Hospital Essen (UMEA) to join the lab and study aggressive and central nervous system lymphomas.",
-        image: "/news/umea.png"
-    },
-// news detail 6
-    "memorial-fellowship": {
-        title: "Memorial Fellowship by the EKFS",
-        date: "02/2024",
-        content:
-            "We are excited to share the news that Emre Kocakavuk, MD, PhD has received the Memorial Fellowship by the Else Kröner-Fresenius-Stiftung (EKFS). This fellowship will support AI-guided analyses in precision oncology for the next two years.",
-        image: "/news/elsekroner.png"
-    },
-// news detail 7
-    "lab-opening": {
-        title: "Kocakavuk Lab opening its doors",
-        date: "07/2023",
-        content:
-            "We are happy to share the news that the Kocakavuk Lab with a focus on Computational Oncology has opened. We welcome Pranav Swaroop Gundla, MSc as the first PhD student of the lab.",
-        image: "/news/opening-doors.png"
-        },
+// Function to get category color
+const getCategoryColor = (category) => {
+    const cat = Object.values(NEWS_CATEGORIES).find((c) => c.id === category);
+    return cat ? cat.color : "#6B7280";
+};
+
+// Function to get category label
+const getCategoryLabel = (category) => {
+    const cat = Object.values(NEWS_CATEGORIES).find((c) => c.id === category);
+    return cat ? cat.label : "News";
 };
 
 function NewsDetail() {
     const { newsId } = useParams();
-    const newsItem = newsDetails[newsId];
+    const navigate = useNavigate();
+    const newsItem = getNewsById(newsId);
 
     if (!newsItem) {
-        return <p className="text-center text-red-500">News article not found!</p>;
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gray-50">
+                <div className="text-center">
+                    <h1 className="text-4xl font-bold text-red-500 mb-4">404</h1>
+                    <p className="text-xl text-gray-700 mb-6">News article not found!</p>
+                    <button
+                        onClick={() => navigate("/news")}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                        Back to News
+                    </button>
+                </div>
+            </div>
+        );
     }
 
+    // Get previous and next news items
+    const sortedNews = getSortedNews();
+    const currentIndex = sortedNews.findIndex((item) => item.id === newsId);
+    const previousNews =
+        currentIndex < sortedNews.length - 1 ? sortedNews[currentIndex + 1] : null;
+    const nextNews = currentIndex > 0 ? sortedNews[currentIndex - 1] : null;
+
+    const categoryColor = getCategoryColor(newsItem.category);
+
     return (
-        <div className="max-w-3xl mx-auto py-16 px-8">
-            <img
-                src={newsItem.image}
-                alt={newsItem.title}
-                className="w-full rounded-lg shadow-lg mb-6"
-                loading="lazy"
-            />
-            <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
-            <p className="text-sm text-gray-500 mb-4">
-            {newsItem.date}
-            </p>
-            
-            <ReactMarkdown
-  components={{
-    p: ({ node, ...props }) => (
-      <p className="text-lg text-gray-700 mb-4" {...props} />
-    ),
-    strong: ({ node, ...props }) => (
-      <strong className="font-semibold text-gray-900" {...props} />
-    )
-  }}
->
-  {newsItem.content}
-</ReactMarkdown>
+        <div className="min-h-screen bg-gray-50">
+            {/* Hero Section with Image */}
+            <div className="relative w-full h-96 overflow-hidden bg-gradient-to-br from-blue-600 to-purple-700">
+                {newsItem.image && (
+                    <img
+                        src={newsItem.image}
+                        alt={newsItem.title}
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
+                        loading="lazy"
+                    />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                {/* Back Button */}
+                <button
+                    onClick={() => navigate("/news")}
+                    className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-gray-800 rounded-lg shadow-lg transition-all"
+                >
+                    <FaArrowLeft />
+                    <span>Back to News</span>
+                </button>
+
+                {/* Category Badge */}
+                <div className="absolute top-6 right-6">
+                    <span
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg"
+                        style={{ backgroundColor: categoryColor }}
+                    >
+                        {getCategoryIcon(newsItem.category)}
+                        {getCategoryLabel(newsItem.category)}
+                    </span>
+                </div>
+            </div>
+
+            {/* Content Section */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-4xl mx-auto -mt-20 relative z-10"
+            >
+                {/* Main Content Card */}
+                <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8">
+                    {/* Header */}
+                    <div
+                        className="p-8 md:p-12 border-b-4"
+                        style={{ borderColor: categoryColor }}
+                    >
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                            {newsItem.title}
+                        </h1>
+
+                        {/* Meta Information */}
+                        <div className="flex flex-wrap items-center gap-4 text-gray-600">
+                            <div className="flex items-center gap-2">
+                                <FaCalendarAlt className="text-gray-400" />
+                                <span className="font-medium">{newsItem.dateDisplay}</span>
+                            </div>
+
+                            {newsItem.tags && newsItem.tags.length > 0 && (
+                                <div className="flex items-center gap-2">
+                                    <FaTag className="text-gray-400" />
+                                    <span className="text-sm">{newsItem.tags.length} tags</span>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Article Content */}
+                    <div className="p-8 md:p-12">
+                        <ReactMarkdown
+                            components={{
+                                p: ({ node, ...props }) => (
+                                    <p
+                                        className="text-lg text-gray-700 mb-6 leading-relaxed"
+                                        {...props}
+                                    />
+                                ),
+                                strong: ({ node, ...props }) => (
+                                    <strong className="font-semibold text-gray-900" {...props} />
+                                ),
+                                h1: ({ node, ...props }) => (
+                                    // eslint-disable-next-line jsx-a11y/heading-has-content
+                                    <h1
+                                        className="text-3xl font-bold text-gray-900 mt-8 mb-4"
+                                        {...props}
+                                    />
+                                ),
+                                h2: ({ node, ...props }) => (
+                                    // eslint-disable-next-line jsx-a11y/heading-has-content
+                                    <h2
+                                        className="text-2xl font-bold text-gray-900 mt-6 mb-3"
+                                        {...props}
+                                    />
+                                ),
+                                h3: ({ node, ...props }) => (
+                                    // eslint-disable-next-line jsx-a11y/heading-has-content
+                                    <h3
+                                        className="text-xl font-semibold text-gray-900 mt-4 mb-2"
+                                        {...props}
+                                    />
+                                ),
+                                ul: ({ node, ...props }) => (
+                                    <ul
+                                        className="list-disc list-inside mb-6 space-y-2"
+                                        {...props}
+                                    />
+                                ),
+                                ol: ({ node, ...props }) => (
+                                    <ol
+                                        className="list-decimal list-inside mb-6 space-y-2"
+                                        {...props}
+                                    />
+                                ),
+                                li: ({ node, ...props }) => (
+                                    <li className="text-gray-700 ml-4" {...props} />
+                                ),
+                                a: ({ node, ...props }) => (
+                                    // eslint-disable-next-line jsx-a11y/anchor-has-content
+                                    <a
+                                        className="text-blue-600 hover:text-blue-800 underline font-medium"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        {...props}
+                                    />
+                                ),
+                                blockquote: ({ node, ...props }) => (
+                                    <blockquote
+                                        className="border-l-4 border-blue-600 pl-4 italic text-gray-600 my-6"
+                                        {...props}
+                                    />
+                                ),
+                                code: ({ node, inline, ...props }) =>
+                                    inline ? (
+                                        <code
+                                            className="bg-gray-100 text-red-600 px-2 py-1 rounded text-sm font-mono"
+                                            {...props}
+                                        />
+                                    ) : (
+                                        <code
+                                            className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-4 font-mono text-sm"
+                                            {...props}
+                                        />
+                                    ),
+                            }}
+                        >
+                            {newsItem.fullContent}
+                        </ReactMarkdown>
+
+                        {/* Member Images Section (for new member announcements) */}
+                        {newsItem.memberImages && newsItem.memberImages.length > 0 && (
+                            <div className="mt-8 pt-8 border-t border-gray-200">
+                                <h3 className="text-lg font-semibold text-gray-900 mb-6 text-center">
+                                    Welcome to the Team
+                                </h3>
+                                <div className="flex flex-wrap gap-6 justify-center">
+                                    {newsItem.memberImages.map((memberImg, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="flex flex-col items-center"
+                                        >
+                                            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl transform hover:scale-110 transition-transform duration-300">
+                                                <img
+                                                    src={memberImg}
+                                                    alt={`Team member ${idx + 1}`}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Tags Section */}
+                        {newsItem.tags && newsItem.tags.length > 0 && (
+                            <div className="mt-8 pt-8 border-t border-gray-200">
+                                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                                    Tags
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {newsItem.tags.map((tag, idx) => (
+                                        <span
+                                            key={idx}
+                                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Navigation to Previous/Next News */}
+                {(previousNews || nextNews) && (
+                    <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                            More News
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {/* Previous News */}
+                            {previousNews && (
+                                <button
+                                    onClick={() => navigate(`/news/${previousNews.id}`)}
+                                    className="flex items-start gap-4 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all text-left group"
+                                >
+                                    <div className="flex-shrink-0 mt-1">
+                                        <FaArrowLeft className="text-gray-400 group-hover:text-blue-600 transition-colors" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-xs text-gray-500 mb-1">Previous</p>
+                                        <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                            {previousNews.title}
+                                        </p>
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            {previousNews.dateDisplay}
+                                        </p>
+                                    </div>
+                                </button>
+                            )}
+
+                            {/* Next News */}
+                            {nextNews && (
+                                <button
+                                    onClick={() => navigate(`/news/${nextNews.id}`)}
+                                    className="flex items-start gap-4 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all text-left group"
+                                >
+                                    <div className="flex-1">
+                                        <p className="text-xs text-gray-500 mb-1">Next</p>
+                                        <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                                            {nextNews.title}
+                                        </p>
+                                        <p className="text-xs text-gray-500 mt-1">
+                                            {nextNews.dateDisplay}
+                                        </p>
+                                    </div>
+                                    <div className="flex-shrink-0 mt-1">
+                                        <FaArrowLeft className="text-gray-400 group-hover:text-blue-600 transition-colors rotate-180" />
+                                    </div>
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                )}
+
+                {/* Back to All News Button */}
+                <div className="text-center pb-12">
+                    <button
+                        onClick={() => navigate("/news")}
+                        className="px-8 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transform hover:scale-105 transition-all"
+                    >
+                        View All News
+                    </button>
+                </div>
+            </motion.div>
         </div>
     );
 }

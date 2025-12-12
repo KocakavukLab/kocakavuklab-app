@@ -1,4 +1,3 @@
-import React from "react";
 import GoToTopButton from "../common/GoToTopButton";
 const PrivacyPolicy = () => {
   return (

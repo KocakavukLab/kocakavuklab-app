@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaTimes, FaBars } from "react-icons/fa";
+import labLogoWhite from "../assets/logos/lablogowhite.svg";
 
 function NavBar() {
     const [click, setClick] = useState(false);
@@ -34,7 +35,7 @@ function NavBar() {
             <div className="nav-container">
                 {/* Logo */}
                 <NavLink to="/" className="nav-logo">
-                    <img src="lablogowhite.svg" alt="Lab Logo" />
+                    <img src={labLogoWhite} alt="Lab Logo" />
                 </NavLink>
 
                 {/* Hamburger Icon (Only on Small Screens) */}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PageHeader from "../common/PageHeader";
 import GoToTopButton from "../common/GoToTopButton";
 const JoinUs = () => {
@@ -21,7 +21,7 @@ const JoinUs = () => {
     ];
 
     return (
-        <div className="join-us-container flex flex-col items-center justify-center min-h-screen bg-blue-50">
+        <div className="join-us-container flex flex-col items-center justify-center min-h-screen bg-gray-50">
             {/* Hero Section */}
             <section className="w-full max-w-7xl py-16 px-6 md:px-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left">
