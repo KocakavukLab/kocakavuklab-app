@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion"; // Import animation library
 import {
     CanTarLogo, BFondLogo, DFGLogo, WTZLogo, EKFSLogo, 
@@ -50,7 +49,7 @@ const sliderAnimation = {
 
 const Network = () => {
     return (
-        <div className="w-full py-6 relative flex flex-col items-center">
+        <div className="min-h-screen bg-gray-50 w-full py-6 relative flex flex-col items-center">
             {/* Page Header */}
             <div className="relative networks-div mb-6">
                 <PageHeader title="Our Network" />

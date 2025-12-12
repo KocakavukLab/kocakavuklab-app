@@ -42,13 +42,6 @@ body::-webkit-scrollbar {
   align-items: center;
   padding: 20px 0;
 }
-/* footer image */
-.footer-bg-img {
-  background-image: url("./assets/covers/footercover.jpg");
-  background-repeat: no-repeat;
-  background-size: fill;
-  background-position: center;
-}
 /* Scrolling Animation */
 @keyframes scrollLeft {
   from {

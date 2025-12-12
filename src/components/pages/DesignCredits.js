@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import GoToTopButton from "../common/GoToTopButton";
 
 const DesignCredits = () => {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-100 py-10 px-6">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-gray-50 py-10 px-6">
       <div className="max-w-4xl bg-white shadow-lg rounded-lg p-8">
         <h1 className="text-center text-gray-800 text-4xl font-bold mb-6">
           Site Credits

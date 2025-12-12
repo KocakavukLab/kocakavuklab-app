@@ -1,4 +1,3 @@
-import React from "react";
 import { SiGooglescholar, SiResearchgate } from "react-icons/si";
 import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 import { GrLinkedin } from "react-icons/gr";
@@ -7,10 +6,23 @@ import { FaGithub } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
 import PageHeader from "../common/PageHeader";
 import GoToTopButton from "../common/GoToTopButton";
+
+// Import member images
+import quanImg from "../../assets/members/quan.png";
+import fabianImg from "../../assets/members/Fabian.png";
+import pranavImg from "../../assets/members/Pranav.png";
+import yinchunImg from "../../assets/members/YinchunSu.png";
+import cihatImg from "../../assets/members/cihat.png";
+import marcoImg from "../../assets/members/marco.png";
+import jiaweiImg from "../../assets/members/jiawei.png";
+import mahsaImg from "../../assets/members/mahsa.png";
+import emreImg from "../../assets/members/Emre.png";
+import fatmaImg from "../../assets/members/fatma.png";
+
 const members = [
   {
     name: "Quan Shi, MBBS, PhD",
-    image: "/quan.png",
+    image: quanImg,
     role: "Postdoctoral Researcher",
     description: "Dr. Quan Shi is a DFG-funded postdoctoral researcher. He focuses on the development and application of single-cell and spatial transcriptomics technologies in cancer research.",
     email: "mailto:Quan.Shi@uk-essen.de",
@@ -20,7 +32,7 @@ const members = [
   },
   {
     name: "Fabian Ullrich, MD",
-    image: "/Fabian.png",
+    image: fabianImg,
     role: "UMEA Clinician Scientist",
     description:
       "Dr. Fabian Ullrich joined the lab as an UMEA-funded Clinician Scientist. He currently performs a postdoctoral fellowship in the Zuber Lab at IMP in Vienna, Austria.",
@@ -32,7 +44,7 @@ const members = [
   },
   {
     name: "Pranav Swaroop Gundla, MSc",
-    image: "/Pranav.png",
+    image: pranavImg,
     role: "PhD Student",
     description:
       "Pranav Swaroop Gundla is a CANTAR-funded PhD Student and focuses on applying deep learning methods in computational pathology.",
@@ -45,7 +57,7 @@ const members = [
   },
   {
     name: "Yinchun Su, MSc",
-    image: "/YinchunSu.png",
+    image: yinchunImg,
     role: "PhD Student",
     description:
       "Yinchun Su is a DFG-funded PhD student and focuses on performing integrative computational analyses to study aggressive intracranial tumors.",
@@ -56,7 +68,7 @@ const members = [
   },
   {
     name: "Cihat Karadag, MD",
-    image: "/cihat.png",
+    image: cihatImg,
     role: "Clinician Scientist",
     description:
       "Cihat Karadag is a Clinician Scientist with an interest in aggressive brain tumors and leverages real-world clinicogenomic glioma datasets.",
@@ -68,7 +80,7 @@ const members = [
   },
   {
     name: "Marco Tembrink, MD",
-    image: "/marco.png",
+    image: marcoImg,
     role: "UMEA Clinician Scientist",
     description:
       "Marco Tembrink is an UMEA-funded Clinician Scientist. He joined the lab to pursue analyses of complex genomic events in cancer, with a focus on CNS lymphomas.",
@@ -83,7 +95,7 @@ const members = [
 const memberTwo = [
   {
     name: "Jiawei Zhou, MD",
-    image: "/jiawei.png",
+    image: jiaweiImg,
     role: "Visiting Researcher",
     description:
       "Jiawei Zhou is a Visiting Researcher collaborating with the lab on systematic analyses of real-world clinico-genomic datasets.",
@@ -95,7 +107,7 @@ const memberTwo = [
   },
   {
     name: "Mahsasadat Nezamabadi, BSc",
-    image: "/mahsa.png",
+    image: mahsaImg,
     role: "Student Research Assistant",
     description:
       "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science at the University of Duisburg-Essen. She supports the team as a Student Research Assistant.",
@@ -108,7 +120,7 @@ const memberTwo = [
 const blockTwo = [
   {
     name: "Emre Kocakavuk, MD, PhD",
-    image: "/Emre.png",
+    image: emreImg,
     role: "Principal Investigator",
     description:
       "Dr. Emre Kocakavuk is a Clinician Scientist and an Emmy Noether Group Leader in the Department of Hematology and Stem Cell Transplantation at the West German Cancer Center & Institute for AI in Medicine (IKIM)",
@@ -123,7 +135,7 @@ const blockTwo = [
 const alumni = [
   {
     name: "Fatma Atak",
-    image: "/fatma.png",
+    image: fatmaImg,
     role: "Erasmus Exchange Student",
     description:
       "Fatma Atak is an undergraduate student in Electrical and Electronics Engineering at the Marmara university, Istanbul, Turkey . She is joining the lab as a part of Erasmus Exchange Program.",
@@ -134,7 +146,7 @@ const alumni = [
 ];
 function Members() {
   return (
-    <div className="p-8 flex flex-col items-center text-center">
+    <div className="min-h-screen bg-gray-50 p-8 flex flex-col items-center text-center">
       {/* Page Title */}
       <PageHeader title="Our Team" />
 

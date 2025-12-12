@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import labLogoFull from "../assets/logos/lablogowhite_full.svg";
 
 function Footer() {
   useEffect(() => {
@@ -79,7 +80,7 @@ function Footer() {
           {/* Logo */}
           <div className="flex justify-center items-center">
             <img
-              src="/lablogowhite_full.svg"
+              src={labLogoFull}
               alt="Kocakavuk Lab"
               className="h-28 w-28 md:h-44 md:w-44"
             />
