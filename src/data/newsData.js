@@ -36,6 +36,9 @@ import cihatImg from '../assets/members/cihat.png';
 import yinchunImg from '../assets/members/YinchunSu.png';
 import mahsaImg from '../assets/members/mahsa.png';
 import fatmaImg from '../assets/members/fatma.png';
+import katharinaImg from '../assets/members/katharina.png';
+import nachiImg from '../assets/members/nachi.png';
+import jonayedImg from '../assets/members/jonayed.png';
 
 export const NEWS_CATEGORIES = {
   GRANT: {
@@ -72,7 +75,20 @@ export const NEWS_CATEGORIES = {
 
 export const newsItems = [
   // ==================== 2025 ====================
-
+// Katharina, Nachi and Jonayed - February 2026
+  {
+    id: "new-member3",
+    title: "New members joining the lab",
+    date: new Date(2026, 2, 1), // October 1, 2025
+    dateDisplay: "February 2026",
+    category: NEWS_CATEGORIES.NEW_MEMBER.id,
+    shortDescription: "We are excited to welcome three new members to the Kocakavuk Lab: Nachiyappan Venkatachalam, Jonayed Sarkar, and Dr. Katharina Ruff.",
+    fullContent:
+      "We are excited to welcome three new members to the Kocakavuk Lab: Nachiyappan Venkatachalam, Jonayed Sarkar, and Dr. Katharina Ruff.",
+    image: newMembersImg,
+    memberImages: [katharinaImg, nachiImg, jonayedImg],
+    tags: ["New Members", "CNS Lymphomas" , "preclinical disease models" , "spatial/omics"]
+  },
   // ESMO Merit Award - November 2025
   {
     id: "esmo-merit-award",
