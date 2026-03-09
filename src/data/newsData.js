@@ -87,7 +87,7 @@ export const newsItems = [
       "We are excited to welcome three new members to the Kocakavuk Lab: Nachiyappan Venkatachalam, Jonayed Sarkar, and Dr. Katharina Ruff.",
     image: newMembersImg,
     memberImages: [katharinaImg, nachiImg, jonayedImg],
-    tags: ["New Members", "CNS Lymphomas" , "preclinical disease models" , "spatial/omics"]
+    tags: ["New Members", "CNS Lymphomas" , "Pre-clinical Disease Models" , "Spatial Omics"]
   },
   // ESMO Merit Award - November 2025
   {
