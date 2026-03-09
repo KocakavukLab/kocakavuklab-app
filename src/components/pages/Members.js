@@ -18,6 +18,10 @@ import jiaweiImg from "../../assets/members/jiawei.png";
 import mahsaImg from "../../assets/members/mahsa.png";
 import emreImg from "../../assets/members/Emre.png";
 import fatmaImg from "../../assets/members/fatma.png";
+import katharinaImg from "../../assets/members/katharina.png";
+import nachiImg from "../../assets/members/nachi.png";
+import jonayedImg from "../../assets/members/jonayed.png";
+
 
 const members = [
   {
@@ -83,16 +87,37 @@ const members = [
     image: marcoImg,
     role: "UMEA Clinician Scientist",
     description:
-      "Marco Tembrink is an UMEA-funded Clinician Scientist. He joined the lab to pursue analyses of complex genomic events in cancer, with a focus on CNS lymphomas.",
+      "Dr. Marco Tembrink is an UMEA-funded Clinician Scientist. He joined the lab to pursue analyses of complex genomic events in cancer, with a focus on CNS lymphomas.",
     email: "mailto: marco.tembrink@uk-essen.de",
+    bsky: "",
+    scholar: "https://scholar.google.com/citations?user=KULjYawAAAAJ&hl=en&oi=sra",
+    researchgate: "",
+    linkedin: "https://de.linkedin.com/in/marco-tembrink"
+  },
+  {
+    name: "Katharina Ruff, MD",
+    image: katharinaImg,
+    role: "Clinician Scientist",
+    description:
+      "Dr. Katharina Ruff is a Clinician Scientist with a focus on the epigenetic mechanisms driving cancers, with a focus on CNS lymphomas.",
+    email: "mailto: Katharina.ruff@uk-essen.de",
     bsky: "",
     scholar: "",
     researchgate: "",
     linkedin: ""
-  }
-  
-];
-const memberTwo = [
+  },
+  {
+    name: "Nachiyappan Venkatachalam, MSc",
+    image: nachiImg,
+    role: "Lab Manager",
+    description:
+      "Nachi Venkatachalam joined as a lab manager and supports the lab with pre-clinical disease models, and spatial-omics based analyses.",
+    email: "mailto: nachiyappan.venkatachalam@uk-essen.de",
+    bsky: "",
+    scholar: "https://portal.uk-essen.de/enqsig/link?id=BAgAAAApzp34r4_eQbwAAACDweSz4iX6q7pQs8-UHSnBl3aI2BwyGCdkgfttuXDGWTwZZfAMdpxvni0RI_mOj0BRkZBtoE7496LDtrLn0tpv1b05-ZNKfTTDzU0zFQNCl24C3_wdBaDH7DGQnTaQnSW9x-TCZ3YwB07D2KAIvSH9r4hN7H2M1KVWX1RchqbSb5y4RST0SwJmZOgD4azuj29evr0UNgVPt-44G6JOAFtEGOmYLn6BMRB_TZmGd08iP1goMjMaa17IDAgYNg2",
+    researchgate: "https://www.researchgate.net/profile/Nachiyappan-Venkatachalam?ev=hdr_xprf",
+    linkedin: "https://www.linkedin.com/in/nachiv/"
+  },
   {
     name: "Jiawei Zhou, MD",
     image: jiaweiImg,
@@ -104,6 +129,21 @@ const memberTwo = [
     scholar: "",
     researchgate: "",
     linkedin: ""
+  }
+];
+const memberTwo = [
+  
+  {
+    name: "Jonayed Sarkar, BSc",
+    image: jonayedImg,
+    role: "Student Research Assistant",
+    description:
+      "Jonayed is pursuing a Master's degree in Data Science at the TU Dortmund university. He supports the team as a Student Research Assistant.",
+    email: "mailto: mdjonayed64173@gmail.com ",
+    bsky: "",
+    scholar: "",
+    researchgate: "",
+    linkedin: "https://www.linkedin.com/in/mdjonayedsarkar/"
   },
   {
     name: "Mahsasadat Nezamabadi, BSc",
@@ -138,7 +178,7 @@ const alumni = [
     image: fatmaImg,
     role: "Erasmus Exchange Student",
     description:
-      "Fatma Atak is an undergraduate student in Electrical and Electronics Engineering at the Marmara university, Istanbul, Turkey . She is joining the lab as a part of Erasmus Exchange Program.",
+      "",
     email: "mailto:atakf223@gmail.com",
     linkedin: "https://www.linkedin.com/in/fatma-0148881b8"
   }
@@ -488,11 +528,11 @@ function Members() {
         {alumni.map((alumni, index) =>
           <div
             key={index}
-            className="flex items-start space-x-6 bg-white shadow-lg rounded-md p-4 w-full max-w-5xl mb-6"
+            className="flex flex-col items-center text-center bg-white shadow-lg rounded-md p-4 w-full max-w-5xl mb-6"
           >
             {/* Profile Image */}
             <img
-              className="w-28 h-28 rounded-full object-cover mt-1"
+              className="w-28 h-28 justify-center items-center rounded-full object-cover mt-1"
               src={alumni.image}
               alt={alumni.name}
             />
