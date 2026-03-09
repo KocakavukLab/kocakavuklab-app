@@ -111,7 +111,7 @@ const members = [
     image: nachiImg,
     role: "Lab Manager",
     description:
-      "Nachi Venkatachalam joined as a lab manager and supports the lab with pre-clinical disease models, and spatial-omics-based analyses.",
+      "Nachi Venkatachalam joined as a lab manager and supports the lab with pre-clinical disease models, and spatial-omics based analyses.",
     email: "mailto: nachiyappan.venkatachalam@uk-essen.de",
     bsky: "",
     scholar: "https://portal.uk-essen.de/enqsig/link?id=BAgAAAApzp34r4_eQbwAAACDweSz4iX6q7pQs8-UHSnBl3aI2BwyGCdkgfttuXDGWTwZZfAMdpxvni0RI_mOj0BRkZBtoE7496LDtrLn0tpv1b05-ZNKfTTDzU0zFQNCl24C3_wdBaDH7DGQnTaQnSW9x-TCZ3YwB07D2KAIvSH9r4hN7H2M1KVWX1RchqbSb5y4RST0SwJmZOgD4azuj29evr0UNgVPt-44G6JOAFtEGOmYLn6BMRB_TZmGd08iP1goMjMaa17IDAgYNg2",
