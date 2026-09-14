@@ -29,7 +29,7 @@ This application is configured for deployment on Cloudflare Pages with the custo
 4. Connect your GitHub repository
 5. Configure build settings:
    - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
+   - **Build output directory**: `build` (explicitly configured in `vite.config.mjs`)
    - **Root directory**: `/`
    - **Environment variables**: None required
 
@@ -42,7 +42,7 @@ npm install -g wrangler
 wrangler login
 
 # Deploy the project
-wrangler pages deploy dist --project-name=kocakavuklab
+wrangler pages deploy build --project-name=kocakavuklab-app
 ```
 
 ## Custom Domain Configuration
