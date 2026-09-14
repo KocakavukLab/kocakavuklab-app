@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screns:{
       'tablet' : '1023px',
@@ -16,5 +16,5 @@ module.exports = {
       widest: ".25em",
     },
   },
-  plugins: [require('autoprefixer')],
+  plugins: [],
 };

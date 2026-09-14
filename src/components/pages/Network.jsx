@@ -3,10 +3,10 @@ import {
     CanTarLogo, BFondLogo, DFGLogo, WTZLogo, EKFSLogo, 
     ESMOLogo, WSGLogo, UMEALogo, UMEHLogo, YaleLogo, 
     ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,SFBLogo,DHKLogo
-} from "../LogoName.js";
+} from "../LogoName";
 import "../../App.css";
-import PageHeader from "../common/PageHeader.js"; 
-import GoToTopButton from "../common/GoToTopButton.js";
+import PageHeader from "../common/PageHeader";
+import GoToTopButton from "../common/GoToTopButton";
 
 // Networking Collaborators
 const networking = [

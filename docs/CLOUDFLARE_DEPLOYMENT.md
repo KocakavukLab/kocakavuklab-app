@@ -29,7 +29,7 @@ This application is configured for deployment on Cloudflare Pages with the custo
 4. Connect your GitHub repository
 5. Configure build settings:
    - **Build command**: `npm run build`
-   - **Build output directory**: `build`
+   - **Build output directory**: `dist`
    - **Root directory**: `/`
    - **Environment variables**: None required
 
@@ -42,7 +42,7 @@ npm install -g wrangler
 wrangler login
 
 # Deploy the project
-wrangler pages deploy build --project-name=kocakavuklab
+wrangler pages deploy dist --project-name=kocakavuklab
 ```
 
 ## Custom Domain Configuration
@@ -71,9 +71,9 @@ All routes are handled by React Router:
 ## Build Information
 
 - **Framework**: React 18.2.0
-- **Build tool**: react-scripts 5.0.1
-- **Bundle size**: ~199 KB (gzipped)
-- **Node version**: 18+ recommended
+- **Build tool**: Vite 8
+- **Bundle size**: ~176 KB JavaScript (gzipped)
+- **Node version**: 22.22.2 or newer
 
 ## Environment Variables (if needed)
 
@@ -81,7 +81,7 @@ If you need to add environment variables later:
 1. Go to Cloudflare Pages dashboard
 2. Select your project
 3. Navigate to **Settings** > **Environment variables**
-4. Add variables with `REACT_APP_` prefix
+4. Add variables with `VITE_` prefix
 
 ## Caching Strategy
 
@@ -95,7 +95,7 @@ If you need to add environment variables later:
 **Solution**: Ensure `_redirects` file is in the `public` folder and is being copied to the build output.
 
 ### Issue: Images not loading
-**Solution**: All images are now in `src/assets/` and webpack-bundled. Make sure to import them correctly.
+**Solution**: All images are now in `src/assets/` and Vite-bundled. Make sure to import them correctly.
 
 ### Issue: Custom domain not working
 **Solution**: Verify DNS records in Cloudflare DNS management. Allow 24-48 hours for DNS propagation.
@@ -110,7 +110,7 @@ If you need to add environment variables later:
 
 ## Performance Optimizations
 
-1. All images webpack-optimized and bundled
+1. All images optimized and bundled by Vite
 2. Code splitting enabled
 3. Lazy loading for images
 4. Minified JavaScript and CSS

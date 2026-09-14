@@ -14,6 +14,7 @@ This homepage serves as a central hub for:
 ## 🛠 Tech Stack
 This website is built using:
 - **React.js** with **Node JS** for frontend development
+- **Vite** for development and production builds
 - **Tailwind CSS** for responsive UI
 - **Bluesky Embed** for live updates
 - Hosted on **Cloudflare** for fast deployment
