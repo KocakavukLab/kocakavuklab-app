@@ -17,6 +17,6 @@ jobs:
       - run: npm ci
       - run: npm run content:generate
       - run: npm run content:test
-      - run: npm test -- --watchAll=false
+      - run: npm test
       - name: Build existing site
         run: npm run build

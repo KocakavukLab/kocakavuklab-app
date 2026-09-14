@@ -1,6 +1,6 @@
 # Updating website content
 
-This draft keeps the page layouts from `psgundla-layout` commit `01bad6c30a2c6a98a401c110eea5cc7e3fbd6ef5`. Content changes do not require React, JSX, CSS, or route changes.
+This draft uses the redesigned website served on port 4184 from `/private/tmp/kocakavuk-map-news-preview`, copied into `psgundlacod/content-maintenance-draft`. The remote `psgundla-layout` source at `01bad6c` was an older layout and is not the visual baseline. Content changes do not require React, JSX, CSS, or route changes.
 
 ## Choose the file
 
@@ -33,20 +33,21 @@ Categories: `grant`, `award`, `new_member`, `publication`, `general`. Dates sort
 
 Copy a nearby record, then replace its values. Keep JSON punctuation and existing group IDs. Every new record needs a unique ID except publications, which use a unique DOI URL. Keep all required fields. Empty optional social links should be omitted, not set to an empty string.
 
-- **People:** put the person in the correct group's `members` array. For the first three active groups, add their ID to `activeOrder` at the desired position. Remove the ID there when moving someone to alumni. Validation requires every active ID exactly once. Student/visitor and alumni order follows their arrays.
-- **Publications:** use `MM/YYYY` for the date, a full DOI link, author text, cover image, and journal logo. Existing publication grouping and display behavior are preserved. This migration does not alter publication visibility or grouping.
-- **Network:** edit `items` inside `network` or `funding`. Keep groups in place. Use full HTTPS links. The inherited `#` placeholder remains supported; replace it with a verified link when known.
+- **People:** put the person in the correct group's `members` array. For the first four active groups, add their ID to `activeOrder` at the desired position. Remove the ID there when moving someone to alumni. Validation requires every active ID exactly once. Student/visitor and alumni order follows their arrays.
+- **Publications:** use `MM/YYYY` for the date, a full DOI link, author text, cover image, and journal logo. Publications display newest first by year and month. Set `hidden: true` to retain a paper without displaying it; 2019 and 2020 papers retain their existing hidden flags. Cover image and journal logo are optional; the page supplies its existing text fallback.
+- **Network:** edit `items` inside the single `network` group. Funding and collaboration logos share this group. Keep the group ID in place. Use full HTTPS links. The inherited `#` placeholder remains supported; replace it with a verified link when known.
 - **Moments:** add an event under the correct year. Each photo requires a unique ID, `src` image path, and meaningful `alt` text. Keep newest years/events first; array order controls this page.
-- **Jobs:** choose `phd`, `postdoc`, or `minijob`; status is `Open` or `Closed`. The inherited Join Us page currently has its Apply button disabled. Changing data does not change that behavior; enabling job display requires a separately reviewed functionality change.
+- **Jobs:** choose `phd`, `postdoc`, or `minijob`; status is `Open` or `Closed`. The redesigned Join Us page keeps its current application and contact controls.
 
 ## Local preview
 
-Use Node 22 and npm with the committed lockfile:
+Use Node 22.22.2 or newer and npm with the committed lockfile:
 
 ```sh
 npm ci
 npm run content:generate
 npm run content:test
+npm test
 npm run build
 npm start
 ```

@@ -5,7 +5,6 @@
   "dateDisplay": "June 2025",
   "category": "new_member",
   "shortDescription": "We are thrilled to welcome four new members to the Kocakavuk Lab: Cihat Karadag, Yinchun Su, Mahsasadat Nezamabadi, and Fatma Atak.",
-  "image": "src/assets/news/new_members.png",
   "memberImages": [
     "src/assets/members/cihat.png",
     "src/assets/members/YinchunSu.png",

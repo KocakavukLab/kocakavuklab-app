@@ -1,48 +1,146 @@
 [
   {
-    "year": 2025,
+    "year": 2026,
     "events": [
       {
-        "id": "esmo-merit-award-2025",
-        "date": "November 2025",
-        "title": "ESMO AI & Digital Oncology",
-        "description": "Pranav Swaroop Gundla received an ESMO Merit Award in Berlin.",
+        "id": "quan-grants-fellowships-2026",
+        "date": "July 2026",
+        "title": "Grants & Fellowships",
+        "description": "Celebrating Quan Shi's research grant success and Humboldt / iFORES fellowship.",
         "photos": [
           {
-            "id": "esmo-merit-award-team",
-            "src": "src/assets/news/Merit_Awardees.jpg",
-            "alt": "ESMO Merit Award recipients at the 2025 congress in Berlin"
+            "id": "quan-grant-celebration",
+            "src": "src/assets/moments/quan_grant_celeb_2026_jul.jpg",
+            "alt": "The lab celebrating Quan Shi's research grant"
+          },
+          {
+            "id": "quan-humboldt-ifores",
+            "src": "src/assets/moments/quan_humbol_ifores_2026_jul.jpg",
+            "alt": "Quan Shi receiving the Humboldt iFORES fellowship"
           }
         ]
       },
       {
-        "id": "new-members-2025",
-        "date": "October 2025",
-        "title": "New Members Joining the Lab",
-        "description": "Welcoming Marco Tembrink, Jiawei Zhou, and Quan Shi to the Kocakavuk Lab.",
+        "id": "lab-summer-outing-2026",
+        "date": "July 2026",
+        "title": "Lab Summer Outing",
+        "description": "A summer afternoon outdoors with a picnic, barbecue, and plenty of time together away from the lab.",
         "photos": [
           {
-            "id": "new-members-group-2025",
-            "src": "src/assets/news/new_members.png",
-            "alt": "New members joining the Kocakavuk Lab in 2025"
+            "id": "lab-outing-2026",
+            "src": "src/assets/moments/labouting_jul_2026.jpg",
+            "alt": "The Kocakavuk Lab on a summer outing"
+          },
+          {
+            "id": "lab-outing-group-portrait-2026",
+            "src": "src/assets/moments/Labouting_Jul2026_moment5.jpg",
+            "alt": "The lab posing together in the park at the summer outing"
+          }
+        ]
+      },
+      {
+        "id": "ikim-5plus1-celebration-2026",
+        "date": "June 2026",
+        "title": "IKIM 5+1 Celebration",
+        "description": "Marking a milestone together at IKIM.",
+        "photos": [
+          {
+            "id": "ikim-celebration-moment",
+            "src": "src/assets/moments/20260612-IKIM-5+1Celeb_inthemoment.jpg",
+            "alt": "The lab in the moment during the IKIM 5+1 celebration"
+          },
+          {
+            "id": "ikim-celebration-group",
+            "src": "src/assets/moments/Part_of_IKIM5+1Celebs.jpeg",
+            "alt": "Part of the team at the IKIM 5+1 celebration"
+          }
+        ]
+      },
+      {
+        "id": "grugalauf-2026",
+        "date": "April 2026",
+        "title": "Grugalauf Team Run",
+        "description": "The lab took to the track for the Essen Grugalauf.",
+        "photos": [
+          {
+            "id": "grugalauf-run",
+            "src": "src/assets/moments/grugalauf_2026.JPG",
+            "alt": "Lab members at the Grugalauf run in Essen"
           }
         ]
       }
     ]
   },
   {
-    "year": 2023,
+    "year": 2025,
     "events": [
       {
-        "id": "lab-opening-2023",
-        "date": "July 2023",
-        "title": "Opening the Kocakavuk Lab",
-        "description": "The beginning of our computational oncology research group at University Hospital Essen.",
+        "id": "christmas-gluhwein-2025",
+        "date": "December 2025",
+        "title": "Christmas & Glühwein",
+        "description": "Winding down the year with a festive lab dinner and Glühwein.",
         "photos": [
           {
-            "id": "lab-opening",
-            "src": "src/assets/news/opening-doors.png",
-            "alt": "Kocakavuk Lab opening announcement"
+            "id": "christmas-dinner-2025",
+            "src": "src/assets/moments/labdinner_christmas_2025.jpeg",
+            "alt": "The lab's Christmas dinner in 2025"
+          },
+          {
+            "id": "gluhwein-2025",
+            "src": "src/assets/moments/gluhweinwithlab_2025.jpg",
+            "alt": "Lab members enjoying Glühwein together"
+          }
+        ]
+      },
+      {
+        "id": "lab-dinner-nov-2025",
+        "date": "November 2025",
+        "title": "Autumn Lab Dinner",
+        "description": "Gathering around the table as the season turns.",
+        "photos": [
+          {
+            "id": "lab-dinner-november-2025",
+            "src": "src/assets/moments/lab_dinner_nov_2025.jpg",
+            "alt": "The Kocakavuk Lab at a November dinner"
+          }
+        ]
+      },
+      {
+        "id": "summer-intern-turkey-2025",
+        "date": "September 2025",
+        "title": "Summer Intern from Turkey",
+        "description": "Welcoming a summer intern who joined us from Turkey.",
+        "photos": [
+          {
+            "id": "summer-intern-2025",
+            "src": "src/assets/moments/summerintern_from_turkey_sep_2025.jpg",
+            "alt": "Welcoming the summer intern from Turkey"
+          }
+        ]
+      },
+      {
+        "id": "new-phd-clinician-scientist-2025",
+        "date": "July 2025",
+        "title": "New PhD & Clinician-Scientist",
+        "description": "A lab dinner marking a new PhD student and a new clinician-scientist.",
+        "photos": [
+          {
+            "id": "new-phd-dinner-2025",
+            "src": "src/assets/moments/lab_dinner_newphd_newclinicanscientist_jul_2025.jpg",
+            "alt": "Lab dinner welcoming a new PhD student and clinician-scientist"
+          }
+        ]
+      },
+      {
+        "id": "ikim-get-together-2025",
+        "date": "April 2025",
+        "title": "IKIM Get-Together",
+        "description": "Sharing a homemade meal and an evening with colleagues at IKIM.",
+        "photos": [
+          {
+            "id": "ikim-get-together-group-2025",
+            "src": "src/assets/moments/IKIMGetTogetherpeeps_april2025.jpeg",
+            "alt": "IKIM colleagues gathered around a shared meal"
           }
         ]
       }

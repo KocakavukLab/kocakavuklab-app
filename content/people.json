@@ -6,7 +6,7 @@
     "role": "Principal Investigator",
     "description": "Dr. Emre Kocakavuk is a Clinician Scientist and an Emmy Noether Group Leader in the Department of Hematology and Stem Cell Transplantation at the West German Cancer Center & Institute for AI in Medicine (IKIM).",
     "email": "mailto:emre.kocakavuk@uk-essen.de",
-    "bsky": "https://bsky.app/profile/ekocakavuk.bsky.social",
+    "twitter": "https://twitter.com/ekocakavuk",
     "scholar": "https://scholar.google.co.in/citations?user=gGSCLooAAAAJ&hl=en&oi=ao",
     "linkedin": "https://de.linkedin.com/in/emre-kocakavuk-824284353"
   },
@@ -18,9 +18,9 @@
         {
           "id": "quan-shi",
           "name": "Quan Shi, MBBS, PhD",
-          "image": "src/assets/members/quan.png",
+          "image": "src/assets/members/Quan_Shi.jpg",
           "role": "Postdoctoral Researcher",
-          "description": "Dr. Quan Shi is a DFG-funded postdoctoral researcher. He focuses on the development and application of single-cell and spatial transcriptomics technologies in cancer research.",
+          "description": "Dr. Quan Shi is an Alexander von Humboldt Fellow developing single-cell and spatial transcriptomics methods for central nervous system lymphoma (CNSL) and glioma.",
           "email": "mailto:Quan.Shi@uk-essen.de",
           "linkedin": "https://www.linkedin.com/in/quan-shi-11b5b49a",
           "github": "https://github.com/shiquan",
@@ -57,7 +57,33 @@
           "image": "src/assets/members/marco.png",
           "role": "UMEA Clinician Scientist",
           "description": "Marco Tembrink is a UMEA-funded Clinician Scientist studying complex genomic events in cancer, with a focus on CNS lymphomas.",
-          "email": "mailto:marco.tembrink@uk-essen.de"
+          "email": "mailto:marco.tembrink@uk-essen.de",
+          "linkedin": "https://www.linkedin.com/in/marco-tembrink/"
+        },
+        {
+          "id": "katharina-ruff",
+          "name": "Katharina Ruff, MD",
+          "image": "src/assets/members/katharina.png",
+          "role": "Clinician Scientist",
+          "description": "Dr. Katharina Ruff is a Clinician Scientist with a focus on the epigenetic mechanisms driving cancers, with a focus on CNS lymphomas.",
+          "email": "mailto:Katharina.ruff@uk-essen.de"
+        }
+      ]
+    },
+    {
+      "id": "lab-management",
+      "title": "Lab Management",
+      "members": [
+        {
+          "id": "nachiyappan-venkatachalam",
+          "name": "Nachiyappan Venkatachalam, MSc",
+          "image": "src/assets/members/nachi.png",
+          "role": "Lab Manager",
+          "description": "Nachi Venkatachalam joined as a lab manager and supports the lab with pre-clinical disease models and spatial-omics based analyses.",
+          "email": "mailto:nachiyappan.venkatachalam@uk-essen.de",
+          "scholar": "https://portal.uk-essen.de/enqsig/link?id=BAgAAAApzp34r4_eQbwAAACDweSz4iX6q7pQs8-UHSnBl3aI2BwyGCdkgfttuXDGWTwZZfAMdpxvni0RI_mOj0BRkZBtoE7496LDtrLn0tpv1b05-ZNKfTTDzU0zFQNCl24C3_wdBaDH7DGQnTaQnSW9x-TCZ3YwB07D2KAIvSH9r4hN7H2M1KVWX1RchqbSb5y4RST0SwJmZOgD4azuj29evr0UNgVPt-44G6JOAFtEGOmYLn6BMRB_TZmGd08iP1goMjMaa17IDAgYNg2",
+          "researchgate": "https://www.researchgate.net/profile/Nachiyappan-Venkatachalam?ev=hdr_xprf",
+          "linkedin": "https://www.linkedin.com/in/nachiv/"
         }
       ]
     },
@@ -74,7 +100,8 @@
           "email": "mailto:pranavswaroop.gundla@uk-essen.de",
           "bsky": "https://bsky.app/profile/pranavgundla.bsky.social",
           "scholar": "https://scholar.google.co.in/citations?user=UzlYsbgAAAAJ&hl=en&oi=ao",
-          "linkedin": "https://www.linkedin.com/in/pranavswaroopgundla"
+          "linkedin": "https://www.linkedin.com/in/pranavswaroopgundla",
+          "website": "https://psgundla.com/"
         },
         {
           "id": "yinchun-su",
@@ -85,7 +112,8 @@
           "email": "mailto:yinchun.su@uk-essen.de",
           "researchgate": "https://www.researchgate.net/profile/Yinchun-Su",
           "bsky": "https://bsky.app/profile/randef1ned.bsky.social",
-          "linkedin": "https://www.linkedin.com/in/yinchun-su"
+          "linkedin": "https://www.linkedin.com/in/yinchun-su",
+          "website": "https://yinchun.su/"
         }
       ]
     },
@@ -101,13 +129,20 @@
           "description": "Jiawei Zhou is a Visiting Researcher collaborating with the lab on systematic analyses of real-world clinico-genomic datasets."
         },
         {
-          "id": "mahsasadat-nezamabadi",
-          "name": "Mahsasadat Nezamabadi, BSc",
-          "image": "src/assets/members/mahsa.png",
+          "id": "jonayed-sarkar",
+          "name": "Jonayed Sarkar, BSc",
+          "image": "src/assets/members/jonayed.png",
           "role": "Student Research Assistant",
-          "description": "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science at the University of Duisburg-Essen and supports the team as a Student Research Assistant.",
-          "email": "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
-          "linkedin": "https://de.linkedin.com/in/mahsa-sadat-nezamabadi-52238720b"
+          "description": "Jonayed Sarkar is pursuing a Master’s degree in Data Science at TU Dortmund University and supports the team as a Student Research Assistant.",
+          "email": "mailto:mdjonayed64173@gmail.com",
+          "linkedin": "https://www.linkedin.com/in/mdjonayedsarkar/"
+        },
+        {
+          "id": "anastasija-ivancukova",
+          "name": "Anastasija Ivančukova",
+          "image": "src/assets/members/anastasija.jpg",
+          "role": "Summer Research Student",
+          "description": "Anastasija is a fifth-year medical student from Latvia, joining the lab for a summer research placement in clinico-genomic studies of central nervous system lymphoma."
         }
       ]
     },
@@ -116,12 +151,20 @@
       "title": "Alumni",
       "members": [
         {
+          "id": "mahsasadat-nezamabadi",
+          "name": "Mahsasadat Nezamabadi, BSc",
+          "image": "src/assets/members/mahsa.png",
+          "role": "Student Research Assistant",
+          "description": "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science at the University of Duisburg-Essen and supports the team as a Student Research Assistant.",
+          "email": "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
+          "linkedin": "https://de.linkedin.com/in/mahsa-sadat-nezamabadi-52238720b"
+        },
+        {
           "id": "fatma-atak",
           "name": "Fatma Atak",
           "image": "src/assets/members/fatma.png",
           "role": "Erasmus Exchange Student",
           "description": "Fatma Atak is an undergraduate student in Electrical and Electronics Engineering at Marmara University, Istanbul, Turkey. She joined the lab through the Erasmus Exchange Program.",
-          "email": "mailto:atakf223@gmail.com",
           "linkedin": "https://www.linkedin.com/in/fatma-0148881b8"
         }
       ],
@@ -134,6 +177,8 @@
     "pranav-gundla",
     "yinchun-su",
     "cihat-karadag",
-    "marco-tembrink"
+    "marco-tembrink",
+    "katharina-ruff",
+    "nachiyappan-venkatachalam"
   ]
 }

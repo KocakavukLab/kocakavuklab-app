@@ -13,7 +13,7 @@ export function date(value, where) {
 }
 export function asset(value, where) {
   text(value, where);
-  if (!/^src\/assets\/[\w /().-]+\.(png|jpe?g|webp|svg)$/i.test(value) || value.split('/').includes('..')) fail(where, 'use an image path under src/assets');
+  if (!/^src\/assets\/[\w /()+.-]+\.(png|jpe?g|webp|svg)$/i.test(value) || value.split('/').includes('..')) fail(where, 'use an image path under src/assets');
   const target = path.resolve(root, value);
   if (!fs.existsSync(target) || !fs.realpathSync(target).startsWith(fs.realpathSync(root + '/src/assets') + path.sep)) fail(where, `image missing or outside assets: ${value}`);
 }
@@ -41,7 +41,7 @@ export function parseNews(source, filename) {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) fail(filename, 'expected JSON metadata between --- lines, followed by Markdown');
   const entry = { ...JSON.parse(match[1]), fullContent: match[2].replace(/\r?\n$/, '') };
-  records([entry], ['id','title','date','dateDisplay','category','image','shortDescription','fullContent'], ['id','title','date','dateDisplay','category','image','shortDescription','fullContent','tags','photoPair','memberImages'], filename);
+  records([entry], ['id','title','date','dateDisplay','category','shortDescription','fullContent'], ['id','title','date','dateDisplay','category','image','shortDescription','fullContent','tags','photoPair','memberImages'], filename);
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.id) || filename !== `${entry.id}.md`) fail(filename, 'filename must match lowercase hyphenated id');
   date(entry.date, filename);
   if (!['grant','award','new_member','publication','general'].includes(entry.category)) fail(filename, 'unknown category');
@@ -61,10 +61,10 @@ export function loadContent() {
   records(people.groups, ['id','title'], ['id','title','members','layout'], 'people.groups');
   const members = people.groups.flatMap(group => { list(group.members, group.id); return group.members; });
   records(members, ['id','name','image','role','description'], personFields, 'people.members');
-  const groupIds = ['postdocs','clinician-scientists','phd-students','masters-md-bachelors','alumni'];
+  const groupIds = ['postdocs','clinician-scientists','lab-management','phd-students','masters-md-bachelors','alumni'];
   if (JSON.stringify(people.groups.map(g => g.id)) !== JSON.stringify(groupIds)) fail('people.groups', 'keep existing group ids and order');
   list(people.activeOrder, 'people.activeOrder');
-  const activeIds = people.groups.slice(0,3).flatMap(g => g.members.map(m => m.id));
+  const activeIds = people.groups.slice(0,4).flatMap(g => g.members.map(m => m.id));
   if (new Set(people.activeOrder).size !== people.activeOrder.length || JSON.stringify([...activeIds].sort()) !== JSON.stringify([...people.activeOrder].sort())) fail('people.activeOrder', 'list every active member id exactly once');
   records(jobs, ['id','title'], ['id','title','jobs'], 'jobs');
   if (JSON.stringify(jobs.map(g=>g.id)) !== JSON.stringify(['phd','postdoc','minijob'])) fail('jobs', 'keep existing group ids and order');
@@ -72,7 +72,7 @@ export function loadContent() {
   records(jobs.flatMap(g=>g.jobs), ['id','title','description','status','applyLink'], ['id','title','description','status','applyLink'], 'jobs.items');
   jobs.flatMap(g=>g.jobs).forEach(j => { if (!['Open','Closed'].includes(j.status)) fail(j.id, 'status must be Open or Closed'); });
   records(network, ['id','title'], ['id','title','items'], 'network');
-  if (JSON.stringify(network.map(g=>g.id)) !== JSON.stringify(['network','funding'])) fail('network', 'keep existing group ids and order');
+  if (JSON.stringify(network.map(g=>g.id)) !== JSON.stringify(['network'])) fail('network', 'keep existing group ids and order');
   network.forEach(g => list(g.items, g.id));
   records(network.flatMap(g=>g.items), ['id','title','logo','url'], ['id','title','logo','url'], 'network.items');
   list(moments, 'moments');
@@ -82,8 +82,8 @@ export function loadContent() {
   records(events, ['id','date','title','description'], ['id','date','title','description','photos'], 'moments.events');
   events.forEach(e=> { list(e.photos,e.id); if (!e.photos.length) fail(e.id, 'add at least one photo'); });
   records(events.flatMap(e=>e.photos), ['id','src','alt'], ['id','src','alt'], 'moments.photos');
-  records(publications, ['title','journal','doi','authors','date','status','image','journalLogo'], ['title','journal','doi','authors','date','status','image','journalLogo'], 'publications', 'doi');
-  publications.forEach(p=> { if (!/^(0[1-9]|1[0-2])\/\d{4}$/.test(p.date)) fail(p.title, 'date must be MM/YYYY'); if (!['Published','Preprint'].includes(p.status)) fail(p.title, 'unknown publication status'); });
+  records(publications, ['title','journal','doi','authors','date','status'], ['title','journal','doi','authors','date','status','image','journalLogo','hidden'], 'publications', 'doi');
+  publications.forEach(p=> { if (p.hidden !== undefined && typeof p.hidden !== 'boolean') fail(p.title, 'hidden must be true or false'); if (!/^(0[1-9]|1[0-2])\/\d{4}$/.test(p.date)) fail(p.title, 'date must be MM/YYYY'); if (!['Published','Preprint','In-review','Submitted'].includes(p.status)) fail(p.title, 'unknown publication status'); });
   const news = fs.readdirSync(root+'/content/news').filter(f=>f.endsWith('.md')).sort().map(f=>parseNews(fs.readFileSync(root+'/content/news/'+f,'utf8'),f)).sort((a,b)=>b.date.localeCompare(a.date));
   records(news, ['id'], ['id','title','date','dateDisplay','category','image','shortDescription','fullContent','tags','photoPair','memberImages'], 'news');
   return { people, jobs, network, moments, publications, news };

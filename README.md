@@ -1,3 +1,5 @@
+> **Maintenance draft:** uses the redesigned Vite website. Start with `npm ci` and `npm start`; build with `npm run build` (output: `dist/`). See [content editing guide](docs/MAINTAINING-CONTENT.md) and [draft scope](docs/CONTENT-DRAFT.md). Historical instructions below may refer to the older site.
+
 # Kocakavuk Lab - Computational Oncology Homepage
 
 Welcome to the **Kocakavuk Lab** at the **West German Cancer Center** in **Universitätsklinikum Essen**.  

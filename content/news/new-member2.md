@@ -5,11 +5,10 @@
   "dateDisplay": "October 2025",
   "category": "new_member",
   "shortDescription": "We are delighted to welcome three new members to the Kocakavuk Lab: Marco Tembrink, Jiawei Zhou, and Dr. Quan Shi.",
-  "image": "src/assets/news/new_members.png",
   "memberImages": [
     "src/assets/members/marco.png",
     "src/assets/members/jiawei.png",
-    "src/assets/members/quan.png"
+    "src/assets/members/Quan_Shi.jpg"
   ],
   "tags": [
     "New Members",

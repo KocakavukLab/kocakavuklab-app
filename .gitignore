@@ -42,3 +42,6 @@ lerna-debug.log*
 
 # Content modules generated before start/build/test
 /src/data/generated/
+
+# Vite build output
+/dist/

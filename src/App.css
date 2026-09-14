@@ -14,6 +14,23 @@ body {
 body::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
 }
+
+/* Exact light-theme page-hero typography from approved mockup scale. */
+.site-main--nav-offset > div > header:first-child h1 {
+  font-size: 36px !important;
+  line-height: 1.05 !important;
+}
+
+.site-main--nav-offset > div > header:first-child h1 + p {
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+@media (min-width: 768px) {
+  .site-main--nav-offset > div > header:first-child h1 {
+    font-size: 48px !important;
+  }
+}
 /* Background Covers */
 .bg-cover {
   background-image: url("./assets/covers/maincover.jpg");
