@@ -1,3 +1,5 @@
+import mapQuan from '../assets/news/map-2026-quan.png';
+import mapTeam from '../assets/news/map-2026-team.png';
 /**
  * News Data Configuration
  *
@@ -71,6 +73,22 @@ export const NEWS_CATEGORIES = {
 };
 
 export const newsItems = [
+  {
+    id: "map-2026-london",
+    title: "Kocakavuk Lab at MAP 2026 in London",
+    date: new Date(2026, 8, 11),
+    dateDisplay: "10–11 September 2026 · London, UK",
+    category: NEWS_CATEGORIES.GENERAL.id,
+    image: mapQuan,
+    photoPair: [mapQuan, mapTeam],
+    shortDescription: "Dr. Quan Shi presented poster 101P on spatial deconvolution of neuro-immune-tumor crosstalk in central nervous system lymphoma at MAP 2026 in London, 10–11 September.\n\nOur PI, Dr. Emre Kocakavuk, co-chaired and introduced the Young Oncologists Vesalius talk on AI in precision oncology.",
+    fullContent: "Dr. Quan Shi presented **poster 101P**, ‘Spatial deconvolution of neuro-immune-tumor crosstalk in central nervous system lymphoma’, at the **Molecular Analysis for Precision Oncology (MAP) Congress 2026**, held at the Business Design Centre in London on **10–11 September 2026**.\n\n" +
+      "Our PI, **Dr. Emre Kocakavuk**, co-chaired the **YO Vesalius talk** alongside **Lucy G. Faulkner** on Thursday, 10 September, and was listed as a speaker for the session introduction. The session explored **Opportunities and Risks of AI in Precision Oncology**.\n\n" +
+      "[MAP 2026 congress](https://www.esmo.org/meeting-calendar/molecular-analysis-for-precision-oncology-congress-2026) · [YO Vesalius talk programme](https://cslide.ctimeetingtech.com/map2026/attendee/confcal/show/session/12)",
+    tags: ["MAP 2026", "Poster presentation", "Spatial transcriptomics", "Precision oncology"]
+  },
+
+
   // ==================== 2025 ====================
 
   // ESMO Merit Award - November 2025

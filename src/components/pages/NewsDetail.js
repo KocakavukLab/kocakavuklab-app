@@ -224,6 +224,18 @@ function NewsDetail() {
                             {newsItem.fullContent}
                         </ReactMarkdown>
 
+            {newsItem.photoPair && (
+              <div className="my-6 grid grid-cols-2 items-start gap-3 sm:gap-4">
+                {newsItem.photoPair.map((photo, index) => (
+                  <a key={photo} href={photo} target="_blank" rel="noopener noreferrer" aria-label={`Open MAP 2026 photo ${index + 1} at full size`}>
+                    <img src={photo} alt={index === 0 ? "Quan Shi with poster 101P at MAP 2026" : "Kocakavuk Lab at the poster presentation in London"} loading="lazy" className="h-auto w-full rounded-lg" />
+                  </a>
+                ))}
+              </div>
+            )}
+
+
+
                         {/* Member Images Section (for new member announcements) */}
                         {newsItem.memberImages && newsItem.memberImages.length > 0 && (
                             <div className="mt-8 pt-8 border-t border-gray-200">

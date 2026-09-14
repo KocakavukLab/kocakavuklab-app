@@ -113,7 +113,8 @@ function News() {
                             {item.title}
                           </h3>
 
-                          {/* Member Images */}
+                          {item.photoPair && <div className="mb-4 grid grid-cols-2 gap-2">{item.photoPair.map((photo, i) => <img key={photo} src={photo} alt={i === 0 ? "Quan Shi presenting poster 101P at MAP 2026" : "Kocakavuk Lab at MAP 2026 in London"} className="h-auto w-full rounded-md" />)}</div>}
+{/* Member Images */}
                           {item.memberImages && item.memberImages.length > 0 && (
                             <div className="flex gap-3 mb-4">
                               {item.memberImages.map((memberImg, idx) => (
@@ -202,7 +203,8 @@ function News() {
                             {item.title}
                           </h3>
 
-                          {/* Member Images */}
+                          {item.photoPair && <div className="mb-4 grid grid-cols-2 gap-2">{item.photoPair.map((photo, i) => <img key={photo} src={photo} alt={i === 0 ? "Quan Shi presenting poster 101P at MAP 2026" : "Kocakavuk Lab at MAP 2026 in London"} className="h-auto w-full rounded-md" />)}</div>}
+{/* Member Images */}
                           {item.memberImages && item.memberImages.length > 0 && (
                             <div className="flex gap-3 mb-4">
                               {item.memberImages.map((memberImg, idx) => (
@@ -266,7 +268,8 @@ function News() {
                       {item.title}
                     </h3>
 
-                    {/* Member Images */}
+                    {item.photoPair && <div className="mb-4 grid grid-cols-2 gap-2">{item.photoPair.map((photo, i) => <img key={photo} src={photo} alt={i === 0 ? "Quan Shi presenting poster 101P at MAP 2026" : "Kocakavuk Lab at MAP 2026 in London"} className="h-auto w-full rounded-md" />)}</div>}
+{/* Member Images */}
                     {item.memberImages && item.memberImages.length > 0 && (
                       <div className="flex gap-3 mb-4">
                         {item.memberImages.map((memberImg, idx) => (
