@@ -39,3 +39,6 @@ lerna-debug.log*
 .superdesign/init/
 .superdesign/tmp/
 .superdesign/website/
+
+# Content modules generated before start/build/test
+/src/data/generated/

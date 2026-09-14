@@ -35,7 +35,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "content:generate": "node scripts/content.mjs",
+    "content:check": "node scripts/content.mjs --check",
+    "content:test": "node scripts/content.test.mjs",
+    "prestart": "npm run content:generate",
+    "prebuild": "npm run content:generate",
+    "pretest": "npm run content:generate"
   },
   "eslintConfig": {
     "extends": [

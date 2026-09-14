@@ -1,0 +1,19 @@
+name: Website bug
+description: Report a broken page, missing image, or incorrect behavior.
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Browser, screen size and screenshot

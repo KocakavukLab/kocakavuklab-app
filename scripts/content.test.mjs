@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { date, asset, parseNews, loadContent, generate, records } from './content.mjs';
+const sample = fs.readFileSync(new URL('../content/news/map-2026-london.md', import.meta.url),'utf8');
+assert.equal(parseNews(sample,'map-2026-london.md').photoPair.length, 2);
+assert.throws(()=>date('2026-02-30','date'), /invalid calendar/);
+assert.throws(()=>date('September 11','date'), /YYYY-MM-DD/);
+assert.throws(()=>asset('src/assets/missing.png','image'), /missing/);
+assert.throws(()=>asset('src/assets/../../package.json','image'), /image path/);
+assert.throws(()=>parseNews(sample.replace('"general"','"unknown"'),'map-2026-london.md'), /category/);
+assert.throws(()=>parseNews(sample+'\n<script>alert(1)</script>','map-2026-london.md'), /HTML/);
+assert.throws(()=>parseNews(sample,'different-id.md'), /filename/);
+assert.throws(()=>parseNews(sample.replace('"title":','"titel":'),'map-2026-london.md'), /unknown field/);
+assert.throws(()=>parseNews(sample.replace('2026-09-11','2026-13-11'),'map-2026-london.md'), /calendar/);
+assert.throws(()=>records([{id:'same'},{id:'same'}], ['id'], ['id'], 'items'), /duplicate/);
+loadContent(); generate(true);
+console.log('Content regression checks passed.');

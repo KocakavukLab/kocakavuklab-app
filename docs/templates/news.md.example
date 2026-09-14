@@ -1,0 +1,15 @@
+---
+{
+  "id": "your-story-id",
+  "title": "Your verified news headline",
+  "date": "2026-09-11",
+  "dateDisplay": "September 2026",
+  "category": "general",
+  "image": "src/assets/news/your-photo.jpg",
+  "shortDescription": "A short, factual summary for the news card.",
+  "tags": ["Research"]
+}
+---
+Write the news story here. Verify names, dates, titles and claims before submitting.
+
+[Supporting source](https://example.org)

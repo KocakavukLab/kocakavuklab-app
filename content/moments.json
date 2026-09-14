@@ -1,0 +1,51 @@
+[
+  {
+    "year": 2025,
+    "events": [
+      {
+        "id": "esmo-merit-award-2025",
+        "date": "November 2025",
+        "title": "ESMO AI & Digital Oncology",
+        "description": "Pranav Swaroop Gundla received an ESMO Merit Award in Berlin.",
+        "photos": [
+          {
+            "id": "esmo-merit-award-team",
+            "src": "src/assets/news/Merit_Awardees.jpg",
+            "alt": "ESMO Merit Award recipients at the 2025 congress in Berlin"
+          }
+        ]
+      },
+      {
+        "id": "new-members-2025",
+        "date": "October 2025",
+        "title": "New Members Joining the Lab",
+        "description": "Welcoming Marco Tembrink, Jiawei Zhou, and Quan Shi to the Kocakavuk Lab.",
+        "photos": [
+          {
+            "id": "new-members-group-2025",
+            "src": "src/assets/news/new_members.png",
+            "alt": "New members joining the Kocakavuk Lab in 2025"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "events": [
+      {
+        "id": "lab-opening-2023",
+        "date": "July 2023",
+        "title": "Opening the Kocakavuk Lab",
+        "description": "The beginning of our computational oncology research group at University Hospital Essen.",
+        "photos": [
+          {
+            "id": "lab-opening",
+            "src": "src/assets/news/opening-doors.png",
+            "alt": "Kocakavuk Lab opening announcement"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "network",
+    "title": "Collaborations & Network",
+    "items": [
+      {
+        "id": "umeh",
+        "title": "UMEH",
+        "logo": "src/assets/logos/umeh.png",
+        "url": "https://www.uni-essen-haematologie.de/"
+      },
+      {
+        "id": "esmo",
+        "title": "ESMO",
+        "logo": "src/assets/logos/esmo.png",
+        "url": "https://www.esmo.org/"
+      },
+      {
+        "id": "nct",
+        "title": "NCT",
+        "logo": "src/assets/logos/nct.png",
+        "url": "https://nct.dkfz.de/en/nct.html"
+      },
+      {
+        "id": "yale",
+        "title": "Yale",
+        "logo": "src/assets/logos/yalecombi.png",
+        "url": "https://www.yale.edu/"
+      },
+      {
+        "id": "wtz",
+        "title": "WTZ",
+        "logo": "src/assets/logos/wtz.png",
+        "url": "https://wtz-essen.de/"
+      },
+      {
+        "id": "glass",
+        "title": "GLASS",
+        "logo": "src/assets/logos/glass_consort.png",
+        "url": "https://www.glass-consortium.org/"
+      },
+      {
+        "id": "ikim",
+        "title": "IKIM",
+        "logo": "src/assets/logos/ikim.png",
+        "url": "https://www.ikim.uk-essen.de/"
+      },
+      {
+        "id": "dhk",
+        "title": "DHK",
+        "logo": "src/assets/logos/dhk.png",
+        "url": "#"
+      },
+      {
+        "id": "sfb",
+        "title": "SFB",
+        "logo": "src/assets/logos/sfb.svg",
+        "url": "https://sfb1530.de/"
+      },
+      {
+        "id": "cantar-network",
+        "title": "CANTAR",
+        "logo": "src/assets/logos/logo-cantar2.jpg",
+        "url": "https://land.nrw/pressemitteilung/81-millionen-euro-landesfoerderung-fuer-fuenf-exzellente-forschungsnetzwerke"
+      }
+    ]
+  },
+  {
+    "id": "funding",
+    "title": "Funding",
+    "items": [
+      {
+        "id": "bif",
+        "title": "Boehringer Ingelheim Fonds",
+        "logo": "src/assets/logos/bhs.svg",
+        "url": "https://www.bifonds.de/index.html"
+      },
+      {
+        "id": "cantar-funding",
+        "title": "CANTAR",
+        "logo": "src/assets/logos/logo-cantar2.jpg",
+        "url": "https://land.nrw/pressemitteilung/81-millionen-euro-landesfoerderung-fuer-fuenf-exzellente-forschungsnetzwerke"
+      },
+      {
+        "id": "dfg",
+        "title": "DFG",
+        "logo": "src/assets/logos/dfg.png",
+        "url": "https://www.dfg.de/"
+      },
+      {
+        "id": "ekfs",
+        "title": "EKFS",
+        "logo": "src/assets/logos/elsekroner.png",
+        "url": "https://www.ekfs.de/"
+      },
+      {
+        "id": "wsg",
+        "title": "Walter Siegenthaler Gesellschaft",
+        "logo": "src/assets/logos/walterlogo.png",
+        "url": "https://siegenthaler-gesellschaft.de/"
+      },
+      {
+        "id": "forbeck",
+        "title": "Forbeck",
+        "logo": "src/assets/logos/forbeck.png",
+        "url": "https://www.wgfrf.org/"
+      },
+      {
+        "id": "umea",
+        "title": "UMEA",
+        "logo": "src/assets/logos/umea.png",
+        "url": "https://www.uni-due.de/med/umea/"
+      },
+      {
+        "id": "jackstaedt",
+        "title": "Jackstädt Foundation",
+        "logo": "src/assets/logos/logo_jackstaedt.png",
+        "url": "https://www.jackstaedt-stiftung.de"
+      },
+      {
+        "id": "emmy-noether",
+        "title": "Emmy Noether Programme",
+        "logo": "src/assets/logos/logo_emmy_noether_gross.jpg",
+        "url": "https://www.dfg.de/de/foerderung/foerdermoeglichkeiten/programme/einzelfoerderung/emmy-noether"
+      }
+    ]
+  }
+]

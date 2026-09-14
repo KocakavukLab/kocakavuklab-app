@@ -1,0 +1,28 @@
+name: Content update
+description: Add or correct website content without changing its layout.
+title: "Content: "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      description: Which page needs updating?
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Requested change
+      description: Include exact text, names, dates, image captions and links.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources and images
+      description: Link supporting sources and attach approved images. Do not include private data.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Describe how to confirm the update is correct.

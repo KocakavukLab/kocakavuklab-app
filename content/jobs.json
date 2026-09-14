@@ -1,0 +1,33 @@
+[
+  {
+    "id": "phd",
+    "title": "PhD Student Positions",
+    "jobs": []
+  },
+  {
+    "id": "postdoc",
+    "title": "Postdoctoral Positions",
+    "jobs": [
+      {
+        "id": "postdoc-2025",
+        "title": "Postdoctoral Research Position",
+        "description": "Applications for a postdoctoral research position in the lab.",
+        "status": "Closed",
+        "applyLink": "https://karriere.ume.de/job-finder/?get_job=12180"
+      }
+    ]
+  },
+  {
+    "id": "minijob",
+    "title": "Minijob Positions",
+    "jobs": [
+      {
+        "id": "technical-assistant-2025",
+        "title": "Technical Assistant Position",
+        "description": "A technical assistant position supporting the lab’s research activities.",
+        "status": "Closed",
+        "applyLink": "https://karriere.ume.de/job-finder/?get_job=12335"
+      }
+    ]
+  }
+]
