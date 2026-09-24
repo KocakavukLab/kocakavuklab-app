@@ -1,6 +1,6 @@
 import GoToTopButton from "../common/GoToTopButton";
 import publications from "../../data/pubsData";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import "../../App.css";
 
 // ---- Theme (light) ----

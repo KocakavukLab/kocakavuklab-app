@@ -10,7 +10,7 @@
         "photos": [
           {
             "id": "quan-grant-celebration",
-            "src": "src/assets/moments/quan_grant_celeb_2026_jul.jpg",
+            "src": "src/assets/moments/quan_grant_celeb_2026_jul.optimized.webp",
             "alt": "The lab celebrating Quan Shi's research grant"
           }
         ]
@@ -28,7 +28,7 @@
           },
           {
             "id": "lab-outing-group-portrait-2026",
-            "src": "src/assets/moments/Labouting_Jul2026_moment5.jpg",
+            "src": "src/assets/moments/Labouting_Jul2026_moment5.optimized.webp",
             "alt": "The lab posing together in the park at the summer outing"
           }
         ]
@@ -41,7 +41,7 @@
         "photos": [
           {
             "id": "ikim-celebration-group",
-            "src": "src/assets/moments/Part_of_IKIM5+1Celebs.jpeg",
+            "src": "src/assets/moments/Part_of_IKIM5+1Celebs.optimized.webp",
             "alt": "Part of the team at the IKIM 5+1 celebration"
           }
         ]
@@ -54,7 +54,7 @@
         "photos": [
           {
             "id": "grugalauf-run",
-            "src": "src/assets/moments/grugalauf_2026.JPG",
+            "src": "src/assets/moments/grugalauf_2026.optimized.webp",
             "alt": "Lab members at the Grugalauf run in Essen"
           }
         ]
@@ -72,7 +72,7 @@
         "photos": [
           {
             "id": "christmas-dinner-2025",
-            "src": "src/assets/moments/labdinner_christmas_2025.jpeg",
+            "src": "src/assets/moments/labdinner_christmas_2025.optimized.webp",
             "alt": "The lab's Christmas dinner in 2025"
           }
         ]
@@ -85,7 +85,7 @@
         "photos": [
           {
             "id": "summer-intern-2025",
-            "src": "src/assets/moments/summerintern_from_turkey_sep_2025.jpg",
+            "src": "src/assets/moments/summerintern_from_turkey_sep_2025.optimized.webp",
             "alt": "Welcoming the summer intern from Turkey"
           }
         ]
@@ -98,7 +98,7 @@
         "photos": [
           {
             "id": "new-phd-dinner-2025",
-            "src": "src/assets/moments/lab_dinner_newphd_newclinicanscientist_jul_2025.jpg",
+            "src": "src/assets/moments/lab_dinner_newphd_newclinicanscientist_jul_2025.optimized.webp",
             "alt": "Lab dinner welcoming a new PhD student and clinician-scientist"
           }
         ]

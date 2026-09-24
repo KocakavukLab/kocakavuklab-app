@@ -7,7 +7,7 @@
   "shortDescription": "We are happy to share the news that the Kocakavuk Lab with a focus on Computational Oncology has opened.",
   "image": "src/assets/news/opening-doors.png",
   "memberImages": [
-    "src/assets/members/Pranav.png"
+    "src/assets/members/Pranav.optimized.webp"
   ],
   "tags": [
     "Lab Opening",

@@ -5,7 +5,7 @@
   "dateDisplay": "May 2025",
   "category": "grant",
   "shortDescription": "This is a true milestone for our laboratory as we have secured funding in the prestigious Emmy Noether Program of the German Research Foundation (DFG).",
-  "image": "src/assets/news/logo_emmy_noether.jpg",
+  "image": "src/assets/news/logo_emmy_noether.optimized.webp",
   "tags": [
     "DFG",
     "Emmy Noether",

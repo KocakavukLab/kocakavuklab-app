@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 import { momentsTimeline } from "../../data/momentsData";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import "./Moments.css";
 
 const Moments = () => {

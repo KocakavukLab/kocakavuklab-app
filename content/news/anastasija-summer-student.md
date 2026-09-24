@@ -6,7 +6,7 @@
   "category": "new_member",
   "shortDescription": "We are delighted to welcome Anastasija Ivančukova, a medical student from Latvia, to our growing team as a summer research student.",
   "memberImages": [
-    "src/assets/members/anastasija.jpg"
+    "src/assets/members/anastasija.optimized.webp"
   ],
   "tags": [
     "New Member",

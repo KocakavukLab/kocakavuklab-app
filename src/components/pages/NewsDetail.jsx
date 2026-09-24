@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaCalendarAlt } from "react-icons/fa";
 import { getNewsById, NEWS_CATEGORIES, getSortedNews } from "../../data/newsData";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import "../../App.css";
 
 const T = { page: "#F6F2EC", surface: "#FFFFFF", ink: "#14181F", muted: "#5B6472", line: "#E4DCD1" };

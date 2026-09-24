@@ -1,21 +1,17 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { principalInvestigator } from "../../data/membersData";
 import GoToTopButton from "../common/GoToTopButton";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import wtzLogo from "../../assets/logos/Logo_UME_WTZ_essen_EN.png";
-import ukeLogo from "../../assets/logos/Logo_UME_UKE_EN.png";
-import hematologyLogo from "../../assets/logos/Logo_UME_UKE_Klinik_fuer_Haematologie_und_Stammzelltransplantation_EN.png";
-import ikimLogo from "../../assets/logos/ikim.png";
+import ukeLogo from "../../assets/logos/Logo_UME_UKE_EN.optimized.webp";
+import hematologyLogo from "../../assets/logos/Logo_UME_UKE_Klinik_fuer_Haematologie_und_Stammzelltransplantation_EN.optimized.webp";
+import ikimLogo from "../../assets/logos/ikim.optimized.webp";
 import { getSortedNews } from "../../data/newsData";
 import "../../App.css";
 
 const DISPLAY = '"Space Grotesk", system-ui, sans-serif';
 const BODY = '"DM Sans", system-ui, -apple-system, sans-serif';
 const MONO = "ui-monospace, 'SF Mono', Menlo, monospace";
-
-const TWITTER_HANDLE = "ekocakavuk";
-const TWITTER_WIDGET_ID = "twitter-wjs";
-const TWITTER_WIDGET_SRC = "https://platform.x.com/widgets.js";
 
 const readTime = (item) => {
   const words = (item.fullContent || item.shortDescription || "").trim().split(/\s+/).filter(Boolean).length;
@@ -44,72 +40,17 @@ function NewsCard({ item }) {
   );
 }
 
-function TwitterTimeline() {
-  const [status, setStatus] = useState("loading");
-  const ref = useRef(null);
-
-  useEffect(() => {
-    let active = true;
-
-    const render = () => {
-      if (!active || !ref.current || !window.twttr?.widgets) return;
-      window.twttr.widgets.load(ref.current);
-      setStatus("ready");
-    };
-
-    if (window.twttr?.widgets) {
-      render();
-      return () => { active = false; };
-    }
-
-    const existing = document.getElementById(TWITTER_WIDGET_ID);
-    const script = existing || document.createElement("script");
-    const onLoad = () => { window.clearTimeout(timeout); (window.twttr?.ready ? window.twttr.ready(render) : render()); };
-    const onError = () => { window.clearTimeout(timeout); if (active) setStatus("error"); };
-    const timeout = window.setTimeout(() => { if (active && !window.twttr?.widgets) setStatus("error"); }, 8000);
-
-    script.addEventListener("load", onLoad, { once: true });
-    script.addEventListener("error", onError, { once: true });
-    if (!existing) {
-      script.id = TWITTER_WIDGET_ID;
-      script.src = TWITTER_WIDGET_SRC;
-      script.async = true;
-      document.body.appendChild(script);
-    } else if (window.twttr?.ready) {
-      window.twttr.ready(render);
-    }
-
-    return () => {
-      active = false;
-      window.clearTimeout(timeout);
-      script.removeEventListener("load", onLoad);
-      script.removeEventListener("error", onError);
-    };
-  }, []);
-
+function SocialProfile() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#E4DCD1] bg-white shadow-sm">
-      <div className="flex items-center gap-2 border-b border-[#E4DCD1] px-4 py-3 text-sm font-bold text-[#14181F]">
-        <span aria-hidden="true">𝕏</span> From X · @{TWITTER_HANDLE}
-      </div>
-      {status === "loading" && <p className="px-4 py-4 text-sm text-[#5B6472]">Loading @{TWITTER_HANDLE} posts…</p>}
-      {status === "error" && (
-        <p className="px-4 py-4 text-sm text-[#5B6472]">
-          Timeline blocked by browser privacy settings. <a href={`https://x.com/${TWITTER_HANDLE}`} target="_blank" rel="noreferrer" className="font-bold text-[#E0742E] hover:underline">Open on X ↗</a>
-        </p>
-      )}
-      <div ref={ref} className="min-h-[1px] px-2">
-        <a
-          className="twitter-timeline"
-          data-height="420"
-          data-theme="light"
-          data-chrome="noheader nofooter noborders transparent"
-          href={`https://x.com/${TWITTER_HANDLE}?ref_src=twsrc%5Etfw`}
-        >
-          Posts by @{TWITTER_HANDLE}
-        </a>
-      </div>
-    </div>
+    <nav aria-label="More updates from Emre Kocakavuk" className="flex flex-wrap items-center justify-center gap-3 py-3">
+      <p className="w-full text-center text-sm text-[#5B6472] sm:mr-2 sm:w-auto">For more updates</p>
+      <a href={principalInvestigator.twitter} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#E4DCD1] bg-white px-6 py-3 text-sm font-bold text-[#14181F] transition hover:border-[#FF914D] hover:bg-[#FFF5ED] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF914D]">
+        View on X<span className="sr-only"> (opens in a new tab)</span>
+      </a>
+      <a href={principalInvestigator.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#E4DCD1] bg-white px-6 py-3 text-sm font-bold text-[#14181F] transition hover:border-[#FF914D] hover:bg-[#FFF5ED] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF914D]">
+        View on LinkedIn<span className="sr-only"> (opens in a new tab)</span>
+      </a>
+    </nav>
   );
 }
 
@@ -135,19 +76,23 @@ function Overview() {
       <div className="mx-auto w-full max-w-[1480px] px-3 pb-3 md:px-5 md:pb-5">
         {/* About + research focus */}
         <section className="mt-3 overflow-hidden rounded-[26px] border border-[#E4DCD1] bg-[#FBFAF7] shadow-sm md:mt-5 md:rounded-[32px]">
-          <div className="p-6 sm:p-7 lg:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#E0742E]" style={{ fontFamily: MONO }}>About us</p>
-            <h2 className="mt-2 max-w-2xl text-[#14181F]" style={{ fontFamily: DISPLAY, fontWeight: 700, letterSpacing: "-0.025em", lineHeight: 1.08, fontSize: "clamp(28px,2.4vw,38px)" }}>
-              Research at the intersection of oncology, computation &amp; genomics.
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#5B6472]">
-              A dedicated team of Clinician-Scientists and Researchers at the West German Cancer Center
-              and NCT West, University Hospital Essen — turning sequencing data into an understanding of
-              how tumors change over time.
-            </p>
-            <Link to="/members" className="mt-4 inline-flex text-sm font-bold text-[#E0742E] hover:underline">
-              Learn more about our lab ↗
-            </Link>
+          <div className="grid gap-6 p-6 sm:p-7 lg:grid-cols-2 lg:items-center lg:gap-12 lg:p-8">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#E0742E]" style={{ fontFamily: MONO }}>About us</p>
+              <h2 className="mt-2 text-[#14181F]" style={{ fontFamily: DISPLAY, fontWeight: 700, letterSpacing: "-0.025em", lineHeight: 1.08, fontSize: "clamp(28px,2.4vw,38px)" }}>
+                Research at the intersection of oncology, computation &amp; genomics.
+              </h2>
+            </div>
+            <div>
+              <p className="text-sm leading-relaxed text-[#5B6472] lg:text-base">
+                A dedicated team of Clinician-Scientists and Researchers at the West German Cancer Center
+                and NCT West, University Hospital Essen — turning sequencing data into an understanding of
+                how tumors change over time.
+              </p>
+              <Link to="/members" className="mt-4 inline-flex text-sm font-bold text-[#E0742E] hover:underline">
+                Learn more about our lab ↗
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -158,24 +103,24 @@ function Overview() {
             {latestNews.map((item) => <NewsCard key={item.id} item={item} />)}
           </div>
           <div className="mt-5">
-            <TwitterTimeline />
+            <SocialProfile />
           </div>
         </section>
 
         {/* Institutional affiliations */}
         <section aria-label="Institutional affiliations" className="mt-3 rounded-[26px] border border-[#E4DCD1] bg-[#FBFAF7] px-6 py-7 shadow-sm md:mt-5 md:rounded-[32px]">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
-            <a href="https://www.uk-essen.de/" target="_blank" rel="noreferrer" className="flex items-center justify-center transition hover:opacity-75">
-              <img src={ukeLogo} alt="University Hospital Essen (UME)" className="h-9 w-auto max-w-[220px] object-contain sm:h-11" />
+          <div className="grid w-full grid-cols-2 items-center gap-x-6 gap-y-6 lg:grid-cols-4 lg:gap-x-10">
+            <a href="https://www.uk-essen.de/" target="_blank" rel="noreferrer" className="flex min-w-0 items-center justify-center rounded-lg px-2 py-3 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF914D]">
+              <img src={ukeLogo} alt="University Hospital Essen (UME)" className="h-16 w-full max-w-[280px] object-contain sm:h-20" />
             </a>
-            <a href="https://wtz-essen.de/" target="_blank" rel="noreferrer" className="flex items-center justify-center transition hover:opacity-75">
-              <img src={wtzLogo} alt="West German Cancer Center (WTZ)" className="h-9 w-auto max-w-[220px] object-contain sm:h-11" />
+            <a href="https://wtz-essen.de/" target="_blank" rel="noreferrer" className="flex min-w-0 items-center justify-center rounded-lg px-2 py-3 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF914D]">
+              <img src={wtzLogo} alt="West German Cancer Center (WTZ)" className="h-16 w-full max-w-[280px] object-contain sm:h-20" />
             </a>
-            <a href="https://www.uk-essen.de/haematologie-stammzelltransplantation/" target="_blank" rel="noreferrer" className="flex items-center justify-center transition hover:opacity-75">
-              <img src={hematologyLogo} alt="Clinic for Haematology and Stem Cell Transplantation" className="h-11 w-auto max-w-[240px] object-contain sm:h-14" />
+            <a href="https://www.uk-essen.de/haematologie-stammzelltransplantation/" target="_blank" rel="noreferrer" className="flex min-w-0 items-center justify-center rounded-lg px-2 py-3 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF914D]">
+              <img src={hematologyLogo} alt="Clinic for Haematology and Stem Cell Transplantation" className="h-16 w-full max-w-[280px] object-contain sm:h-20" />
             </a>
-            <a href="https://www.ikim.uk-essen.de/" target="_blank" rel="noreferrer" className="flex items-center justify-center transition hover:opacity-75">
-              <img src={ikimLogo} alt="Institute for AI in Medicine (IKIM)" className="h-9 w-auto max-w-[220px] object-contain sm:h-11" />
+            <a href="https://www.ikim.uk-essen.de/" target="_blank" rel="noreferrer" className="flex min-w-0 items-center justify-center rounded-lg px-2 py-3 transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FF914D]">
+              <img src={ikimLogo} alt="Institute for AI in Medicine (IKIM)" className="h-16 w-full max-w-[280px] object-contain sm:h-20" />
             </a>
           </div>
         </section>

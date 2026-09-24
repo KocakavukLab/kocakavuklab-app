@@ -6,10 +6,10 @@
   "category": "new_member",
   "shortDescription": "We are thrilled to welcome four new members to the Kocakavuk Lab: Cihat Karadag, Yinchun Su, Mahsasadat Nezamabadi, and Fatma Atak.",
   "memberImages": [
-    "src/assets/members/cihat.png",
-    "src/assets/members/YinchunSu.png",
-    "src/assets/members/mahsa.png",
-    "src/assets/members/fatma.png"
+    "src/assets/members/cihat.optimized.webp",
+    "src/assets/members/YinchunSu.optimized.webp",
+    "src/assets/members/mahsa.optimized.webp",
+    "src/assets/members/fatma.optimized.webp"
   ],
   "tags": [
     "New Members",

@@ -9,7 +9,7 @@ Link supporting sources. Attach desktop/mobile preview screenshots or state what
 ## Validation
 
 - [ ] `npm run content:generate` and `npm run content:test` pass
-- [ ] `npm run build` passes
+- [ ] `npm test` and `npm run build` pass (or unrun checks are explicitly listed)
 - [ ] Affected list/detail pages checked; links and images verified
 - [ ] Existing appearance and routes preserved, or layout changes explicitly described
 - [ ] Facts and permission to publish images checked

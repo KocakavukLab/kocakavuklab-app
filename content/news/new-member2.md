@@ -7,8 +7,8 @@
   "shortDescription": "We are delighted to welcome three new members to the Kocakavuk Lab: Marco Tembrink, Jiawei Zhou, and Dr. Quan Shi.",
   "memberImages": [
     "src/assets/members/marco.png",
-    "src/assets/members/jiawei.png",
-    "src/assets/members/Quan_Shi.jpg"
+    "src/assets/members/jiawei.optimized.webp",
+    "src/assets/members/Quan_Shi.optimized.webp"
   ],
   "tags": [
     "New Members",

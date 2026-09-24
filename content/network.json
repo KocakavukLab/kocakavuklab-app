@@ -36,7 +36,7 @@
       {
         "id": "emmy-noether",
         "title": "Emmy Noether Programme",
-        "logo": "src/assets/logos/logo_emmy_noether_gross.jpg",
+        "logo": "src/assets/logos/logo_emmy_noether_gross.optimized.webp",
         "url": "https://www.dfg.de/de/foerderung/foerdermoeglichkeiten/programme/einzelfoerderung/emmy-noether"
       },
       {
@@ -54,7 +54,7 @@
       {
         "id": "glass",
         "title": "GLASS",
-        "logo": "src/assets/logos/glass_consort.png",
+        "logo": "src/assets/logos/glass_consort.optimized.webp",
         "url": "https://www.glass-consortium.org/"
       },
       {
@@ -66,7 +66,7 @@
       {
         "id": "ikim",
         "title": "IKIM",
-        "logo": "src/assets/logos/ikim.png",
+        "logo": "src/assets/logos/ikim.optimized.webp",
         "url": "https://www.ikim.uk-essen.de/"
       },
       {
@@ -78,7 +78,7 @@
       {
         "id": "nct",
         "title": "NCT West Network",
-        "logo": "src/assets/logos/nct.png",
+        "logo": "src/assets/logos/nct.optimized.webp",
         "url": "https://nct.dkfz.de/en/nct.html"
       },
       {
@@ -90,19 +90,19 @@
       {
         "id": "umeh",
         "title": "UME Hematology",
-        "logo": "src/assets/logos/Logo_UME_UKE_Klinik_fuer_Haematologie_und_Stammzelltransplantation_EN.png",
+        "logo": "src/assets/logos/Logo_UME_UKE_Klinik_fuer_Haematologie_und_Stammzelltransplantation_EN.optimized.webp",
         "url": "https://www.uni-essen-haematologie.de/"
       },
       {
         "id": "ume",
         "title": "UME Hospital",
-        "logo": "src/assets/logos/Logo_UME_UKE_EN.png",
+        "logo": "src/assets/logos/Logo_UME_UKE_EN.optimized.webp",
         "url": "https://www.uk-essen.de/"
       },
       {
         "id": "umea",
         "title": "UMEA",
-        "logo": "src/assets/logos/umea.png",
+        "logo": "src/assets/logos/umea.optimized.webp",
         "url": "https://www.uni-due.de/med/umea/"
       },
       {
@@ -114,7 +114,7 @@
       {
         "id": "wsg",
         "title": "Walter Siegenthaler Gesellschaft",
-        "logo": "src/assets/logos/walterlogo.png",
+        "logo": "src/assets/logos/walterlogo.optimized.webp",
         "url": "https://siegenthaler-gesellschaft.de/"
       },
       {

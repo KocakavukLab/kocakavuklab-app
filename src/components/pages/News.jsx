@@ -7,7 +7,7 @@ import {
 // Icons
 import { FaMoneyBillWave, FaUserPlus, FaNewspaper, FaAward } from "react-icons/fa";
 import { motion } from "framer-motion";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import '../../App.css';
 
 // ---- Theme (light) ----

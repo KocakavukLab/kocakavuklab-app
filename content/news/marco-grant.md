@@ -5,7 +5,7 @@
   "dateDisplay": "November 2025",
   "category": "grant",
   "shortDescription": "Marco Tembrink, MD, has successfully secured a Junior Clinician Scientist fellowship granted by the Clinician Scientist Academy of the University Hospital Essen (UMEA).",
-  "image": "src/assets/news/umea.png",
+  "image": "src/assets/news/umea.optimized.webp",
   "tags": [
     "UMEA",
     "Fellowship",

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import LocationMap from "../common/LocationMap";
 import GoToTopButton from "../common/GoToTopButton";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import "../../App.css";
 
 // ---- Theme (light) ----
@@ -73,10 +73,10 @@ const Contact = () => {
         </div>
       </header>
 
-      <div className="contact-section mx-auto flex w-full max-w-[2096px] flex-col px-6 py-12 md:px-10 lg:min-h-[996px]">
-        <div className="grid flex-1 grid-cols-1 overflow-hidden rounded-2xl border bg-white shadow-sm md:grid-cols-2" style={{ borderColor: T.line }}>
+      <div className="contact-section mx-auto w-full max-w-[1440px] px-6 py-14">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border bg-white shadow-sm md:grid-cols-2" style={{ borderColor: T.line }}>
           {/* 01 Message */}
-          <div className="p-6 md:p-10 lg:p-14 md:border-r" style={{ borderColor: T.line }}>
+          <div className="p-6 md:p-8 md:border-r" style={{ borderColor: T.line }}>
             <div className="flex items-center gap-2.5">
               <span className="text-lg font-extrabold" style={{ fontFamily: DISPLAY, color: ORANGE }}>01</span>
               <span className="text-[12px] font-bold uppercase tracking-[0.14em]" style={{ color: T.ink }}>Message</span>
@@ -93,7 +93,7 @@ const Contact = () => {
               </div>
               <div className="mb-4">
                 <label className={label} style={{ color: T.ink }} htmlFor="message">Message</label>
-                <textarea name="message" id="message" rows="8" value={formData.message} onChange={handleInputChange} required className={input} style={{ borderColor: T.line, background: T.field, color: T.ink }} />
+                <textarea name="message" id="message" rows="6" value={formData.message} onChange={handleInputChange} required className={input} style={{ borderColor: T.line, background: T.field, color: T.ink }} />
               </div>
               <label className="mb-4 flex items-start gap-2.5 text-[12.5px]" style={{ color: T.muted }}>
                 <input type="checkbox" required checked={checked} onChange={() => setChecked(!checked)} className="mt-0.5 h-4 w-4 accent-[#FF914D]" />
@@ -110,7 +110,7 @@ const Contact = () => {
           </div>
 
           {/* 02 Location */}
-          <div className="flex flex-col p-6 md:p-10 lg:p-14">
+          <div className="flex flex-col p-6 md:p-8">
             <div className="flex items-center gap-2.5">
               <span className="text-lg font-extrabold" style={{ fontFamily: DISPLAY, color: ORANGE }}>02</span>
               <span className="text-[12px] font-bold uppercase tracking-[0.14em]" style={{ color: T.ink }}>Location</span>

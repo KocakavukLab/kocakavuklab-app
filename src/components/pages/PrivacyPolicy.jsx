@@ -1,5 +1,5 @@
 import GoToTopButton from "../common/GoToTopButton";
-import coverImg from "../../assets/covers/maincover.jpg";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 
 // ---- Theme (light) ----
 const T = { page: "#F6F2EC", surface: "#FFFFFF", ink: "#14181F", muted: "#5B6472", line: "#E4DCD1" };

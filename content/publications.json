@@ -16,7 +16,7 @@
     "authors": "Johnson K. C., Spitzer A., Varn F. S., Nomura M., Garofano L., Chowdhury T., Lipsa A., Zhang L., Calvo Fernández E., Barak T., Ercan-Sencicek A. G., Peksen A. B., Anderson K. J., Tesileanu C. M. S., Amin S. B., Kocakavuk E., Zhao D., D'Angelo F., Migliozzi S., Bussema L., Gritsch S., Moon H. E., Paek S. H., Bielle F., Laurenge A., Di Stefano A. L., Mathon B., Picca A., Sanson M., Hau A. C., Hertel F., Grzyb K., Zhao Z., Wang Q., Jiang T., Miller J. J., Wakimoto H., Cahill D. P., Moliterno J., Günel M., Hermes B., Sanai N., Golebiewska A., Niclou S. P., Huse J., Yung W. K. A., Lasorella A., Suvà M. L., Iavarone A., Tirosh I., Verhaak R. G. W.",
     "date": "06/2026",
     "status": "Published",
-    "image": "src/assets/pubs/nature-2026.png",
+    "image": "src/assets/pubs/nature-2026.optimized.webp",
     "journalLogo": "src/assets/journals/nature.svg"
   },
   {
@@ -26,7 +26,7 @@
     "authors": "Chowdhury T., Tesileanu C. M. S., Kocakavuk E., Johnson K. C., Lee J., Erson-Omay Z., Heo C., Aldape K., Amin S. B., Anderson K. J., Ashley D. M., Barnholtz-Sloan J. S., Brat D. J., Brodbelt A. R., Castro A. V., Claus E. B., Connelly J. M., Costello J., Datta I., Elliott C., Finocchiaro G., French P. J., Gan H. K., Garofano L., Ghospurkar P. L., Golebiewska A., Gundla P. S., Hermes B., Hong C., Hoogstrate Y., Horbinski C., Huse J. T., Iavarone A., Karadag C., Khasraw M., Kouwenhoven M. C. M., LaViolette P. S., Li K., Lowman A., McCortney K., Moon H. E., Nader S., Nasrallah M. P., Ng H. K., Ormond D. R., Padovan M., Paek S. H., Poisson L. M., Puri S., Shen E., Shwetal M., Sloan A. E., Vallentgoed W. R., Van Meir E. G., Vaubel R., Wade T., Walenkamp A. M., Watts C., Weiss T., Weller M., Wesseling P., Westcott K., Westerman B., Ye G. Y., Yung W. K. A., The GLASS Consortium, Varn F. S., Verhaak R. G. W.",
     "date": "06/2025",
     "status": "In-review",
-    "image": "src/assets/pubs/nature-25.png",
+    "image": "src/assets/pubs/nature-25.optimized.webp",
     "journalLogo": "src/assets/journals/biorxiv.png"
   },
   {
@@ -36,7 +36,7 @@
     "authors": "Malta T. M., Sabedot T. S., Morosini N. S., Datta I., Garofano L., Vallentgoed W. R., Varn F. S., Aldape K., D'Angelo F., Bakas S., Barnholtz-Sloan J. S., Gan H. K., Hasanain M., Hau A. C., Johnson K. C., Cazacu S., deCarvalho A. C., Khasraw M., Kocakavuk E., Kouwenhoven M. C. M., Migliozzi S., Niclou S. P., Niers J. M., Ormond D. R., Paek S. H., Reifenberger G., Sillevis Smitt P. A., Smits M., Stead L. F., van den Bent M. J., Van Meir E. G., Walenkamp A., Weiss T., Weller M., Westerman B. A., Ylstra B., Wesseling P., Lasorella A., French P. J., Poisson L. M., GLASS Consortium, Verhaak R. G. W., Iavarone A., Noushmehr H.",
     "date": "03/2024",
     "status": "Published",
-    "image": "src/assets/pubs/can-res-25.png",
+    "image": "src/assets/pubs/can-res-25.optimized.webp",
     "journalLogo": "src/assets/journals/can-res.svg"
   },
   {
@@ -46,7 +46,7 @@
     "authors": "Kocakavuk E., Johnson K. C., Sabedot T. S., Reinhardt H. C., Noushmehr H., Verhaak R. G. W.",
     "date": "09/2023",
     "status": "Published",
-    "image": "src/assets/pubs/neu-onco-23.png",
+    "image": "src/assets/pubs/neu-onco-23.optimized.webp",
     "journalLogo": "src/assets/journals/neuro-onco.svg"
   },
   {
@@ -56,7 +56,7 @@
     "authors": "Varn F. S., Johnson K. C., Martinek J., Huse J. T., Nasrallah M. P., Wesseling P., Cooper L. A. D., Malta T. M., Wade T. E., Sabedot T. S., Brat D., Gould P. V., Wöehrer A., Aldape K., Ismail A., Sivajothi S. K., Barthel F. P., Kim H., Kocakavuk E., Ahmed N., White K., Datta I., Moon H. E., Pollock S., Goldfarb C., Lee G. H., Garofano L., Anderson K. J., Nehar-Belaid D., Barnholtz-Sloan J. S., Bakas S., Byrne A. T., D'Angelo F., Gan H. K., Khasraw M., Migliozzi S., Ormond D. R., Paek S. H., Van Meir E. G., Walenkamp A. M. E., Watts C., Weiss T., Weller M., Palucka K., Stead L. F., Poisson L. M., Noushmehr H., Iavarone A., Verhaak R. G. W., GLASS Consortium.",
     "date": "06/2022",
     "status": "Published",
-    "image": "src/assets/pubs/cell-22.png",
+    "image": "src/assets/pubs/cell-22.optimized.webp",
     "journalLogo": "src/assets/journals/cell.svg"
   },
   {
@@ -66,7 +66,7 @@
     "authors": "Kocakavuk E., Anderson K. J., Varn F. S., Johnson K. C., Amin S. B., Sulman E. P., Lolkema M. P., Barthel F. P., Verhaak R. G. W.",
     "date": "07/2021",
     "status": "Published",
-    "image": "src/assets/pubs/nat-gen-21.png",
+    "image": "src/assets/pubs/nat-gen-21.optimized.webp",
     "journalLogo": "src/assets/journals/natgen.svg"
   },
   {
@@ -77,7 +77,7 @@
     "date": "02/2020",
     "hidden": true,
     "status": "Published",
-    "image": "src/assets/pubs/can-cell-20.png",
+    "image": "src/assets/pubs/can-cell-20.optimized.webp",
     "journalLogo": "src/assets/journals/CancerCell_ICON.svg"
   },
   {
@@ -88,7 +88,7 @@
     "date": "12/2019",
     "hidden": true,
     "status": "Published",
-    "image": "src/assets/pubs/nature-19.png",
+    "image": "src/assets/pubs/nature-19.optimized.webp",
     "journalLogo": "src/assets/journals/nature.svg"
   }
 ]

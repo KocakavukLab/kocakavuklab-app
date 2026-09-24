@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 }
 /* Background Covers */
 .bg-cover {
-  background-image: url("./assets/covers/maincover.jpg");
+  background-image: url("./assets/covers/maincover.optimized.webp");
   transition: height 0.3s;
   background-size: cover;
   background-repeat: no-repeat;
