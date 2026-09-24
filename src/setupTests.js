@@ -13,6 +13,8 @@ window.matchMedia =
   function () {
     return {
       matches: false,
+      addEventListener: function () {},
+      removeEventListener: function () {},
       addListener: function () {},
       removeListener: function () {},
     };

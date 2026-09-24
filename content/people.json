@@ -136,13 +136,6 @@
           "description": "Jonayed Sarkar is pursuing a Master’s degree in Data Science at TU Dortmund University and supports the team as a Student Research Assistant.",
           "email": "mailto:mdjonayed64173@gmail.com",
           "linkedin": "https://www.linkedin.com/in/mdjonayedsarkar/"
-        },
-        {
-          "id": "anastasija-ivancukova",
-          "name": "Anastasija Ivančukova",
-          "image": "src/assets/members/anastasija.jpg",
-          "role": "Summer Research Student",
-          "description": "Anastasija is a fifth-year medical student from Latvia, joining the lab for a summer research placement in clinico-genomic studies of central nervous system lymphoma."
         }
       ]
     },
@@ -150,6 +143,13 @@
       "id": "alumni",
       "title": "Alumni",
       "members": [
+        {
+          "id": "anastasija-ivancukova",
+          "name": "Anastasija Ivančukova",
+          "image": "src/assets/members/anastasija.jpg",
+          "role": "Summer Research Student",
+          "description": "Anastasija is a fifth-year medical student from Latvia, joining the lab for a summer research placement in clinico-genomic studies of central nervous system lymphoma."
+        },
         {
           "id": "mahsasadat-nezamabadi",
           "name": "Mahsasadat Nezamabadi, BSc",

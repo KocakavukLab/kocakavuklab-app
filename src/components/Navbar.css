@@ -73,3 +73,7 @@
 }
 @media(max-width:380px){.hf-toggle span{display:none}.hf-toggle{width:44px}.hf-header .hf-brand>span{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.hf-header *,.hf-footer *{transition:none!important;animation:none!important}}
+
+.hf-footer{isolation:isolate;overflow:hidden}
+.hf-footer-particles{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hf-footer-particles>div,.hf-footer-particles canvas{width:100%;height:100%}

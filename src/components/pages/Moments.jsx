@@ -16,17 +16,14 @@ const Moments = () => {
     []
   );
 
-  const allPhotos = useMemo(
-    () =>
-      posts.flatMap((post) =>
-        post.photos.map((photo) => ({
-          ...photo,
-          eventTitle: post.title,
-          date: post.date,
-        }))
-      ),
-    [posts]
-  );
+  const allPhotos = useMemo(() => momentsTimeline.map(group => ({
+    id: String(group.year),
+    eventTitle: `Life outside the lab · ${group.year}`,
+    date: String(group.year),
+    photos: posts.filter(post => post.year === group.year).flatMap(post =>
+      post.photos.map(photo => ({ ...photo, caption: `${post.title} · ${post.date}` }))
+    ),
+  })).filter(album => album.photos.length), [posts]);
 
   const selectedIndex = allPhotos.findIndex((photo) => photo.id === selectedPhotoId);
   const selectedPhoto = selectedIndex >= 0 ? allPhotos[selectedIndex] : null;
@@ -66,24 +63,37 @@ const Moments = () => {
           </div>
         </div>
 
-        <div className="moments-grid">
-          {allPhotos.map((photo) => (
-            <button
-              key={photo.id}
-              className="moments-grid__item"
-              onClick={() => setSelectedPhotoId(photo.id)}
-              aria-label={`Open ${photo.alt}`}
-            >
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
-            </button>
-          ))}
+        <div className="moments-albums">
+          <div className="moments-albums__intro">
+            <h2>A collection of shared moments</h2>
+            <p>Beyond the research. Open an album to explore life outside the lab.</p>
+          </div>
+          <div className="moments-albums__grid">
+            {allPhotos.map(album => (
+              <button key={album.id} className="moment-album"
+                onClick={() => setSelectedPhotoId(album.id)}
+                aria-label={`Open ${album.date} album`}>
+                <span className="moment-album__stack">
+                  <span className="moment-album__sheet">
+                    <span className={`moment-collage moment-collage--${album.photos.length}`}>
+                      {album.photos.map(photo => <img key={photo.id} src={photo.src} alt="" loading="lazy" />)}
+                    </span>
+                  </span>
+                </span>
+                <span className="moment-album__caption">
+                  <span><strong>{album.date}</strong><span>{album.photos.length} photographs</span></span>
+                  <span className="moment-album__open">Open album <FiChevronRight aria-hidden="true" /></span>
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
       <dialog
         ref={dialogRef}
         className="moment-lightbox"
-        aria-label="Moments image viewer"
+        aria-label="Moments album viewer"
         aria-describedby="moment-caption"
         onCancel={() => setSelectedPhotoId(null)}
         onClick={(event) => {
@@ -95,18 +105,20 @@ const Moments = () => {
         }}
       >
         {selectedPhoto && <>
-          <button autoFocus type="button" className="moment-lightbox__close" onClick={() => setSelectedPhotoId(null)} aria-label="Close image viewer"><FiX /></button>
+          <button autoFocus type="button" className="moment-lightbox__close" onClick={() => setSelectedPhotoId(null)} aria-label="Close album viewer"><FiX /></button>
           <figure>
-            <img src={selectedPhoto.src} alt={selectedPhoto.alt} />
+            <div className={`moment-collage moment-collage--${selectedPhoto.photos.length}`}>
+              {selectedPhoto.photos.map(photo => <img key={photo.id} src={photo.src} alt={photo.alt} title={photo.caption} />)}
+            </div>
             <figcaption id="moment-caption" aria-live="polite">
-              <strong>{selectedPhoto.alt}</strong>
-              <span>{selectedPhoto.eventTitle} · {selectedPhoto.date}</span>
+              <strong>{selectedPhoto.eventTitle}</strong>
+              <span>{selectedPhoto.photos.length} photographs · Esc to close · Arrow keys to navigate</span>
             </figcaption>
           </figure>
           <div className="moment-lightbox__controls">
-            <button type="button" onClick={showPrevious} aria-label="Previous image"><FiChevronLeft /> Previous</button>
+            <button type="button" onClick={showPrevious} aria-label="Previous album"><FiChevronLeft /> Previous</button>
             <span>{selectedIndex + 1} / {allPhotos.length}</span>
-            <button type="button" onClick={showNext} aria-label="Next image">Next <FiChevronRight /></button>
+            <button type="button" onClick={showNext} aria-label="Next album">Next <FiChevronRight /></button>
           </div>
         </>}
       </dialog>

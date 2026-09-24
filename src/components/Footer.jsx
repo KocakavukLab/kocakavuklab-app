@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { FaArrowRight, FaArrowUp, FaEnvelope } from "react-icons/fa";
 import { Brand, nav } from "./Navbar";
 
+import FooterParticles from "./FooterParticles";
+
 const legal = [
   ["/privacypolicy", "Privacy"],
   ["/imprint", "Imprint"],
@@ -11,6 +13,7 @@ const legal = [
 export default function Footer() {
   return (
     <footer className="hf-footer" id="footer">
+      <FooterParticles />
       <div className="hf-footer-inner">
         <div className="hf-footer-intro">
           <Brand />

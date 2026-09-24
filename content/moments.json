@@ -12,11 +12,6 @@
             "id": "quan-grant-celebration",
             "src": "src/assets/moments/quan_grant_celeb_2026_jul.jpg",
             "alt": "The lab celebrating Quan Shi's research grant"
-          },
-          {
-            "id": "quan-humboldt-ifores",
-            "src": "src/assets/moments/quan_humbol_ifores_2026_jul.jpg",
-            "alt": "Quan Shi receiving the Humboldt iFORES fellowship"
           }
         ]
       },
@@ -44,11 +39,6 @@
         "title": "IKIM 5+1 Celebration",
         "description": "Marking a milestone together at IKIM.",
         "photos": [
-          {
-            "id": "ikim-celebration-moment",
-            "src": "src/assets/moments/20260612-IKIM-5+1Celeb_inthemoment.jpg",
-            "alt": "The lab in the moment during the IKIM 5+1 celebration"
-          },
           {
             "id": "ikim-celebration-group",
             "src": "src/assets/moments/Part_of_IKIM5+1Celebs.jpeg",
@@ -84,24 +74,6 @@
             "id": "christmas-dinner-2025",
             "src": "src/assets/moments/labdinner_christmas_2025.jpeg",
             "alt": "The lab's Christmas dinner in 2025"
-          },
-          {
-            "id": "gluhwein-2025",
-            "src": "src/assets/moments/gluhweinwithlab_2025.jpg",
-            "alt": "Lab members enjoying Glühwein together"
-          }
-        ]
-      },
-      {
-        "id": "lab-dinner-nov-2025",
-        "date": "November 2025",
-        "title": "Autumn Lab Dinner",
-        "description": "Gathering around the table as the season turns.",
-        "photos": [
-          {
-            "id": "lab-dinner-november-2025",
-            "src": "src/assets/moments/lab_dinner_nov_2025.jpg",
-            "alt": "The Kocakavuk Lab at a November dinner"
           }
         ]
       },
@@ -128,19 +100,6 @@
             "id": "new-phd-dinner-2025",
             "src": "src/assets/moments/lab_dinner_newphd_newclinicanscientist_jul_2025.jpg",
             "alt": "Lab dinner welcoming a new PhD student and clinician-scientist"
-          }
-        ]
-      },
-      {
-        "id": "ikim-get-together-2025",
-        "date": "April 2025",
-        "title": "IKIM Get-Together",
-        "description": "Sharing a homemade meal and an evening with colleagues at IKIM.",
-        "photos": [
-          {
-            "id": "ikim-get-together-group-2025",
-            "src": "src/assets/moments/IKIMGetTogetherpeeps_april2025.jpeg",
-            "alt": "IKIM colleagues gathered around a shared meal"
           }
         ]
       }
