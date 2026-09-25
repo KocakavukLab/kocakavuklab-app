@@ -28,7 +28,7 @@ The site uses the V18 design with the maintainer content system integrated. A fl
 - **React Router** chooses pages without a full document reload. `src/App.jsx` defines the routes; `src/index.jsx` starts the application with BrowserRouter.
 - **Vite** serves local development and builds the production site. No running Node application server is needed to serve the built files.
 - **Tailwind CSS and component CSS** control responsive spacing and appearance. `Layout.jsx` wraps pages with the shared navbar, main area and footer.
-- **React Markdown** renders news. Contributors write Markdown with JSON metadata between `---` delimiters; this is not YAML. Do not add executable code or HTML to articles.
+- **React Markdown** renders news. Contributors write Markdown with JSON or YAML metadata between `---` delimiters. Structured collections also accept `.yaml` or `.yml` instead of `.json`; keep exactly one source per collection. Do not add executable code or HTML to articles.
 - **tsParticles** supplies the decorative footer animation. Animation changes belong to developer work.
 - **EmailJS** sends contact form submissions from the browser. Successful page rendering does not prove email delivery; test deliberately with a known test message. Never put private service credentials into frontend files.
 - **Google Maps embeds** are external services. Their availability and browser privacy settings can affect loading independently of the site build.
@@ -36,7 +36,7 @@ The site uses the V18 design with the maintainer content system integrated. A fl
 ## How content becomes a page
 
 ```text
-content/ Markdown and JSON + src/assets/ images
+content/ Markdown and JSON or YAML + src/assets/ images
                     |
        scripts/content.mjs validates inputs
                     |
@@ -47,7 +47,10 @@ content/ Markdown and JSON + src/assets/ images
            Vite -> build/ -> Cloudflare
 ```
 
-`src/data/generated/` is ignored by Git and recreated before start, test and build. Never edit it directly. If a preview is already running, rerun `npm run content:generate` after a content edit. Validation checks structure, dates, duplicate identifiers, image paths and supported values. People still verify facts, publication permissions and visual quality.
+> [!WARNING]
+> `src/data/generated/` is ignored by Git and recreated before start, test and build. Never edit it directly.
+
+ If a preview is already running, rerun `npm run content:generate` after a content edit. Validation checks structure, dates, duplicate identifiers, image paths and supported values. People still verify facts, publication permissions and visual quality.
 
 ## Folder map
 
