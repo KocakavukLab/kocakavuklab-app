@@ -139,3 +139,15 @@ Check the Cloudflare branch preview before merging changes that affect rendering
 For an incorrect merged change, open a reviewed revert PR and redeploy through the normal release process. Do not reset shared history. Confirm the deployed commit after release.
 
 See [WebsiteOverview.md](WebsiteOverview.md) for architecture, page ownership and deployment.
+
+## Verify content additions before review
+
+The current editing format remains JSON for the five structured collections and JSON front matter inside Markdown news files. YAML is not supported; do not rename these files to `.yaml` or paste YAML metadata.
+
+`npm run content:test` adds temporary examples for people, publications, network, jobs, Moments and news, verifies generated output, and checks that an invalid edit does not overwrite the last valid output. `npm test` checks those additions in the affected pages, including Overview and news detail, and smoke-tests the static pages. Fixtures live in a temporary directory and are deleted after tests; they never become published website content. Contact and legal pages do not accept data-driven blocks.
+
+Use optimized WebP assets for photographs and publication thumbnails. Before deleting an original, confirm its optimized replacement exists, search source/content/public files for references, and run content validation and a production build. Keep SVG organization marks as SVG. Git history retains removed originals; no history rewrite is needed to clean the current tree.
+
+For publication screenshots, use a flat rendering of the source PDF page, preserve proportions, save as WebP and include the source URL, DOI and page number in the PR. Avoid decorative page mockups. The Cell 2022 GLASS thumbnail uses PDF page 1 from [the coauthor-hosted paper](https://www.barthel-lab.com/publications/data/2022_Cell_GLASSx.pdf), DOI `10.1016/j.cell.2022.04.038`.
+
+Before deleting obsolete branches, archive their tips in a verified Git bundle and record the branch-to-commit mapping and restore commands. Preserve uncommitted work separately. Never delete a branch supporting an open PR; retain the active maintainer branch and main. Archive files are local recovery artifacts, not website assets.

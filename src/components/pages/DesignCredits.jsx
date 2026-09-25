@@ -26,25 +26,31 @@ const groups = [
       { label: "React Markdown", to: "https://github.com/remarkjs/react-markdown", detail: "News article rendering" },
       { label: "EmailJS", to: "https://www.emailjs.com/", detail: "Contact form delivery" },
       { label: "canvas-confetti", to: "https://www.npmjs.com/package/canvas-confetti", detail: "News interactions" },
-      { label: "Particles.js", to: "https://github.com/VincentGarreau/particles.js/", detail: "Footer particle network" },
-      { label: "X Embedded Timeline", to: "https://help.x.com/en/using-x/embed-x-feed", detail: "Official expandable Overview profile feed" },
+      { label: "tsParticles", to: "https://particles.js.org/", detail: "Footer animation using the React integration and slim engine" },
+      { label: "Google Maps", to: "https://maps.google.com/", detail: "Embedded hematology location map" },
+      { label: "React Helmet", to: "https://github.com/nfl/react-helmet", detail: "Document metadata on the recovery page" },
     ],
   },
   {
     title: "Visual Assets",
     items: [
       { label: "Adobe Firefly", to: "https://www.adobe.com/products/firefly.html", detail: "DNA cover artwork" },
-      { label: "Google Fonts", to: "https://fonts.google.com/", detail: "Space Grotesk and DM Sans" },
+      { label: "Segoe UI & system fonts", detail: "Main interface uses locally installed fonts; no Segoe font files are distributed" },
+      { label: "Google Fonts", to: "https://fonts.google.com/", detail: "Hero typography and retained page font styles" },
       { label: "Journal artwork", detail: "Publication covers and journal marks belong to their publishers" },
       { label: "Organization marks", detail: "Collaborator and funder logos belong to their organizations" },
       { label: "Kocakavuk Lab", detail: "Member portraits, news images, and moments photography" },
     ],
   },
   {
-    title: "Delivery",
+    title: "Build, Testing & Delivery",
     items: [
       { label: "Cloudflare", to: "https://www.cloudflare.com/", detail: "Site hosting and delivery" },
-      { label: "jsDelivr", to: "https://www.jsdelivr.com/", detail: "Particles.js CDN" },
+      { label: "Vite", to: "https://vite.dev/", detail: "Development server and production build" },
+      { label: "Vitest & Testing Library", to: "https://vitest.dev/", detail: "Component and content integration tests with jsdom" },
+      { label: "PostCSS & Autoprefixer", to: "https://postcss.org/", detail: "CSS build processing and browser prefixes" },
+      { label: "Node.js & npm", to: "https://nodejs.org/", detail: "Content validation, asset generation and dependency management" },
+      { label: "GitHub Actions", to: "https://github.com/features/actions", detail: "Pull request content checks, tests and builds" },
     ],
   },
   {
@@ -52,7 +58,6 @@ const groups = [
     wide: true,
     items: [
       { label: "Pranav Swaroop Gundla", to: "https://github.com/psgundla", detail: "Lab website architect and maintainer" },
-      { label: "Mahsasadat Nezamabadi", to: "https://github.com/MahsasadatNezamabadi", detail: "Lab website maintainer" },
       { label: "Codex by OpenAI", to: "https://openai.com/codex/", detail: "Development assistance" },
     ],
   },
@@ -71,8 +76,6 @@ const DesignCredits = () => {
           <p className="mt-2 text-white/85">
             Designed with <span aria-hidden="true">&#x2764;</span> by{" "}
             <Link to="https://biocoderr.github.io" className="font-semibold" style={{ color: ORANGE }}>Pranav</Link>
-            {" & "}
-            <Link to="https://github.com/MahsasadatNezamabadi" className="font-semibold" style={{ color: ORANGE }}>Mahsa</Link>
           </p>
         </div>
       </header>
@@ -94,7 +97,7 @@ const DesignCredits = () => {
                 </h2>
               </div>
               <ul
-                className={`mt-4 text-sm ${wide ? "divide-y md:grid md:grid-cols-3 md:divide-x md:divide-y-0" : "divide-y"}`}
+                className={`mt-4 text-sm ${wide ? "divide-y md:grid md:grid-cols-2 md:divide-x md:divide-y-0" : "divide-y"}`}
                 style={{ color: T.muted, borderColor: T.line }}
               >
                 {items.map(({ label, to, detail }) => (
