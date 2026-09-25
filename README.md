@@ -1,4 +1,4 @@
-# Kocakavuk Lab website — Version 2
+# Kocakavuk Lab website 
 
 Computational Oncology at University Hospital Essen.
 
