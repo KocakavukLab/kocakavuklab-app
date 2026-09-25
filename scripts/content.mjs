@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseDocument } from 'yaml';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const fail = (where, message) => { throw new Error(`${where}: ${message}`); };
@@ -37,10 +38,17 @@ export function records(items, required, allowed, where, key = 'id') {
     }
   });
 }
+export function parseMetadata(source, filename) {
+  // JSON remains compatible. YAML uses core scalars: dates stay strings.
+  const doc = parseDocument(source, { schema: 'core', uniqueKeys: true });
+  if (doc.errors.length || doc.warnings.length) fail(filename, [...doc.errors, ...doc.warnings].map(e => e.message).join('; '));
+  try { return doc.toJS({ maxAliasCount: 0 }); }
+  catch (error) { fail(filename, error.message); }
+}
 export function parseNews(source, filename) {
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
-  if (!match) fail(filename, 'expected JSON metadata between --- lines, followed by Markdown');
-  const entry = { ...JSON.parse(match[1]), fullContent: match[2].replace(/\r?\n$/, '') };
+  if (!match) fail(filename, 'expected JSON or YAML metadata between --- lines, followed by Markdown');
+  const entry = { ...parseMetadata(match[1], filename), fullContent: match[2].replace(/\r?\n$/, '') };
   records([entry], ['id','title','date','dateDisplay','category','shortDescription','fullContent'], ['id','title','date','dateDisplay','category','image','shortDescription','fullContent','tags','photoPair','memberImages'], filename);
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.id) || filename !== `${entry.id}.md`) fail(filename, 'filename must match lowercase hyphenated id');
   date(entry.date, filename);
@@ -53,7 +61,11 @@ export function parseNews(source, filename) {
   return entry;
 }
 export function loadContent(contentDir = path.join(root, 'content')) {
-  const read = name => JSON.parse(fs.readFileSync(path.join(contentDir, `${name}.json`), 'utf8'));
+  const read = name => {
+    const sources = ['json', 'yaml', 'yml'].map(ext => path.join(contentDir, `${name}.${ext}`)).filter(file => fs.existsSync(file));
+    if (sources.length !== 1) fail(name, 'keep exactly one source: .json, .yaml or .yml');
+    return parseMetadata(fs.readFileSync(sources[0], 'utf8'), sources[0]);
+  };
   const people = read('people'), jobs = read('jobs'), network = read('network'), moments = read('moments'), publications = read('publications');
   records([people], [], ['principalInvestigator','groups','activeOrder'], 'people', null);
   const personFields = ['id','name','image','role','description','email','bsky','scholar','linkedin','github','website','twitter','researchgate'];

@@ -61,7 +61,7 @@ const Contact = () => {
   const input = "w-full rounded-xl border px-4 py-4 text-base outline-none focus:border-[#FF914D]";
 
   return (
-    <div className="min-h-screen" style={{ background: T.page, fontFamily: BODY }}>
+    <div style={{ background: T.page, fontFamily: BODY }}>
       {/* Header band */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${coverImg})` }} aria-hidden="true" />
