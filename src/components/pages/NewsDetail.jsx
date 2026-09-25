@@ -1,339 +1,155 @@
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
-import {
-    FaArrowLeft,
-    FaCalendarAlt,
-    FaTag,
-    FaMoneyBillWave,
-    FaUserPlus,
-    FaNewspaper,
-    FaAward,
-} from "react-icons/fa";
-import {
-    getNewsById,
-    NEWS_CATEGORIES,
-    getSortedNews,
-} from "../../data/newsData";
+import { FaArrowLeft, FaCalendarAlt } from "react-icons/fa";
+import { getNewsById, NEWS_CATEGORIES, getSortedNews } from "../../data/newsData";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
 import "../../App.css";
 
-// Function to get category icon
-const getCategoryIcon = (category) => {
-    switch (category) {
-        case "grant":
-            return <FaMoneyBillWave className="inline" />;
-        case "new_member":
-            return <FaUserPlus className="inline" />;
-        case "award":
-            return <FaAward className="inline" />;
-        default:
-            return <FaNewspaper className="inline" />;
-    }
-};
+const T = { page: "#F6F2EC", surface: "#FFFFFF", ink: "#14181F", muted: "#5B6472", line: "#E4DCD1" };
+const DISPLAY = '"Space Grotesk", system-ui, sans-serif';
+const BODY = '"DM Sans", system-ui, -apple-system, sans-serif';
+const ORANGE = "#FF914D";
 
-// Function to get category color
-const getCategoryColor = (category) => {
-    const cat = Object.values(NEWS_CATEGORIES).find((c) => c.id === category);
-    return cat ? cat.color : "#6B7280";
-};
-
-// Function to get category label
 const getCategoryLabel = (category) => {
-    const cat = Object.values(NEWS_CATEGORIES).find((c) => c.id === category);
-    return cat ? cat.label : "News";
+  const cat = Object.values(NEWS_CATEGORIES).find((c) => c.id === category);
+  return cat ? cat.label : "News";
 };
 
 function NewsDetail() {
-    const { newsId } = useParams();
-    const navigate = useNavigate();
-    const newsItem = getNewsById(newsId);
+  const { newsId } = useParams();
+  const navigate = useNavigate();
+  const newsItem = getNewsById(newsId);
 
-    if (!newsItem) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-50">
-                <div className="text-center">
-                    <h1 className="text-4xl font-bold text-red-500 mb-4">404</h1>
-                    <p className="text-xl text-gray-700 mb-6">News article not found!</p>
-                    <button
-                        onClick={() => navigate("/news")}
-                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                        Back to News
-                    </button>
-                </div>
-            </div>
-        );
-    }
-
-    // Get previous and next news items
-    const sortedNews = getSortedNews();
-    const currentIndex = sortedNews.findIndex((item) => item.id === newsId);
-    const previousNews =
-        currentIndex < sortedNews.length - 1 ? sortedNews[currentIndex + 1] : null;
-    const nextNews = currentIndex > 0 ? sortedNews[currentIndex - 1] : null;
-
-    const categoryColor = getCategoryColor(newsItem.category);
-
+  if (!newsItem) {
     return (
-        <div className="min-h-screen bg-gray-50">
-            {/* Hero Section with Image */}
-            <div className="relative w-full h-96 overflow-hidden bg-gradient-to-br from-blue-600 to-purple-700">
-                {newsItem.image && (
-                    <img
-                        src={newsItem.image}
-                        alt={newsItem.title}
-            className="absolute inset-0 w-full h-full object-cover opacity-80"
-                        loading="lazy"
-                    />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-                {/* Back Button */}
-                <button
-                    onClick={() => navigate("/news")}
-                    className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-gray-800 rounded-lg shadow-lg transition-all"
-                >
-                    <FaArrowLeft />
-                    <span>Back to News</span>
-                </button>
-
-                {/* Category Badge */}
-                <div className="absolute top-6 right-6">
-                    <span
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg"
-                        style={{ backgroundColor: categoryColor }}
-                    >
-                        {getCategoryIcon(newsItem.category)}
-                        {getCategoryLabel(newsItem.category)}
-                    </span>
-                </div>
-            </div>
-
-            {/* Content Section */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="max-w-4xl mx-auto -mt-20 relative z-10"
-            >
-                {/* Main Content Card */}
-                <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8">
-                    {/* Header */}
-                    <div
-                        className="p-8 md:p-12 border-b-4"
-                        style={{ borderColor: categoryColor }}
-                    >
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                            {newsItem.title}
-                        </h1>
-
-                        {/* Meta Information */}
-                        <div className="flex flex-wrap items-center gap-4 text-gray-600">
-                            <div className="flex items-center gap-2">
-                                <FaCalendarAlt className="text-gray-400" />
-                                <span className="font-medium">{newsItem.dateDisplay}</span>
-                            </div>
-
-                            {newsItem.tags && newsItem.tags.length > 0 && (
-                                <div className="flex items-center gap-2">
-                                    <FaTag className="text-gray-400" />
-                                    <span className="text-sm">{newsItem.tags.length} tags</span>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Article Content */}
-                    <div className="p-8 md:p-12">
-                        <ReactMarkdown
-                            components={{
-                                p: ({ node, ...props }) => (
-                                    <p
-                                        className="text-lg text-gray-700 mb-6 leading-relaxed"
-                                        {...props}
-                                    />
-                                ),
-                                strong: ({ node, ...props }) => (
-                                    <strong className="font-semibold text-gray-900" {...props} />
-                                ),
-                                h1: ({ node, ...props }) => (
-                                    // eslint-disable-next-line jsx-a11y/heading-has-content
-                                    <h1
-                                        className="text-3xl font-bold text-gray-900 mt-8 mb-4"
-                                        {...props}
-                                    />
-                                ),
-                                h2: ({ node, ...props }) => (
-                                    // eslint-disable-next-line jsx-a11y/heading-has-content
-                                    <h2
-                                        className="text-2xl font-bold text-gray-900 mt-6 mb-3"
-                                        {...props}
-                                    />
-                                ),
-                                h3: ({ node, ...props }) => (
-                                    // eslint-disable-next-line jsx-a11y/heading-has-content
-                                    <h3
-                                        className="text-xl font-semibold text-gray-900 mt-4 mb-2"
-                                        {...props}
-                                    />
-                                ),
-                                ul: ({ node, ...props }) => (
-                                    <ul
-                                        className="list-disc list-inside mb-6 space-y-2"
-                                        {...props}
-                                    />
-                                ),
-                                ol: ({ node, ...props }) => (
-                                    <ol
-                                        className="list-decimal list-inside mb-6 space-y-2"
-                                        {...props}
-                                    />
-                                ),
-                                li: ({ node, ...props }) => (
-                                    <li className="text-gray-700 ml-4" {...props} />
-                                ),
-                                a: ({ node, ...props }) => (
-                                    // eslint-disable-next-line jsx-a11y/anchor-has-content
-                                    <a
-                                        className="text-blue-600 hover:text-blue-800 underline font-medium"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        {...props}
-                                    />
-                                ),
-                                blockquote: ({ node, ...props }) => (
-                                    <blockquote
-                                        className="border-l-4 border-blue-600 pl-4 italic text-gray-600 my-6"
-                                        {...props}
-                                    />
-                                ),
-                                code: ({ node, inline, ...props }) =>
-                                    inline ? (
-                                        <code
-                                            className="bg-gray-100 text-red-600 px-2 py-1 rounded text-sm font-mono"
-                                            {...props}
-                                        />
-                                    ) : (
-                                        <code
-                                            className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-4 font-mono text-sm"
-                                            {...props}
-                                        />
-                                    ),
-                            }}
-                        >
-                            {newsItem.fullContent}
-                        </ReactMarkdown>
-
-                        {/* Member Images Section (for new member announcements) */}
-                        {newsItem.memberImages && newsItem.memberImages.length > 0 && (
-                            <div className="mt-8 pt-8 border-t border-gray-200">
-                                <h3 className="text-lg font-semibold text-gray-900 mb-6 text-center">
-                                    Welcome to the Team
-                                </h3>
-                                <div className="flex flex-wrap gap-6 justify-center">
-                                    {newsItem.memberImages.map((memberImg, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="flex flex-col items-center"
-                                        >
-                                            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl transform hover:scale-110 transition-transform duration-300">
-                                                <img
-                                                    src={memberImg}
-                                                    alt={`Team member ${idx + 1}`}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Tags Section */}
-                        {newsItem.tags && newsItem.tags.length > 0 && (
-                            <div className="mt-8 pt-8 border-t border-gray-200">
-                                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                                    Tags
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {newsItem.tags.map((tag, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-
-                {/* Navigation to Previous/Next News */}
-                {(previousNews || nextNews) && (
-                    <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                            More News
-                        </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {/* Previous News */}
-                            {previousNews && (
-                                <button
-                                    onClick={() => navigate(`/news/${previousNews.id}`)}
-                                    className="flex items-start gap-4 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all text-left group"
-                                >
-                                    <div className="flex-shrink-0 mt-1">
-                                        <FaArrowLeft className="text-gray-400 group-hover:text-blue-600 transition-colors" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <p className="text-xs text-gray-500 mb-1">Previous</p>
-                                        <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                            {previousNews.title}
-                                        </p>
-                                        <p className="text-xs text-gray-500 mt-1">
-                                            {previousNews.dateDisplay}
-                                        </p>
-                                    </div>
-                                </button>
-                            )}
-
-                            {/* Next News */}
-                            {nextNews && (
-                                <button
-                                    onClick={() => navigate(`/news/${nextNews.id}`)}
-                                    className="flex items-start gap-4 p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all text-left group"
-                                >
-                                    <div className="flex-1">
-                                        <p className="text-xs text-gray-500 mb-1">Next</p>
-                                        <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                                            {nextNews.title}
-                                        </p>
-                                        <p className="text-xs text-gray-500 mt-1">
-                                            {nextNews.dateDisplay}
-                                        </p>
-                                    </div>
-                                    <div className="flex-shrink-0 mt-1">
-                                        <FaArrowLeft className="text-gray-400 group-hover:text-blue-600 transition-colors rotate-180" />
-                                    </div>
-                                </button>
-                            )}
-                        </div>
-                    </div>
-                )}
-
-                {/* Back to All News Button */}
-                <div className="text-center pb-12">
-                    <button
-                        onClick={() => navigate("/news")}
-                        className="px-8 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transform hover:scale-105 transition-all"
-                    >
-                        View All News
-                    </button>
-                </div>
-            </motion.div>
+      <div className="flex min-h-screen items-center justify-center px-6" style={{ background: T.page, fontFamily: BODY }}>
+        <div className="text-center">
+          <h1 className="text-6xl font-extrabold" style={{ fontFamily: DISPLAY, color: T.ink }}>
+            4<span style={{ color: ORANGE }}>0</span>4
+          </h1>
+          <p className="mt-3 text-lg" style={{ color: T.muted }}>News article not found.</p>
+          <button onClick={() => navigate("/news")} className="mt-6 rounded-xl px-6 py-3 text-sm font-bold" style={{ background: ORANGE, color: "#14181F" }}>
+            Back to News
+          </button>
         </div>
+      </div>
     );
+  }
+
+  const sortedNews = getSortedNews();
+  const currentIndex = sortedNews.findIndex((item) => item.id === newsId);
+  const previousNews = currentIndex < sortedNews.length - 1 ? sortedNews[currentIndex + 1] : null;
+  const nextNews = currentIndex > 0 ? sortedNews[currentIndex - 1] : null;
+
+  return (
+    <div className="min-h-screen" style={{ background: T.page, fontFamily: BODY }}>
+      {/* Hero */}
+      <div className="relative h-96 w-full overflow-hidden" style={{ background: T.ink }}>
+        <img src={newsItem.image || coverImg} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+        <div className="absolute left-4 right-4 top-24 z-20 flex items-start justify-between gap-3 sm:left-6 sm:right-6 sm:top-28">
+          <button onClick={() => navigate("/news")} className="flex shrink-0 items-center gap-2 rounded-xl bg-white/90 px-4 py-2 text-sm font-semibold text-[#14181F] shadow-lg transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#FF914D]">
+            <FaArrowLeft /> Back to News
+          </button>
+          <span className="ml-auto rounded-full px-3 py-2 text-right text-xs font-bold sm:px-4 sm:text-sm" style={{ background: ORANGE, color: "#14181F" }}>
+            {getCategoryLabel(newsItem.category)}
+          </span>
+        </div>
+      </div>
+
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="relative z-10 mx-auto -mt-20 max-w-4xl px-4">
+        <article className="mb-8 overflow-hidden rounded-2xl border bg-white shadow-xl" style={{ borderColor: T.line }}>
+          <div className="border-b-4 p-8 md:p-12" style={{ borderColor: ORANGE }}>
+            <h1 className="text-3xl font-bold leading-tight md:text-4xl" style={{ fontFamily: DISPLAY, color: T.ink, letterSpacing: "-0.02em" }}>
+              {newsItem.title}
+            </h1>
+            <div className="mt-4 flex items-center gap-2 text-[13px]" style={{ color: T.muted }}>
+              <FaCalendarAlt style={{ color: ORANGE }} /> <span className="font-medium">{newsItem.dateDisplay}</span>
+            </div>
+          </div>
+
+          <div className="p-8 md:p-12">
+            <ReactMarkdown
+              components={{
+                p: ({ node, ...props }) => <p className="mb-5 text-[16px] leading-relaxed" style={{ color: "#37414d" }} {...props} />,
+                strong: ({ node, ...props }) => <strong className="font-semibold" style={{ color: T.ink }} {...props} />,
+                a: ({ node, ...props }) => (
+                  // eslint-disable-next-line jsx-a11y/anchor-has-content
+                  <a className="font-medium underline" style={{ color: ORANGE }} target="_blank" rel="noopener noreferrer" {...props} />
+                ),
+                ul: ({ node, ...props }) => <ul className="mb-5 list-inside list-disc space-y-2" {...props} />,
+                li: ({ node, ...props }) => <li style={{ color: "#37414d" }} {...props} />
+              }}
+            >
+              {newsItem.fullContent}
+            </ReactMarkdown>
+
+            {newsItem.photoPair && (
+              <div className="my-6 grid grid-cols-2 items-start gap-3 sm:gap-4">
+                {newsItem.photoPair.map((photo, index) => (
+                  <a key={photo} href={photo} target="_blank" rel="noopener noreferrer" aria-label={`Open MAP 2026 photo ${index + 1} at full size`}>
+                    <img src={photo} alt={index === 0 ? "Quan Shi with poster 101P at MAP 2026" : "Kocakavuk Lab at the poster presentation in London"} loading="lazy" className="h-auto w-full rounded-lg" />
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {newsItem.memberImages && newsItem.memberImages.length > 0 && (
+              <div className="mt-8 border-t pt-8" style={{ borderColor: T.line }}>
+                <h3 className="mb-6 text-center text-lg font-bold" style={{ color: T.ink }}>Welcome to the Team</h3>
+                <div className="flex flex-wrap justify-center gap-6">
+                  {newsItem.memberImages.map((memberImg, idx) => (
+                    <img key={idx} src={memberImg} alt={`Team member ${idx + 1}`} className="h-24 w-24 rounded-full object-cover shadow-lg transition hover:scale-105" />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {newsItem.tags && newsItem.tags.length > 0 && (
+              <div className="mt-8 border-t pt-8" style={{ borderColor: T.line }}>
+                <h3 className="mb-3 text-[13px] font-bold uppercase tracking-[0.14em]" style={{ color: T.muted }}>Tags</h3>
+                <div className="flex flex-wrap gap-2">
+                  {newsItem.tags.map((tag, idx) => (
+                    <span key={idx} className="rounded-full px-3 py-1 text-[13px]" style={{ background: "#EDE7DE", color: T.muted }}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
+
+        {(previousNews || nextNews) && (
+          <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {previousNews && (
+              <button onClick={() => navigate(`/news/${previousNews.id}`)} className="flex items-start gap-4 rounded-2xl border bg-white p-5 text-left transition hover:border-[#FF914D]" style={{ borderColor: T.line }}>
+                <FaArrowLeft className="mt-1 flex-none" style={{ color: T.muted }} />
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.14em]" style={{ color: ORANGE }}>Previous</p>
+                  <p className="mt-1 font-bold" style={{ color: T.ink }}>{previousNews.title}</p>
+                </div>
+              </button>
+            )}
+            {nextNews && (
+              <button onClick={() => navigate(`/news/${nextNews.id}`)} className="flex items-start justify-between gap-4 rounded-2xl border bg-white p-5 text-left transition hover:border-[#FF914D] md:text-right" style={{ borderColor: T.line }}>
+                <div className="md:order-2">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.14em]" style={{ color: ORANGE }}>Next</p>
+                  <p className="mt-1 font-bold" style={{ color: T.ink }}>{nextNews.title}</p>
+                </div>
+                <FaArrowLeft className="mt-1 flex-none rotate-180 md:order-1" style={{ color: T.muted }} />
+              </button>
+            )}
+          </div>
+        )}
+
+        <div className="pb-12 text-center">
+          <button onClick={() => navigate("/news")} className="rounded-xl px-8 py-3 text-sm font-bold" style={{ background: ORANGE, color: "#14181F" }}>
+            View All News
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
 }
 
 export default NewsDetail;

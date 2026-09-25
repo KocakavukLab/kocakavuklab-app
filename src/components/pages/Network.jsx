@@ -1,108 +1,57 @@
-import { motion } from "framer-motion"; // Import animation library
-import {
-    CanTarLogo, BFondLogo, DFGLogo, WTZLogo, EKFSLogo, 
-    ESMOLogo, WSGLogo, UMEALogo, UMEHLogo, YaleLogo, 
-    ForbeckLogo, GLASSLogo, NCTLogo, JSTLogo, ENLogo,IKLogo,SFBLogo,DHKLogo
-} from "../LogoName";
-import "../../App.css";
-import PageHeader from "../common/PageHeader";
 import GoToTopButton from "../common/GoToTopButton";
+import { networkGroups } from "../../data/networkData";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
+import "../../App.css";
 
-// Networking Collaborators
-const networking = [
-    { nid: 1, ntitle: "UMEH", nlogo: UMEHLogo, url: "https://www.uni-essen-haematologie.de/" },
-    { nid: 2, ntitle: "ESMO", nlogo: ESMOLogo, url: "https://www.esmo.org/" },
-    { nid: 3, ntitle: "NCT", nlogo: NCTLogo, url: "https://nct.dkfz.de/en/nct.html" },
-    { nid: 4, ntitle: "Yale", nlogo: YaleLogo, url: "https://www.yale.edu/" },
-    { nid: 5, ntitle: "WTZ", nlogo: WTZLogo, url: "https://wtz-essen.de/" },
-    { nid: 6, ntitle: "GLASS", nlogo: GLASSLogo, url: "https://www.glass-consortium.org/" },
-    { nid: 7, ntitle: "IKIM", nlogo: IKLogo, url: "https://www.ikim.uk-essen.de/" },
-    { nid: 8, ntitle: "DHK", nlogo: DHKLogo, url: "#" },
-    { nid: 9, ntitle: "SFB", nlogo: SFBLogo, url: "https://sfb1530.de/" },
-    { nid: 10, ntitle: "CANTAR", nlogo: CanTarLogo, url: "https://land.nrw/pressemitteilung/81-millionen-euro-landesfoerderung-fuer-fuenf-exzellente-forschungsnetzwerke" },
-];
+// ---- Theme (light) ----
+const T = { page: "#F6F2EC", surface: "#FFFFFF", ink: "#14181F", muted: "#5B6472", line: "#E4DCD1" };
+const DISPLAY = '"Space Grotesk", system-ui, sans-serif';
+const BODY = '"DM Sans", system-ui, -apple-system, sans-serif';
+const ORANGE = "#FF914D";
 
-// Funders Section
-const funders = [
-    { id: 1, title: "Boehringer Ingelheim Fonds", logo: BFondLogo, url: "https://www.bifonds.de/index.html" },
-    { id: 2, title: "CANTAR", logo: CanTarLogo, url: "https://land.nrw/pressemitteilung/81-millionen-euro-landesfoerderung-fuer-fuenf-exzellente-forschungsnetzwerke" },
-    { id: 3, title: "DFG", logo: DFGLogo, url: "https://www.dfg.de/" },
-    { id: 4, title: "EKFS", logo: EKFSLogo, url: "https://www.ekfs.de/" },
-    { id: 5, title: "Walter Siegenthaler Gesellschaft", logo: WSGLogo, url: "https://siegenthaler-gesellschaft.de/" },
-    { id: 6, title: "Forbeck", logo: ForbeckLogo, url: "https://www.wgfrf.org/" },
-    { id: 7, title: "UMEA", logo: UMEALogo, url: "https://www.uni-due.de/med/umea/" },
-    { id: 8, title: "Emmy Noether", logo: JSTLogo, url: "https://www.jackstaedt-stiftung.de" },
-    { id: 9, title: "Jack Staedt", logo: ENLogo, url: "https://www.dfg.de/de/foerderung/foerdermoeglichkeiten/programme/einzelfoerderung/emmy-noether" }
-];
+const LogoGrid = ({ items }) => (
+  <div className="mt-4 grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
+    {items.map((it) => (
+      <a
+        key={it.id}
+        href={it.url && it.url !== "#" ? it.url : undefined}
+        target={it.url && it.url !== "#" ? "_blank" : undefined}
+        rel="noreferrer"
+        aria-label={it.title}
+        className="flex min-h-[200px] flex-col items-center justify-center gap-5 overflow-hidden rounded-2xl border bg-white p-4 text-center transition hover:-translate-y-1 hover:border-[#FF914D]"
+        style={{ borderColor: T.line }}
+      >
+        <span className="flex h-24 w-full items-center justify-center">
+          <img src={it.logo} alt={it.title} loading="lazy" className="max-h-full max-w-[85%] object-contain" />
+        </span>
+        <span className="w-full text-base font-semibold leading-tight" style={{ color: T.ink }}>{it.title}</span>
+      </a>
+    ))}
+  </div>
+);
 
-// Infinite Sliding Animation
-const sliderAnimation = {
-    animate: {
-        x: ["0%", "-100%"], // Moves from left to right
-        transition: {
-            ease: "linear",
-            duration: 80, // Speed of sliding (increase for slower effect)
-            repeat: Infinity, // Loop forever
-        },
-    },
-};
+function Network() {
+  const collab = networkGroups.find((g) => g.id === "network");
 
-const Network = () => {
-    return (
-        <div className="min-h-screen bg-gray-50 w-full py-6 relative flex flex-col items-center">
-            {/* Page Header */}
-            <div className="relative networks-div mb-6">
-                <PageHeader title="Our Network" />
-            </div>
-
-            {/* Collaborators Section */}
-            <div className="w-full max-w-7xl px-4 overflow-hidden">
-                <PageHeader title="Collaborations & Network" />
-                <motion.div className="flex w-max" variants={sliderAnimation} animate="animate">
-                    {networking.concat(networking).map((network, index) => (
-                        <a
-                            key={index}
-                            href={network.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex justify-center items-center p-4"
-                        >
-                            <img
-                                src={network.nlogo}
-                                alt={network.ntitle}
-                                className="w-64 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-                                loading="lazy"
-                            />
-                        </a>
-                    ))}
-                </motion.div>
-            </div>
-
-            {/* Funders Section */}
-            <div className="w-full max-w-7xl px-4 mt-12 overflow-hidden">
-                <PageHeader title="Funding" />
-                <motion.div className="flex w-max" variants={sliderAnimation} animate="animate">
-                    {funders.concat(funders).map((funder, index) => (
-                        <a
-                            key={index}
-                            href={funder.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex justify-center items-center p-4"
-                        >
-                            <img
-                                src={funder.logo}
-                                alt={funder.title}
-                                className="w-64 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-                                loading="lazy"
-                            />
-                        </a>
-                    ))}
-                </motion.div>
-            </div>
-            <GoToTopButton />
+  return (
+    <div className="min-h-screen" style={{ background: T.page, fontFamily: BODY }}>
+      <header className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${coverImg})` }} aria-hidden="true" />
+        <div className="absolute inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-16">
+          <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: ORANGE, fontFamily: "ui-monospace, 'SF Mono', Menlo, monospace" }}>Collaborations &amp; funding</p>
+          <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl" style={{ fontFamily: DISPLAY, letterSpacing: "-0.02em", textShadow: "0 2px 20px rgba(0,0,0,.5)" }}>Our Network</h1>
+          <p className="mt-2 max-w-2xl text-white/85">Collaborations that connect clinical care, computation and cancer research.</p>
         </div>
-    );
-};
+      </header>
+
+      <div className="mx-auto max-w-[1440px] px-6 py-14">
+        {collab && <LogoGrid items={collab.items} />}
+      </div>
+
+      <GoToTopButton />
+    </div>
+  );
+}
 
 export default Network;

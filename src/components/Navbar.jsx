@@ -1,97 +1,83 @@
-import { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logos/lablogo_complete.svg";
 import "./Navbar.css";
-import { FaTimes, FaBars } from "react-icons/fa";
-import labLogoWhite from "../assets/logos/lablogowhite.svg";
 
-function NavBar() {
-    const [click, setClick] = useState(false);
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 960);
-    const [linkDisabled] = useState(false); // Change this to false to enable the link
-    const navbarRef = useRef(null);
+export const nav = [
+  ["/overview", "Overview"],
+  ["/members", "Members"],
+  ["/publications", "Publications"],
+  ["/network", "Network"],
+  ["/news", "News"],
+  ["/moments", "Moments"],
+  ["/contact", "Contact"],
+  ["/joinus", "Join Us"],
+];
 
-    const handleClick = () => setClick(!click);
-
-    // Close menu when clicking outside
-    useEffect(() => {
-        const closeMenu = (e) => {
-            if (click && navbarRef.current && !navbarRef.current.contains(e.target)) {
-                setClick(false);
-            }
-        };
-        document.addEventListener("mousedown", closeMenu);
-        return () => document.removeEventListener("mousedown", closeMenu);
-    }, [click]);
-
-    // Update state when window resizes
-    useEffect(() => {
-        const checkScreenSize = () => setIsSmallScreen(window.innerWidth <= 960);
-        window.addEventListener("resize", checkScreenSize);
-        return () => window.removeEventListener("resize", checkScreenSize);
-    }, []);
-
-    return (
-        <nav ref={navbarRef} className="navbar">
-            <div className="nav-container">
-                {/* Logo */}
-                <NavLink to="/" className="nav-logo">
-                    <img src={labLogoWhite} alt="Lab Logo" />
-                </NavLink>
-
-                {/* Hamburger Icon (Only on Small Screens) */}
-                {isSmallScreen && (
-                    <div className="nav-icon" onClick={handleClick} aria-label="Toggle Menu">
-                        {click ? <FaTimes /> : <FaBars />}
-                    </div>
-                )}
-
-                {/* Navbar Links with Correct Paths */}
-                <ul className={`nav-menu ${click || !isSmallScreen ? "active" : ""}`}>
-                    <li className="nav-item">
-                        <NavLink to="/overview" className="nav-links" onClick={() => setClick(false)}>
-                            Overview
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/members" className="nav-links" onClick={() => setClick(false)}>
-                            Members
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/publications" className="nav-links" onClick={() => setClick(false)}>
-                            Publications
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/network" className="nav-links" onClick={() => setClick(false)}>
-                            Network
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/news" className="nav-links" onClick={() => setClick(false)}>
-                            News
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        {linkDisabled ? (
-                            <span className="nav-links text-gray-400 cursor-not-allowed">
-                                Join Us
-                            </span>
-                        ) : (
-                            <NavLink to="/joinus" className="nav-links" onClick={() => setClick(false)}>
-                                Join Us
-                            </NavLink>
-                        )}
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/contact" className="nav-links" onClick={() => setClick(false)}>
-                            Contact Us
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
+export function Brand() {
+  return (
+    <Link className="hf-brand" to="/overview">
+      <svg viewBox="180 115 140 190" aria-hidden="true" focusable="false">
+        <image href={logo} width="500" height="500" />
+      </svg>
+      <span>Kocakavuk Lab{" "}<small>Computational Oncology</small></span>
+    </Link>
+  );
 }
 
-export default NavBar;
+export default function NavBar() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const toggle = useRef(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    const close = (event) => {
+      if (event.key === "Escape" && open) {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+    };
+    const outside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) setOpen(false);
+    };
+    document.addEventListener("keydown", close);
+    document.addEventListener("pointerdown", outside);
+    return () => {
+      document.removeEventListener("keydown", close);
+      document.removeEventListener("pointerdown", outside);
+    };
+  }, [open]);
+
+  return (
+    <header aria-label="Site header" className="hf-header" ref={ref}>
+      <div className="hf-header-inner">
+        <Brand />
+        <button
+          className="hf-toggle"
+          ref={toggle}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="hf-navigation"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <FaTimes /> : <FaBars />}<span>Menu</span>
+        </button>
+        <nav id="hf-navigation" className={open ? "is-open" : ""} aria-label="Primary navigation">
+          {nav.map(([to, label]) => (
+            <NavLink
+              key={to}
+              to={to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) => `hf-link ${to === "/joinus" ? "hf-join" : ""} ${isActive ? "is-active" : ""}`}
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+}

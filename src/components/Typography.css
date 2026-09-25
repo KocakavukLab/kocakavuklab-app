@@ -1,0 +1,9 @@
+/* Segoe UI uses the installed system font; no proprietary font files are served.
+   The original home hero keeps its existing font and artwork. */
+.site-shell {
+  --site-font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+.site-shell :is(.hf-header, .hf-footer, .site-main--nav-offset, .site-main:not(.site-main--nav-offset) > div > :not(header)),
+.site-shell :is(.hf-header, .hf-footer, .site-main--nav-offset, .site-main:not(.site-main--nav-offset) > div > :not(header)) :is(div, section, article, h1, h2, h3, h4, h5, h6, p, a, span, li, button, label, input, textarea, select, address, small, strong, time, td, th) {
+  font-family: var(--site-font) !important;
+}

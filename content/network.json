@@ -1,0 +1,134 @@
+[
+  {
+    "id": "network",
+    "title": "Collaborations & Network",
+    "items": [
+      {
+        "id": "avh",
+        "title": "Alexander von Humboldt",
+        "logo": "src/assets/logos/AvH_Logo_rgb.svg",
+        "url": "https://www.humboldt-foundation.de/en/connect/explore-the-humboldt-network/singleview/1264675/dr-quan-shi"
+      },
+      {
+        "id": "bif",
+        "title": "Boehringer Ingelheim Fonds",
+        "logo": "src/assets/logos/boehringer-ingelheim.webp",
+        "url": "https://www.bifonds.de/index.html"
+      },
+      {
+        "id": "cantar-funding",
+        "title": "CANTAR",
+        "logo": "src/assets/logos/logo-cantar2.jpg",
+        "url": "https://land.nrw/pressemitteilung/81-millionen-euro-landesfoerderung-fuer-fuenf-exzellente-forschungsnetzwerke"
+      },
+      {
+        "id": "dfg",
+        "title": "DFG",
+        "logo": "src/assets/logos/dfg.png",
+        "url": "https://www.dfg.de/"
+      },
+      {
+        "id": "ekfs",
+        "title": "EKFS",
+        "logo": "src/assets/logos/EKFS Logo Standard blau_blue_RGB_digital_0.png",
+        "url": "https://www.ekfs.de/"
+      },
+      {
+        "id": "emmy-noether",
+        "title": "Emmy Noether Programme",
+        "logo": "src/assets/logos/logo_emmy_noether_gross.optimized.webp",
+        "url": "https://www.dfg.de/de/foerderung/foerdermoeglichkeiten/programme/einzelfoerderung/emmy-noether"
+      },
+      {
+        "id": "esmo",
+        "title": "ESMO",
+        "logo": "src/assets/logos/esmo.png",
+        "url": "https://www.esmo.org/"
+      },
+      {
+        "id": "forbeck",
+        "title": "Forbeck",
+        "logo": "src/assets/logos/forbeck.png",
+        "url": "https://www.wgfrf.org/"
+      },
+      {
+        "id": "glass",
+        "title": "GLASS",
+        "logo": "src/assets/logos/glass_consort.optimized.webp",
+        "url": "https://www.glass-consortium.org/"
+      },
+      {
+        "id": "ifores",
+        "title": "IFORES",
+        "logo": "src/assets/logos/ifores.png",
+        "url": "#"
+      },
+      {
+        "id": "ikim",
+        "title": "IKIM",
+        "logo": "src/assets/logos/ikim.optimized.webp",
+        "url": "https://www.ikim.uk-essen.de/"
+      },
+      {
+        "id": "jackstaedt",
+        "title": "Jackstädt Foundation",
+        "logo": "src/assets/logos/logo_jackstaedt.png",
+        "url": "https://www.jackstaedt-stiftung.de"
+      },
+      {
+        "id": "nct",
+        "title": "NCT West Network",
+        "logo": "src/assets/logos/nct.optimized.webp",
+        "url": "https://nct.dkfz.de/en/nct.html"
+      },
+      {
+        "id": "sfb",
+        "title": "SFB",
+        "logo": "src/assets/logos/sfb.svg",
+        "url": "https://sfb1530.de/"
+      },
+      {
+        "id": "umeh",
+        "title": "UME Hematology",
+        "logo": "src/assets/logos/Logo_UME_UKE_Klinik_fuer_Haematologie_und_Stammzelltransplantation_EN.optimized.webp",
+        "url": "https://www.uni-essen-haematologie.de/"
+      },
+      {
+        "id": "ume",
+        "title": "UME Hospital",
+        "logo": "src/assets/logos/Logo_UME_UKE_EN.optimized.webp",
+        "url": "https://www.uk-essen.de/"
+      },
+      {
+        "id": "umea",
+        "title": "UMEA",
+        "logo": "src/assets/logos/umea.optimized.webp",
+        "url": "https://www.uni-due.de/med/umea/"
+      },
+      {
+        "id": "ude",
+        "title": "University Duiburg Essen",
+        "logo": "src/assets/logos/ude_logo_claim_rgb.svg",
+        "url": "https://www.uni-due.de/de/index.php"
+      },
+      {
+        "id": "wsg",
+        "title": "Walter Siegenthaler Gesellschaft",
+        "logo": "src/assets/logos/walterlogo.optimized.webp",
+        "url": "https://siegenthaler-gesellschaft.de/"
+      },
+      {
+        "id": "wtz",
+        "title": "WTZ Network",
+        "logo": "src/assets/logos/Logo_UME_WTZ_essen_EN.png",
+        "url": "https://wtz-essen.de/"
+      },
+      {
+        "id": "yale",
+        "title": "Yale",
+        "logo": "src/assets/logos/yalecombi.png",
+        "url": "https://www.yale.edu/"
+      }
+    ]
+  }
+]

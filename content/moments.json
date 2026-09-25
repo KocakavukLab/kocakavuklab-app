@@ -1,0 +1,108 @@
+[
+  {
+    "year": 2026,
+    "events": [
+      {
+        "id": "quan-grants-fellowships-2026",
+        "date": "July 2026",
+        "title": "Grants & Fellowships",
+        "description": "Celebrating Quan Shi's research grant success and Humboldt / iFORES fellowship.",
+        "photos": [
+          {
+            "id": "quan-grant-celebration",
+            "src": "src/assets/moments/quan_grant_celeb_2026_jul.optimized.webp",
+            "alt": "The lab celebrating Quan Shi's research grant"
+          }
+        ]
+      },
+      {
+        "id": "lab-summer-outing-2026",
+        "date": "July 2026",
+        "title": "Lab Summer Outing",
+        "description": "A summer afternoon outdoors with a picnic, barbecue, and plenty of time together away from the lab.",
+        "photos": [
+          {
+            "id": "lab-outing-2026",
+            "src": "src/assets/moments/labouting_jul_2026.jpg",
+            "alt": "The Kocakavuk Lab on a summer outing"
+          },
+          {
+            "id": "lab-outing-group-portrait-2026",
+            "src": "src/assets/moments/Labouting_Jul2026_moment5.optimized.webp",
+            "alt": "The lab posing together in the park at the summer outing"
+          }
+        ]
+      },
+      {
+        "id": "ikim-5plus1-celebration-2026",
+        "date": "June 2026",
+        "title": "IKIM 5+1 Celebration",
+        "description": "Marking a milestone together at IKIM.",
+        "photos": [
+          {
+            "id": "ikim-celebration-group",
+            "src": "src/assets/moments/Part_of_IKIM5+1Celebs.optimized.webp",
+            "alt": "Part of the team at the IKIM 5+1 celebration"
+          }
+        ]
+      },
+      {
+        "id": "grugalauf-2026",
+        "date": "April 2026",
+        "title": "Grugalauf Team Run",
+        "description": "The lab took to the track for the Essen Grugalauf.",
+        "photos": [
+          {
+            "id": "grugalauf-run",
+            "src": "src/assets/moments/grugalauf_2026.optimized.webp",
+            "alt": "Lab members at the Grugalauf run in Essen"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2025,
+    "events": [
+      {
+        "id": "christmas-gluhwein-2025",
+        "date": "December 2025",
+        "title": "Christmas & Glühwein",
+        "description": "Winding down the year with a festive lab dinner and Glühwein.",
+        "photos": [
+          {
+            "id": "christmas-dinner-2025",
+            "src": "src/assets/moments/labdinner_christmas_2025.optimized.webp",
+            "alt": "The lab's Christmas dinner in 2025"
+          }
+        ]
+      },
+      {
+        "id": "summer-intern-turkey-2025",
+        "date": "September 2025",
+        "title": "Summer Intern from Turkey",
+        "description": "Welcoming a summer intern who joined us from Turkey.",
+        "photos": [
+          {
+            "id": "summer-intern-2025",
+            "src": "src/assets/moments/summerintern_from_turkey_sep_2025.optimized.webp",
+            "alt": "Welcoming the summer intern from Turkey"
+          }
+        ]
+      },
+      {
+        "id": "new-phd-clinician-scientist-2025",
+        "date": "July 2025",
+        "title": "New PhD & Clinician-Scientist",
+        "description": "A lab dinner marking a new PhD student and a new clinician-scientist.",
+        "photos": [
+          {
+            "id": "new-phd-dinner-2025",
+            "src": "src/assets/moments/lab_dinner_newphd_newclinicanscientist_jul_2025.optimized.webp",
+            "alt": "Lab dinner welcoming a new PhD student and clinician-scientist"
+          }
+        ]
+      }
+    ]
+  }
+]

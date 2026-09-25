@@ -8,6 +8,7 @@ import Publications from "./components/pages/Publications";
 import JoinUs from "./components/pages/JoinUs";
 import News from "./components/pages/News";
 import NewsDetail from "./components/pages/NewsDetail";
+import Moments from "./components/pages/Moments";
 import Contact from "./components/pages/Contact";
 import NotFound from "./components/NotFound";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy";
@@ -33,6 +34,7 @@ export const App = () => {
       <Route path="/publications" element={<Publications />} />
       <Route path="/news" element={<News />} />
       <Route path="/news/:newsId" element={<NewsDetail />} />
+      <Route path="/moments" element={<Moments />} />
       <Route path="/joinus" element={<JoinUs />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacypolicy" element={<PrivacyPolicy />} />

@@ -4,623 +4,127 @@ import { GrLinkedin } from "react-icons/gr";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
-import PageHeader from "../common/PageHeader";
 import GoToTopButton from "../common/GoToTopButton";
+import { members, memberTwo, blockTwo, alumni } from "../../data/membersData";
+import coverImg from "../../assets/covers/maincover.optimized.webp";
+import "../../App.css";
 
-// Import member images
-import quanImg from "../../assets/members/quan.png";
-import fabianImg from "../../assets/members/Fabian.png";
-import pranavImg from "../../assets/members/Pranav.png";
-import yinchunImg from "../../assets/members/YinchunSu.png";
-import cihatImg from "../../assets/members/cihat.png";
-import marcoImg from "../../assets/members/marco.png";
-import jiaweiImg from "../../assets/members/jiawei.png";
-import mahsaImg from "../../assets/members/mahsa.png";
-import emreImg from "../../assets/members/Emre.png";
-import fatmaImg from "../../assets/members/fatma.png";
-import katharinaImg from "../../assets/members/katharina.png";
-import nachiImg from "../../assets/members/nachi.png";
-import jonayedImg from "../../assets/members/jonayed.png";
+// ---- Theme (light) ----
+const T = { page: "#F6F2EC", surface: "#FFFFFF", ink: "#14181F", muted: "#5B6472", line: "#E4DCD1", tile: "#EDE7DE" };
+const DISPLAY = '"Space Grotesk", system-ui, sans-serif';
+const BODY = '"DM Sans", system-ui, -apple-system, sans-serif';
+const ORANGE = "#FF914D";
 
+const initials = (n) => n.split(" ").map((p) => p[0]).slice(0, 2).join("");
 
-const members = [
-  {
-    name: "Quan Shi, MBBS, PhD",
-    image: quanImg,
-    role: "Postdoctoral Researcher",
-    description: "Dr. Quan Shi is a DFG-funded postdoctoral researcher. He focuses on the development and application of single-cell and spatial transcriptomics technologies in cancer research.",
-    email: "mailto:Quan.Shi@uk-essen.de",
-    linkedin: "https://www.linkedin.com/in/quan-shi-11b5b49a",
-    github: "https://github.com/shiquan",
-    website: "https://shiquan.github.io/"
-  },
-  {
-    name: "Fabian Ullrich, MD",
-    image: fabianImg,
-    role: "UMEA Clinician Scientist",
-    description:
-      "Dr. Fabian Ullrich joined the lab as an UMEA-funded Clinician Scientist. He currently performs a postdoctoral fellowship in the Zuber Lab at IMP in Vienna, Austria.",
-    email: "mailto:fabian.ullrich@uk-essen.de",
-    twitter: "https://twitter.com/fa_ulle",
-    scholar: "",
-    researchgate: "https://www.researchgate.net/profile/Fabian-Ullrich",
-    linkedin: "https://www.linkedin.com/in/fabian-u"
-  },
-  {
-    name: "Pranav Swaroop Gundla, MSc",
-    image: pranavImg,
-    role: "PhD Student",
-    description:
-      "Pranav Swaroop Gundla is a CANTAR-funded PhD Student and focuses on applying deep learning methods in computational pathology.",
-    email: "mailto:pranavswaroop.gundla@uk-essen.de",
-    bsky: "https://bsky.app/profile/pranavgundla.bsky.social",
-    scholar:
-      "https://scholar.google.co.in/citations?user=UzlYsbgAAAAJ&hl=en&oi=ao",
-    researchgate: "",
-    linkedin: "https://www.linkedin.com/in/pranavswaroopgundla"
-  },
-  {
-    name: "Yinchun Su, MSc",
-    image: yinchunImg,
-    role: "PhD Student",
-    description:
-      "Yinchun Su is a DFG-funded PhD student and focuses on performing integrative computational analyses to study aggressive intracranial tumors.",
-    email: "mailto: yinchun.su@uk-essen.de",
-    researchgate: "https://www.researchgate.net/profile/Yinchun-Su",
-    bsky: "https://bsky.app/profile/randef1ned.bsky.social",
-    linkedin: "https://www.linkedin.com/in/yinchun-su"
-  },
-  {
-    name: "Cihat Karadag, MD",
-    image: cihatImg,
-    role: "Clinician Scientist",
-    description:
-      "Cihat Karadag is a Clinician Scientist with an interest in aggressive brain tumors and leverages real-world clinicogenomic glioma datasets.",
-    email: "mailto:",
-    bsky: "",
-    scholar: "",
-    researchgate: "https://www.researchgate.net/profile/Cihat-Karadag",
-    linkedin: ""
-  },
-  {
-    name: "Marco Tembrink, MD",
-    image: marcoImg,
-    role: "UMEA Clinician Scientist",
-    description:
-      "Dr. Marco Tembrink is an UMEA-funded Clinician Scientist. He joined the lab to pursue analyses of complex genomic events in cancer, with a focus on CNS lymphomas.",
-    email: "mailto: marco.tembrink@uk-essen.de",
-    bsky: "",
-    scholar: "https://scholar.google.com/citations?user=KULjYawAAAAJ&hl=en&oi=sra",
-    researchgate: "",
-    linkedin: "https://de.linkedin.com/in/marco-tembrink"
-  },
-  {
-    name: "Katharina Ruff, MD",
-    image: katharinaImg,
-    role: "Clinician Scientist",
-    description:
-      "Dr. Katharina Ruff is a Clinician Scientist with a focus on the epigenetic mechanisms driving cancers, with a focus on CNS lymphomas.",
-    email: "mailto: Katharina.ruff@uk-essen.de",
-    bsky: "",
-    scholar: "",
-    researchgate: "",
-    linkedin: ""
-  },
-  {
-    name: "Nachiyappan Venkatachalam, MSc",
-    image: nachiImg,
-    role: "Lab Manager",
-    description:
-      "Nachi Venkatachalam joined as a lab manager and supports the lab with pre-clinical disease models, and spatial-omics based analyses.",
-    email: "mailto: nachiyappan.venkatachalam@uk-essen.de",
-    bsky: "",
-    scholar: "https://portal.uk-essen.de/enqsig/link?id=BAgAAAApzp34r4_eQbwAAACDweSz4iX6q7pQs8-UHSnBl3aI2BwyGCdkgfttuXDGWTwZZfAMdpxvni0RI_mOj0BRkZBtoE7496LDtrLn0tpv1b05-ZNKfTTDzU0zFQNCl24C3_wdBaDH7DGQnTaQnSW9x-TCZ3YwB07D2KAIvSH9r4hN7H2M1KVWX1RchqbSb5y4RST0SwJmZOgD4azuj29evr0UNgVPt-44G6JOAFtEGOmYLn6BMRB_TZmGd08iP1goMjMaa17IDAgYNg2",
-    researchgate: "https://www.researchgate.net/profile/Nachiyappan-Venkatachalam?ev=hdr_xprf",
-    linkedin: "https://www.linkedin.com/in/nachiv/"
-  },
-  {
-    name: "Jiawei Zhou, MD",
-    image: jiaweiImg,
-    role: "Visiting Researcher",
-    description:
-      "Jiawei Zhou is a Visiting Researcher collaborating with the lab on systematic analyses of real-world clinico-genomic datasets.",
-    email: "",
-    bsky: "",
-    scholar: "",
-    researchgate: "",
-    linkedin: ""
-  }
-];
-const memberTwo = [
-  
-  {
-    name: "Jonayed Sarkar, BSc",
-    image: jonayedImg,
-    role: "Student Research Assistant",
-    description:
-      "Jonayed is pursuing a Master's degree in Data Science at the TU Dortmund university. He supports the team as a Student Research Assistant.",
-    email: "mailto: mdjonayed64173@gmail.com ",
-    bsky: "",
-    scholar: "",
-    researchgate: "",
-    linkedin: "https://www.linkedin.com/in/mdjonayedsarkar/"
-  },
-  {
-    name: "Mahsasadat Nezamabadi, BSc",
-    image: mahsaImg,
-    role: "Student Research Assistant",
-    description:
-      "Mahsasadat Nezamabadi is pursuing a Master’s degree in Applied Computer Science at the University of Duisburg-Essen. She supports the team as a Student Research Assistant.",
-    email: "mailto:mahsasadat.nezamabadi@stud.uni-due.de",
-    linkedin: "https://de.linkedin.com/in/mahsa-sadat-nezamabadi-52238720b"
-  }
-  
-];
+const Socials = ({ p, size = 18, align = "center" }) => (
+  <div className={`mt-3 flex flex-wrap gap-3 ${align === "start" ? "justify-start" : "justify-center"}`}>
+    {p.email && <a href={p.email} target="_blank" rel="noreferrer" aria-label={`${p.name} email`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><PiMicrosoftOutlookLogoFill size={size} /></a>}
+    {p.linkedin && <a href={p.linkedin} target="_blank" rel="noreferrer" aria-label={`${p.name} LinkedIn`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><GrLinkedin size={size} /></a>}
+    {p.scholar && <a href={p.scholar} target="_blank" rel="noreferrer" aria-label={`${p.name} Google Scholar`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><SiGooglescholar size={size} /></a>}
+    {p.researchgate && <a href={p.researchgate} target="_blank" rel="noreferrer" aria-label={`${p.name} ResearchGate`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><SiResearchgate size={size} /></a>}
+    {p.github && <a href={p.github} target="_blank" rel="noreferrer" aria-label={`${p.name} GitHub`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><FaGithub size={size} /></a>}
+    {p.website && <a href={p.website} target="_blank" rel="noreferrer" aria-label={`${p.name} website`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><FiGlobe size={size} /></a>}
+    {p.twitter && <a href={p.twitter} target="_blank" rel="noreferrer" aria-label={`${p.name} X`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><RiTwitterXLine size={size} /></a>}
+  </div>
+);
 
-const blockTwo = [
-  {
-    name: "Emre Kocakavuk, MD, PhD",
-    image: emreImg,
-    role: "Principal Investigator",
-    description:
-      "Dr. Emre Kocakavuk is a Clinician Scientist and an Emmy Noether Group Leader in the Department of Hematology and Stem Cell Transplantation at the West German Cancer Center & Institute for AI in Medicine (IKIM)",
-    email: "mailto:emre.kocakavuk@uk-essen.de",
-    bsky: "https://bsky.app/profile/ekocakavuk.bsky.social",
-    scholar:
-      "https://scholar.google.co.in/citations?user=gGSCLooAAAAJ&hl=en&oi=ao",
-    researchgate: "",
-    linkedin: "https://de.linkedin.com/in/emre-kocakavuk-824284353"
-  }
-];
-const alumni = [
-  {
-    name: "Fatma Atak",
-    image: fatmaImg,
-    role: "Erasmus Exchange Student",
-    description:
-      "",
-    email: "mailto:atakf223@gmail.com",
-    linkedin: "https://www.linkedin.com/in/fatma-0148881b8"
-  }
-  
-];
+const Card = ({ person }) => (
+  <div className="flex h-full flex-col items-center gap-5 rounded-2xl border p-6 text-center shadow-sm" style={{ background: T.surface, borderColor: T.line }}>
+    {person.image ? (
+      <img src={person.image} alt={person.name} loading="lazy" className="h-36 w-36 flex-none rounded-full object-fit shadow-sm" style={{ background: T.tile }} />
+    ) : (
+      <div className="flex h-40 w-40 flex-none items-center justify-center rounded-full text-3xl font-semibold shadow-sm" style={{ background: T.tile, color: "#9a8f80" }}>
+        {initials(person.name)}
+      </div>
+    )}
+    <div className="min-w-0 flex-1">
+      <h3 className="text-lg font-bold" style={{ color: T.ink }}>{person.name}</h3>
+      <p className="text-[13px] font-bold" style={{ color: ORANGE }}>{person.role}</p>
+      {person.description && <p className="mx-auto mt-2 max-w-3xl text-[13px] leading-relaxed" style={{ color: T.muted }}>{person.description}</p>}
+      <Socials p={person} size={20} />
+    </div>
+  </div>
+);
+
+const AlumniCard = ({ person }) => (
+  <article className="flex flex-col items-center gap-5 rounded-2xl border bg-white p-6 text-center shadow-sm sm:flex-row sm:text-left" style={{ borderColor: T.line }}>
+    {person.image ? (
+      <img
+        src={person.image}
+        alt={person.name}
+        loading="lazy"
+        className="h-32 w-32 flex-none rounded-full border object-fit shadow-sm"
+        style={{ borderColor: T.line, background: T.tile }}
+      />
+    ) : (
+      <div className="flex h-40 w-40 flex-none items-center justify-center rounded-full border text-3xl font-semibold shadow-sm" style={{ borderColor: T.line, background: T.tile, color: "#9a8f80" }}>
+        {initials(person.name)}
+      </div>
+    )}
+    <div className="min-w-0 flex-1">
+      <h3 className="text-lg font-bold" style={{ color: T.ink }}>{person.name}</h3>
+      <p className="text-[13px] font-bold" style={{ color: ORANGE }}>{person.role}</p>
+      {person.description && <p className="mt-2 max-w-3xl text-[13px] leading-relaxed" style={{ color: T.muted }}>{person.description}</p>}
+      <div className="flex justify-center sm:justify-start">
+        <Socials p={person} size={18} align="start" />
+      </div>
+    </div>
+  </article>
+);
+
+const Sec = ({ n, label }) => (
+  <div className="mt-10 flex items-center gap-2.5">
+    <span className="text-lg font-extrabold" style={{ fontFamily: DISPLAY, color: ORANGE }}>{n}</span>
+    <span className="text-[12px] font-bold uppercase tracking-[0.14em]" style={{ color: T.ink }}>{label}</span>
+  </div>
+);
+
 function Members() {
+  const pi = blockTwo[0];
+  const rest = [...members, ...memberTwo];
+
   return (
-    <div className="min-h-screen bg-gray-50 p-8 flex flex-col items-center text-center">
-      {/* Page Title */}
-      <PageHeader title="Our Team" />
-
-      {/* First Block of Members Section */}
-
-      <div className="flex flex-col items-center justify-center w-full mt-16 mb-14 ">
-        {blockTwo.map((blockTwo, index) =>
-          <div
-            key={index}
-            className="flex flex-col items-center text-center bg-white shadow-xl rounded-lg p-6 w-full max-w-sm h-full"
-          >
-            {/* Profile Image */}
-            <img
-              className="w-40 h-40 rounded-full object-cover bg-white p-1 border border-gray-200 shadow-sm transition-transform duration-200 hover:scale-110"
-              src={blockTwo.image}
-              alt={blockTwo.name}
-            />
-
-            {/* Name & Role */}
-            <div className="flex flex-col items-center mt-4">
-              <h3 className="text-lg font-semibold">
-                {blockTwo.name}
-              </h3>
-              <p className="text-cyan-500 text-sm mt-1">
-                {blockTwo.role}
-              </p>
-            </div>
-
-            {/* Description */}
-            <p className="text-gray-600 text-sm mt-4 ">
-              {blockTwo.description}
-            </p>
-
-            {/* Social Icons - Always at the bottom */}
-            <div className="flex justify-center gap-4 mt-auto pt-6">
-              {blockTwo.email &&
-                <a
-                  href={blockTwo.email}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-500"
-                >
-                  <PiMicrosoftOutlookLogoFill size={20} />
-                </a>}
-
-              {blockTwo.bsky &&
-                <a
-                  href={blockTwo.bsky}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition hover:opacity-100"
-                >
-                  <img
-                    src="bluesky.svg"
-                    alt="Bluesky"
-                    className="w-5 h-5 opacity-80 transition"
-                    style={{
-                      filter:
-                        "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                      transition: "filter 0.3s ease-in-out"
-                    }}
-                    onMouseOver={e => {
-                      e.currentTarget.style.filter =
-                        "invert(48%) sepia(74%) saturate(440%) hue-rotate(163deg) brightness(90%) contrast(90%)";
-                    }}
-                    onMouseOut={e => {
-                      e.currentTarget.style.filter =
-                        "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)";
-                    }}
-                  />
-                </a>}
-
-              {blockTwo.scholar &&
-                <a
-                  href={blockTwo.scholar}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-500"
-                >
-                  <SiGooglescholar size={20} />
-                </a>}
-
-              {blockTwo.researchgate &&
-                <a
-                  href={blockTwo.researchgate}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-green-500"
-                >
-                  <SiResearchgate size={20} />
-                </a>}
-              {blockTwo.linkedin &&
-                <a
-                  href={blockTwo.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-700"
-                >
-                  <GrLinkedin size={20} />
-                </a>}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Centered Grid for Members- 3 in a row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 lg:gap-12">
-        {members.map((member, index) =>
-          <div
-            key={index}
-            className="flex flex-col items-center text-center bg-white shadow-xl rounded-lg p-6 w-full max-w-sm h-full"
-          >
-            {/* Profile Image */}
-            <img
-              className="w-40 h-40 rounded-full object-cover bg-white p-1 border border-gray-200 shadow-sm transition-transform duration-200 hover:scale-110"
-              src={member.image}
-              alt={member.name}
-            />
-
-            {/* Name & Role */}
-            <div className="flex flex-col items-center mt-4">
-              <h3 className="text-lg font-semibold">
-                {member.name}
-              </h3>
-              <p className="text-cyan-500 text-sm mt-1">
-                {member.role}
-              </p>
-            </div>
-
-            {/* Description */}
-            <p className="text-gray-600 text-sm mt-4">
-              {member.description}
-            </p>
-
-            {/* Social Icons - Always at the bottom */}
-            <div className="flex justify-center gap-4 mt-auto pt-6">
-              {member.email &&
-                <a
-                  href={member.email}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-red-500"
-                >
-                  <PiMicrosoftOutlookLogoFill size={20} />
-                </a>}
-
-              {member.bsky &&
-                <a
-                  href={member.bsky}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition hover:opacity-100"
-                >
-                  <img
-                    src="bluesky.svg"
-                    alt="Bluesky"
-                    className="w-5 h-5 opacity-80 transition"
-                    style={{
-                      filter:
-                        "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                      transition: "filter 0.3s ease-in-out"
-                    }}
-                    onMouseOver={e => {
-                      e.currentTarget.style.filter =
-                        "invert(48%) sepia(74%) saturate(440%) hue-rotate(163deg) brightness(90%) contrast(90%)";
-                    }}
-                    onMouseOut={e => {
-                      e.currentTarget.style.filter =
-                        "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)";
-                    }}
-                  />
-                </a>}
-
-              {member.scholar &&
-                <a
-                  href={member.scholar}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-500"
-                >
-                  <SiGooglescholar size={20} />
-                </a>}
-
-              {member.researchgate &&
-                <a
-                  href={member.researchgate}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-green-500"
-                >
-                  <SiResearchgate size={20} />
-                </a>}
-              {member.linkedin &&
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-700"
-                >
-                  <GrLinkedin size={20} />
-                </a>}
-                {member.github && (
-  <a
-    href={member.github}
-    target="_blank"
-    rel="noreferrer"
-    aria-label={`${member.name} GitHub`}
-    className="text-gray-700 transition hover:text-gray-900"
-    title="GitHub"
-  >
-    <FaGithub size={20} />
-  </a>
-)}
-
-{member.website && (
-  <a
-    href={member.website}
-    target="_blank"
-    rel="noreferrer"
-    aria-label={`${member.name} Website`}
-    className="text-gray-700 transition hover:text-blue-600"
-    title="Website"
-  >
-    <FiGlobe size={20} />
-  </a>
-)}
-
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Centered Grid for Members- 2 in a row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12 auto-rows-fr mt-24">
-        {memberTwo.map((memberTwo, index) =>
-          <div
-            key={index}
-            className="flex flex-col items-center text-center bg-white shadow-xl rounded-lg p-6 w-full max-w-sm h-full"
-          >
-            {/* Profile Image */}
-            <img
-              className="w-40 h-40 rounded-full object-cover bg-white p-1 border border-gray-200 shadow-sm transition-transform duration-200 hover:scale-110"
-              src={memberTwo.image}
-              alt={memberTwo.name}
-            />
-
-            {/* Name & Role */}
-            <div className="flex flex-col items-center mt-4">
-              <h3 className="text-lg font-semibold">
-                {memberTwo.name}
-              </h3>
-              <p className="text-cyan-500 text-sm mt-1">
-                {memberTwo.role}
-              </p>
-            </div>
-
-            {/* Description */}
-            <p className="text-gray-600 text-sm mt-4">
-              {memberTwo.description}
-            </p>
-
-            {/* Social Icons - Always at the bottom */}
-            <div className="flex justify-center gap-4 mt-auto pt-6">
-              {memberTwo.email &&
-                <a
-                  href={memberTwo.email}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-500"
-                >
-                  <PiMicrosoftOutlookLogoFill size={20} />
-                </a>}
-
-              {memberTwo.bsky &&
-                <a
-                  href={memberTwo.bsky}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="transition hover:opacity-100"
-                >
-                  <img
-                    src="bluesky.svg"
-                    alt="Bluesky"
-                    className="w-5 h-5 opacity-80 transition"
-                    style={{
-                      filter:
-                        "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)",
-                      transition: "filter 0.3s ease-in-out"
-                    }}
-                    onMouseOver={e => {
-                      e.currentTarget.style.filter =
-                        "invert(48%) sepia(74%) saturate(440%) hue-rotate(163deg) brightness(90%) contrast(90%)";
-                    }}
-                    onMouseOut={e => {
-                      e.currentTarget.style.filter =
-                        "invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%)";
-                    }}
-                  />
-                </a>}
-
-              {memberTwo.scholar &&
-                <a
-                  href={memberTwo.scholar}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-500"
-                >
-                  <SiGooglescholar size={20} />
-                </a>}
-
-              {memberTwo.researchgate &&
-                <a
-                  href={memberTwo.researchgate}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-green-500"
-                >
-                  <SiResearchgate size={20} />
-                </a>}
-              {memberTwo.linkedin &&
-                <a
-                  href={memberTwo.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-gray-700 transition hover:text-blue-700"
-                >
-                  <GrLinkedin size={20} />
-                </a>}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Centered Grid for alumni */}
-      <div className="flex flex-col items-center justify-center w-full mt-16 mb-14 ">
-        <div className="mb-4">
-          <span className=" font-bold text-2xl text-black-900">Alumni</span>
+    <div className="min-h-screen" style={{ background: T.page, fontFamily: BODY }}>
+      <header className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${coverImg})` }} aria-hidden="true" />
+        <div className="absolute inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-16">
+          <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: ORANGE, fontFamily: "ui-monospace, monospace" }}>People behind the research</p>
+          <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl" style={{ fontFamily: DISPLAY, letterSpacing: "-0.02em", textShadow: "0 2px 20px rgba(0,0,0,.5)" }}>Our Team</h1>
+          <p className="mt-2 max-w-2xl text-white/85">Clinician scientists and researchers working at the intersection of computational biology and oncology to decode cancer evolution and improve outcomes.</p>
         </div>
-        {alumni.map((alumni, index) =>
-          <div
-            key={index}
-            className="flex flex-col items-center text-center bg-white shadow-lg rounded-md p-4 w-full max-w-5xl mb-6"
-          >
-            {/* Profile Image */}
-            <img
-              className="w-28 h-28 justify-center items-center rounded-full object-cover mt-1"
-              src={alumni.image}
-              alt={alumni.name}
-            />
+      </header>
 
-            {/* Name, Role & Description */}
-            <div className="flex flex-col justify-between">
-              {/* Name & Role */}
-              <div className="mb-2">
-                <h3 className="text-base font-semibold leading-tight">
-                  {alumni.name}
-                </h3>
-                <p className="text-cyan-500 text-xs">
-                  {alumni.role}
-                </p>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-600 text-sm max-w-3xl">
-                {alumni.description}
-              </p>
-
-              {/* Social Icons */}
-              <div className="flex justify-center gap-4 mt-4">
-                {alumni.email &&
-                  <a
-                    href={alumni.email}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-700 transition hover:text-blue-500"
-                  >
-                    <PiMicrosoftOutlookLogoFill
-                      size={18}
-                      className="hover:fill-blue-500"
-                    />
-                  </a>}
-
-                {alumni.twitter &&
-                  <a
-                    href={alumni.twitter}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="transition hover:opacity-100 hover:text-black"
-                  >
-                    <RiTwitterXLine size={18} />
-                  </a>}
-
-                {alumni.scholar &&
-                  <a
-                    href={alumni.scholar}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-700 transition hover:text-blue-500"
-                  >
-                    <SiGooglescholar size={18} />
-                  </a>}
-
-                {alumni.researchgate &&
-                  <a
-                    href={alumni.researchgate}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-700 transition hover:text-green-500"
-                  >
-                    <SiResearchgate size={18} />
-                  </a>}
-                {alumni.linkedin &&
-                  <a
-                    href={alumni.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-gray-700 transition hover:text-blue-700"
-                  >
-                    <GrLinkedin size={20} />
-                  </a>}
-              </div>
-            </div>
+      <div className="mx-auto max-w-6xl px-6 py-8">
+        <Sec n="01" label="Principal Investigator" />
+        <div className="mt-4 flex flex-col items-center gap-5 rounded-2xl border p-6 text-center shadow-sm" style={{ background: T.surface, borderColor: T.line }}>
+          {pi.image
+            ? <img src={pi.image} alt={pi.name} className="h-36 w-36 flex-none rounded-full object-fit shadow-sm" style={{ background: T.tile }} />
+            : <div className="flex h-32 w-32 flex-none items-center justify-center rounded-full text-2xl font-semibold shadow-sm" style={{ background: T.tile }}>{initials(pi.name)}</div>}
+          <div>
+            <h3 className="text-lg font-bold" style={{ color: T.ink }}>{pi.name}</h3>
+            <p className="text-[13px] font-bold" style={{ color: ORANGE }}>{pi.role}</p>
+            <p className="mx-auto mt-2 max-w-2xl text-[13px]" style={{ color: T.muted }}>{pi.description}</p>
+            <Socials p={pi} size={20} />
           </div>
+        </div>
+
+        <Sec n="02" label="Research Team" />
+        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {rest.map((m) => <Card key={m.id} person={m} />)}
+        </div>
+
+        {alumni.length > 0 && (
+          <>
+            <Sec n="03" label="Alumni" />
+            <div className="mt-4 space-y-4">
+              {alumni.map((m) => <AlumniCard key={m.id} person={m} />)}
+            </div>
+          </>
         )}
       </div>
 
-      {/* Join Us Button with better UI/UX */}
-      {/* <button
-            onClick={() => window.location.href = "/joinus"}
-            className="mt-4 px-6 py-2 text-md font-medium text-white bg-gradient-to-r bg-gradient-to-r from-[#FB7686] to-[#145587] hover:from-[#145587] hover:to-[#FB7686] rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95"
-            >
-            Join Us →
-            </button> */}
-      {/* Add the Go to Top Button */}
       <GoToTopButton />
     </div>
   );

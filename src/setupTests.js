@@ -7,11 +7,14 @@ import { TextDecoder, TextEncoder } from 'node:util';
 
 globalThis.TextDecoder = TextDecoder;
 globalThis.TextEncoder = TextEncoder;
+
 window.matchMedia =
   window.matchMedia ||
   function () {
     return {
       matches: false,
+      addEventListener: function () {},
+      removeEventListener: function () {},
       addListener: function () {},
       removeListener: function () {},
     };
