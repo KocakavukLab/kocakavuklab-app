@@ -68,11 +68,11 @@ for (const [name, Component] of [['Contact', Contact], ['Credits', DesignCredits
 }
 
 
-test('member biography and contact links follow content edits', () => {
+test('member biography and social links follow content edits', () => {
   render(<MemoryRouter><Members /></MemoryRouter>);
   expect(screen.getByText('Test biography updated through content.')).toBeInTheDocument();
   expect(screen.getByRole('link', { name: 'Fixture Researcher website' })).toHaveAttribute('href', 'https://example.org/researcher');
-  expect(screen.getByRole('link', { name: 'Fixture Researcher email' })).toHaveAttribute('href', 'mailto:researcher@example.org');
+  expect(document.querySelector('a[href^="mailto:"]')).toBeNull();
 });
 
 test('publication links work, newest comes first, hidden draft stays absent', () => {
@@ -93,6 +93,7 @@ test('partner URL and vacancy links render; closed vacancy is excluded', () => {
   expect(screen.queryByText('Fixture Closed Position')).not.toBeInTheDocument();
   expect(screen.getAllByRole('link', { name: /View details/ }).some(link => link.href === 'https://example.org/apply')).toBe(true);
   expect(screen.getAllByRole('link', { name: /Send a general application/ })[0]).toHaveAttribute('href', '/contact');
+  expect(screen.getByRole('link', { name: /Email our PI/ })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
 });
 
 test('news card opens detail, Markdown link resolves, back button returns', async () => {
@@ -137,4 +138,12 @@ test('Contact requires valid email and consent; privacy link remains available',
   expect(submit).toBeEnabled();
   expect(screen.getByRole('link', { name: /data privacy policy/i })).toHaveAttribute('href', '/privacypolicy');
   // Do not submit: email delivery is an external action, outside this simulation.
+});
+
+ test('Imprint uses the lab contact address and Contact has no direct email link', () => {
+  const view = render(<MemoryRouter><Imprint /></MemoryRouter>);
+  expect(screen.getByRole('link', { name: 'contact@kocakavuklab.com' })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
+  view.unmount();
+  render(<MemoryRouter><Contact /></MemoryRouter>);
+  expect(document.querySelector('a[href^="mailto:"]')).toBeNull();
 });

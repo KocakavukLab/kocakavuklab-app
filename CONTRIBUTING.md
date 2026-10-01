@@ -59,7 +59,7 @@ Categories: `grant`, `award`, `new_member`, `publication`, `general`. Dates sort
 
 Copy a nearby record, then replace its values. Keep JSON punctuation and existing group IDs. Every new record needs a unique ID except publications, which use a unique DOI URL. Keep all required fields. Empty optional social links should be omitted, not set to an empty string.
 
-- **People:** put the person in the correct group's `members` array. For the first four active groups, add their ID to `activeOrder` at the desired position. Remove the ID there when moving someone to alumni. Validation requires every active ID exactly once. Student/visitor and alumni order follows their arrays.
+- **People:** member records accept social/profile links only; omit email fields. Put the person in the correct group's `members` array. For the first four active groups, add their ID to `activeOrder` at the desired position. Remove the ID there when moving someone to alumni. Validation requires every active ID exactly once. Student/visitor and alumni order follows their arrays.
 - **Publications:** use `MM/YYYY` for the date, a full DOI link, author text, cover image, and journal logo. Publications display newest first by year and month. Set `hidden: true` to retain a paper without displaying it; 2019 and 2020 papers retain their existing hidden flags. Cover image and journal logo are optional; the page supplies its existing text fallback.
 - **Network:** edit `items` inside the single `network` group. Funding and collaboration logos share this group. Keep the group ID in place. Use full HTTPS links. The inherited `#` placeholder remains supported; replace it with a verified link when known.
 - **Moments:** add an event under the correct year. Each photo requires a unique ID, `src` image path, and meaningful `alt` text. Each year appears as an album; its photos form the collage. Check the album cover and expanded viewer after adding photos. Keep newest years/events first; array order controls this page.
@@ -217,7 +217,6 @@ File: `content/people.json`. Add this object to the appropriate group's `members
   "image": "src/assets/members/example-researcher.webp",
   "role": "Postdoctoral Researcher",
   "description": "A verified description of their research interests.",
-  "email": "mailto:researcher@example.org",
   "website": "https://example.org/researcher"
 }
 ```
@@ -381,3 +380,11 @@ Edit `index.html` for the default browser title:
 ```
 
 Shared navigation lives in `src/components/Navbar.jsx`; footer in `src/components/Footer.jsx`. Changes there affect every page and need developer review. The 404 page sets its own descriptive browser title.
+
+## Contact and responsive layout rules
+
+- Member cards show social/profile links only. Email fields are not supported by the people schema.
+- Footer “Email the lab”, Join Us “Email our PI”, and the Imprint address use `contact@kocakavuklab.com`. Contact shows the message form and location without a separate email address. EmailJS delivery configuration is managed separately.
+- Footer branding is centered. Below 651px, show branding only; hide footer columns and the copyright row.
+- News uses a left rail and readable single-column cards below 900px, and alternating cards around a centered rail from 900px. Maintain 16px body text, keyboard-operable cards, visible focus, and reduced-motion support.
+- Check phones and tablets in portrait and landscape, plus desktop. Preserve story IDs, chronological order, detail links, and existing content.

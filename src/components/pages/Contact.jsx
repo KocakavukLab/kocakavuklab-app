@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import LocationMap from "../common/LocationMap";
 import GoToTopButton from "../common/GoToTopButton";
 import coverImg from "../../assets/covers/maincover.optimized.webp";
@@ -118,10 +118,6 @@ const Contact = () => {
             <div className="mt-5 flex gap-3 text-sm" style={{ color: T.muted }}>
               <FaMapMarkerAlt className="mt-0.5 flex-none" style={{ color: ORANGE }} />
               <span>West German Cancer Center<br />University Hospital Essen (AöR)<br />Hufelandstrasse 55, D-45147 Essen</span>
-            </div>
-            <div className="mt-4 flex items-center gap-3 text-sm" style={{ color: T.muted }}>
-              <FaEnvelope className="flex-none" style={{ color: ORANGE }} />
-              <a href="mailto:emre.kocakavuk@uk-essen.de" className="hover:text-[#14181F]">emre.kocakavuk@uk-essen.de</a>
             </div>
             <a
               href="https://www.google.com/maps/search/?api=1&query=Universit%C3%A4tsklinikum%20Essen%20H%C3%A4matologie%20Hufelandstra%C3%9Fe%2055%20Essen"

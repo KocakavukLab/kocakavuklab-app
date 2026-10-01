@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import confetti from "canvas-confetti";
 import GoToTopButton from "../common/GoToTopButton";
 import {
@@ -6,7 +6,7 @@ import {
 } from "../../data/newsData";
 // Icons
 import { FaMoneyBillWave, FaUserPlus, FaNewspaper, FaAward } from "react-icons/fa";
-import { motion } from "framer-motion";
+import "./News.css";
 import coverImg from "../../assets/covers/maincover.optimized.webp";
 import '../../App.css';
 
@@ -16,25 +16,6 @@ const DISPLAY = '"Space Grotesk", system-ui, sans-serif';
 const BODY = '"DM Sans", system-ui, -apple-system, sans-serif';
 const MONO = "ui-monospace, 'SF Mono', Menlo, monospace";
 const ORANGE = "#FF914D";
-
-const fadeInEffect = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-};
-
-const iconAppearEffect = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 15,
-      duration: 0.5
-    }
-  }
-};
 
 // Function to return the correct icon based on the category
 const getCategoryIcon = category => {
@@ -61,12 +42,13 @@ const launchConfetti = () => {
 
 // Reusable news card (shared by left / right / mobile layouts)
 const NewsCard = ({ item, onClick }) => (
-  <div
+  <Link
+    to={`/news/${item.id}`}
     onClick={onClick}
-    className="w-full max-w-md cursor-pointer rounded-2xl border bg-white p-6 shadow-sm transition-shadow hover:shadow-lg"
+    className="news-timeline-card text-left w-full max-w-md cursor-pointer rounded-2xl border bg-white p-2.5 md:p-6 shadow-sm transition-shadow hover:shadow-lg"
     style={{ borderColor: T.line }}
   >
-    <h3 className="mb-4 text-xl font-bold" style={{ fontFamily: DISPLAY, color: T.ink, letterSpacing: "-0.01em" }}>
+    <h3 className="mb-3 text-sm md:mb-4 md:text-xl font-bold" style={{ fontFamily: DISPLAY, color: T.ink, letterSpacing: "-0.01em" }}>
       {item.title}
     </h3>
 
@@ -101,18 +83,18 @@ const NewsCard = ({ item, onClick }) => (
     )}
 
     {/* Description */}
-    <div className="text-sm leading-relaxed" style={{ color: T.muted }}>
+    <div className="text-xs md:text-sm leading-relaxed" style={{ color: T.muted }}>
       {item.shortDescription.split("\n\n").map((para, idx) => (
         <p key={idx} className="mb-2">
           {para}
         </p>
       ))}
     </div>
-  </div>
+  </Link>
 );
 
 const NewsDate = ({ children }) => (
-  <span className="text-lg font-extrabold uppercase tracking-[0.12em] md:text-xl" style={{ fontFamily: DISPLAY, color: T.ink }}>
+  <span className="news-timeline-month text-[10px] font-extrabold uppercase tracking-[0.06em] sm:text-sm md:tracking-[0.12em] md:text-xl" style={{ fontFamily: DISPLAY, color: T.ink }}>
     {children}
   </span>
 );
@@ -120,23 +102,12 @@ const NewsDate = ({ children }) => (
 const monthLabel = (date) => date.toLocaleDateString("en-US", { month: "long" });
 
 const IconNode = ({ item }) => (
-  <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-100px" }}
-    variants={iconAppearEffect}
-  >
-    <div
-      className="flex h-14 w-14 items-center justify-center rounded-full border-4 border-white text-lg text-white shadow-lg"
-      style={{ backgroundColor: ORANGE }}
-    >
-      {getCategoryIcon(item.category)}
-    </div>
-  </motion.div>
+  <div aria-hidden="true" className="news-timeline-icon flex h-14 w-14 items-center justify-center rounded-full border-4 border-white text-lg text-[#14181F] shadow-sm" style={{ backgroundColor: ORANGE }}>
+    {getCategoryIcon(item.category)}
+  </div>
 );
 
 function News() {
-  const navigate = useNavigate();
   // Sort news in descending order (newest first: 2025 -> 2023)
   const allNews = getSortedNews();
   const newsByYear = allNews.reduce((groups, item) => {
@@ -153,10 +124,9 @@ function News() {
   }, []);
 
   const handleNewsClick = item => {
-    if (item.category === "grant") {
+    if (item.category === "grant" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       launchConfetti();
     }
-    navigate(`/news/${item.id}`);
   };
 
   return (
@@ -173,16 +143,16 @@ function News() {
       </header>
 
       {/* Custom Timeline */}
-      <div className="mx-auto mt-12 w-full max-w-6xl px-6 pb-16">
+      <div className="news-timeline mx-auto mt-12 w-full max-w-6xl px-6 pb-16">
         <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-1/2 hidden h-full w-1 -translate-x-1/2 transform md:block" style={{ background: T.line }} />
+          {/* Shared centered timeline across screen sizes. */}
+          <div aria-hidden="true" className="news-timeline-rail absolute left-1/2 h-full w-1 -translate-x-1/2" style={{ background: T.line }} />
 
           {/* News items stay chronologically grouped; visible labels show month only. */}
           <div className="space-y-20">
             {newsByYear.map((yearGroup) => (
               <section key={yearGroup.year} aria-labelledby={`news-year-${yearGroup.year}`}>
-                <div className="relative mb-12 flex justify-center">
+                <div className="news-timeline-year relative mb-12 flex justify-center">
                   <h2
                     id={`news-year-${yearGroup.year}`}
                     className="relative z-20 rounded-full border-2 bg-white px-6 py-2 text-center text-xl font-bold shadow-sm"
@@ -196,67 +166,37 @@ function News() {
                     const isLeft = index % 2 === 0;
 
                     return (
-                      <motion.div
-                        key={item.id}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeInEffect}
-                        className="relative"
-                      >
-                  {/* Desktop Layout */}
-                  <div className="hidden items-start md:grid md:grid-cols-[1fr_auto_1fr] md:gap-0">
+                      <div key={item.id} className="relative">
+                  {/* Alternating timeline layout */}
+                  <div className="news-timeline-row grid items-start grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-0">
                     {isLeft ? (
                       <>
-                        <div className="flex justify-end pr-12">
+                        <div className="news-timeline-card-slot flex justify-end pr-2 md:pr-12">
                           <NewsCard item={item} onClick={() => handleNewsClick(item)} />
                         </div>
-                        <div className="relative z-10 flex justify-center">
+                        <div className="news-timeline-icon-slot relative z-10 flex justify-center">
                           <IconNode item={item} />
                         </div>
-                        <div className="flex items-start pl-12 pt-3">
+                        <div className="news-timeline-date-slot flex items-start pl-2 pt-2 md:pl-12 md:pt-3">
                           <NewsDate>{monthLabel(item.date)}</NewsDate>
                         </div>
                       </>
                     ) : (
                       <>
-                        <div className="flex items-start justify-end pr-12 pt-3">
+                        <div className="news-timeline-date-slot flex items-start justify-end pr-2 pt-2 md:pr-12 md:pt-3">
                           <NewsDate>{monthLabel(item.date)}</NewsDate>
                         </div>
-                        <div className="relative z-10 flex justify-center">
+                        <div className="news-timeline-icon-slot relative z-10 flex justify-center">
                           <IconNode item={item} />
                         </div>
-                        <div className="flex justify-start pl-12">
+                        <div className="news-timeline-card-slot flex justify-start pl-2 md:pl-12">
                           <NewsCard item={item} onClick={() => handleNewsClick(item)} />
                         </div>
                       </>
                     )}
                   </div>
 
-                  {/* Mobile Layout */}
-                  <div className="md:hidden">
-                    <div className="mb-4 flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <motion.div
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          variants={iconAppearEffect}
-                        >
-                          <div
-                            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FF914D] text-lg text-white shadow-lg"
-                          >
-                            {getCategoryIcon(item.category)}
-                          </div>
-                        </motion.div>
                       </div>
-                      <span className="pt-2">
-                        <NewsDate>{monthLabel(item.date)}</NewsDate>
-                      </span>
-                    </div>
-                    <NewsCard item={item} onClick={() => handleNewsClick(item)} />
-                  </div>
-                      </motion.div>
                     );
                   })}
                 </div>

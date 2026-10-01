@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaArrowUp, FaEnvelope } from "react-icons/fa";
+import { FaArrowUp, FaEnvelope } from "react-icons/fa";
 import { Brand, nav } from "./Navbar";
 
 import FooterParticles from "./FooterParticles";
@@ -17,15 +17,12 @@ export default function Footer() {
       <div className="hf-footer-inner">
         <div className="hf-footer-intro">
           <Brand />
-          <Link className="hf-contact-button" to="/contact">
-            Contact the lab <FaArrowRight aria-hidden="true" />
-          </Link>
         </div>
         <div className="hf-footer-grid">
           <section className="hf-address">
             <h2>Find us</h2>
             <address>Hufelandstrasse 55<br />45147 Essen, Germany</address>
-            <a className="hf-email" href="mailto:kocakavuklab@gmail.com">
+            <a className="hf-email" href="mailto:contact@kocakavuklab.com">
               <FaEnvelope aria-hidden="true" />Email the lab
             </a>
           </section>

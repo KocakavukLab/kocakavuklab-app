@@ -79,7 +79,7 @@ function JoinUs() {
               : <div className="mt-8 grid h-28 w-28 place-items-center rounded-full bg-white text-2xl font-semibold">{initials(pi.name)}</div>}
             <h3 className="mt-6 text-xl font-semibold" style={{ color: T.ink }}>{pi.name}</h3>
             <p className="mt-2 text-sm" style={{ color: T.muted }}>Principal Investigator</p>
-            <a href={pi.email} className="mt-6 inline-flex min-h-12 items-center self-start text-base font-semibold underline underline-offset-4" style={{ color: T.ink }}>Email our PI ↗</a>
+            <a href="mailto:contact@kocakavuklab.com" className="mt-6 inline-flex min-h-12 items-center self-start text-base font-semibold underline underline-offset-4" style={{ color: T.ink }}>Email our PI ↗</a>
           </section>
         </div>
       </div>

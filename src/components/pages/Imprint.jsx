@@ -36,8 +36,8 @@ const sections = [
         </Link>
         <br />
         E-mail:{" "}
-        <Link to="mailto:kocakavuklab@gmail.com" className="font-semibold" style={{ color: ORANGE }}>
-          kocakavuklab@lab.de
+        <Link to="mailto:contact@kocakavuklab.com" className="font-semibold" style={{ color: ORANGE }}>
+          contact@kocakavuklab.com
         </Link>
       </>
     ),
@@ -79,7 +79,7 @@ const Imprint = () => {
       </header>
 
       <div className="mx-auto max-w-4xl px-6 py-12">
-        <div className="rounded-2xl border bg-white p-8 shadow-sm md:p-12" style={{ borderColor: T.line }}>
+        <div className="rounded-2xl border bg-white p-8 shadow-sm [overflow-wrap:anywhere] md:p-12" style={{ borderColor: T.line }}>
           {sections.map(({ title, body }, i) => (
             <div key={title} className={i < sections.length - 1 ? "mb-8" : ""}>
               <div className="flex items-center gap-2.5">

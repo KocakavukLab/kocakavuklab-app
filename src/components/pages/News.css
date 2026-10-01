@@ -1,0 +1,30 @@
+.news-timeline .news-timeline-card{padding:24px;overflow-wrap:anywhere;transition:box-shadow 180ms ease,border-color 180ms ease}
+.news-timeline .news-timeline-card:focus-visible{outline:3px solid #b94e0b;outline-offset:4px}
+.news-timeline .news-timeline-card:active{border-color:#ff914d}
+.news-timeline .news-timeline-card h3{font-size:20px;line-height:1.35}
+.news-timeline .news-timeline-card>div:last-child{font-size:16px;line-height:1.65}
+.news-timeline .news-timeline-card .h-16{flex-shrink:0}
+.news-timeline .news-timeline-card .mb-4.flex{flex-wrap:wrap}
+.news-timeline .news-timeline-month{font-size:16px;letter-spacing:.08em}
+@media(max-width:899px){
+ .news-timeline{max-width:720px;margin-top:32px;padding-inline:20px}
+ .news-timeline .news-timeline-rail{left:22px;width:2px;transform:none;background:#d9c8b5!important}
+ .news-timeline .news-timeline-year{justify-content:flex-start;padding-left:64px;margin-bottom:32px}
+ .news-timeline .news-timeline-year:before{content:"";position:absolute;left:22px;top:50%;width:42px;height:2px;background:#d9c8b5}
+ .news-timeline .news-timeline-row{grid-template-columns:46px minmax(0,1fr);column-gap:18px;row-gap:14px}
+ .news-timeline .news-timeline-icon-slot{grid-column:1;grid-row:1;align-self:center}
+ .news-timeline .news-timeline-icon{width:46px;height:46px;font-size:16px}
+ .news-timeline .news-timeline-date-slot{grid-column:2;grid-row:1;justify-content:flex-start;padding:0;align-self:center;min-height:46px}
+ .news-timeline .news-timeline-card-slot{grid-column:2;grid-row:2;padding:0;min-width:0}
+ .news-timeline .news-timeline-card{max-width:none;padding:20px;border-radius:18px;box-shadow:0 4px 16px #14181f08}
+ .news-timeline .news-timeline-card h3{font-size:20px}
+ .news-timeline>div>div{row-gap:56px}
+}
+@media(max-width:390px){
+ .news-timeline{padding-inline:16px}
+ .news-timeline .news-timeline-row{column-gap:12px}
+ .news-timeline .news-timeline-year{padding-left:58px}
+ .news-timeline .news-timeline-card{padding:16px}
+ .news-timeline .news-timeline-card h3{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){.news-timeline .news-timeline-card{transition:none}}
