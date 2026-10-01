@@ -21,7 +21,7 @@ export function createContentFixture({ yaml = false } = {}) {
     };
     const image = 'src/assets/members/Emre.optimized.webp';
     update('people', data => {
-      data.groups[0].members.push({ id: 'test-member', name: 'Fixture Researcher', image, role: 'Test role', description: 'Test biography updated through content.', email: 'mailto:researcher@example.org', website: 'https://example.org/researcher' });
+      data.groups[0].members.push({ id: 'test-member', name: 'Fixture Researcher', image, role: 'Test role', description: 'Test biography updated through content.', website: 'https://example.org/researcher' });
       data.activeOrder.push('test-member');
     });
     update('publications', data => data.push({ title: 'Fixture Publication', journal: 'Test Journal', doi: 'https://example.org/test-paper', authors: 'Test Author', date: '12/2099', status: 'Published', image: 'src/assets/pubs/cell-22.optimized.webp' }));

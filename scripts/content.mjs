@@ -34,7 +34,7 @@ export function records(items, required, allowed, where, key = 'id') {
     if (key) { text(item[key], `${at}.${key}`); if (ids.has(item[key])) fail(at, `duplicate ${key}: ${item[key]}`); ids.add(item[key]); }
     for (const [field, value] of Object.entries(item)) {
       if (['image', 'logo', 'src', 'journalLogo'].includes(field)) asset(value, `${at}.${field}`);
-      if (['url', 'doi', 'applyLink', 'email', 'bsky', 'scholar', 'linkedin', 'github', 'website', 'twitter', 'researchgate'].includes(field)) url(value, `${at}.${field}`);
+      if (['url', 'doi', 'applyLink', 'bsky', 'scholar', 'linkedin', 'github', 'website', 'twitter', 'researchgate'].includes(field)) url(value, `${at}.${field}`);
     }
   });
 }
@@ -68,7 +68,7 @@ export function loadContent(contentDir = path.join(root, 'content')) {
   };
   const people = read('people'), jobs = read('jobs'), network = read('network'), moments = read('moments'), publications = read('publications');
   records([people], [], ['principalInvestigator','groups','activeOrder'], 'people', null);
-  const personFields = ['id','name','image','role','description','email','bsky','scholar','linkedin','github','website','twitter','researchgate'];
+  const personFields = ['id','name','image','role','description','bsky','scholar','linkedin','github','website','twitter','researchgate'];
   records([people.principalInvestigator], ['id','name','image','role','description'], personFields, 'people.principalInvestigator');
   records(people.groups, ['id','title'], ['id','title','members','layout'], 'people.groups');
   const members = people.groups.flatMap(group => { list(group.members, group.id); return group.members; });

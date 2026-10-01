@@ -1,5 +1,4 @@
 import { SiGooglescholar, SiResearchgate } from "react-icons/si";
-import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 import { GrLinkedin } from "react-icons/gr";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa";
@@ -19,7 +18,6 @@ const initials = (n) => n.split(" ").map((p) => p[0]).slice(0, 2).join("");
 
 const Socials = ({ p, size = 18, align = "center" }) => (
   <div className={`mt-3 flex flex-wrap gap-3 ${align === "start" ? "justify-start" : "justify-center"}`}>
-    {p.email && <a href={p.email} target="_blank" rel="noreferrer" aria-label={`${p.name} email`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><PiMicrosoftOutlookLogoFill size={size} /></a>}
     {p.linkedin && <a href={p.linkedin} target="_blank" rel="noreferrer" aria-label={`${p.name} LinkedIn`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><GrLinkedin size={size} /></a>}
     {p.scholar && <a href={p.scholar} target="_blank" rel="noreferrer" aria-label={`${p.name} Google Scholar`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><SiGooglescholar size={size} /></a>}
     {p.researchgate && <a href={p.researchgate} target="_blank" rel="noreferrer" aria-label={`${p.name} ResearchGate`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><SiResearchgate size={size} /></a>}
