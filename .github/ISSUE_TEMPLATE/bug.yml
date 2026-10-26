@@ -17,3 +17,10 @@ body:
     id: evidence
     attributes:
       label: Browser, screen size and screenshot
+  - type: textarea
+    id: regression
+    attributes:
+      label: Regression-test acceptance criteria
+      description: What observable behavior should a test verify after this fix? A maintainer can refine the test plan.
+    validations:
+      required: true

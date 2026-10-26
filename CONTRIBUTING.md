@@ -388,3 +388,22 @@ Shared navigation lives in `src/components/Navbar.jsx`; footer in `src/component
 - Footer branding is centered. Below 651px, show branding only; hide footer columns and the copyright row.
 - News uses a left rail and readable single-column cards below 900px, and alternating cards around a centered rail from 900px. Maintain 16px body text, keyboard-operable cards, visible focus, and reduced-motion support.
 - Check phones and tablets in portrait and landscape, plus desktop. Preserve story IDs, chronological order, detail links, and existing content.
+
+
+## Tests for fixes and features
+
+Every PR runs both `validate` (content validation and production build) and `unit-tests` (the full Vitest suite). Neither job uses path filters. A failing check blocks merge when the main branch ruleset is active.
+
+Bug issues must describe reproduction steps, expected behavior and regression-test acceptance criteria. Feature issues must explain the user need, acceptance criteria and testable edge cases. Issues describe work; tests run on the implementing PR.
+
+Bug fixes must add a regression test that fails before the fix and passes afterward. Features and behavior changes must add or update tests for the intended behavior and relevant failure or boundary cases. Tests must assert observable behavior rather than copy implementation details. Run the full existing suite to catch regressions.
+
+Content-only, documentation-only and dependency-only PRs may reuse existing checks when no behavior changes. Explain why a new test is unnecessary and report actual check results. Dependency changes also require `npm audit`; CSS tooling changes require checking the generated styles or a visual preview.
+
+The PR must link an issue when one exists, state which tests cover the change, and disclose untested behavior. An independent reviewer verifies test adequacy. A green suite alone does not prove new behavior has meaningful coverage. Do not add arbitrary coverage percentages as a substitute for behavioral assertions.
+
+### Main branch enforcement
+
+`.github/main-ruleset.json` defines the requested GitHub rules: PRs required, one independent approval, stale approvals dismissed, approval required after the latest push, resolved review conversations, up-to-date branches, passing `validate` and `unit-tests` checks from GitHub Actions, and blocked force pushes and deletion. No bypass actors are configured.
+
+This file is an administrator import payload, not automatic enforcement. A repository administrator must apply it through GitHub's repository rulesets API or equivalent settings, then verify the active ruleset. Until applied, these rules remain documented policy only.

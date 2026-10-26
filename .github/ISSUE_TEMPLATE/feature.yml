@@ -1,0 +1,17 @@
+name: Feature request
+description: Propose a website feature with a clear user need and testable outcome.
+title: "Feature: "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: User need and proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and test cases
+      description: Describe observable success, relevant edge cases and failure behavior. A maintainer can refine the test plan.
+    validations:
+      required: true
