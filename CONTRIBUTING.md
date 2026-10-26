@@ -8,14 +8,51 @@ For news, people, publications, partners, Moments and vacancies, use the content
 
 Use the content-update or bug issue form. Include the affected page, proposed correction, verified source, image permission and requested publication date. For bugs, add reproduction steps and expected versus actual behavior. Small typo fixes may go directly to a PR.
 
-## Submit a pull request
+## Pull request process
 
-1. Create a branch from the current approved target branch. Confirm the PR base; do not assume an old version branch is the release target.
-2. Make one focused change. Preserve existing IDs and URLs. Do not commit generated output, credentials or unapproved personal information.
-3. Run `npm run content:test`, `npm test` and `npm run build`. If using GitHub's editor, disclose that local checks were not run and wait for CI and a maintainer preview.
-4. Preview affected pages on desktop and mobile. For news, inspect both list and detail pages; for Moments, inspect the album viewer.
-5. Complete the PR template with sources, actual check results and preview evidence. Keep unfinished work as a draft PR.
-6. Request an independent reviewer and address feedback. New changes need review of the latest revision.
+Adapted for this website from [ECC's pull request process](https://github.com/affaan-m/ECC/blob/main/CONTRIBUTING.md#pull-request-process).
+
+### 1. Prepare a focused branch
+
+Check existing issues and PRs to avoid duplicate work. For substantial features, agree on the user need and acceptance criteria in an issue first. Branch from the current approved target, normally `main`, using `psgundlacod/<short-description>` for maintainer work. Confirm the PR base and preserve unrelated local edits. Keep content, layout and dependency work focused; explain related changes that must ship together.
+
+### 2. Use a descriptive title
+
+Use `type(scope): description`; scope is optional. Types are `feat`, `fix`, `docs`, `test`, `chore`, `ci`, and `refactor`. Describe the final change, for example:
+
+```text
+feat(news): add category filtering
+fix(publications): preserve links when a cover is missing
+docs: clarify content editing
+ci: run unit tests for every pull request
+chore(deps): update vulnerable build dependencies
+```
+
+This title convention is review policy; CI does not currently validate titles.
+
+### 3. Complete the description
+
+Use the PR template: summarize the problem, resulting behavior, change type, related issue, actual tests, preview evidence and remaining risks. Explain exceptions rather than checking unperformed work. Keep screenshots and source links for content or visual changes. Do not commit credentials, private information, unapproved images or generated content modules.
+
+### 4. Check before pushing
+
+Use the supported Node version and npm. When dependencies change, update and commit `package-lock.json` with `package.json`, then verify a clean `npm ci`. Do not introduce a second package manager or lockfile.
+
+```sh
+npm run content:generate
+npm run content:test
+npm test
+npm run build
+git diff --check
+```
+
+For dependency changes, also run `npm audit` and explain unresolved advisories. Update affected tests, fixtures, shared callers, content validation and documentation together. Follow the behavioral test rules below. Preview affected pages on desktop and mobile; for news inspect list and detail pages, and for Moments inspect the album viewer. Disclose checks that could not run.
+
+### 5. Request review and address feedback
+
+Assign a responsible maintainer and request an independent reviewer. Keep incomplete work as a draft. Respond to review comments, push focused follow-up changes, and rerun affected checks. Update the title and description when scope changes. New commits require review of the latest revision. Review timing depends on maintainer availability.
+
+Merge only after the independent approval, resolved conversations and passing checks described below. Follow the existing deployment and recovery process; opening or approving a PR is not release authorization.
 
 ## Merge
 

@@ -1,6 +1,19 @@
-## What changes for visitors?
+## Summary
 
-Describe the content correction/addition and affected page(s).
+Describe the problem, resulting behavior and affected pages or tooling. Explain why the change is needed.
+
+## Type
+
+- [ ] Feature
+- [ ] Bug fix
+- [ ] Content update
+- [ ] Documentation
+- [ ] Tests
+- [ ] Dependencies / maintenance
+- [ ] CI
+- [ ] Refactor
+
+Use a title such as `fix(news): preserve detail links` or `chore(deps): update build tooling`.
 
 ## Sources and preview
 
@@ -13,6 +26,8 @@ Link supporting sources. Attach desktop/mobile preview screenshots or state what
 - [ ] Affected list/detail pages checked; links and images verified
 - [ ] Existing appearance and routes preserved, or layout changes explicitly described
 - [ ] Facts and permission to publish images checked
+- [ ] Title and description reflect the final change
+- [ ] Lockfile updated when dependencies change; no secrets or private information added
 - [ ] Independent reviewer requested; merge waits for approval and required checks
 
 ## Issue and behavioral tests
