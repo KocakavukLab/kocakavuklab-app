@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import confetti from "canvas-confetti";
 import GoToTopButton from "../common/GoToTopButton";
 import {
@@ -26,6 +27,8 @@ const getCategoryIcon = category => {
       return <FaUserPlus />;
     case "award":
       return <FaAward />;
+    case "publication":
+      return <FaNewspaper />;
     default:
       return <FaNewspaper />;
   }
@@ -52,7 +55,7 @@ const NewsCard = ({ item, onClick }) => (
       {item.title}
     </h3>
 
-    {item.photoPair && <div className="mb-4 grid grid-cols-2 gap-2">{item.photoPair.map((photo, i) => <img key={photo} src={photo} alt={i === 0 ? "Quan Shi presenting poster 101P at MAP 2026" : "Kocakavuk Lab at MAP 2026 in London"} className="h-auto w-full rounded-md" />)}</div>}
+    {item.photoPair && <div className="mb-4 grid grid-cols-2 gap-2">{item.photoPair.map((photo, i) => <img key={photo} src={photo} alt={`${item.title}: photo ${i + 1}`} loading="lazy" className="h-auto w-full rounded-md" />)}</div>}
     {item.image && !item.photoPair && (
       <img
         src={item.image}
@@ -84,11 +87,16 @@ const NewsCard = ({ item, onClick }) => (
 
     {/* Description */}
     <div className="text-xs md:text-sm leading-relaxed" style={{ color: T.muted }}>
-      {item.shortDescription.split("\n\n").map((para, idx) => (
-        <p key={idx} className="mb-2">
-          {para}
-        </p>
-      ))}
+      <ReactMarkdown
+        allowedElements={["p", "strong", "em"]}
+        unwrapDisallowed
+        components={{
+          p: ({ node, ...props }) => <p className="mb-2" {...props} />,
+          strong: ({ node, ...props }) => <strong className="font-semibold" style={{ color: T.ink }} {...props} />,
+        }}
+      >
+        {item.shortDescription}
+      </ReactMarkdown>
     </div>
   </Link>
 );

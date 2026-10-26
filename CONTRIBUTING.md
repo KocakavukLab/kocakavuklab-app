@@ -8,51 +8,13 @@ For news, people, publications, partners, Moments and vacancies, use the content
 
 Use the content-update or bug issue form. Include the affected page, proposed correction, verified source, image permission and requested publication date. For bugs, add reproduction steps and expected versus actual behavior. Small typo fixes may go directly to a PR.
 
-## Pull request process
+## Submit a pull request
 
-Adapted for this website from [ECC's pull request process](https://github.com/affaan-m/ECC/blob/main/CONTRIBUTING.md#pull-request-process).
+Create a focused branch from current `main`. Describe what changes for website visitors, link sources and any related issue, and report actual tests and preview results. Use the PR template. Keep unfinished work as a draft and assign the responsible maintainer.
 
-### 1. Prepare a focused branch
+Run `npm run content:generate`, `npm run content:test`, `npm test`, `npm run build`, and `git diff --check` before pushing. Dependency changes also need a matching npm lockfile and `npm audit`. Preserve unrelated edits and keep generated modules, credentials and unapproved personal information out of commits.
 
-Check existing issues and PRs to avoid duplicate work. For substantial features, agree on the user need and acceptance criteria in an issue first. Branch from the current approved target, normally `main`, using `psgundlacod/<short-description>` for maintainer work. Confirm the PR base and preserve unrelated local edits. Keep content, layout and dependency work focused; explain related changes that must ship together.
-
-### 2. Use a descriptive title
-
-Use `type(scope): description`; scope is optional. Types are `feat`, `fix`, `docs`, `test`, `chore`, `ci`, and `refactor`. Describe the final change, for example:
-
-```text
-feat(news): add category filtering
-fix(publications): preserve links when a cover is missing
-docs: clarify content editing
-ci: run unit tests for every pull request
-chore(deps): update vulnerable build dependencies
-```
-
-This title convention is review policy; CI does not currently validate titles.
-
-### 3. Complete the description
-
-Use the PR template: summarize the problem, resulting behavior, change type, related issue, actual tests, preview evidence and remaining risks. Explain exceptions rather than checking unperformed work. Keep screenshots and source links for content or visual changes. Do not commit credentials, private information, unapproved images or generated content modules.
-
-### 4. Check before pushing
-
-Use the supported Node version and npm. When dependencies change, update and commit `package-lock.json` with `package.json`, then verify a clean `npm ci`. Do not introduce a second package manager or lockfile.
-
-```sh
-npm run content:generate
-npm run content:test
-npm test
-npm run build
-git diff --check
-```
-
-For dependency changes, also run `npm audit` and explain unresolved advisories. Update affected tests, fixtures, shared callers, content validation and documentation together. Follow the behavioral test rules below. Preview affected pages on desktop and mobile; for news inspect list and detail pages, and for Moments inspect the album viewer. Disclose checks that could not run.
-
-### 5. Request review and address feedback
-
-Assign a responsible maintainer and request an independent reviewer when available. Keep incomplete work as a draft. Respond to review comments, push focused follow-up changes, and rerun affected checks. Update the title and description when scope changes. Review the latest revision after new commits. Review timing depends on maintainer availability.
-
-Merge only after resolved conversations and passing checks described below. Independent approval is optional for this sole-maintainer repository. Follow the existing deployment and recovery process; opening or approving a PR is not release authorization.
+Review the final diff and address review comments. Independent review is welcome when available; this sole-maintainer repository requires passing CI rather than another person's approval. Follow the merge policy below.
 
 ## Merge
 
@@ -444,3 +406,12 @@ The PR must link an issue when one exists, state which tests cover the change, a
 `.github/main-ruleset.json` defines the requested GitHub rules: PRs required, zero required approvals, resolved review conversations, up-to-date branches, passing `validate` and `unit-tests` checks from GitHub Actions, CodeQL results with no high-or-higher security alerts or errors/warnings, and blocked force pushes and deletion. No bypass actors are configured.
 
 This file is an administrator import payload, not automatic enforcement. The live Protect main ruleset is active. Future edits to this JSON must be applied separately by an administrator and verified against live settings.
+
+
+## Publication and news updates
+
+Add a published paper to `content/publications.json` with its journal-verified title, DOI, author order, month/year, journal name and optimized thumbnail. Preserve existing records. When a published article supersedes a preprint, retain the preprint with `hidden: true` rather than deleting its provenance. Publication rows show the journal name below the authors.
+
+Add announcements as separate `content/news/<id>.md` files, with stable IDs, exact event/publication dates and source links. For paired photos use the existing two-item `photoPair` field. Summaries support paragraphs, bold and italic Markdown; links belong in the article body. Use the publication category for papers and general for lab milestones. A milestone must not show a new-member welcome heading.
+
+Verify dates and authorship against primary sources; distinguish study associations from clinical benefit. Confirm permission to publish photographs. Check news list/detail routes and the publications page, including images, ordering and hidden superseded records. Keep donation, payment, navigation and unrelated page work in separate PRs.

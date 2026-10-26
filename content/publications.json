@@ -1,5 +1,15 @@
 [
   {
+    "title": "Divergent genomic evolution in astrocytomas and oligodendrogliomas",
+    "journal": "Nature",
+    "doi": "https://doi.org/10.1038/s41586-026-11150-x",
+    "authors": "Chowdhury T., Tesileanu C. M. S., Kocakavuk E., Johnson K. C., Lee J. H., Erson-Omay Z., Heo C., Aldape K., Amin S. B., Anderson K. J., Ashley D. M., Barthel F. P., Barnholtz-Sloan J. S., Brat D. J., Brodbelt A. R., Castro A. V., Claus E. B., Connelly J. M., Costello J. F., Datta I., Elliott C., Finocchiaro G., French P. J., Gan H. K., Garofano L., Ghospurkar P. L., Golebiewska A., Gundla P. S., Hermes B., Hong C., Hoogstrate Y., Horbinski C., Huse J. T., Iavarone A., Karadag C., Khasraw M., Kouwenhoven M. C. M., LaViolette P. S., Li K., Lowman A., McCortney K., Moon H.-E., Sanai N., Nasrallah M. P., Ng H. K., Ormond D. R., Kwan B., Padovan M., Paek S. H., Poisson L. M., Puri S., Shen E., Mehta S., Sloan A. E., Vallentgoed W. R., Van Meir E. G., Vaubel R., Wade T. E., Walenkamp A. M. E., Watts C., Weiss T., Weller M., Wesseling P., Westcott K., Westerman B. A., Ye G. Y., Yung W. K. A., The GLASS Consortium, Varn F. S., Verhaak R. G. W.",
+    "date": "10/2026",
+    "status": "Published",
+    "image": "src/assets/pubs/nature-october-2026.webp",
+    "journalLogo": "src/assets/journals/nature.svg"
+  },
+  {
     "title": "Prognostic and Predictive Effect of Age in Molecularly Defined Lower-Grade Gliomas",
     "journal": "Journal of Clinical Oncology",
     "doi": "https://doi.org/10.1200/JCO-25-01846",
@@ -27,7 +37,8 @@
     "date": "06/2025",
     "status": "In-review",
     "image": "src/assets/pubs/nature-25.optimized.webp",
-    "journalLogo": "src/assets/journals/biorxiv.png"
+    "journalLogo": "src/assets/journals/biorxiv.png",
+    "hidden": true
   },
   {
     "title": "The Epigenetic Evolution of Glioma Is Determined by the IDH1 Mutation Status and Treatment Regimen",

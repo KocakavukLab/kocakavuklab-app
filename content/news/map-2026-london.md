@@ -9,7 +9,7 @@
     "src/assets/news/map-2026-quan.optimized.webp",
     "src/assets/news/map-2026-team.optimized.webp"
   ],
-  "shortDescription": "Dr. Quan Shi presented poster 101P on spatial deconvolution of neuro-immune-tumor crosstalk in central nervous system lymphoma at MAP 2026 in London, 10–11 September.\n\nOur PI, Dr. Emre Kocakavuk, co-chaired and introduced the Young Oncologists Vesalius talk on AI in precision oncology.",
+  "shortDescription": "**Dr. Quan Shi** presented **poster 101P** on spatial deconvolution of neuro-immune-tumor crosstalk in central nervous system lymphoma at **MAP 2026** in London, **10–11 September**.\n\nOur PI, **Dr. Emre Kocakavuk**, co-chaired and introduced the Young Oncologists Vesalius talk on **AI in precision oncology**.",
   "tags": [
     "MAP 2026",
     "Poster presentation",

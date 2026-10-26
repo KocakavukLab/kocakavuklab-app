@@ -4,7 +4,7 @@
   "title": "Kocakavuk Lab opening its doors",
   "dateDisplay": "July 2023",
   "category": "new_member",
-  "shortDescription": "We are happy to share the news that the Kocakavuk Lab with a focus on Computational Oncology has opened.",
+  "shortDescription": "We are happy to share the news that the **Kocakavuk Lab** with a focus on **Computational Oncology** has opened.",
   "image": "src/assets/news/opening-doors.png",
   "memberImages": [
     "src/assets/members/Pranav.optimized.webp"

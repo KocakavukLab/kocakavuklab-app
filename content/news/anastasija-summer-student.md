@@ -4,7 +4,7 @@
   "title": "Anastasija Joins the Lab as a Summer Research Student",
   "dateDisplay": "July 2026",
   "category": "new_member",
-  "shortDescription": "We are delighted to welcome Anastasija Ivančukova, a medical student from Latvia, to our growing team as a summer research student.",
+  "shortDescription": "We are delighted to welcome **Anastasija Ivančukova**, a medical student from Latvia, to our growing team as a summer research student.",
   "memberImages": [
     "src/assets/members/anastasija.optimized.webp"
   ],

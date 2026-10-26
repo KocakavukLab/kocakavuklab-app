@@ -4,7 +4,7 @@
   "title": "Junior Clinician Scientist Fellowship by UMEA",
   "dateDisplay": "April 2024",
   "category": "grant",
-  "shortDescription": "Fabian Ullrich, MD, has successfully secured a Junior Clinician Scientist fellowship granted by the Clinician Scientist Academy of the University Hospital Essen (UMEA).",
+  "shortDescription": "**Fabian Ullrich, MD**, has successfully secured a **Junior Clinician Scientist fellowship** granted by the **Clinician Scientist Academy of the University Hospital Essen (UMEA)**.",
   "image": "src/assets/news/umea.optimized.webp",
   "tags": [
     "UMEA",
