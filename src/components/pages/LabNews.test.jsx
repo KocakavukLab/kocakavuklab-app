@@ -12,6 +12,8 @@ const stories = [
 test('both new stories appear first with verified dates and working card destinations', () => {
   expect(getSortedNews().slice(0, 2).map(({ id, date }) => [id, date])).toEqual(stories.map(([id, , date]) => [id, new Date(`${date}T00:00:00`)]));
   render(<MemoryRouter><News /></MemoryRouter>);
+  expect(screen.getByText('Astrocytomas and oligodendrogliomas').tagName).toBe('STRONG');
+  expect(screen.getByText('Dr. Sc. Hum. Nachiyappan Venkatachalam').tagName).toBe('STRONG');
   for (const [id, title] of stories) {
     expect(screen.getAllByText(title)[0].closest('a')).toHaveAttribute('href', `/news/${id}`);
   }
