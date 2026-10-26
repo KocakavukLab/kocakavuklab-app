@@ -8,18 +8,55 @@ For news, people, publications, partners, Moments and vacancies, use the content
 
 Use the content-update or bug issue form. Include the affected page, proposed correction, verified source, image permission and requested publication date. For bugs, add reproduction steps and expected versus actual behavior. Small typo fixes may go directly to a PR.
 
-## Submit a pull request
+## Pull request process
 
-1. Create a branch from the current approved target branch. Confirm the PR base; do not assume an old version branch is the release target.
-2. Make one focused change. Preserve existing IDs and URLs. Do not commit generated output, credentials or unapproved personal information.
-3. Run `npm run content:test`, `npm test` and `npm run build`. If using GitHub's editor, disclose that local checks were not run and wait for CI and a maintainer preview.
-4. Preview affected pages on desktop and mobile. For news, inspect both list and detail pages; for Moments, inspect the album viewer.
-5. Complete the PR template with sources, actual check results and preview evidence. Keep unfinished work as a draft PR.
-6. Request an independent reviewer and address feedback. New changes need review of the latest revision.
+Adapted for this website from [ECC's pull request process](https://github.com/affaan-m/ECC/blob/main/CONTRIBUTING.md#pull-request-process).
+
+### 1. Prepare a focused branch
+
+Check existing issues and PRs to avoid duplicate work. For substantial features, agree on the user need and acceptance criteria in an issue first. Branch from the current approved target, normally `main`, using `psgundlacod/<short-description>` for maintainer work. Confirm the PR base and preserve unrelated local edits. Keep content, layout and dependency work focused; explain related changes that must ship together.
+
+### 2. Use a descriptive title
+
+Use `type(scope): description`; scope is optional. Types are `feat`, `fix`, `docs`, `test`, `chore`, `ci`, and `refactor`. Describe the final change, for example:
+
+```text
+feat(news): add category filtering
+fix(publications): preserve links when a cover is missing
+docs: clarify content editing
+ci: run unit tests for every pull request
+chore(deps): update vulnerable build dependencies
+```
+
+This title convention is review policy; CI does not currently validate titles.
+
+### 3. Complete the description
+
+Use the PR template: summarize the problem, resulting behavior, change type, related issue, actual tests, preview evidence and remaining risks. Explain exceptions rather than checking unperformed work. Keep screenshots and source links for content or visual changes. Do not commit credentials, private information, unapproved images or generated content modules.
+
+### 4. Check before pushing
+
+Use the supported Node version and npm. When dependencies change, update and commit `package-lock.json` with `package.json`, then verify a clean `npm ci`. Do not introduce a second package manager or lockfile.
+
+```sh
+npm run content:generate
+npm run content:test
+npm test
+npm run build
+git diff --check
+```
+
+For dependency changes, also run `npm audit` and explain unresolved advisories. Update affected tests, fixtures, shared callers, content validation and documentation together. Follow the behavioral test rules below. Preview affected pages on desktop and mobile; for news inspect list and detail pages, and for Moments inspect the album viewer. Disclose checks that could not run.
+
+### 5. Request review and address feedback
+
+Assign a responsible maintainer and request an independent reviewer when available. Keep incomplete work as a draft. Respond to review comments, push focused follow-up changes, and rerun affected checks. Update the title and description when scope changes. Review the latest revision after new commits. Review timing depends on maintainer availability.
+
+Merge only after resolved conversations and passing checks described below. Independent approval is optional for this sole-maintainer repository. Follow the existing deployment and recovery process; opening or approving a PR is not release authorization.
 
 ## Merge
 
-Merge only after required checks pass, conversations are resolved and at least one reviewer other than the author approves the latest changes. Use the repository's allowed merge method. Do not bypass protection or force-push a shared release branch.
+Merge only after required checks pass and conversations are resolved. The maintainer reviews the final diff; independent approval is optional. Use the repository's allowed merge method. Do not bypass protection or force-push a shared release branch.
 
 See the review policy below for enforcement and recovery. A merge may trigger deployment; verify the target and preview first.
 
@@ -51,7 +88,7 @@ Version 2 keeps editable content separate in the page design. Start here for rou
 5. Write the article below the second `---` line using ordinary Markdown: paragraphs, **bold**, lists and `[link text](https://example.org)`. Do not paste HTML or React code.
 6. Set `id` to the filename without `.md`. Existing IDs are public URLs; changing one breaks old links. Set `date` to the verified publication date in `YYYY-MM-DD` format and edit `dateDisplay` to match.
 7. Set `image` to a repository path such as `src/assets/news/example.jpg`. Optional `photoPair` contains exactly two image paths for the existing side-by-side layout. Optional `memberImages` contains member portrait paths. Optional `tags` contains text labels.
-8. Open a pull request. Explain the change, include sources, and request review. A maintainer can run the local preview and attach screenshots. Wait for passing checks and independent approval before merging.
+8. Open a pull request. Explain the change, include sources, and request review. A maintainer can run the local preview and attach screenshots. Wait for passing checks and resolved review conversations before merging.
 
 Categories: `grant`, `award`, `new_member`, `publication`, `general`. Dates sort newest first. Future dates are not automatically hidden: do not merge unpublished announcements early. Template files outside `content/` never render.
 
@@ -114,15 +151,15 @@ Write the news story here. Verify names, dates, titles and claims before submitt
 
 ## Review and merge policy
 
-These are the required project rules. GitHub enforcement has not been verified or changed as part of this documentation update.
+These are the required project rules. Live GitHub rules were verified on 2026-10-26; the saved payload matches the sole-maintainer policy.
 
 A repository administrator should configure the actual protected release/integration branches with:
 
 - Pull requests required before merging; no routine direct pushes.
-- At least one approving reviewer other than the PR author.
-- Dismiss stale approvals when new commits change the PR; require approval of the most recent reviewable push by someone other than its pusher.
+- Zero required approvals for the sole-maintainer workflow; request independent review when available.
+- Do not require latest-push approval or dismissal of stale approvals in the sole-maintainer workflow.
 - All review conversations resolved.
-- Required status check: `validate` from the `Content and build` workflow.
+- Required status checks: `validate` and `unit-tests` from GitHub Actions; CodeQL scanning must satisfy the configured security thresholds.
 - Branch up to date before merge, or the repository's existing merge queue if one is already used.
 - Force pushes and branch deletion blocked.
 - Bypass permissions limited to an explicitly agreed emergency administrator procedure, with follow-up review.
@@ -388,3 +425,22 @@ Shared navigation lives in `src/components/Navbar.jsx`; footer in `src/component
 - Footer branding is centered. Below 651px, show branding only; hide footer columns and the copyright row.
 - News uses a left rail and readable single-column cards below 900px, and alternating cards around a centered rail from 900px. Maintain 16px body text, keyboard-operable cards, visible focus, and reduced-motion support.
 - Check phones and tablets in portrait and landscape, plus desktop. Preserve story IDs, chronological order, detail links, and existing content.
+
+
+## Tests for fixes and features
+
+Every PR runs both `validate` (content validation and production build) and `unit-tests` (the full Vitest suite). Neither job uses path filters. A failing check blocks merge when the main branch ruleset is active.
+
+Bug issues must describe reproduction steps, expected behavior and regression-test acceptance criteria. Feature issues must explain the user need, acceptance criteria and testable edge cases. Issues describe work; tests run on the implementing PR.
+
+Bug fixes must add a regression test that fails before the fix and passes afterward. Features and behavior changes must add or update tests for the intended behavior and relevant failure or boundary cases. Tests must assert observable behavior rather than copy implementation details. Run the full existing suite to catch regressions.
+
+Content-only, documentation-only and dependency-only PRs may reuse existing checks when no behavior changes. Explain why a new test is unnecessary and report actual check results. Dependency changes also require `npm audit`; CSS tooling changes require checking the generated styles or a visual preview.
+
+The PR must link an issue when one exists, state which tests cover the change, and disclose untested behavior. The maintainer verifies test adequacy and seeks independent review when available. A green suite alone does not prove new behavior has meaningful coverage. Do not add arbitrary coverage percentages as a substitute for behavioral assertions.
+
+### Main branch enforcement
+
+`.github/main-ruleset.json` defines the requested GitHub rules: PRs required, zero required approvals, resolved review conversations, up-to-date branches, passing `validate` and `unit-tests` checks from GitHub Actions, CodeQL results with no high-or-higher security alerts or errors/warnings, and blocked force pushes and deletion. No bypass actors are configured.
+
+This file is an administrator import payload, not automatic enforcement. The live Protect main ruleset is active. Future edits to this JSON must be applied separately by an administrator and verified against live settings.
