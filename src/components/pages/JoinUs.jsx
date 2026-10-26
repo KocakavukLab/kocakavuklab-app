@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import GoToTopButton from "../common/GoToTopButton";
 import { jobPositions } from "../../data/jobsData";
 import { principalInvestigator } from "../../data/membersData";
@@ -28,9 +27,9 @@ function JoinUs() {
           <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: ORANGE, fontFamily: MONO }}>Careers</p>
           <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl" style={{ fontFamily: DISPLAY, letterSpacing: "-0.02em", textShadow: "0 2px 20px rgba(0,0,0,.5)" }}>Join Our Research Team</h1>
           <p className="mt-2 max-w-2xl text-white/85">We are constantly looking for highly motivated MD, PhD and postdoctoral candidates.</p>
-          <Link to="/contact" className="mt-5 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold transition hover:brightness-95" style={{ background: ORANGE, color: "#14181F" }}>
+          <a href="mailto:contact@kocakavuklab.com?subject=General%20application" className="mt-5 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold transition hover:brightness-95" style={{ background: ORANGE, color: "#14181F" }}>
             Send a general application ↗
-          </Link>
+          </a>
         </div>
       </header>
 
@@ -69,7 +68,7 @@ function JoinUs() {
               <li className="py-5">Motivation letter</li>
               <li className="py-5">Brief statement of research interests</li>
             </ul>
-            <Link to="/contact" className="mt-7 inline-flex min-h-12 items-center rounded-full px-7 py-3 text-base font-semibold hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" style={{ background: ORANGE, color: T.ink }}>Send a general application ↗</Link>
+            <a href="mailto:contact@kocakavuklab.com?subject=General%20application" className="mt-7 inline-flex min-h-12 items-center rounded-full px-7 py-3 text-base font-semibold hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" style={{ background: ORANGE, color: T.ink }}>Send a general application ↗</a>
           </section>
           <section className="flex flex-col rounded-2xl border p-8 md:p-10" style={{ borderColor: T.line, background: T.tile }} aria-labelledby="join-contact-heading">
             <h2 id="join-contact-heading" className="text-2xl font-semibold" style={{ color: T.ink }}>Talk to our PI</h2>

@@ -11,7 +11,6 @@ export const nav = [
   ["/network", "Network"],
   ["/news", "News"],
   ["/moments", "Moments"],
-  ["/contact", "Contact"],
   ["/joinus", "Join Us"],
 ];
 
@@ -71,12 +70,15 @@ export default function NavBar() {
               key={to}
               to={to}
               onClick={() => setOpen(false)}
-              className={({ isActive }) => `hf-link ${to === "/joinus" ? "hf-join" : ""} ${isActive ? "is-active" : ""}`}
+              className={({ isActive }) => `hf-link ${isActive ? "is-active" : ""}`}
             >
               {label}
             </NavLink>
           ))}
         </nav>
+        <button type="button" className="hf-link hf-donate" disabled title="Donations coming soon">
+          Donate
+        </button>
       </div>
     </header>
   );

@@ -121,7 +121,7 @@ Validation catches malformed metadata, missing required fields, duplicate IDs/DO
 
 ## Design boundary
 
-Home hero/title, layout, typography, navigation, routes, forms, maps and legal/information page structure remain unchanged. Version 2 exposes the six existing content collections; Contact, Overview, Privacy, Imprint, Credits and 404 prose remains in existing components. Ask a developer for those changes rather than editing JSX without review. Further prose extraction should be a separate, appearance-preserving change with developer review.
+Home hero/title, layout, typography, navigation, routes, forms, maps and legal/information page structure remain unchanged. Version 2 exposes the six existing content collections; Overview, Privacy, Imprint, Credits and 404 prose remains in existing components. Ask a developer for those changes rather than editing JSX without review. Further prose extraction should be a separate, appearance-preserving change with developer review.
 
 ## Recovery
 
@@ -182,7 +182,7 @@ See [WebsiteOverview.md](WebsiteOverview.md) for architecture, page ownership an
 
 The five structured collections accept JSON, YAML (`.yaml`) or `.yml`. Keep exactly one file per collection: for example, `people.json` OR `people.yaml`, never both. Existing JSON files remain valid. News Markdown accepts JSON or YAML metadata between `---` delimiters. YAML dates stay strings; use spaces for indentation. Duplicate keys, aliases and custom tags are rejected. The same field, link and image validation applies to both formats.
 
-`npm run content:test` adds temporary examples for people, publications, network, jobs, Moments and news, verifies generated output, and checks that an invalid edit does not overwrite the last valid output. `npm test` checks those additions in the affected pages, including Overview and news detail, and smoke-tests the static pages. Fixtures live in a temporary directory and are deleted after tests; they never become published website content. Contact and legal pages do not accept data-driven blocks.
+`npm run content:test` adds temporary examples for people, publications, network, jobs, Moments and news, verifies generated output, and checks that an invalid edit does not overwrite the last valid output. `npm test` checks those additions in the affected pages, including Overview and news detail, and smoke-tests the static pages. Fixtures live in a temporary directory and are deleted after tests; they never become published website content. Legal pages do not accept data-driven blocks.
 
 Use optimized WebP assets for photographs and publication thumbnails. Before deleting an original, confirm its optimized replacement exists, search source/content/public files for references, and run content validation and a production build. Keep SVG organization marks as SVG. Git history retains removed originals; no history rewrite is needed to clean the current tree.
 
@@ -359,17 +359,15 @@ File: `content/jobs.json`. Add to the `jobs` array inside `phd`, `postdoc`, or `
 }
 ```
 
-Set status to `Closed` when recruitment ends. Closed records remain in content but disappear from the page. The View details button uses `applyLink`; general application buttons still lead to Contact.
+Set status to `Closed` when recruitment ends. Closed records remain in content but disappear from the page. The View details button uses `applyLink`; general application buttons open an email to `contact@kocakavuklab.com` with the subject `General application`.
 
-### Contact — `/contact`
+### Contact, Join Us and Donate
 
-File: `src/components/pages/Contact.jsx`; developer review required. There is no Contact YAML collection. An email link has this JSX shape; preserve existing classes and verify address before replacing values:
+The old Contact form is retired; its source remains recoverable in Git history. `/contact` redirects to `/joinus`. General applications use `mailto:contact@kocakavuklab.com?subject=General%20application`.
 
-```jsx
-<a href="mailto:verified-address@example.org">verified-address@example.org</a>
-```
+The shared footer contains the existing Hematology map, address and lab email. Verify map and email links on desktop and mobile after editing.
 
-Map link and iframe are separate URLs in the same component. Update them together. EmailJS delivery settings are separate from the displayed address; changing display text does not change the message recipient. Never submit test email to the live service without authorization.
+Donate is a visible, native disabled button in the header. It has no link or click handler; no donation page, foundation link, account details or checkout is published. Direct `/donate` requests use the existing not-found page. Payment and foundation integration require a separate change and authorization.
 
 ### Privacy, Imprint, Credits and 404
 
@@ -421,8 +419,8 @@ Shared navigation lives in `src/components/Navbar.jsx`; footer in `src/component
 ## Contact and responsive layout rules
 
 - Member cards show social/profile links only. Email fields are not supported by the people schema.
-- Footer “Email the lab”, Join Us “Email our PI”, and the Imprint address use `contact@kocakavuklab.com`. Contact shows the message form and location without a separate email address. EmailJS delivery configuration is managed separately.
-- Footer branding is centered. Below 651px, show branding only; hide footer columns and the copyright row.
+- Footer “Email the lab”, Join Us “Email our PI”, and the Imprint address use `contact@kocakavuklab.com`. Contact is retired; the shared footer shows the map and email, while Join Us handles general applications.
+- Footer branding is centered. Below 651px, show branding and contact/location details; hide footer navigation columns and the copyright row.
 - News uses a left rail and readable single-column cards below 900px, and alternating cards around a centered rail from 900px. Maintain 16px body text, keyboard-operable cards, visible focus, and reduced-motion support.
 - Check phones and tablets in portrait and landscape, plus desktop. Preserve story IDs, chronological order, detail links, and existing content.
 

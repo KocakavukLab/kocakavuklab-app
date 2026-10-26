@@ -22,7 +22,6 @@ import News from './components/pages/News';
 import NewsDetail from './components/pages/NewsDetail';
 import Moments from './components/pages/Moments';
 import JoinUs from './components/pages/JoinUs';
-import Contact from './components/pages/Contact';
 import DesignCredits from './components/pages/DesignCredits';
 import Imprint from './components/pages/Imprint';
 import PrivacyPolicy from './components/pages/PrivacyPolicy';
@@ -60,7 +59,7 @@ test('new article detail renders Markdown body', () => {
   expect(screen.getByText('Fixture article body.')).toBeInTheDocument();
 });
 
-for (const [name, Component] of [['Contact', Contact], ['Credits', DesignCredits], ['Imprint', Imprint], ['Privacy', PrivacyPolicy]]) {
+for (const [name, Component] of [['Credits', DesignCredits], ['Imprint', Imprint], ['Privacy', PrivacyPolicy]]) {
   test(`${name} still renders alongside updated content`, () => {
     render(<MemoryRouter><Component /></MemoryRouter>);
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
@@ -92,7 +91,7 @@ test('partner URL and vacancy links render; closed vacancy is excluded', () => {
   render(<MemoryRouter><JoinUs /></MemoryRouter>);
   expect(screen.queryByText('Fixture Closed Position')).not.toBeInTheDocument();
   expect(screen.getAllByRole('link', { name: /View details/ }).some(link => link.href === 'https://example.org/apply')).toBe(true);
-  expect(screen.getAllByRole('link', { name: /Send a general application/ })[0]).toHaveAttribute('href', '/contact');
+  expect(screen.getAllByRole('link', { name: /Send a general application/ })[0]).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com?subject=General%20application');
   expect(screen.getByRole('link', { name: /Email our PI/ })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
 });
 
@@ -123,27 +122,7 @@ test('Moments opens two-photo sample, next/previous navigate, close restores pag
   expect(document.body.style.overflow).not.toBe('hidden');
 });
 
-test('Contact requires valid email and consent; privacy link remains available', async () => {
-  const user = userEvent.setup();
-  render(<MemoryRouter><Contact /></MemoryRouter>);
-  const submit = screen.getByRole('button', { name: 'Send Message' });
-  expect(submit).toBeDisabled();
-  await user.type(screen.getByLabelText('Name'), 'Test visitor');
-  await user.type(screen.getByLabelText('Email'), 'invalid-email');
-  await user.type(screen.getByLabelText('Message'), 'Local test only; do not send.');
-  await user.click(screen.getByRole('checkbox'));
-  expect(submit).toBeDisabled();
-  await user.clear(screen.getByLabelText('Email'));
-  await user.type(screen.getByLabelText('Email'), 'visitor@example.org');
-  expect(submit).toBeEnabled();
-  expect(screen.getByRole('link', { name: /data privacy policy/i })).toHaveAttribute('href', '/privacypolicy');
-  // Do not submit: email delivery is an external action, outside this simulation.
-});
-
- test('Imprint uses the lab contact address and Contact has no direct email link', () => {
-  const view = render(<MemoryRouter><Imprint /></MemoryRouter>);
+test('Imprint uses the lab contact address', () => {
+  render(<MemoryRouter><Imprint /></MemoryRouter>);
   expect(screen.getByRole('link', { name: 'contact@kocakavuklab.com' })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
-  view.unmount();
-  render(<MemoryRouter><Contact /></MemoryRouter>);
-  expect(document.querySelector('a[href^="mailto:"]')).toBeNull();
 });
