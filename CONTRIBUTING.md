@@ -50,13 +50,13 @@ For dependency changes, also run `npm audit` and explain unresolved advisories. 
 
 ### 5. Request review and address feedback
 
-Assign a responsible maintainer and request an independent reviewer. Keep incomplete work as a draft. Respond to review comments, push focused follow-up changes, and rerun affected checks. Update the title and description when scope changes. New commits require review of the latest revision. Review timing depends on maintainer availability.
+Assign a responsible maintainer and request an independent reviewer when available. Keep incomplete work as a draft. Respond to review comments, push focused follow-up changes, and rerun affected checks. Update the title and description when scope changes. Review the latest revision after new commits. Review timing depends on maintainer availability.
 
-Merge only after the independent approval, resolved conversations and passing checks described below. Follow the existing deployment and recovery process; opening or approving a PR is not release authorization.
+Merge only after resolved conversations and passing checks described below. Independent approval is optional for this sole-maintainer repository. Follow the existing deployment and recovery process; opening or approving a PR is not release authorization.
 
 ## Merge
 
-Merge only after required checks pass, conversations are resolved and at least one reviewer other than the author approves the latest changes. Use the repository's allowed merge method. Do not bypass protection or force-push a shared release branch.
+Merge only after required checks pass and conversations are resolved. The maintainer reviews the final diff; independent approval is optional. Use the repository's allowed merge method. Do not bypass protection or force-push a shared release branch.
 
 See the review policy below for enforcement and recovery. A merge may trigger deployment; verify the target and preview first.
 
@@ -88,7 +88,7 @@ Version 2 keeps editable content separate in the page design. Start here for rou
 5. Write the article below the second `---` line using ordinary Markdown: paragraphs, **bold**, lists and `[link text](https://example.org)`. Do not paste HTML or React code.
 6. Set `id` to the filename without `.md`. Existing IDs are public URLs; changing one breaks old links. Set `date` to the verified publication date in `YYYY-MM-DD` format and edit `dateDisplay` to match.
 7. Set `image` to a repository path such as `src/assets/news/example.jpg`. Optional `photoPair` contains exactly two image paths for the existing side-by-side layout. Optional `memberImages` contains member portrait paths. Optional `tags` contains text labels.
-8. Open a pull request. Explain the change, include sources, and request review. A maintainer can run the local preview and attach screenshots. Wait for passing checks and independent approval before merging.
+8. Open a pull request. Explain the change, include sources, and request review. A maintainer can run the local preview and attach screenshots. Wait for passing checks and resolved review conversations before merging.
 
 Categories: `grant`, `award`, `new_member`, `publication`, `general`. Dates sort newest first. Future dates are not automatically hidden: do not merge unpublished announcements early. Template files outside `content/` never render.
 
@@ -151,15 +151,15 @@ Write the news story here. Verify names, dates, titles and claims before submitt
 
 ## Review and merge policy
 
-These are the required project rules. GitHub enforcement has not been verified or changed as part of this documentation update.
+These are the required project rules. Live GitHub rules were verified on 2026-10-26; the saved payload matches the sole-maintainer policy.
 
 A repository administrator should configure the actual protected release/integration branches with:
 
 - Pull requests required before merging; no routine direct pushes.
-- At least one approving reviewer other than the PR author.
-- Dismiss stale approvals when new commits change the PR; require approval of the most recent reviewable push by someone other than its pusher.
+- Zero required approvals for the sole-maintainer workflow; request independent review when available.
+- Do not require latest-push approval or dismissal of stale approvals in the sole-maintainer workflow.
 - All review conversations resolved.
-- Required status check: `validate` from the `Content and build` workflow.
+- Required status checks: `validate` and `unit-tests` from GitHub Actions; CodeQL scanning must satisfy the configured security thresholds.
 - Branch up to date before merge, or the repository's existing merge queue if one is already used.
 - Force pushes and branch deletion blocked.
 - Bypass permissions limited to an explicitly agreed emergency administrator procedure, with follow-up review.
@@ -437,10 +437,10 @@ Bug fixes must add a regression test that fails before the fix and passes afterw
 
 Content-only, documentation-only and dependency-only PRs may reuse existing checks when no behavior changes. Explain why a new test is unnecessary and report actual check results. Dependency changes also require `npm audit`; CSS tooling changes require checking the generated styles or a visual preview.
 
-The PR must link an issue when one exists, state which tests cover the change, and disclose untested behavior. An independent reviewer verifies test adequacy. A green suite alone does not prove new behavior has meaningful coverage. Do not add arbitrary coverage percentages as a substitute for behavioral assertions.
+The PR must link an issue when one exists, state which tests cover the change, and disclose untested behavior. The maintainer verifies test adequacy and seeks independent review when available. A green suite alone does not prove new behavior has meaningful coverage. Do not add arbitrary coverage percentages as a substitute for behavioral assertions.
 
 ### Main branch enforcement
 
-`.github/main-ruleset.json` defines the requested GitHub rules: PRs required, one independent approval, stale approvals dismissed, approval required after the latest push, resolved review conversations, up-to-date branches, passing `validate` and `unit-tests` checks from GitHub Actions, and blocked force pushes and deletion. No bypass actors are configured.
+`.github/main-ruleset.json` defines the requested GitHub rules: PRs required, zero required approvals, resolved review conversations, up-to-date branches, passing `validate` and `unit-tests` checks from GitHub Actions, CodeQL results with no high-or-higher security alerts or errors/warnings, and blocked force pushes and deletion. No bypass actors are configured.
 
-This file is an administrator import payload, not automatic enforcement. A repository administrator must apply it through GitHub's repository rulesets API or equivalent settings, then verify the active ruleset. Until applied, these rules remain documented policy only.
+This file is an administrator import payload, not automatic enforcement. The live Protect main ruleset is active. Future edits to this JSON must be applied separately by an administrator and verified against live settings.

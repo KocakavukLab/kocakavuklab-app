@@ -28,7 +28,7 @@ Link supporting sources. Attach desktop/mobile preview screenshots or state what
 - [ ] Facts and permission to publish images checked
 - [ ] Title and description reflect the final change
 - [ ] Lockfile updated when dependencies change; no secrets or private information added
-- [ ] Independent reviewer requested; merge waits for approval and required checks
+- [ ] Final diff reviewed by maintainer; independent review requested when available; required checks pass
 
 ## Issue and behavioral tests
 
