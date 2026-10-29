@@ -80,7 +80,7 @@ function Overview() {
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#E0742E]" style={{ fontFamily: MONO }}>About us</p>
               <h2 className="mt-2 text-[#14181F]" style={{ fontFamily: DISPLAY, fontWeight: 700, letterSpacing: "-0.025em", lineHeight: 1.08, fontSize: "clamp(28px,2.4vw,38px)" }}>
-                Research at the intersection of oncology, computation &amp; genomics.
+                Research at the intersection of clinical oncology, computational biology &amp; cancer genomics
               </h2>
             </div>
             <div>

@@ -6,7 +6,7 @@ import {
   getSortedNews
 } from "../../data/newsData";
 // Icons
-import { FaMoneyBillWave, FaUserPlus, FaNewspaper, FaAward } from "react-icons/fa";
+import { FaTrophy, FaUserPlus, FaNewspaper, FaAward } from "react-icons/fa";
 import "./News.css";
 import coverImg from "../../assets/covers/maincover.optimized.webp";
 import '../../App.css';
@@ -22,7 +22,7 @@ const ORANGE = "#FF914D";
 const getCategoryIcon = category => {
   switch (category) {
     case "grant":
-      return <FaMoneyBillWave />;
+      return <FaTrophy />;
     case "new_member":
       return <FaUserPlus />;
     case "award":

@@ -4,7 +4,7 @@ export const NEWS_CATEGORIES = {
     id: 'grant',
     label: 'Grants & Funding',
     color: '#10B981',
-    icon: 'FaMoneyBillWave'
+    icon: 'FaTrophy'
   },
   AWARD: {
     id: 'award',
