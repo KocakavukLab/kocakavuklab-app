@@ -1,5 +1,6 @@
 import GoToTopButton from "../common/GoToTopButton";
 import publications from "../../data/pubsData";
+import { principalInvestigator, memberGroups } from "../../data/membersData";
 import coverImg from "../../assets/covers/maincover.optimized.webp";
 import "../../App.css";
 
@@ -16,7 +17,17 @@ const DISPLAY = '"Space Grotesk", system-ui, sans-serif';
 const BODY = '"DM Sans", system-ui, -apple-system, sans-serif';
 const ORANGE = "#FF914D";
 
-const highlightRegex = /(Kocakavuk|Karadag C\.|Gundla P\. S\.)/;
+const normalizeName = (name) => name.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^\p{L}]/gu, "");
+const labAuthors = new Set(
+  [principalInvestigator, ...memberGroups.flatMap(group => group.members)].flatMap(({ name }) => {
+    const fullName = name.split(",")[0].trim().replace(/^(?:(?:Dr|Prof)\.?\s+)+/i, "");
+    const parts = fullName.split(/[\s-]+/);
+    // shortcut: listed names use single-word surnames; add explicit family-name data for compound surnames.
+    const surname = parts.pop();
+    const initials = parts.map(part => part[0]).join("");
+    return [normalizeName(fullName), normalizeName(`${surname} ${initials}`)];
+  })
+);
 const yearOf = (p) => p.date.split("/")[1];
 
 const Authors = ({ authors }) => {
@@ -24,7 +35,7 @@ const Authors = ({ authors }) => {
   return (
     <p className="mt-1.5 text-[12.5px] leading-relaxed" style={{ color: T.muted }}>
       {parts.map((a, i) => (
-        <span key={i} style={highlightRegex.test(a) ? { color: ORANGE, fontWeight: 700 } : undefined}>
+        <span key={i} style={labAuthors.has(normalizeName(a)) ? { color: ORANGE, fontWeight: 700 } : undefined}>
           {a}
           {i < parts.length - 1 ? ", " : ""}
         </span>

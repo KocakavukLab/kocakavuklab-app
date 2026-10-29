@@ -8,7 +8,8 @@ test('renders visible publications in newest-first date order', () => {
   const rendered = screen.getAllByRole('link')
     .map(link => byTitle.get(link.textContent.trim())).filter(Boolean);
   expect(rendered).toHaveLength(publications.filter(pub => !pub.hidden).length);
-  expect(rendered[0].doi).toBe('https://doi.org/10.1038/s41586-026-11150-x');
+  expect(rendered[0].doi).toBe('https://doi.org/10.1016/j.annonc.2026.09.008');
+  expect(rendered[1].doi).toBe('https://doi.org/10.1038/s41586-026-11150-x');
   expect(rendered[0].date).toBe('10/2026');
   expect(rendered.every(pub => !['2019', '2020'].includes(pub.date.split('/')[1]))).toBe(true);
   expect(screen.queryByText('Tumor-initiating genetics and therapy drive divergent molecular evolution in IDH-mutant gliomas')).not.toBeInTheDocument();
