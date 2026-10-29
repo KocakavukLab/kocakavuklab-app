@@ -24,7 +24,7 @@ export function createContentFixture({ yaml = false } = {}) {
       data.groups[0].members.push({ id: 'test-member', name: 'Fixture Researcher', image, role: 'Test role', description: 'Test biography updated through content.', website: 'https://example.org/researcher' });
       data.activeOrder.push('test-member');
     });
-    update('publications', data => data.push({ title: 'Fixture Publication', journal: 'Test Journal', doi: 'https://example.org/test-paper', authors: 'Test Author', date: '12/2099', status: 'Published', image: 'src/assets/pubs/cell-22.optimized.webp' }));
+    update('publications', data => data.push({ title: 'Fixture Publication', journal: 'Test Journal', doi: 'https://example.org/test-paper', authors: 'Researcher F., Researcher X., Kocakavuk E., Kocakavuk X., Gundla P.S., Gundla P., Shi Q., Zhou J., Ivancukova A., Emre Kocakavuk, Outside O.', date: '12/2099', status: 'Published', image: 'src/assets/pubs/cell-22.optimized.webp' }));
     update('publications', data => data.push({ title: 'Fixture Hidden Publication', journal: 'Test Journal', doi: 'https://example.org/hidden-paper', authors: 'Test Author', date: '11/2099', status: 'Preprint', hidden: true }));
     update('network', data => data[0].items.push({ id: 'test-partner', title: 'Fixture Partner', logo: image, url: 'https://example.org/partner' }));
     update('jobs', data => data[0].jobs.push({ id: 'test-job', title: 'Fixture Position', description: 'Test job description.', status: 'Open', applyLink: 'https://example.org/apply' }));

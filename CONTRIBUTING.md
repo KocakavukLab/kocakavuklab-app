@@ -280,6 +280,10 @@ File: `content/publications.json`. Append one object to the top-level array:
 
 Use `hidden: true` to hide a record without deleting it. Status accepts `Published`, `Preprint`, `In-review`, or `Submitted`. Image and journal logo are optional. Both thumbnail and title link to `doi`. Verify the newest-first order and both links after updating.
 
+Author highlighting is derived from `content/people.json`, including the PI, all member groups and alumni. Use comma-separated authors in `Surname A. B.` format or the full name listed on the Members page. Matching ignores case, punctuation and accents, but requires every listed given-name initial; surname-only matches and missing middle initials are not accepted. Update member records rather than adding names to the publication component. Compound surnames and publication aliases need explicit support before relying on automatic matching. Names and initials cannot distinguish two different people with identical names and initials; verify authorship when adding a publication.
+
+The ESCAT v2 thumbnail (`annals-oncology-escat-v2-2026.webp`) renders page 1 of the user-supplied article-in-press PDF without changing its contents. Source: [Annals of Oncology](https://www.annalsofoncology.org/article/S0923-7534(26)06651-2/pdf), DOI `10.1016/j.annonc.2026.09.008`. The listing uses the verified online publication date, 21 October 2026, rather than the PDF's placeholder date.
+
 ### Network — `/network`
 
 File: `content/network.json`. Insert into `items` under the existing `network` group:
