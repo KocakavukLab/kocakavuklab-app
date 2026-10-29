@@ -126,3 +126,14 @@ test('Imprint uses the lab contact address', () => {
   render(<MemoryRouter><Imprint /></MemoryRouter>);
   expect(screen.getByRole('link', { name: 'contact@kocakavuklab.com' })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
 });
+
+test('publication author highlighting follows members, including new entries and alumni', () => {
+  render(<Publications />);
+  const paper = screen.getByRole('link', { name: 'Fixture Publication' });
+  const authorSpans = [...paper.parentElement.querySelector('p').querySelectorAll('span')];
+  const highlighted = authorSpans.filter(span => span.style.fontWeight === '700')
+    .map(span => span.textContent.replace(/,\s*$/, '').trim());
+  expect(highlighted).toEqual([
+    'Researcher F.', 'Kocakavuk E.', 'Gundla P.S.', 'Shi Q.', 'Zhou J.', 'Ivancukova A.', 'Emre Kocakavuk',
+  ]);
+});

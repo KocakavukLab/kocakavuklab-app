@@ -3,6 +3,14 @@ import fs from 'node:fs';
 import { date, asset, parseNews, loadContent, generate, records, parseMetadata } from './content.mjs';
 const sample = fs.readFileSync(new URL('../content/news/map-2026-london.md', import.meta.url),'utf8');
 assert.equal(parseNews(sample,'map-2026-london.md').photoPair.length, 2);
+const posterStory = parseNews(sample, 'map-2026-london.md');
+assert.equal(posterStory.image, 'src/assets/news/map-2026-quan-redacted.webp');
+assert.deepEqual(posterStory.photoPair, ['src/assets/news/map-2026-quan-redacted.webp', 'src/assets/news/map-2026-team-redacted.webp']);
+for (const who of ['quan', 'team']) {
+  for (const suffix of ['.png', '.optimized.webp']) {
+    assert.equal(fs.existsSync(new URL(`../src/assets/news/map-2026-${who}${suffix}`, import.meta.url)), false);
+  }
+}
 assert.throws(()=>date('2026-02-30','date'), /invalid calendar/);
 assert.throws(()=>date('September 11','date'), /YYYY-MM-DD/);
 assert.throws(()=>asset('src/assets/missing.png','image'), /missing/);

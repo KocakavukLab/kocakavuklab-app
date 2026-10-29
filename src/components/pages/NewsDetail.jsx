@@ -88,8 +88,8 @@ function NewsDetail() {
             {newsItem.photoPair && (
               <div className="my-6 grid grid-cols-2 items-start gap-3 sm:gap-4">
                 {newsItem.photoPair.map((photo, index) => (
-                  <a key={photo} href={photo} target="_blank" rel="noopener noreferrer" aria-label={`Open MAP 2026 photo ${index + 1} at full size`}>
-                    <img src={photo} alt={index === 0 ? "Quan Shi with poster 101P at MAP 2026" : "Kocakavuk Lab at the poster presentation in London"} loading="lazy" className="h-auto w-full rounded-lg" />
+                  <a key={photo} href={photo} target="_blank" rel="noopener noreferrer" aria-label={`Open ${newsItem.title}: photo ${index + 1} at full size`}>
+                    <img src={photo} alt={`${newsItem.title}: photo ${index + 1}`} loading="lazy" className="h-auto w-full rounded-lg" />
                   </a>
                 ))}
               </div>
@@ -97,7 +97,7 @@ function NewsDetail() {
 
             {newsItem.memberImages && newsItem.memberImages.length > 0 && (
               <div className="mt-8 border-t pt-8" style={{ borderColor: T.line }}>
-                <h3 className="mb-6 text-center text-lg font-bold" style={{ color: T.ink }}>Welcome to the Team</h3>
+                {newsItem.category === "new_member" && <h3 className="mb-6 text-center text-lg font-bold" style={{ color: T.ink }}>Welcome to the Team</h3>}
                 <div className="flex flex-wrap justify-center gap-6">
                   {newsItem.memberImages.map((memberImg, idx) => (
                     <img key={idx} src={memberImg} alt={`Team member ${idx + 1}`} className="h-24 w-24 rounded-full object-cover shadow-lg transition hover:scale-105" />

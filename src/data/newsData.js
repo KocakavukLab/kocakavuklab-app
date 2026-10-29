@@ -22,7 +22,7 @@ export const NEWS_CATEGORIES = {
     id: 'publication',
     label: 'Publications',
     color: '#8B5CF6',
-    icon: 'FaNewspaper'
+    icon: 'FaScroll'
   },
   GENERAL: {
     id: 'general',
