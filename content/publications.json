@@ -1,5 +1,15 @@
 [
   {
+    "title": "The ESMO Scale for Clinical Actionability of Molecular Targets, version 2 (ESCAT v2): an evidence-based framework for ranking alterations as actionability and resistance biomarkers in precision oncology",
+    "journal": "Annals of Oncology",
+    "doi": "https://doi.org/10.1016/j.annonc.2026.09.008",
+    "authors": "El Helali A., Cardone C., Coleman N., Beal J. R., Cruz-Ordinario M. V., Kocakavuk E., Chiu M. K.-L., Thomas D., Turnbull C., Meric-Bernstam F., Mosele M. F., Chakravarty D., Dienstmann R., Tamborero D., Russnes H. E. G., Kordes M., Loong H. H. F., Stenzinger A., Rueter J., Martins-Branco D., Pentheroudakis G., Mateo J., Westphalen C. B.",
+    "date": "10/2026",
+    "status": "Published",
+    "image": "src/assets/pubs/annals-oncology-escat-v2-2026.webp",
+    "journalLogo": "src/assets/journals/annals-oncology.svg"
+  },
+  {
     "title": "Prognostic and Predictive Effect of Age in Molecularly Defined Lower-Grade Gliomas",
     "journal": "Journal of Clinical Oncology",
     "doi": "https://doi.org/10.1200/JCO-25-01846",
