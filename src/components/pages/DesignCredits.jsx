@@ -24,7 +24,6 @@ const groups = [
     items: [
       { label: "React Icons", to: "https://react-icons.github.io/react-icons/", detail: "Interface and social icons" },
       { label: "React Markdown", to: "https://github.com/remarkjs/react-markdown", detail: "News article rendering" },
-      { label: "EmailJS", to: "https://www.emailjs.com/", detail: "Contact form delivery" },
       { label: "canvas-confetti", to: "https://www.npmjs.com/package/canvas-confetti", detail: "News interactions" },
       { label: "tsParticles", to: "https://particles.js.org/", detail: "Footer animation using the React integration and slim engine" },
       { label: "Google Maps", to: "https://maps.google.com/", detail: "Embedded hematology location map" },
