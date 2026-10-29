@@ -4,7 +4,7 @@
   "title": "Dr. Quan Shi Receives a Prestigious Alexander von Humboldt Research Fellowship",
   "dateDisplay": "July 2026",
   "category": "grant",
-  "shortDescription": "We congratulate our postdoctoral researcher, Dr. Quan Shi, on being awarded the Alexander von Humboldt Research Fellowship.",
+  "shortDescription": "We congratulate our postdoctoral researcher, **Dr. Quan Shi**, on being awarded the **Alexander von Humboldt Research Fellowship**.",
   "image": "src/assets/news/humboldt.optimized.webp",
   "tags": [
     "Alexander von Humboldt",

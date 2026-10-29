@@ -4,7 +4,7 @@
   "title": "Memorial Fellowship by the EKFS",
   "dateDisplay": "February 2024",
   "category": "grant",
-  "shortDescription": "We are excited to share the news that Emre Kocakavuk, MD, PhD has received the Memorial Fellowship by the Else Kröner-Fresenius-Stiftung (EKFS).",
+  "shortDescription": "We are excited to share the news that **Emre Kocakavuk, MD, PhD** has received the **Memorial Fellowship** by the **Else Kröner-Fresenius-Stiftung (EKFS)**.",
   "image": "src/assets/logos/EKFS Logo Standard blau_blue_RGB_digital_0.png",
   "tags": [
     "EKFS",

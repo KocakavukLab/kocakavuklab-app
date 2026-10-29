@@ -67,6 +67,7 @@ const Row = ({ pub, first = false }) => (
         {pub.title}
       </a>
       <Authors authors={pub.authors} />
+      <p className="mt-2 text-sm" style={{ color: T.ink }}><strong>{pub.journal}</strong></p>
     </div>
     <div className="flex w-[100px] flex-none items-center justify-center gap-3 text-center">
       {pub.journalLogo

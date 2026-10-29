@@ -4,7 +4,7 @@
   "title": "Dr. Quan Shi Receives the IFORES Career Kickstart Grant",
   "dateDisplay": "July 2026",
   "category": "grant",
-  "shortDescription": "We congratulate Dr. Quan Shi, our Alexander von Humboldt Fellow, on receiving the IFORES Career Kickstart Grant — the University of Duisburg-Essen's internal research funding programme — which provides €49,500 to support his research project.",
+  "shortDescription": "We congratulate **Dr. Quan Shi**, our Alexander von Humboldt Fellow, on receiving the **IFORES Career Kickstart Grant** — the University of Duisburg-Essen's internal research funding programme — which provides **€49,500** to support his research project.",
   "image": "src/assets/logos/ifores.png",
   "tags": [
     "IFORES",

@@ -4,7 +4,7 @@
   "title": "New members joining the lab",
   "dateDisplay": "June 2025",
   "category": "new_member",
-  "shortDescription": "We are thrilled to welcome four new members to the Kocakavuk Lab: Cihat Karadag, Yinchun Su, Mahsasadat Nezamabadi, and Fatma Atak.",
+  "shortDescription": "We are thrilled to welcome four new members to the Kocakavuk Lab: **Cihat Karadag**, **Yinchun Su**, **Mahsasadat Nezamabadi**, and **Fatma Atak**.",
   "memberImages": [
     "src/assets/members/cihat.optimized.webp",
     "src/assets/members/YinchunSu.optimized.webp",

@@ -4,7 +4,7 @@
   "title": "ESMO Merit Award",
   "dateDisplay": "November 2025",
   "category": "award",
-  "shortDescription": "Our PhD student Pranav Swaroop Gundla has been awarded the prestigious ESMO Merit Award at the ESMO AI & Digital Oncology Congress 2025.",
+  "shortDescription": "Our PhD student **Pranav Swaroop Gundla** has been awarded the prestigious **ESMO Merit Award** at the **ESMO AI & Digital Oncology Congress 2025**.",
   "image": "src/assets/news/Merit_Awardees.optimized.webp",
   "tags": [
     "ESMO",
