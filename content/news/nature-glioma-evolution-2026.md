@@ -1,7 +1,7 @@
 ---
 {
   "id": "nature-glioma-evolution-2026",
-  "title": "Lab contributes to Nature study on glioma evolution",
+  "title": "Nature study on glioma evolution",
   "date": "2026-10-14",
   "dateDisplay": "14 October 2026",
   "category": "publication",
