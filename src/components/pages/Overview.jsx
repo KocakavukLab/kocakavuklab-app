@@ -31,7 +31,7 @@ function NewsCard({ item }) {
             <img key={photo} src={photo} alt="" loading="lazy" className="h-full min-w-0 flex-1 object-cover" />
           ))}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white" aria-hidden="true" />
+        <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-b from-transparent to-white/40" aria-hidden="true" />
       </div>
       <div className="flex flex-1 flex-col justify-end p-4">
         <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#E0742E]" style={{ fontFamily: MONO }}>News</span>
