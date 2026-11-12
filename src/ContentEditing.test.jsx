@@ -91,7 +91,7 @@ test('partner URL and vacancy links render; closed vacancy is excluded', () => {
   render(<MemoryRouter><JoinUs /></MemoryRouter>);
   expect(screen.queryByText('Fixture Closed Position')).not.toBeInTheDocument();
   expect(screen.getAllByRole('link', { name: /View details/ }).some(link => link.href === 'https://example.org/apply')).toBe(true);
-  expect(screen.getAllByRole('link', { name: /Send a general application/ })[0]).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com?subject=General%20application');
+  expect(screen.queryByRole('link', { name: /Send a general application/ })).not.toBeInTheDocument();
   expect(screen.getByRole('link', { name: /Email our PI/ })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
 });
 

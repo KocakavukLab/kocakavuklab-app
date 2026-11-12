@@ -48,9 +48,7 @@ test('Donate is visible but cannot navigate or start a payment', async () => {
   expect(footer.getByTitle('Google Maps — Essen University Hospital Department of Hematology')).toHaveAttribute('loading', 'lazy');
   expect(footer.getByRole('link', { name: 'Email the lab' })).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com');
   expect(footer.getByRole('link', { name: /Open Hematology location/ })).toHaveAttribute('href', expect.stringContaining('google.com/maps/search/'));
-  for (const link of screen.getAllByRole('link', { name: /Send a general application/ })) {
-    expect(link).toHaveAttribute('href', 'mailto:contact@kocakavuklab.com?subject=General%20application');
-  }
+  expect(screen.queryByRole('link', { name: /Send a general application/ })).not.toBeInTheDocument();
 });
 
 test('retired Contact route leads to Join Us without the old message form', () => {
