@@ -27,9 +27,6 @@ function JoinUs() {
           <p className="text-xs font-bold uppercase tracking-[0.16em]" style={{ color: ORANGE, fontFamily: MONO }}>Careers</p>
           <h1 className="mt-2 text-4xl font-bold text-white md:text-5xl" style={{ fontFamily: DISPLAY, letterSpacing: "-0.02em", textShadow: "0 2px 20px rgba(0,0,0,.5)" }}>Join Our Research Team</h1>
           <p className="mt-2 max-w-2xl text-white/85">We are constantly looking for highly motivated MD, PhD and postdoctoral candidates.</p>
-          <a href="mailto:contact@kocakavuklab.com?subject=General%20application" className="mt-5 inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-bold transition hover:brightness-95" style={{ background: ORANGE, color: "#14181F" }}>
-            Send a general application ↗
-          </a>
         </div>
       </header>
 
@@ -60,15 +57,14 @@ function JoinUs() {
         )}
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.65fr_1fr]">
-          <section className="rounded-2xl border bg-white p-8 md:p-10" style={{ borderColor: T.line }} aria-labelledby="join-apply-heading">
+          <section className="flex flex-col rounded-2xl border bg-white p-8 md:p-10" style={{ borderColor: T.line }} aria-labelledby="join-apply-heading">
             <h2 id="join-apply-heading" className="text-3xl font-semibold" style={{ color: T.ink }}>Your application</h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed" style={{ color: T.muted }}>We welcome highly motivated MD, PhD and postdoctoral candidates. Please include:</p>
-            <ul className="mt-6 divide-y text-lg" style={{ borderColor: T.line, color: T.ink }}>
-              <li className="py-5">Curriculum Vitae (CV)</li>
-              <li className="py-5">Motivation letter</li>
-              <li className="py-5">Brief statement of research interests</li>
+            <ul className="mt-6 grid flex-1 auto-rows-fr divide-y text-lg" style={{ borderColor: T.line, color: T.ink }}>
+              <li className="flex items-center py-5">Curriculum Vitae (CV)</li>
+              <li className="flex items-center py-5">Motivation letter</li>
+              <li className="flex items-center py-5">Brief statement of research interests</li>
             </ul>
-            <a href="mailto:contact@kocakavuklab.com?subject=General%20application" className="mt-7 inline-flex min-h-12 items-center rounded-full px-7 py-3 text-base font-semibold hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" style={{ background: ORANGE, color: T.ink }}>Send a general application ↗</a>
           </section>
           <section className="flex flex-col rounded-2xl border p-8 md:p-10" style={{ borderColor: T.line, background: T.tile }} aria-labelledby="join-contact-heading">
             <h2 id="join-contact-heading" className="text-2xl font-semibold" style={{ color: T.ink }}>Talk to our PI</h2>
@@ -78,7 +74,7 @@ function JoinUs() {
               : <div className="mt-8 grid h-28 w-28 place-items-center rounded-full bg-white text-2xl font-semibold">{initials(pi.name)}</div>}
             <h3 className="mt-6 text-xl font-semibold" style={{ color: T.ink }}>{pi.name}</h3>
             <p className="mt-2 text-sm" style={{ color: T.muted }}>Principal Investigator</p>
-            <a href="mailto:contact@kocakavuklab.com" className="mt-6 inline-flex min-h-12 items-center self-start text-base font-semibold underline underline-offset-4" style={{ color: T.ink }}>Email our PI ↗</a>
+            <a href="mailto:contact@kocakavuklab.com" className="mt-6 inline-flex min-h-12 items-center self-start rounded-full px-7 py-3 text-base font-semibold hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" style={{ background: ORANGE, color: T.ink }}>Email our PI ↗</a>
           </section>
         </div>
       </div>

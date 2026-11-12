@@ -19,19 +19,24 @@ const readTime = (item) => {
 };
 
 function NewsCard({ item }) {
+  const photos = item.photoPair?.length ? item.photoPair : [item.image || item.memberImages?.[0]].filter(Boolean);
   return (
     <Link
       to={`/news/${item.id}`}
       className="group flex min-h-[270px] flex-col overflow-hidden rounded-2xl border border-[#E4DCD1] bg-white shadow-sm transition hover:-translate-y-1 hover:border-[#FF914D] hover:shadow-md"
     >
       <div className="relative h-32 overflow-hidden bg-[#EDE7DE]">
-        <img src={item.image || coverImg} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white" aria-hidden="true" />
+        <div className="flex h-full gap-1">
+          {photos.map(photo => (
+            <img key={photo} src={photo} alt="" loading="lazy" className="h-full min-w-0 flex-1 object-cover" />
+          ))}
+        </div>
+        <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-b from-transparent to-white/40" aria-hidden="true" />
       </div>
-      <div className="relative -mt-6 flex flex-1 flex-col p-4 pt-0">
+      <div className="flex flex-1 flex-col justify-end p-4">
         <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#E0742E]" style={{ fontFamily: MONO }}>News</span>
         <h3 className="mt-2 text-lg font-bold leading-tight text-[#14181F]" style={{ fontFamily: DISPLAY }}>{item.title}</h3>
-        <div className="mt-auto flex items-end justify-between gap-4 pt-4 text-sm text-[#5B6472]">
+        <div className="flex items-end justify-between gap-4 pt-5 text-sm text-[#5B6472]">
           <span>{item.dateDisplay} <span className="mx-1.5">•</span> {readTime(item)} min read</span>
           <span className="text-2xl leading-none text-[#FF914D] transition group-hover:translate-x-1" aria-hidden="true">↗</span>
         </div>

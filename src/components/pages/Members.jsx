@@ -16,8 +16,8 @@ const ORANGE = "#FF914D";
 
 const initials = (n) => n.split(" ").map((p) => p[0]).slice(0, 2).join("");
 
-const Socials = ({ p, size = 18, align = "center" }) => (
-  <div className={`mt-3 flex flex-wrap gap-3 ${align === "start" ? "justify-start" : "justify-center"}`}>
+const Socials = ({ p, size = 18, alignment = "justify-center" }) => (
+  <div className={`mt-auto flex flex-wrap gap-3 pt-3 ${alignment}`}>
     {p.linkedin && <a href={p.linkedin} target="_blank" rel="noreferrer" aria-label={`${p.name} LinkedIn`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><GrLinkedin size={size} /></a>}
     {p.scholar && <a href={p.scholar} target="_blank" rel="noreferrer" aria-label={`${p.name} Google Scholar`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><SiGooglescholar size={size} /></a>}
     {p.researchgate && <a href={p.researchgate} target="_blank" rel="noreferrer" aria-label={`${p.name} ResearchGate`} className="rounded-sm text-[#737373] transition-colors hover:text-[#FF914D] focus:text-[#FF914D] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF914D]"><SiResearchgate size={size} /></a>}
@@ -36,7 +36,7 @@ const Card = ({ person }) => (
         {initials(person.name)}
       </div>
     )}
-    <div className="min-w-0 flex-1">
+    <div className="flex min-w-0 flex-1 flex-col self-stretch">
       <h3 className="text-lg font-bold" style={{ color: T.ink }}>{person.name}</h3>
       <p className="text-[13px] font-bold" style={{ color: ORANGE }}>{person.role}</p>
       {person.description && <p className="mx-auto mt-2 max-w-3xl text-[13px] leading-relaxed" style={{ color: T.muted }}>{person.description}</p>}
@@ -64,9 +64,7 @@ const AlumniCard = ({ person }) => (
       <h3 className="text-lg font-bold" style={{ color: T.ink }}>{person.name}</h3>
       <p className="text-[13px] font-bold" style={{ color: ORANGE }}>{person.role}</p>
       {person.description && <p className="mt-2 max-w-3xl text-[13px] leading-relaxed" style={{ color: T.muted }}>{person.description}</p>}
-      <div className="flex justify-center sm:justify-start">
-        <Socials p={person} size={18} align="start" />
-      </div>
+      <Socials p={person} size={18} alignment="justify-center sm:justify-start" />
     </div>
   </article>
 );

@@ -30,11 +30,6 @@ const sections = [
     title: "Contact",
     body: (
       <>
-        Phone:{" "}
-        <Link to="tel:+49-(0)201-723-0" className="font-semibold" style={{ color: ORANGE }}>
-          +49-(0)201-723-0
-        </Link>
-        <br />
         E-mail:{" "}
         <Link to="mailto:contact@kocakavuklab.com" className="font-semibold" style={{ color: ORANGE }}>
           contact@kocakavuklab.com
