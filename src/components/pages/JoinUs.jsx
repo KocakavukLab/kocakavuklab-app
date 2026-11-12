@@ -57,13 +57,13 @@ function JoinUs() {
         )}
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.65fr_1fr]">
-          <section className="rounded-2xl border bg-white p-8 md:p-10" style={{ borderColor: T.line }} aria-labelledby="join-apply-heading">
+          <section className="flex flex-col rounded-2xl border bg-white p-8 md:p-10" style={{ borderColor: T.line }} aria-labelledby="join-apply-heading">
             <h2 id="join-apply-heading" className="text-3xl font-semibold" style={{ color: T.ink }}>Your application</h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed" style={{ color: T.muted }}>We welcome highly motivated MD, PhD and postdoctoral candidates. Please include:</p>
-            <ul className="mt-6 divide-y text-lg" style={{ borderColor: T.line, color: T.ink }}>
-              <li className="py-5">Curriculum Vitae (CV)</li>
-              <li className="py-5">Motivation letter</li>
-              <li className="py-5">Brief statement of research interests</li>
+            <ul className="mt-6 grid flex-1 auto-rows-fr divide-y text-lg" style={{ borderColor: T.line, color: T.ink }}>
+              <li className="flex items-center py-5">Curriculum Vitae (CV)</li>
+              <li className="flex items-center py-5">Motivation letter</li>
+              <li className="flex items-center py-5">Brief statement of research interests</li>
             </ul>
           </section>
           <section className="flex flex-col rounded-2xl border p-8 md:p-10" style={{ borderColor: T.line, background: T.tile }} aria-labelledby="join-contact-heading">
