@@ -36,7 +36,7 @@ const Authors = ({ authors }) => {
     <p className="mt-1.5 text-[12.5px] leading-relaxed" style={{ color: T.muted }}>
       {parts.map((a, i) => (
         <span key={i} style={labAuthors.has(normalizeName(a)) ? { color: ORANGE, fontWeight: 700 } : undefined}>
-          {a}
+          {a.endsWith("*") ? <>{a.slice(0, -1)}<sup>*</sup></> : a}
           {i < parts.length - 1 ? ", " : ""}
         </span>
       ))}
@@ -67,6 +67,9 @@ const Row = ({ pub, first = false }) => (
         {pub.title}
       </a>
       <Authors authors={pub.authors} />
+      {pub.authors.split(", ").some(name => name.endsWith("*")) && (
+        <p className="mt-1 text-xs text-black"><strong>*shared first-authors</strong></p>
+      )}
       <p className="mt-2 text-sm" style={{ color: T.ink }}><strong>{pub.journal}</strong></p>
     </div>
     <div className="flex w-[100px] flex-none items-center justify-center gap-3 text-center">

@@ -16,9 +16,10 @@ test('renders visible publications in newest-first date order', () => {
   expect(screen.getByText('Acquired genetic and cell-state changes in IDH-mutant glioma progression')).toBeInTheDocument();
   for (const pub of rendered) {
     const title = screen.getByRole('link', { name: pub.title });
-    const journal = title.parentElement.querySelector('strong');
+    expect(title).toHaveAttribute('href', pub.doi);
+    const journal = title.parentElement.querySelector('p:last-child strong');
     expect(journal).toHaveTextContent(pub.journal);
-    expect(journal.parentElement.previousElementSibling).toHaveTextContent(pub.authors);
+    expect(title.nextElementSibling).toHaveTextContent(pub.authors);
   }
   const dates = rendered.map(pub => {
     const [month, year] = pub.date.split('/').map(Number);
